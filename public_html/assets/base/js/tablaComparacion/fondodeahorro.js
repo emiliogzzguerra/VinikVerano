@@ -1,5 +1,8 @@
-$('#table').bootstrapTable({
+$('#aaa').bootstrapTable({
+    /*
     columns: [{
+        sortName: 'id',
+        sortOrder: 'asc',
         field: 'id',
         title: 'Item ID'
     }, {
@@ -9,93 +12,140 @@ $('#table').bootstrapTable({
         field: 'price',
         title: 'Item Price'
     }],
+    */
     data: [{
-        id: 1,
-        name: 'Item 1',
-        price: '$1'
-    }, {
-        id: 2,
-        name: 'Item 2',
-        price: '$2'
-    }, {
-        id: 1,
-        name: 'Item 1',
-        price: '$1'
-    }, {
-        id: 2,
-        name: 'Item 2',
-        price: '$2'
-    }, {
-        id: 2,
-        name: 'Item 2',
-        price: '$2'
-    }, {
-        id: 1,
-        name: 'Item 1',
-        price: '$1'
-    }, {
-        id: 2,
-        name: 'Item 2',
-        price: '$2'
-    }, {
-        id: 2,
-        name: 'Item 2',
-        price: '$2'
-    }, {
-        id: 2,
-        name: 'Item 2',
-        price: '$2'
-    }, {
-        id: 1,
-        name: 'Item 1',
-        price: '$1'
-    }, {
-        id: 2,
-        name: 'Item 2',
-        price: '$2'
-    }, {
-        id: 2,
-        name: 'Item 2',
-        price: '$2'
-    }, {
-        id: 1,
-        name: 'Item 1',
-        price: '$1'
-    }, {
-        id: 2,
-        name: 'Item 2',
-        price: '$2'
-    }, {
-        id: 2,
-        name: 'Item 2',
-        price: '$2'
-    }, {
-        id: 2,
-        name: 'Item 2',
-        price: '$2'
-    }, {
-        id: 1,
-        name: 'Item 1',
-        price: '$1'
-    }, {
-        id: 2,
-        name: 'Item 2',
-        price: '$2'
-    }, {
-        id: 2,
-        name: 'Item 2',
-        price: '$2'
-    }, {
-        id: 1,
-        name: 'Item 1',
-        price: '$1'
-    }, {
-        id: 2,
-        name: 'Item 2',
-        price: '$2'
-    }, {
-        id: 2,
-        name: 'Item 2',
-        price: '$2'
-    }]
-});
+        check: 1,
+        logo: 'Item 1',
+        ti: '$1',
+        amm: 1,
+        pam: 'Item 1',
+        ir: '$1',
+        com: 1,
+        contacto: 'Item 1'
+    },{
+        check: 1,
+        logo: 'Item 1',
+        ti: '$1',
+        amm: 1,
+        pam: 'Item 1',
+        ir: '$1',
+        com: 1,
+        contacto: 'Item 1'
+    },{
+        check: 1,
+        logo: 'Item 1',
+        ti: '$1',
+        amm: 1,
+        pam: 'Item 1',
+        ir: '$1',
+        com: 1,
+        contacto: 'Item 1'
+    },{
+        check: 1,
+        logo: 'Item 1',
+        ti: '$1',
+        amm: 1,
+        pam: 'Item 1',
+        ir: '$1',
+        com: 1,
+        contacto: 'Item 1'
+    },{
+        check: 1,
+        logo: 'Item 1',
+        ti: '$1',
+        amm: 1,
+        pam: 'Item 1',
+        ir: '$1',
+        com: 1,
+        contacto: 'Item 1'
+    },{
+        check: 1,
+        logo: 'Item 1',
+        ti: '$1',
+        amm: 1,
+        pam: 'Item 1',
+        ir: '$1',
+        com: 1,
+        contacto: 'Item 1'
+    },{
+        check: 1,
+        logo: 'Item 1',
+        ti: '$1',
+        amm: 1,
+        pam: 'Item 1',
+        ir: '$1',
+        com: 1,
+        contacto: 'Item 1'
+    },{
+        check: 1,
+        logo: 'Item 1',
+        ti: '$1',
+        amm: 1,
+        pam: 'Item 1',
+        ir: '$1',
+        com: 1,
+        contacto: 'Item 1'
+    },{
+        check: 1,
+        logo: 'Item 1',
+        ti: '$1',
+        amm: 1,
+        pam: 'Item 1',
+        ir: '$1',
+        com: 1,
+        contacto: 'Item 1'
+    },{
+        check: 1,
+        logo: 'Item 1',
+        ti: '$1',
+        amm: 1,
+        pam: 'Item 1',
+        ir: '$1',
+        com: 1,
+        contacto: 'Item 1'
+    },{
+        check: 1,
+        logo: 'Item 1',
+        ti: '$1',
+        amm: 1,
+        pam: 'Item 1',
+        ir: '$1',
+        com: 1,
+        contacto: 'Item 1'
+    },{
+        check: 1,
+        logo: 'Item 1',
+        ti: '$1',
+        amm: 1,
+        pam: 'Item 1',
+        ir: '$1',
+        com: 1,
+        contacto: 'Item 1'
+    },{
+        check: 1,
+        logo: 'Item 1',
+        ti: '$1',
+        amm: 1,
+        pam: 'Item 1',
+        ir: '$1',
+        com: 1,
+        contacto: 'Item 1'
+    },{
+        check: 1,
+        logo: 'Item 1',
+        ti: '$1',
+        amm: 1,
+        pam: 'Item 1',
+        ir: '$1',
+        com: 1,
+        contacto: 'Item 1'
+    },{
+        check: 1,
+        logo: 'Item 1',
+        ti: '$1',
+        amm: 1,
+        pam: 'Item 1',
+        ir: '$1',
+        com: 1,
+        contacto: 'Item 1'
+    }]});

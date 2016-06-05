@@ -728,7 +728,7 @@
 
                 html.push('<th' + sprintf(' title="%s"', column.titleTooltip),
                     column.checkbox || column.radio ?
-                        sprintf(' class="bs-checkbox %s"', column['class'] || '') :
+                        sprintf(' class="bs-checkbox %s" ', column['class'] || '') :
                         class_,
                     sprintf(' style="%s"', halign + style),
                     sprintf(' rowspan="%s"', column.rowspan),
@@ -744,7 +744,7 @@
 
                 if (column.checkbox) {
                     if (!that.options.singleSelect && that.options.checkboxHeader) {
-                        text = '<input name="btSelectAll" type="checkbox" />';
+                        text = '<input name="btSelectAll" type="checkbox"  />';
                     }
                     that.header.stateField = column.field;
                 }
