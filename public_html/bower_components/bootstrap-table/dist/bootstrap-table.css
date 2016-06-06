@@ -4,6 +4,19 @@
  * https://github.com/wenzhixin/bootstrap-table/
  */
 
+
+.table-blue,
+.table-blue > th,
+.table-blue > td {
+  background-color: rgba(14,14,141,0.2);
+}
+
+.table-green,
+.table-green > th,
+.table-green > td {
+  background-color: rgba(25, 187, 0,0.2);
+}
+
 .bootstrap-table .table {
     margin-bottom: 0 !important;
     border-bottom: 1px solid #dddddd;

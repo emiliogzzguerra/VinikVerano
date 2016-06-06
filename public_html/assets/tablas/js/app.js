@@ -1,3 +1,84 @@
+var azul = "dos";
+var verde = "uno";
+var AzulOVerde = false; //False = Verde, True = Azul
+var selections;
+var all;
+var $table = $('#table');
+
+$( document ).ready(function() {
+$("input[data-index='0']").attr("checked",true);
+$("input[data-index='1']").attr("checked",true);
+/*$("#uno").addClass('table-info');
+$("#dos").addClass('table-success');*/
+//$("#uno").attr('class', 'table-success');
+$('#uno').addClass('table-green');
+$('#dos').addClass('table-blue');
+
+
+
+
+});
+                 
+
+        $(function () {
+
+            all = $table.bootstrapTable('getData');
+
+            for (var i = 0; i < 6; i++) {
+                if (all[i][1] != azul && all[i][1] != verde) {
+                    $("input[data-index='" + i + "']").prop("disabled",true);
+                }
+            }
+                    
+            
+        var sum=2;
+
+         var $result = $('#eventsResult');
+            $('#table')
+            .on('check.bs.table', function (e, row) {
+                //$result.text('Event: check.bs.table');
+                $("input[data-index='" + i + "']").prop("disabled",true);
+                if(sum < 2){
+                    sum += 1;
+                    if(sum == 2){
+                        selections = $table.bootstrapTable('getSelections');
+
+                        all = $table.bootstrapTable('getData');
+
+                        azul = selections[0][1];
+                        verde = selections[1][1];
+
+                        for (var i = 0; i < 6; i++) {
+                            if (all[i][1] != azul && all[i][1] != verde) {
+                                $("input[data-index='" + i + "']").prop("disabled",true);
+                            }
+                        }
+
+                        //.table-success
+                    }
+                    //return false;
+                }
+                console.log(sum);
+            })
+
+            .on('uncheck.bs.table', function (e, row) {
+                $result.text('Event: uncheck.bs.table');
+                for (var i = 0; i < 6; i++) {
+                    selections = $table.bootstrapTable('getSelections');
+
+                    all = $table.bootstrapTable('getData');
+
+                    if (all[i][1] != azul && all[i][1] != verde) {
+                            $("input[data-index='" + i + "']").prop("disabled",false);
+                        }
+                }
+
+                sum -= 1;
+                console.log(sum);
+            });
+        });
+
+
 Chart.numberWithCommas = function(x) {
             return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         };

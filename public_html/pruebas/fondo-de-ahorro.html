@@ -298,12 +298,9 @@
                 </div>
             </div>
 
-            <div class="alert alert-success" id="eventsResult">
-                Here is the result of event.
-            </div>
             <div class="c-navbar col-md-12 c-bg-white" style="padding-bottom:20px;">
                     <h3 id="title" class="c-center c-font-bold" style="margin-top:0px;">Información</h3>
-                    <table id="table" data-height="400" data-toggle="table" data-click-to-select="true" >
+                    <table class="table-no-bordered" id="table" data-height="400" data-toggle="table" data-click-to-select="true" >
                     <thead>
                         <tr>
                             <th data-checkbox="true">Compara</th>
@@ -318,67 +315,66 @@
                     </thead>
                     <tbody>
                     
-                      <tr>
-                        <td id="0"></td>
+                      <tr id="uno" class="table-success">
+                        <td></td>
                         <td>uno</td>
-                        <td>10</td>
-                        <td>1,000</td>
-                        <td>2 meses</td>
-                        <td>60%</td>
-                        <td>1.2%</td>
-                        <td><button href="www.facebook.com">Ahora!</button></td>
-
+                        <td>11%</td>
+                        <td>2,000</td>
+                        <td>5 Años</td>
+                        <td>a</td>
+                        <td>1.0%</td>
+                        <td><button href="www.facebook.com" style="background-color:orange">Ahora!</button></td>
                       </tr>
                      
-                      <tr>
+                      <tr id="dos">
                       <td></td>
                         <td>dos</td>
-                        <td>10</td>
-                        <td>1,000</td>
-                        <td>2 meses</td>
-                        <td>60%</td>
-                        <td>1.2%</td>
-                        <td><button href="www.facebook.com">Ahora!</button></td>
+                        <td>9%</td>
+                        <td>1,500</td>
+                        <td>3 Años</td>
+                        <td>b</td>
+                        <td>0.9%</td>
+                        <td><button href="www.facebook.com" style="background-color:orange">Ahora!</button></td>
                       </tr>
-                      <tr>
+                      <tr id="tres">
                       <td></td>
                         <td>tres</td>
-                        <td>10</td>
-                        <td>1,000</td>
-                        <td>2 meses</td>
-                        <td>60%</td>
-                        <td>1.2%</td>
-                        <td><button href="www.facebook.com">Ahora!</button></td>
+                        <td>12%</td>
+                        <td>3,000</td>
+                        <td>4 Años</td>
+                        <td>a</td>
+                        <td>1.5%</td>
+                        <td><button href="www.facebook.com" style="background-color:orange">Ahora!</button></td>
                       </tr>
-                      <tr>
+                      <tr id="cuatro">
                       <td></td>
                         <td>cuatro</td>
-                        <td>10</td>
-                        <td>1,000</td>
-                        <td>2 meses</td>
-                        <td>60%</td>
+                        <td>5%</td>
+                        <td>2,000</td>
+                        <td>2 Años</td>
+                        <td>c</td>
                         <td>1.2%</td>
-                        <td><button href="www.facebook.com">Ahora!</button></td>
+                        <td><button href="www.facebook.com" style="background-color:orange">Ahora!</button></td>
                       </tr>
-                      <tr>
+                      <tr id="cinco">
                       <td></td>
                         <td>cinco</td>
-                        <td>10</td>
-                        <td>1,000</td>
-                        <td>2 meses</td>
-                        <td>60%</td>
-                        <td>1.2%</td>
-                        <td><button href="www.facebook.com">Ahora!</button></td>
+                        <td>10%</td>
+                        <td>1,500</td>
+                        <td>5 Años</td>
+                        <td>d</td>
+                        <td>0.5%</td>
+                        <td><button href="www.facebook.com" style="background-color:orange">Ahora!</button></td>
                       </tr>
-                      <tr>
+                      <tr id="seis">
                       <td></td>
                         <td>seis</td>
-                        <td>10</td>
-                        <td>1,000</td>
-                        <td>2 meses</td>
-                        <td>60%</td>
-                        <td>1.2%</td>
-                        <td><button href="www.facebook.com">Ahora!</button></td>
+                        <td>8%</td>
+                        <td>2,000</td>
+                        <td>5 Años</td>
+                        <td>b</td>
+                        <td>1.8%</td>
+                        <td><button href="www.facebook.com" style="background-color:orange">Ahora!</button></td>
                       </tr>
                     </tbody>
                 </table>
@@ -458,92 +454,7 @@
 
         <!-- BEGIN: PAGE SCRIPTS -->
         <!-- BEGIN: PAGE SCRIPTS -->
-        <script type="text/javascript"> 
-        $( document ).ready(function() {
-            console.log( "ready!" );
 
-        });
-                 
-
-        $(function () {
-            var $table = $('#table')
-            var azul;
-            var verde;
-        var sum=0;
-         var $result = $('#eventsResult');
-            $('#table')
-            .on('check.bs.table', function (e, row) {
-                //$result.text('Event: check.bs.table');
-                if(sum < 2){
-                    sum += 1;
-                    if(sum == 2){
-                        var selections = $table.bootstrapTable('getSelections');
-
-                        var all = $table.bootstrapTable('getData');
-
-                        azul = selections[0][1];
-                        verde = selections[1][1];
-
-                        for (var i = 0; i < 6; i++) {
-                            if (all[i][1] != azul && all[i][1] != verde) {
-                                $("input[data-index='" + i + "']").prop("disabled",true);
-                            }
-                        }
-                    }
-                    //return false;
-                }
-                console.log(sum);
-            })
-            .on('uncheck.bs.table', function (e, row) {
-                $result.text('Event: uncheck.bs.table');
-                for (var i = 0; i < 6; i++) {
-                    $("input[data-index='" + i + "']").prop("disabled",false);
-                }
-
-                sum -=1;
-            });
-        });
-
-            
-        </script>
-        <script>
-            $(document).ready(function()
-            {
-                var slider = $('.c-layout-revo-slider .tp-banner');
-                var cont = $('.c-layout-revo-slider .tp-banner-container');
-                var api = slider.show().revolution(
-                {
-                    delay: 15000,
-                    startwidth: 1170,
-                    startheight: App.getViewPort().height,
-                    navigationType: "hide",
-                    navigationArrows: "solo",
-                    touchenabled: "on",
-                    onHoverStop: "on",
-                    keyboardNavigation: "off",
-                    navigationType: "bullet",
-                    navigationArrows: "",
-                    navigationStyle: "round c-tparrows-hide c-theme",
-                    navigationHAlign: "right",
-                    navigationVAlign: "bottom",
-                    navigationHOffset: 60,
-                    navigationVOffset: 60,
-                    spinner: "spinner2",
-                    fullScreen: 'on',
-                    fullScreenAlignForce: 'on',
-                    fullScreenOffsetContainer: '.c-layout-header',
-                    shadow: 0,
-                    fullWidth: "off",
-                    forceFullWidth: "on",
-                    hideTimerBar: "on",
-                    hideThumbsOnMobile: "on",
-                    hideNavDelayOnMobile: 1500,
-                    hideBulletsOnMobile: "on",
-                    hideArrowsOnMobile: "on",
-                    hideThumbsUnderResolution: 0
-                });
-            }); //ready
-        </script>
         <!--Start of Tawk.to Script-->
         <script type="text/javascript">
         var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
