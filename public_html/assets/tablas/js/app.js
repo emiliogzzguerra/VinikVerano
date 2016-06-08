@@ -20,12 +20,25 @@ $("#dos").addClass('table-success');*/
             
         var sum=2;
 
+        all = $table.bootstrapTable('getData');
+
          var $result = $('#eventsResult');
             $('#table')
-            .on('load-success.bs.table', function (e, data) {
+            .on('all.bs.table', function (e, name, args) {
 
-                $("tr[data-uniqueid='0']").addClass('table-green');
-                $("tr[data-uniqueid='1']").addClass('table-blue');
+                $("tr[data-uniqueid='"+verde+"']").addClass('table-green');
+                $("tr[data-uniqueid='"+azul+"']").addClass('table-blue');
+
+                if(sum == 2){
+                    for (var i = 0; i < all.length; i++) {
+                        if (all[i].id != azul && all[i].id != verde) {
+                            $("input[data-index='" + i + "']").prop("disabled",true);
+                        }
+                    }
+
+                }
+            })
+            .on('load-success.bs.table', function (e, data) {
 
                 all = $table.bootstrapTable('getData');
 
