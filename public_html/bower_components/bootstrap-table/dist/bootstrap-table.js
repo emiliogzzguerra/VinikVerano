@@ -243,7 +243,7 @@
     };
 
     BootstrapTable.DEFAULTS = {
-        classes: 'table table-hover',
+        classes: 'table',//'table table-hover'
         locale: undefined,
         height: undefined,
         undefinedText: '-',
@@ -1876,7 +1876,7 @@
         this.$selectAll.add(this.$selectAll_).prop('checked', checkAll);
 
         this.$selectItem.each(function () {
-            $(this).closest('tr')[$(this).prop('checked') ? 'addClass' : 'removeClass']('selected');
+            //$(this).closest('tr')[$(this).prop('checked') ? 'addClass' : 'removeClass']('selected');
         });
     };
 

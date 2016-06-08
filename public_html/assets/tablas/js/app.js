@@ -1,80 +1,101 @@
-var azul = "dos";
-var verde = "uno";
+var verde = 0;
+var azul = 1;
+
 var AzulOVerde = false; //False = Verde, True = Azul
 var selections;
 var all;
 var $table = $('#table');
 
 $( document ).ready(function() {
-$("input[data-index='0']").attr("checked",true);
-$("input[data-index='1']").attr("checked",true);
+
+
 /*$("#uno").addClass('table-info');
 $("#dos").addClass('table-success');*/
 //$("#uno").attr('class', 'table-success');
-$('#uno').addClass('table-green');
-$('#dos').addClass('table-blue');
-
-
-
 
 });
                  
 
-        $(function () {
-
-            all = $table.bootstrapTable('getData');
-
-            for (var i = 0; i < 6; i++) {
-                if (all[i][1] != azul && all[i][1] != verde) {
-                    $("input[data-index='" + i + "']").prop("disabled",true);
-                }
-            }
-                    
+        $(function () {                  
             
         var sum=2;
 
          var $result = $('#eventsResult');
             $('#table')
+            .on('load-success.bs.table', function (e, data) {
+
+                $("tr[data-uniqueid='0']").addClass('table-green');
+                $("tr[data-uniqueid='1']").addClass('table-blue');
+
+                all = $table.bootstrapTable('getData');
+
+
+                console.log(all[0].id);
+
+                for (var i = 0; i < all.length; i++) {
+                    $("input[data-index='" + i + "']").attr('id', i);
+                }
+
+                for (var i = 0; i < all.length; i++) {
+                    if (all[i].id != azul && all[i].id != verde) {
+                        $("input[data-index='" + i + "']").prop("disabled",true);
+                    }
+                }
+
+                console.log("Started...");
+                console.log("verde = " + verde);
+                console.log("azul = " + azul);
+            })
             .on('check.bs.table', function (e, row) {
                 //$result.text('Event: check.bs.table');
-                $("input[data-index='" + i + "']").prop("disabled",true);
+
+                if (azul == -1) {
+                    azul = row.id;
+                    $("tr[data-uniqueid='"+row.id+"']").addClass('table-blue');
+                } else if (verde == -1) {
+                    verde = row.id;
+                    $("tr[data-uniqueid='"+row.id+"']").addClass('table-green');
+                }
+
                 if(sum < 2){
                     sum += 1;
                     if(sum == 2){
-                        selections = $table.bootstrapTable('getSelections');
-
-                        all = $table.bootstrapTable('getData');
-
-                        azul = selections[0][1];
-                        verde = selections[1][1];
-
-                        for (var i = 0; i < 6; i++) {
-                            if (all[i][1] != azul && all[i][1] != verde) {
+                        for (var i = 0; i < all.length; i++) {
+                            if (all[i].id != azul && all[i].id != verde) {
                                 $("input[data-index='" + i + "']").prop("disabled",true);
                             }
                         }
 
-                        //.table-success
                     }
-                    //return false;
                 }
-                console.log(sum);
+
+                console.log("Checked... Row: " + row.id);
+                console.log("verde = " + verde);
+                console.log("azul = " + azul);
             })
 
             .on('uncheck.bs.table', function (e, row) {
-                $result.text('Event: uncheck.bs.table');
-                for (var i = 0; i < 6; i++) {
-                    selections = $table.bootstrapTable('getSelections');
 
-                    all = $table.bootstrapTable('getData');
-
-                    if (all[i][1] != azul && all[i][1] != verde) {
-                            $("input[data-index='" + i + "']").prop("disabled",false);
-                        }
+                if(row.id == azul){
+                    azul = -1;
+                } else if(row.id == verde) {
+                    verde = -1;
                 }
 
+                selections = $table.bootstrapTable('getSelections');
+
+                $("tr[data-uniqueid='" + row.id + "']").removeAttr('class');
+
+                for (var i = 0; i < all.length; i++) {
+                    if (all[i].id != azul && all[i].id != verde) {
+                        $("input[data-index='" + i + "']").prop("disabled",false);
+                    }
+                }
+                console.log("Unchecked... Row: " + row.id);
+                console.log("verde = " + verde);
+                console.log("azul = " + azul);
+
                 sum -= 1;
-                console.log(sum);
             });
         });
 
@@ -686,4 +707,3 @@ Chart.numberWithCommas = function(x) {
             */
         });
     }
-

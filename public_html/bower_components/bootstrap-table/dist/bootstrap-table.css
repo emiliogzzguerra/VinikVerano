@@ -11,9 +11,9 @@
   background-color: rgba(14,14,141,0.2);
 }
 
-.table-green,
-.table-green > th,
-.table-green > td {
+.table-green, 
+.table-green > th, 
+.table-green > td { 
   background-color: rgba(25, 187, 0,0.2);
 }
 

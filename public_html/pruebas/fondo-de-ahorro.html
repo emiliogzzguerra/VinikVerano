@@ -6,7 +6,7 @@
     <!-- BEGIN HEAD -->
     <head>
         <meta charset="utf-8" />
-        <title>VINIK | Seguros de Gastos Médicos</title>
+        <title>VINIK | Fondos de Ahorro</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -47,7 +47,6 @@
         }
 
         </script>
-        <script src="scripts/angular.min.js"></script>
 
         <!-- Inicia todo lo necesario para la tabla -->
             <script src="../assets/tablas/components/Chart.js/Chart.js"></script>
@@ -278,7 +277,7 @@
                 </div>
 
                 <div class="col-md-6 c-bg-white">
-                    <!-- BEGIN: Tabla 1 -->
+                    <!-- BEGIN: Tabla 1  -->
                             <div style="width:100%">
                                 <div>
                                     <canvas id="canvas" height="300" width="600"></canvas>
@@ -300,83 +299,26 @@
 
             <div class="c-navbar col-md-12 c-bg-white" style="padding-bottom:20px;">
                     <h3 id="title" class="c-center c-font-bold" style="margin-top:0px;">Información</h3>
-                    <table class="table-no-bordered" id="table" data-height="400" data-toggle="table" data-click-to-select="true" >
+                    <table  class="table-no-bordered" 
+                            id="table" 
+                            data-toggle="table"
+                            data-height="400" 
+                            data-click-to-select="true" 
+                            data-unique-id="id" 
+                            data-url="../json/data1.json">
+
                     <thead>
                         <tr>
-                            <th data-checkbox="true">Compara</th>
-                            <th data-sortable="true" >Compañía</th>
-                            <th data-sortable="true">Tasa de Interés</th>
-                            <th data-sortable="true">Ahorro Mínimo Mensual</th>
-                            <th data-sortable="true">Plazo de ahorro mínimo</th>
-                            <th data-sortable="true">Indicador de Riesgo</th>
-                            <th data-sortable="true">Comisión</th>
-                            <th data-sortable="true">Contacto</th>
+                            <th data-field="checkbox" data-checkbox="true">Compara</th>
+                            <th data-field="nombre" data-sortable="true" >Compañía</th>
+                            <th data-field="ti" data-sortable="true">Tasa de Interés</th>
+                            <th data-field="am" data-sortable="true">Ahorro Mínimo Mensual</th>
+                            <th data-field="pa" data-sortable="true">Plazo de ahorro mínimo</th>
+                            <th data-field="ir" data-sortable="true">Indicador de Riesgo</th>
+                            <th data-field="c" data-sortable="true">Comisión</th>
+                            <th data-field="ct" data-sortable="true">Contacto</th>
                         </tr>
                     </thead>
-                    <tbody>
-                    
-                      <tr id="uno" class="table-success">
-                        <td></td>
-                        <td>uno</td>
-                        <td>11%</td>
-                        <td>2,000</td>
-                        <td>5 Años</td>
-                        <td>a</td>
-                        <td>1.0%</td>
-                        <td><button href="www.facebook.com" style="background-color:orange">Ahora!</button></td>
-                      </tr>
-                     
-                      <tr id="dos">
-                      <td></td>
-                        <td>dos</td>
-                        <td>9%</td>
-                        <td>1,500</td>
-                        <td>3 Años</td>
-                        <td>b</td>
-                        <td>0.9%</td>
-                        <td><button href="www.facebook.com" style="background-color:orange">Ahora!</button></td>
-                      </tr>
-                      <tr id="tres">
-                      <td></td>
-                        <td>tres</td>
-                        <td>12%</td>
-                        <td>3,000</td>
-                        <td>4 Años</td>
-                        <td>a</td>
-                        <td>1.5%</td>
-                        <td><button href="www.facebook.com" style="background-color:orange">Ahora!</button></td>
-                      </tr>
-                      <tr id="cuatro">
-                      <td></td>
-                        <td>cuatro</td>
-                        <td>5%</td>
-                        <td>2,000</td>
-                        <td>2 Años</td>
-                        <td>c</td>
-                        <td>1.2%</td>
-                        <td><button href="www.facebook.com" style="background-color:orange">Ahora!</button></td>
-                      </tr>
-                      <tr id="cinco">
-                      <td></td>
-                        <td>cinco</td>
-                        <td>10%</td>
-                        <td>1,500</td>
-                        <td>5 Años</td>
-                        <td>d</td>
-                        <td>0.5%</td>
-                        <td><button href="www.facebook.com" style="background-color:orange">Ahora!</button></td>
-                      </tr>
-                      <tr id="seis">
-                      <td></td>
-                        <td>seis</td>
-                        <td>8%</td>
-                        <td>2,000</td>
-                        <td>5 Años</td>
-                        <td>b</td>
-                        <td>1.8%</td>
-                        <td><button href="www.facebook.com" style="background-color:orange">Ahora!</button></td>
-                      </tr>
-                    </tbody>
                 </table>
             </div>  
 
@@ -456,6 +398,7 @@
         <!-- BEGIN: PAGE SCRIPTS -->
 
         <!--Start of Tawk.to Script-->
+
         <script type="text/javascript">
         var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
         (function(){
@@ -467,6 +410,7 @@
         s0.parentNode.insertBefore(s1,s0);
         })();
         </script>
+
         <!--End of Tawk.to Script-->
         <script src="../assets/base/js/scripts/pages/index-gallery.js" type="text/javascript"></script>
         <script src="../assets/base/js/scripts/pages/faq.js" type="text/javascript"></script>
