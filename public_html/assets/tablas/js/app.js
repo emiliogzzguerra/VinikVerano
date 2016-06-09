@@ -1,28 +1,56 @@
+
+
+//Tabla
 var verde = 0;
 var azul = 1;
-
 var AzulOVerde = false; //False = Verde, True = Azul
 var selections;
 var all;
 var $table = $('#table');
 
-$( document ).ready(function() {
+//AngularApp
+var app = angular.module("fondoDeAhorro", []);
+
+app.controller('ExampleController', ['$scope', function($scope) {
+      $scope.master = {};
+
+      $scope.save = function(user) {
+        a = user.am;
+        tPasado = t;
+        t = user.t;
+
+        lineChartData.labels = [];
+        lineChartData.datasets[0].data = [];
+        lineChartData.datasets[1].data = [];
+        lineChartData.datasets[2].data = [];
+        lineChartData.datasets[3].data = [];
+
+        iPeriodos = t*12;        
+        chartUpdate();
+        console.log(lineChartData.labels);
+
+      };
+
+      $scope.reset = function() {
+        $scope.user = angular.copy($scope.master);
+      };
+
+      $scope.reset();
+    }]);
 
 
-/*$("#uno").addClass('table-info');
-$("#dos").addClass('table-success');*/
-//$("#uno").attr('class', 'table-success');
+$(document).ready(function() {
+console.log(a);
 
 });
                  
 
-        $(function () {                  
-            
-        var sum=2;
+        $(function () {                     
+            var sum=2;
+            all = $table.bootstrapTable('getData');
 
-        all = $table.bootstrapTable('getData');
+            var $result = $('#eventsResult');
 
-         var $result = $('#eventsResult');
             $('#table')
             .on('all.bs.table', function (e, name, args) {
 
@@ -43,7 +71,7 @@ $("#dos").addClass('table-success');*/
                 all = $table.bootstrapTable('getData');
 
 
-                console.log(all[0].id);
+                
 
                 for (var i = 0; i < all.length; i++) {
                     $("input[data-index='" + i + "']").attr('id', i);
@@ -54,10 +82,6 @@ $("#dos").addClass('table-success');*/
                         $("input[data-index='" + i + "']").prop("disabled",true);
                     }
                 }
-
-                console.log("Started...");
-                console.log("verde = " + verde);
-                console.log("azul = " + azul);
             })
             .on('check.bs.table', function (e, row) {
                 //$result.text('Event: check.bs.table');
@@ -80,13 +104,8 @@ $("#dos").addClass('table-success');*/
                         }
 
                     }
-                }
-
-                console.log("Checked... Row: " + row.id);
-                console.log("verde = " + verde);
-                console.log("azul = " + azul);
+                } 
             })
-
             .on('uncheck.bs.table', function (e, row) {
 
                 if(row.id == azul){
@@ -104,25 +123,33 @@ $("#dos").addClass('table-success');*/
                         $("input[data-index='" + i + "']").prop("disabled",false);
                     }
                 }
-                console.log("Unchecked... Row: " + row.id);
-                console.log("verde = " + verde);
-                console.log("azul = " + azul);
+                
+                
+                
 
                 sum -= 1;
             });
         });
 
 
-Chart.numberWithCommas = function(x) {
+       
+        
+
+        //Grafica
+
+        Chart.numberWithCommas = function(x) {
             return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         };
+
         var a = 3000; //Aportaciones (Mensuales)
         var t = 30; //Tiempo en años
+        var tPasado = 30;
         var d = new Date();
         var A = d.getFullYear();
         var iPeriodos = t*12; //Multiplicar años*12
         var t1 = 0;
         var t2 = 0;
+        var intervalo = 10;
         var iAzul = 0; //Determinante de la fila de betas
         var iRojo = 1; //Determinante de la fila de betas
         var B = [[1.10,1.06],[1.12,1.08],[1.07,1.04]];
@@ -135,36 +162,38 @@ Chart.numberWithCommas = function(x) {
         //Color[2] = Blanco
         //Color[3] = Azul Mas Fuerte
         //Color[4] = Rojo Mas Fuerte
+            var lAzul_0 = function(i){ //Azul Alta
+                var res = a*(Math.pow(B[iAzul][0],(i+1))-1)/(B[iAzul][0]-1);
 
-        var lAzul_0 = function(i){ //Azul Alta
-            var res = a*(Math.pow(B[iAzul][0],(i+1))-1)/(B[iAzul][0]-1);
+                var n = res.toFixed(0);
+                t1 += 12;
+                return n;
+            };
 
-            var n = res.toFixed(0);
-            t1 += 12;
-            return n;
-        };
+            var lAzul_1 = function(i){ //Azul Baja
+                var res = a*(Math.pow(B[iAzul][1],(i+1))-1)/(B[iAzul][1]-1);
+                var n = res.toFixed(0);
+                t2 += 12;
+                return n;
+            };
 
-        var lAzul_1 = function(i){ //Azul Baja
-            var res = a*(Math.pow(B[iAzul][1],(i+1))-1)/(B[iAzul][1]-1);
-            var n = res.toFixed(0);
-            t2 += 12;
-            return n;
-        };
+            var lRojo_0 = function(i){ //Rojo Alta
+                var res = a*(Math.pow(B[iRojo][0],(i+1))-1)/(B[iRojo][0]-1);
 
-        var lRojo_0 = function(i){ //Rojo Alta
-            var res = a*(Math.pow(B[iRojo][0],(i+1))-1)/(B[iRojo][0]-1);
+                var n = res.toFixed(0);
+                t1 += 12;
+                return n;
+            };
 
-            var n = res.toFixed(0);
-            t1 += 12;
-            return n;
-        };
+            var lRojo_1 = function(i){ //Rojo Baja
+                var res = a*(Math.pow(B[iRojo][1],(i+1))-1)/(B[iRojo][1]-1);
+                var n = res.toFixed(0);
+                t2 += 12;
+                return n;
+            };
 
-        var lRojo_1 = function(i){ //Rojo Baja
-            var res = a*(Math.pow(B[iRojo][1],(i+1))-1)/(B[iRojo][1]-1);
-            var n = res.toFixed(0);
-            t2 += 12;
-            return n;
-        };
+
+
 
         var lineChartData = {
             labels : [],
@@ -196,230 +225,6 @@ Chart.numberWithCommas = function(x) {
                 }
             ]
         }
-        for (var i = 0; i <= t; i++) {
-            lineChartData.labels[i] = (A+i);
-            if(B[iAzul][0]>=B[iRojo][0]){
-                if(B[iAzul][1]>=B[iRojo][0]){ 
-
-                    console.log("Azul muy alto");
-                    lineChartData.datasets[0].label = arrayNombres[0];
-                    lineChartData.datasets[0].pointStrokeColor = color[3]
-                    lineChartData.datasets[0].pointHighlightStroke = color[3];;
-                    lineChartData.datasets[0].pointColor = color[3];
-                    lineChartData.datasets[0].strokeColor = color[3];
-                    lineChartData.datasets[0].fillColor = color[0];
-                    lineChartData.datasets[0].data[i] = lAzul_0(i);
-
-                    lineChartData.datasets[1].pointStrokeColor = color[3];
-                    lineChartData.datasets[1].pointHighlightStroke = color[3];
-                    lineChartData.datasets[1].label = arrayNombres[1];
-                    lineChartData.datasets[1].pointColor = color[3];
-                    lineChartData.datasets[1].strokeColor = color[3];
-                    lineChartData.datasets[1].fillColor = color[2];
-                    lineChartData.datasets[1].data[i] = lAzul_1(i);
-
-                    lineChartData.datasets[2].pointStrokeColor = color[4];
-                    lineChartData.datasets[2].pointHighlightStroke = color[4];      
-                    lineChartData.datasets[2].label = arrayNombres[2];
-                    lineChartData.datasets[2].pointColor = color[4];
-                    lineChartData.datasets[2].strokeColor = color[4];
-                    lineChartData.datasets[2].fillColor = color[1];
-                    lineChartData.datasets[2].data[i] = lRojo_0(i);
-
-                    lineChartData.datasets[3].pointStrokeColor = color[4];
-                    lineChartData.datasets[3].pointHighlightStroke = color[4];  
-                    lineChartData.datasets[3].label = arrayNombres[3];
-                    lineChartData.datasets[3].pointColor = color[4];
-                    lineChartData.datasets[3].strokeColor = color[4];
-                    lineChartData.datasets[3].fillColor = color[2];
-                    lineChartData.datasets[3].data[i] = lRojo_1(i);
-
-                } else if (B[iAzul][1]>=B[iRojo][1]) {
-
-                    console.log("Azul alto");
-                    lineChartData.datasets[0].label = arrayNombres[0];
-                    lineChartData.datasets[0].pointColor = color[3];
-                    lineChartData.datasets[0].pointStrokeColor = color[3];
-                    lineChartData.datasets[0].pointHighlightStroke = color[3];
-                    lineChartData.datasets[0].strokeColor = color[3];
-                    lineChartData.datasets[0].fillColor = color[0];
-                    lineChartData.datasets[0].data[i] = lAzul_0(i);
-
-                    lineChartData.datasets[1].label = arrayNombres[1];
-                    lineChartData.datasets[1].pointColor = color[3];
-                    lineChartData.datasets[1].pointStrokeColor = color[3];
-                    lineChartData.datasets[1].pointHighlightStroke = color[3];
-                    lineChartData.datasets[1].strokeColor = color[3];
-                    lineChartData.datasets[1].fillColor = color[2];
-                    lineChartData.datasets[1].data[i] = lAzul_1(i);
-
-                    lineChartData.datasets[2].label = arrayNombres[2];
-                    lineChartData.datasets[2].pointColor = color[4];
-                    lineChartData.datasets[2].pointStrokeColor = color[4];
-                    lineChartData.datasets[2].pointHighlightStroke = color[4];
-                    lineChartData.datasets[2].strokeColor = color[4];
-                    lineChartData.datasets[2].fillColor = color[1];
-                    lineChartData.datasets[2].data[i] = lRojo_0(i);
-
-                    lineChartData.datasets[3].label = arrayNombres[3];
-                    lineChartData.datasets[3].pointColor = color[4];
-                    lineChartData.datasets[3].pointStrokeColor = color[4];
-                    lineChartData.datasets[3].pointHighlightStroke = color[4];
-                    lineChartData.datasets[3].strokeColor = color[4];
-                    lineChartData.datasets[3].fillColor = color[2];
-                    lineChartData.datasets[3].data[i] = lRojo_1(i);
-                } else {
-
-                    console.log("Azul volatil");
-                    lineChartData.datasets[0].label = arrayNombres[0];
-                    lineChartData.datasets[0].pointColor = color[4];
-                    lineChartData.datasets[0].pointStrokeColor = color[4];
-                    lineChartData.datasets[0].pointHighlightStroke = color[4];
-                    lineChartData.datasets[0].strokeColor = color[4];
-                    lineChartData.datasets[0].fillColor = color[1];
-                    lineChartData.datasets[0].data[i] = lRojo_0(i);
-
-                    lineChartData.datasets[1].label = arrayNombres[1];
-                    lineChartData.datasets[1].pointColor = color[4];
-                    lineChartData.datasets[1].pointStrokeColor = color[4];
-                    lineChartData.datasets[1].pointHighlightStroke = color[4];
-                    lineChartData.datasets[1].strokeColor = color[4];
-                    lineChartData.datasets[1].fillColor = color[2];
-                    lineChartData.datasets[1].data[i] = lRojo_1(i);
-
-                    lineChartData.datasets[2].label = arrayNombres[2];
-                    lineChartData.datasets[2].pointColor = color[3];
-                    lineChartData.datasets[2].pointStrokeColor = color[3];
-                    lineChartData.datasets[2].pointHighlightStroke = color[3];
-                    lineChartData.datasets[2].strokeColor = color[3];
-                    lineChartData.datasets[2].fillColor = color[0];
-                    lineChartData.datasets[2].data[i] = lAzul_0(i);
-
-                    lineChartData.datasets[3].label = arrayNombres[3];
-                    lineChartData.datasets[3].pointColor = color[3];
-                    lineChartData.datasets[3].pointStrokeColor = color[3];
-                    lineChartData.datasets[3].pointHighlightStroke = color[3];
-                    lineChartData.datasets[3].strokeColor = color[3];
-                    lineChartData.datasets[3].fillColor = color[2];
-                    lineChartData.datasets[3].data[i] = lAzul_1(i);
-                }
-            } else {
-                if(B[iRojo][1]>=B[iAzul][0]){ 
-
-                    console.log("Rojo muy alto");
-                    lineChartData.datasets[0].label = arrayNombres[0];
-                    lineChartData.datasets[0].pointColor = color[4];
-                    lineChartData.datasets[0].pointStrokeColor = color[4];
-                    lineChartData.datasets[0].pointHighlightStroke = color[4];
-                    lineChartData.datasets[0].strokeColor = color[4];
-                    lineChartData.datasets[0].fillColor = color[1];
-                    lineChartData.datasets[0].data[i] = lRojo_0(i);
-
-                    lineChartData.datasets[1].label = arrayNombres[1];
-                    lineChartData.datasets[1].pointColor = color[4];
-                    lineChartData.datasets[1].pointStrokeColor = color[4];
-                    lineChartData.datasets[1].pointHighlightStroke = color[4];
-                    lineChartData.datasets[1].strokeColor = color[4];
-                    lineChartData.datasets[1].fillColor = color[2];
-                    lineChartData.datasets[1].data[i] = lRojo_1(i);
-
-                    lineChartData.datasets[2].label = arrayNombres[2];
-                    lineChartData.datasets[2].pointColor = color[3];
-                    lineChartData.datasets[2].pointStrokeColor = color[3];
-                    lineChartData.datasets[2].pointHighlightStroke = color[3];
-                    lineChartData.datasets[2].strokeColor = color[3];
-                    lineChartData.datasets[2].fillColor = color[0];
-                    lineChartData.datasets[2].data[i] = lAzul_0(i);
-
-                    lineChartData.datasets[3].label = arrayNombres[3];
-                    lineChartData.datasets[3].pointColor = color[3];
-                    lineChartData.datasets[3].pointStrokeColor = color[3];
-                    lineChartData.datasets[3].pointHighlightStroke = color[3];
-                    lineChartData.datasets[3].strokeColor = color[3];
-                    lineChartData.datasets[3].fillColor = color[2];
-                    lineChartData.datasets[3].data[i] = lAzul_1(i);
-
-                } else if (B[iRojo][1]>=B[iAzul][1]) {
-
-                    console.log("Rojo alto");
-                    lineChartData.datasets[0].label = arrayNombres[0];
-                    lineChartData.datasets[0].pointColor = color[4];
-                    lineChartData.datasets[0].pointStrokeColor = color[4];
-                    lineChartData.datasets[0].pointHighlightStroke = color[4];
-                    lineChartData.datasets[0].strokeColor = color[4];
-                    lineChartData.datasets[0].fillColor = color[1];
-                    lineChartData.datasets[0].data[i] = lRojo_0(i);
-
-                    lineChartData.datasets[1].label = arrayNombres[1];
-                    lineChartData.datasets[1].pointColor = color[4];
-                    lineChartData.datasets[1].pointStrokeColor = color[4];
-                    lineChartData.datasets[1].pointHighlightStroke = color[4];
-                    lineChartData.datasets[1].strokeColor = color[4];
-                    lineChartData.datasets[1].fillColor = color[2];
-                    lineChartData.datasets[1].data[i] = lRojo_1(i);
-
-                    lineChartData.datasets[2].label = arrayNombres[2];
-                    lineChartData.datasets[2].pointColor = color[3];
-                    lineChartData.datasets[2].pointStrokeColor = color[3];
-                    lineChartData.datasets[2].pointHighlightStroke = color[3];
-                    lineChartData.datasets[2].strokeColor = color[3];
-                    lineChartData.datasets[2].fillColor = color[0];
-                    lineChartData.datasets[2].data[i] = lAzul_0(i);
-
-                    lineChartData.datasets[3].label = arrayNombres[3];
-                    lineChartData.datasets[3].pointColor = color[3];
-                    lineChartData.datasets[3].pointStrokeColor = color[3];
-                    lineChartData.datasets[3].pointHighlightStroke = color[3];
-                    lineChartData.datasets[3].strokeColor = color[3];
-                    lineChartData.datasets[3].fillColor = color[2];
-                    lineChartData.datasets[3].data[i] = lAzul_1(i);
-
-                } else {
-
-                    console.log("Rojo volatil");
-                    lineChartData.datasets[0].label = arrayNombres[0];
-                    lineChartData.datasets[0].pointColor = color[3];
-                    lineChartData.datasets[0].pointStrokeColor = color[3];
-                    lineChartData.datasets[0].pointHighlightStroke = color[3];
-                    lineChartData.datasets[0].strokeColor = color[3];
-                    lineChartData.datasets[0].fillColor = color[3];
-                    lineChartData.datasets[0].data[i] = lAzul_0(i);
-
-                    lineChartData.datasets[1].label = arrayNombres[1];
-                    lineChartData.datasets[1].pointColor = color[3];
-                    lineChartData.datasets[1].pointStrokeColor = color[3];
-                    lineChartData.datasets[1].pointHighlightStroke = color[3];
-                    lineChartData.datasets[1].strokeColor = color[3];
-                    lineChartData.datasets[1].fillColor = color[2];
-                    lineChartData.datasets[1].data[i] = lAzul_1(i);
-
-                    lineChartData.datasets[2].label = arrayNombres[2];
-                    lineChartData.datasets[2].pointColor = color[4];
-                    lineChartData.datasets[2].pointStrokeColor = color[4];
-                    lineChartData.datasets[2].pointHighlightStroke = color[4];
-                    lineChartData.datasets[2].strokeColor = color[4];
-                    lineChartData.datasets[2].fillColor = color[1];
-                    lineChartData.datasets[2].data[i] = lRojo_0(i);
-
-                    lineChartData.datasets[3].label = arrayNombres[3];
-                    lineChartData.datasets[3].pointColor = color[4];
-                    lineChartData.datasets[3].pointStrokeColor = color[4];
-                    lineChartData.datasets[3].pointHighlightStroke = color[4];
-                    lineChartData.datasets[3].strokeColor = color[4];
-                    lineChartData.datasets[3].fillColor = color[2];
-                    lineChartData.datasets[3].data[i] = lRojo_1(i);
-
-                }
-            }
-
-            /*
-            
-            lineChartData.datasets[0].data[i] = lAzul_0(i);
-            lineChartData.datasets[1].data[i] = lAzul_1(i);
-            lineChartData.datasets[2].data[i] = lRojo_0(i);
-            lineChartData.datasets[3].data[i] = lRojo_1(i);
-            */
-        };
 
         var lineChartData2 = {
             labels : [],
@@ -452,227 +257,460 @@ Chart.numberWithCommas = function(x) {
             ]
         }
 
-        for (var i = 0; i <= t; i++) {
-            lineChartData2.labels[i] = (A+i);
-            if(B2[iAzul][0]>=B2[iRojo][0]){
-                if(B2[iAzul][1]>=B2[iRojo][0]){ 
+        var createGraph = function(){
+            for (var i = 0; i <= t; i++) {
+                if (i%intervalo) {}
+                lineChartData.labels[i] = (A+i);
+                if(B[iAzul][0]>=B[iRojo][0]){
+                    if(B[iAzul][1]>=B[iRojo][0]){ 
 
-                    console.log("Azul muy alto");
-                    lineChartData2.datasets[0].label = arrayNombres[0];
-                    lineChartData2.datasets[0].pointStrokeColor = color[3]
-                    lineChartData2.datasets[0].pointHighlightStroke = color[3];;
-                    lineChartData2.datasets[0].pointColor = color[3];
-                    lineChartData2.datasets[0].strokeColor = color[3];
-                    lineChartData2.datasets[0].fillColor = color[0];
-                    lineChartData2.datasets[0].data[i] = lAzul_0(i);
+                        console.log("Azul muy alto");
+                        lineChartData.datasets[0].label = arrayNombres[0];
+                        lineChartData.datasets[0].pointStrokeColor = color[3]
+                        lineChartData.datasets[0].pointHighlightStroke = color[3];;
+                        lineChartData.datasets[0].pointColor = color[3];
+                        lineChartData.datasets[0].strokeColor = color[3];
+                        lineChartData.datasets[0].fillColor = color[0];
+                        lineChartData.datasets[0].data[i] = lAzul_0(i);
 
-                    lineChartData2.datasets[1].pointStrokeColor = color[3];
-                    lineChartData2.datasets[1].pointHighlightStroke = color[3];
-                    lineChartData2.datasets[1].label = arrayNombres[1];
-                    lineChartData2.datasets[1].pointColor = color[3];
-                    lineChartData2.datasets[1].strokeColor = color[3];
-                    lineChartData2.datasets[1].fillColor = color[2];
-                    lineChartData2.datasets[1].data[i] = lAzul_1(i);
+                        lineChartData.datasets[1].pointStrokeColor = color[3];
+                        lineChartData.datasets[1].pointHighlightStroke = color[3];
+                        lineChartData.datasets[1].label = arrayNombres[1];
+                        lineChartData.datasets[1].pointColor = color[3];
+                        lineChartData.datasets[1].strokeColor = color[3];
+                        lineChartData.datasets[1].fillColor = color[2];
+                        lineChartData.datasets[1].data[i] = lAzul_1(i);
 
-                    lineChartData2.datasets[2].pointStrokeColor = color[4];
-                    lineChartData2.datasets[2].pointHighlightStroke = color[4];      
-                    lineChartData2.datasets[2].label = arrayNombres[2];
-                    lineChartData2.datasets[2].pointColor = color[4];
-                    lineChartData2.datasets[2].strokeColor = color[4];
-                    lineChartData2.datasets[2].fillColor = color[1];
-                    lineChartData2.datasets[2].data[i] = lRojo_0(i);
+                        lineChartData.datasets[2].pointStrokeColor = color[4];
+                        lineChartData.datasets[2].pointHighlightStroke = color[4];      
+                        lineChartData.datasets[2].label = arrayNombres[2];
+                        lineChartData.datasets[2].pointColor = color[4];
+                        lineChartData.datasets[2].strokeColor = color[4];
+                        lineChartData.datasets[2].fillColor = color[1];
+                        lineChartData.datasets[2].data[i] = lRojo_0(i);
 
-                    lineChartData2.datasets[3].pointStrokeColor = color[4];
-                    lineChartData2.datasets[3].pointHighlightStroke = color[4];  
-                    lineChartData2.datasets[3].label = arrayNombres[3];
-                    lineChartData2.datasets[3].pointColor = color[4];
-                    lineChartData2.datasets[3].strokeColor = color[4];
-                    lineChartData2.datasets[3].fillColor = color[2];
-                    lineChartData2.datasets[3].data[i] = lRojo_1(i);
+                        lineChartData.datasets[3].pointStrokeColor = color[4];
+                        lineChartData.datasets[3].pointHighlightStroke = color[4];  
+                        lineChartData.datasets[3].label = arrayNombres[3];
+                        lineChartData.datasets[3].pointColor = color[4];
+                        lineChartData.datasets[3].strokeColor = color[4];
+                        lineChartData.datasets[3].fillColor = color[2];
+                        lineChartData.datasets[3].data[i] = lRojo_1(i);
 
-                } else if (B2[iAzul][1]>=B2[iRojo][1]) {
+                    } else if (B[iAzul][1]>=B[iRojo][1]) {
 
-                    console.log("Azul alto");
-                    lineChartData2.datasets[0].label = arrayNombres[0];
-                    lineChartData2.datasets[0].pointColor = color[3];
-                    lineChartData2.datasets[0].pointStrokeColor = color[3];
-                    lineChartData2.datasets[0].pointHighlightStroke = color[3];
-                    lineChartData2.datasets[0].strokeColor = color[3];
-                    lineChartData2.datasets[0].fillColor = color[0];
-                    lineChartData2.datasets[0].data[i] = lAzul_0(i);
+                        console.log("Azul alto");
+                        lineChartData.datasets[0].label = arrayNombres[0];
+                        lineChartData.datasets[0].pointColor = color[3];
+                        lineChartData.datasets[0].pointStrokeColor = color[3];
+                        lineChartData.datasets[0].pointHighlightStroke = color[3];
+                        lineChartData.datasets[0].strokeColor = color[3];
+                        lineChartData.datasets[0].fillColor = color[0];
+                        lineChartData.datasets[0].data[i] = lAzul_0(i);
 
-                    lineChartData2.datasets[1].label = arrayNombres[1];
-                    lineChartData2.datasets[1].pointColor = color[3];
-                    lineChartData2.datasets[1].pointStrokeColor = color[3];
-                    lineChartData2.datasets[1].pointHighlightStroke = color[3];
-                    lineChartData2.datasets[1].strokeColor = color[3];
-                    lineChartData2.datasets[1].fillColor = color[2];
-                    lineChartData2.datasets[1].data[i] = lAzul_1(i);
+                        lineChartData.datasets[1].label = arrayNombres[1];
+                        lineChartData.datasets[1].pointColor = color[3];
+                        lineChartData.datasets[1].pointStrokeColor = color[3];
+                        lineChartData.datasets[1].pointHighlightStroke = color[3];
+                        lineChartData.datasets[1].strokeColor = color[3];
+                        lineChartData.datasets[1].fillColor = color[2];
+                        lineChartData.datasets[1].data[i] = lAzul_1(i);
 
-                    lineChartData2.datasets[2].label = arrayNombres[2];
-                    lineChartData2.datasets[2].pointColor = color[4];
-                    lineChartData2.datasets[2].pointStrokeColor = color[4];
-                    lineChartData2.datasets[2].pointHighlightStroke = color[4];
-                    lineChartData2.datasets[2].strokeColor = color[4];
-                    lineChartData2.datasets[2].fillColor = color[1];
-                    lineChartData2.datasets[2].data[i] = lRojo_0(i);
+                        lineChartData.datasets[2].label = arrayNombres[2];
+                        lineChartData.datasets[2].pointColor = color[4];
+                        lineChartData.datasets[2].pointStrokeColor = color[4];
+                        lineChartData.datasets[2].pointHighlightStroke = color[4];
+                        lineChartData.datasets[2].strokeColor = color[4];
+                        lineChartData.datasets[2].fillColor = color[1];
+                        lineChartData.datasets[2].data[i] = lRojo_0(i);
 
-                    lineChartData2.datasets[3].label = arrayNombres[3];
-                    lineChartData2.datasets[3].pointColor = color[4];
-                    lineChartData2.datasets[3].pointStrokeColor = color[4];
-                    lineChartData2.datasets[3].pointHighlightStroke = color[4];
-                    lineChartData2.datasets[3].strokeColor = color[4];
-                    lineChartData2.datasets[3].fillColor = color[2];
-                    lineChartData2.datasets[3].data[i] = lRojo_1(i);
+                        lineChartData.datasets[3].label = arrayNombres[3];
+                        lineChartData.datasets[3].pointColor = color[4];
+                        lineChartData.datasets[3].pointStrokeColor = color[4];
+                        lineChartData.datasets[3].pointHighlightStroke = color[4];
+                        lineChartData.datasets[3].strokeColor = color[4];
+                        lineChartData.datasets[3].fillColor = color[2];
+                        lineChartData.datasets[3].data[i] = lRojo_1(i);
+                    } else {
+
+                        console.log("Azul volatil");
+                        lineChartData.datasets[0].label = arrayNombres[0];
+                        lineChartData.datasets[0].pointColor = color[4];
+                        lineChartData.datasets[0].pointStrokeColor = color[4];
+                        lineChartData.datasets[0].pointHighlightStroke = color[4];
+                        lineChartData.datasets[0].strokeColor = color[4];
+                        lineChartData.datasets[0].fillColor = color[1];
+                        lineChartData.datasets[0].data[i] = lRojo_0(i);
+
+                        lineChartData.datasets[1].label = arrayNombres[1];
+                        lineChartData.datasets[1].pointColor = color[4];
+                        lineChartData.datasets[1].pointStrokeColor = color[4];
+                        lineChartData.datasets[1].pointHighlightStroke = color[4];
+                        lineChartData.datasets[1].strokeColor = color[4];
+                        lineChartData.datasets[1].fillColor = color[2];
+                        lineChartData.datasets[1].data[i] = lRojo_1(i);
+
+                        lineChartData.datasets[2].label = arrayNombres[2];
+                        lineChartData.datasets[2].pointColor = color[3];
+                        lineChartData.datasets[2].pointStrokeColor = color[3];
+                        lineChartData.datasets[2].pointHighlightStroke = color[3];
+                        lineChartData.datasets[2].strokeColor = color[3];
+                        lineChartData.datasets[2].fillColor = color[0];
+                        lineChartData.datasets[2].data[i] = lAzul_0(i);
+
+                        lineChartData.datasets[3].label = arrayNombres[3];
+                        lineChartData.datasets[3].pointColor = color[3];
+                        lineChartData.datasets[3].pointStrokeColor = color[3];
+                        lineChartData.datasets[3].pointHighlightStroke = color[3];
+                        lineChartData.datasets[3].strokeColor = color[3];
+                        lineChartData.datasets[3].fillColor = color[2];
+                        lineChartData.datasets[3].data[i] = lAzul_1(i);
+                    }
                 } else {
+                    if(B[iRojo][1]>=B[iAzul][0]){ 
 
-                    console.log("Azul volatil");
-                    lineChartData2.datasets[0].label = arrayNombres[0];
-                    lineChartData2.datasets[0].pointColor = color[4];
-                    lineChartData2.datasets[0].pointStrokeColor = color[4];
-                    lineChartData2.datasets[0].pointHighlightStroke = color[4];
-                    lineChartData2.datasets[0].strokeColor = color[4];
-                    lineChartData2.datasets[0].fillColor = color[1];
-                    lineChartData2.datasets[0].data[i] = lRojo_0(i);
+                        console.log("Rojo muy alto");
+                        lineChartData.datasets[0].label = arrayNombres[0];
+                        lineChartData.datasets[0].pointColor = color[4];
+                        lineChartData.datasets[0].pointStrokeColor = color[4];
+                        lineChartData.datasets[0].pointHighlightStroke = color[4];
+                        lineChartData.datasets[0].strokeColor = color[4];
+                        lineChartData.datasets[0].fillColor = color[1];
+                        lineChartData.datasets[0].data[i] = lRojo_0(i);
 
-                    lineChartData2.datasets[1].label = arrayNombres[1];
-                    lineChartData2.datasets[1].pointColor = color[4];
-                    lineChartData2.datasets[1].pointStrokeColor = color[4];
-                    lineChartData2.datasets[1].pointHighlightStroke = color[4];
-                    lineChartData2.datasets[1].strokeColor = color[4];
-                    lineChartData2.datasets[1].fillColor = color[2];
-                    lineChartData2.datasets[1].data[i] = lRojo_1(i);
+                        lineChartData.datasets[1].label = arrayNombres[1];
+                        lineChartData.datasets[1].pointColor = color[4];
+                        lineChartData.datasets[1].pointStrokeColor = color[4];
+                        lineChartData.datasets[1].pointHighlightStroke = color[4];
+                        lineChartData.datasets[1].strokeColor = color[4];
+                        lineChartData.datasets[1].fillColor = color[2];
+                        lineChartData.datasets[1].data[i] = lRojo_1(i);
 
-                    lineChartData2.datasets[2].label = arrayNombres[2];
-                    lineChartData2.datasets[2].pointColor = color[3];
-                    lineChartData2.datasets[2].pointStrokeColor = color[3];
-                    lineChartData2.datasets[2].pointHighlightStroke = color[3];
-                    lineChartData2.datasets[2].strokeColor = color[3];
-                    lineChartData2.datasets[2].fillColor = color[0];
-                    lineChartData2.datasets[2].data[i] = lAzul_0(i);
+                        lineChartData.datasets[2].label = arrayNombres[2];
+                        lineChartData.datasets[2].pointColor = color[3];
+                        lineChartData.datasets[2].pointStrokeColor = color[3];
+                        lineChartData.datasets[2].pointHighlightStroke = color[3];
+                        lineChartData.datasets[2].strokeColor = color[3];
+                        lineChartData.datasets[2].fillColor = color[0];
+                        lineChartData.datasets[2].data[i] = lAzul_0(i);
 
-                    lineChartData2.datasets[3].label = arrayNombres[3];
-                    lineChartData2.datasets[3].pointColor = color[3];
-                    lineChartData2.datasets[3].pointStrokeColor = color[3];
-                    lineChartData2.datasets[3].pointHighlightStroke = color[3];
-                    lineChartData2.datasets[3].strokeColor = color[3];
-                    lineChartData2.datasets[3].fillColor = color[2];
-                    lineChartData2.datasets[3].data[i] = lAzul_1(i);
+                        lineChartData.datasets[3].label = arrayNombres[3];
+                        lineChartData.datasets[3].pointColor = color[3];
+                        lineChartData.datasets[3].pointStrokeColor = color[3];
+                        lineChartData.datasets[3].pointHighlightStroke = color[3];
+                        lineChartData.datasets[3].strokeColor = color[3];
+                        lineChartData.datasets[3].fillColor = color[2];
+                        lineChartData.datasets[3].data[i] = lAzul_1(i);
+
+                    } else if (B[iRojo][1]>=B[iAzul][1]) {
+
+                        console.log("Rojo alto");
+                        lineChartData.datasets[0].label = arrayNombres[0];
+                        lineChartData.datasets[0].pointColor = color[4];
+                        lineChartData.datasets[0].pointStrokeColor = color[4];
+                        lineChartData.datasets[0].pointHighlightStroke = color[4];
+                        lineChartData.datasets[0].strokeColor = color[4];
+                        lineChartData.datasets[0].fillColor = color[1];
+                        lineChartData.datasets[0].data[i] = lRojo_0(i);
+
+                        lineChartData.datasets[1].label = arrayNombres[1];
+                        lineChartData.datasets[1].pointColor = color[4];
+                        lineChartData.datasets[1].pointStrokeColor = color[4];
+                        lineChartData.datasets[1].pointHighlightStroke = color[4];
+                        lineChartData.datasets[1].strokeColor = color[4];
+                        lineChartData.datasets[1].fillColor = color[2];
+                        lineChartData.datasets[1].data[i] = lRojo_1(i);
+
+                        lineChartData.datasets[2].label = arrayNombres[2];
+                        lineChartData.datasets[2].pointColor = color[3];
+                        lineChartData.datasets[2].pointStrokeColor = color[3];
+                        lineChartData.datasets[2].pointHighlightStroke = color[3];
+                        lineChartData.datasets[2].strokeColor = color[3];
+                        lineChartData.datasets[2].fillColor = color[0];
+                        lineChartData.datasets[2].data[i] = lAzul_0(i);
+
+                        lineChartData.datasets[3].label = arrayNombres[3];
+                        lineChartData.datasets[3].pointColor = color[3];
+                        lineChartData.datasets[3].pointStrokeColor = color[3];
+                        lineChartData.datasets[3].pointHighlightStroke = color[3];
+                        lineChartData.datasets[3].strokeColor = color[3];
+                        lineChartData.datasets[3].fillColor = color[2];
+                        lineChartData.datasets[3].data[i] = lAzul_1(i);
+
+                    } else {
+
+                        console.log("Rojo volatil");
+                        lineChartData.datasets[0].label = arrayNombres[0];
+                        lineChartData.datasets[0].pointColor = color[3];
+                        lineChartData.datasets[0].pointStrokeColor = color[3];
+                        lineChartData.datasets[0].pointHighlightStroke = color[3];
+                        lineChartData.datasets[0].strokeColor = color[3];
+                        lineChartData.datasets[0].fillColor = color[3];
+                        lineChartData.datasets[0].data[i] = lAzul_0(i);
+
+                        lineChartData.datasets[1].label = arrayNombres[1];
+                        lineChartData.datasets[1].pointColor = color[3];
+                        lineChartData.datasets[1].pointStrokeColor = color[3];
+                        lineChartData.datasets[1].pointHighlightStroke = color[3];
+                        lineChartData.datasets[1].strokeColor = color[3];
+                        lineChartData.datasets[1].fillColor = color[2];
+                        lineChartData.datasets[1].data[i] = lAzul_1(i);
+
+                        lineChartData.datasets[2].label = arrayNombres[2];
+                        lineChartData.datasets[2].pointColor = color[4];
+                        lineChartData.datasets[2].pointStrokeColor = color[4];
+                        lineChartData.datasets[2].pointHighlightStroke = color[4];
+                        lineChartData.datasets[2].strokeColor = color[4];
+                        lineChartData.datasets[2].fillColor = color[1];
+                        lineChartData.datasets[2].data[i] = lRojo_0(i);
+
+                        lineChartData.datasets[3].label = arrayNombres[3];
+                        lineChartData.datasets[3].pointColor = color[4];
+                        lineChartData.datasets[3].pointStrokeColor = color[4];
+                        lineChartData.datasets[3].pointHighlightStroke = color[4];
+                        lineChartData.datasets[3].strokeColor = color[4];
+                        lineChartData.datasets[3].fillColor = color[2];
+                        lineChartData.datasets[3].data[i] = lRojo_1(i);
+
+                    }
                 }
-            } else {
-                if(B2[iRojo][1]>=B2[iAzul][0]){ 
 
-                    console.log("Rojo muy alto");
-                    lineChartData2.datasets[0].label = arrayNombres[0];
-                    lineChartData2.datasets[0].pointColor = color[4];
-                    lineChartData2.datasets[0].pointStrokeColor = color[4];
-                    lineChartData2.datasets[0].pointHighlightStroke = color[4];
-                    lineChartData2.datasets[0].strokeColor = color[4];
-                    lineChartData2.datasets[0].fillColor = color[1];
-                    lineChartData2.datasets[0].data[i] = lRojo_0(i);
+                /*
+                
+                lineChartData.datasets[0].data[i] = lAzul_0(i);
+                lineChartData.datasets[1].data[i] = lAzul_1(i);
+                lineChartData.datasets[2].data[i] = lRojo_0(i);
+                lineChartData.datasets[3].data[i] = lRojo_1(i);
+                */
+            };
+            for (var i = 0; i <= t; i++) {
+                lineChartData2.labels[i] = (A+i);
+                if(B2[iAzul][0]>=B2[iRojo][0]){
+                    if(B2[iAzul][1]>=B2[iRojo][0]){ 
 
-                    lineChartData2.datasets[1].label = arrayNombres[1];
-                    lineChartData2.datasets[1].pointColor = color[4];
-                    lineChartData2.datasets[1].pointStrokeColor = color[4];
-                    lineChartData2.datasets[1].pointHighlightStroke = color[4];
-                    lineChartData2.datasets[1].strokeColor = color[4];
-                    lineChartData2.datasets[1].fillColor = color[2];
-                    lineChartData2.datasets[1].data[i] = lRojo_1(i);
+                        console.log("Azul muy alto");
+                        lineChartData2.datasets[0].label = arrayNombres[0];
+                        lineChartData2.datasets[0].pointStrokeColor = color[3]
+                        lineChartData2.datasets[0].pointHighlightStroke = color[3];;
+                        lineChartData2.datasets[0].pointColor = color[3];
+                        lineChartData2.datasets[0].strokeColor = color[3];
+                        lineChartData2.datasets[0].fillColor = color[0];
+                        lineChartData2.datasets[0].data[i] = lAzul_0(i);
 
-                    lineChartData2.datasets[2].label = arrayNombres[2];
-                    lineChartData2.datasets[2].pointColor = color[3];
-                    lineChartData2.datasets[2].pointStrokeColor = color[3];
-                    lineChartData2.datasets[2].pointHighlightStroke = color[3];
-                    lineChartData2.datasets[2].strokeColor = color[3];
-                    lineChartData2.datasets[2].fillColor = color[0];
-                    lineChartData2.datasets[2].data[i] = lAzul_0(i);
+                        lineChartData2.datasets[1].pointStrokeColor = color[3];
+                        lineChartData2.datasets[1].pointHighlightStroke = color[3];
+                        lineChartData2.datasets[1].label = arrayNombres[1];
+                        lineChartData2.datasets[1].pointColor = color[3];
+                        lineChartData2.datasets[1].strokeColor = color[3];
+                        lineChartData2.datasets[1].fillColor = color[2];
+                        lineChartData2.datasets[1].data[i] = lAzul_1(i);
 
-                    lineChartData2.datasets[3].label = arrayNombres[3];
-                    lineChartData2.datasets[3].pointColor = color[3];
-                    lineChartData2.datasets[3].pointStrokeColor = color[3];
-                    lineChartData2.datasets[3].pointHighlightStroke = color[3];
-                    lineChartData2.datasets[3].strokeColor = color[3];
-                    lineChartData2.datasets[3].fillColor = color[2];
-                    lineChartData2.datasets[3].data[i] = lAzul_1(i);
+                        lineChartData2.datasets[2].pointStrokeColor = color[4];
+                        lineChartData2.datasets[2].pointHighlightStroke = color[4];      
+                        lineChartData2.datasets[2].label = arrayNombres[2];
+                        lineChartData2.datasets[2].pointColor = color[4];
+                        lineChartData2.datasets[2].strokeColor = color[4];
+                        lineChartData2.datasets[2].fillColor = color[1];
+                        lineChartData2.datasets[2].data[i] = lRojo_0(i);
 
-                } else if (B2[iRojo][1]>=B2[iAzul][1]) {
+                        lineChartData2.datasets[3].pointStrokeColor = color[4];
+                        lineChartData2.datasets[3].pointHighlightStroke = color[4];  
+                        lineChartData2.datasets[3].label = arrayNombres[3];
+                        lineChartData2.datasets[3].pointColor = color[4];
+                        lineChartData2.datasets[3].strokeColor = color[4];
+                        lineChartData2.datasets[3].fillColor = color[2];
+                        lineChartData2.datasets[3].data[i] = lRojo_1(i);
 
-                    console.log("Rojo alto");
-                    lineChartData2.datasets[0].label = arrayNombres[0];
-                    lineChartData2.datasets[0].pointColor = color[4];
-                    lineChartData2.datasets[0].pointStrokeColor = color[4];
-                    lineChartData2.datasets[0].pointHighlightStroke = color[4];
-                    lineChartData2.datasets[0].strokeColor = color[4];
-                    lineChartData2.datasets[0].fillColor = color[1];
-                    lineChartData2.datasets[0].data[i] = lRojo_0(i);
+                    } else if (B2[iAzul][1]>=B2[iRojo][1]) {
 
-                    lineChartData2.datasets[1].label = arrayNombres[1];
-                    lineChartData2.datasets[1].pointColor = color[4];
-                    lineChartData2.datasets[1].pointStrokeColor = color[4];
-                    lineChartData2.datasets[1].pointHighlightStroke = color[4];
-                    lineChartData2.datasets[1].strokeColor = color[4];
-                    lineChartData2.datasets[1].fillColor = color[2];
-                    lineChartData2.datasets[1].data[i] = lRojo_1(i);
+                        console.log("Azul alto");
+                        lineChartData2.datasets[0].label = arrayNombres[0];
+                        lineChartData2.datasets[0].pointColor = color[3];
+                        lineChartData2.datasets[0].pointStrokeColor = color[3];
+                        lineChartData2.datasets[0].pointHighlightStroke = color[3];
+                        lineChartData2.datasets[0].strokeColor = color[3];
+                        lineChartData2.datasets[0].fillColor = color[0];
+                        lineChartData2.datasets[0].data[i] = lAzul_0(i);
 
-                    lineChartData2.datasets[2].label = arrayNombres[2];
-                    lineChartData2.datasets[2].pointColor = color[3];
-                    lineChartData2.datasets[2].pointStrokeColor = color[3];
-                    lineChartData2.datasets[2].pointHighlightStroke = color[3];
-                    lineChartData2.datasets[2].strokeColor = color[3];
-                    lineChartData2.datasets[2].fillColor = color[0];
-                    lineChartData2.datasets[2].data[i] = lAzul_0(i);
+                        lineChartData2.datasets[1].label = arrayNombres[1];
+                        lineChartData2.datasets[1].pointColor = color[3];
+                        lineChartData2.datasets[1].pointStrokeColor = color[3];
+                        lineChartData2.datasets[1].pointHighlightStroke = color[3];
+                        lineChartData2.datasets[1].strokeColor = color[3];
+                        lineChartData2.datasets[1].fillColor = color[2];
+                        lineChartData2.datasets[1].data[i] = lAzul_1(i);
 
-                    lineChartData2.datasets[3].label = arrayNombres[3];
-                    lineChartData2.datasets[3].pointColor = color[3];
-                    lineChartData2.datasets[3].pointStrokeColor = color[3];
-                    lineChartData2.datasets[3].pointHighlightStroke = color[3];
-                    lineChartData2.datasets[3].strokeColor = color[3];
-                    lineChartData2.datasets[3].fillColor = color[2];
-                    lineChartData2.datasets[3].data[i] = lAzul_1(i);
+                        lineChartData2.datasets[2].label = arrayNombres[2];
+                        lineChartData2.datasets[2].pointColor = color[4];
+                        lineChartData2.datasets[2].pointStrokeColor = color[4];
+                        lineChartData2.datasets[2].pointHighlightStroke = color[4];
+                        lineChartData2.datasets[2].strokeColor = color[4];
+                        lineChartData2.datasets[2].fillColor = color[1];
+                        lineChartData2.datasets[2].data[i] = lRojo_0(i);
 
+                        lineChartData2.datasets[3].label = arrayNombres[3];
+                        lineChartData2.datasets[3].pointColor = color[4];
+                        lineChartData2.datasets[3].pointStrokeColor = color[4];
+                        lineChartData2.datasets[3].pointHighlightStroke = color[4];
+                        lineChartData2.datasets[3].strokeColor = color[4];
+                        lineChartData2.datasets[3].fillColor = color[2];
+                        lineChartData2.datasets[3].data[i] = lRojo_1(i);
+                    } else {
+
+                        console.log("Azul volatil");
+                        lineChartData2.datasets[0].label = arrayNombres[0];
+                        lineChartData2.datasets[0].pointColor = color[4];
+                        lineChartData2.datasets[0].pointStrokeColor = color[4];
+                        lineChartData2.datasets[0].pointHighlightStroke = color[4];
+                        lineChartData2.datasets[0].strokeColor = color[4];
+                        lineChartData2.datasets[0].fillColor = color[1];
+                        lineChartData2.datasets[0].data[i] = lRojo_0(i);
+
+                        lineChartData2.datasets[1].label = arrayNombres[1];
+                        lineChartData2.datasets[1].pointColor = color[4];
+                        lineChartData2.datasets[1].pointStrokeColor = color[4];
+                        lineChartData2.datasets[1].pointHighlightStroke = color[4];
+                        lineChartData2.datasets[1].strokeColor = color[4];
+                        lineChartData2.datasets[1].fillColor = color[2];
+                        lineChartData2.datasets[1].data[i] = lRojo_1(i);
+
+                        lineChartData2.datasets[2].label = arrayNombres[2];
+                        lineChartData2.datasets[2].pointColor = color[3];
+                        lineChartData2.datasets[2].pointStrokeColor = color[3];
+                        lineChartData2.datasets[2].pointHighlightStroke = color[3];
+                        lineChartData2.datasets[2].strokeColor = color[3];
+                        lineChartData2.datasets[2].fillColor = color[0];
+                        lineChartData2.datasets[2].data[i] = lAzul_0(i);
+
+                        lineChartData2.datasets[3].label = arrayNombres[3];
+                        lineChartData2.datasets[3].pointColor = color[3];
+                        lineChartData2.datasets[3].pointStrokeColor = color[3];
+                        lineChartData2.datasets[3].pointHighlightStroke = color[3];
+                        lineChartData2.datasets[3].strokeColor = color[3];
+                        lineChartData2.datasets[3].fillColor = color[2];
+                        lineChartData2.datasets[3].data[i] = lAzul_1(i);
+                    }
                 } else {
+                    if(B2[iRojo][1]>=B2[iAzul][0]){ 
 
-                    console.log("Rojo volatil");
-                    lineChartData2.datasets[0].label = arrayNombres[0];
-                    lineChartData2.datasets[0].pointColor = color[3];
-                    lineChartData2.datasets[0].pointStrokeColor = color[3];
-                    lineChartData2.datasets[0].pointHighlightStroke = color[3];
-                    lineChartData2.datasets[0].strokeColor = color[3];
-                    lineChartData2.datasets[0].fillColor = color[0];
-                    lineChartData2.datasets[0].data[i] = lAzul_0(i);
-                    lineChartData2.datasets[3].label = arrayNombres[1];
-                    lineChartData2.datasets[3].pointColor = color[4];
-                    lineChartData2.datasets[3].pointStrokeColor = color[4];
-                    lineChartData2.datasets[3].pointHighlightStroke = color[4];
-                    lineChartData2.datasets[3].strokeColor = color[4];
-                    lineChartData2.datasets[3].fillColor = color[2];
-                    lineChartData2.datasets[3].data[i] = lAzul_1(i);
-                    lineChartData2.datasets[2].label = arrayNombres[2];
-                    lineChartData2.datasets[2].pointColor = color[4];
-                    lineChartData2.datasets[2].pointStrokeColor = color[4];
-                    lineChartData2.datasets[2].pointHighlightStroke = color[4];
-                    lineChartData2.datasets[2].strokeColor = color[4];
-                    lineChartData2.datasets[2].fillColor = color[1];
-                    lineChartData2.datasets[2].data[i] = lRojo_0(i);
-                    lineChartData2.datasets[1].label = arrayNombres[3];
-                    lineChartData2.datasets[1].pointColor = color[3];
-                    lineChartData2.datasets[1].pointStrokeColor = color[3];
-                    lineChartData2.datasets[1].pointHighlightStroke = color[3];
-                    lineChartData2.datasets[1].strokeColor = color[3];
-                    lineChartData2.datasets[1].fillColor = color[2];
-                    lineChartData2.datasets[1].data[i] = lRojo_1(i);
+                        console.log("Rojo muy alto");
+                        lineChartData2.datasets[0].label = arrayNombres[0];
+                        lineChartData2.datasets[0].pointColor = color[4];
+                        lineChartData2.datasets[0].pointStrokeColor = color[4];
+                        lineChartData2.datasets[0].pointHighlightStroke = color[4];
+                        lineChartData2.datasets[0].strokeColor = color[4];
+                        lineChartData2.datasets[0].fillColor = color[1];
+                        lineChartData2.datasets[0].data[i] = lRojo_0(i);
 
+                        lineChartData2.datasets[1].label = arrayNombres[1];
+                        lineChartData2.datasets[1].pointColor = color[4];
+                        lineChartData2.datasets[1].pointStrokeColor = color[4];
+                        lineChartData2.datasets[1].pointHighlightStroke = color[4];
+                        lineChartData2.datasets[1].strokeColor = color[4];
+                        lineChartData2.datasets[1].fillColor = color[2];
+                        lineChartData2.datasets[1].data[i] = lRojo_1(i);
+
+                        lineChartData2.datasets[2].label = arrayNombres[2];
+                        lineChartData2.datasets[2].pointColor = color[3];
+                        lineChartData2.datasets[2].pointStrokeColor = color[3];
+                        lineChartData2.datasets[2].pointHighlightStroke = color[3];
+                        lineChartData2.datasets[2].strokeColor = color[3];
+                        lineChartData2.datasets[2].fillColor = color[0];
+                        lineChartData2.datasets[2].data[i] = lAzul_0(i);
+
+                        lineChartData2.datasets[3].label = arrayNombres[3];
+                        lineChartData2.datasets[3].pointColor = color[3];
+                        lineChartData2.datasets[3].pointStrokeColor = color[3];
+                        lineChartData2.datasets[3].pointHighlightStroke = color[3];
+                        lineChartData2.datasets[3].strokeColor = color[3];
+                        lineChartData2.datasets[3].fillColor = color[2];
+                        lineChartData2.datasets[3].data[i] = lAzul_1(i);
+
+                    } else if (B2[iRojo][1]>=B2[iAzul][1]) {
+
+                        console.log("Rojo alto");
+                        lineChartData2.datasets[0].label = arrayNombres[0];
+                        lineChartData2.datasets[0].pointColor = color[4];
+                        lineChartData2.datasets[0].pointStrokeColor = color[4];
+                        lineChartData2.datasets[0].pointHighlightStroke = color[4];
+                        lineChartData2.datasets[0].strokeColor = color[4];
+                        lineChartData2.datasets[0].fillColor = color[1];
+                        lineChartData2.datasets[0].data[i] = lRojo_0(i);
+
+                        lineChartData2.datasets[1].label = arrayNombres[1];
+                        lineChartData2.datasets[1].pointColor = color[4];
+                        lineChartData2.datasets[1].pointStrokeColor = color[4];
+                        lineChartData2.datasets[1].pointHighlightStroke = color[4];
+                        lineChartData2.datasets[1].strokeColor = color[4];
+                        lineChartData2.datasets[1].fillColor = color[2];
+                        lineChartData2.datasets[1].data[i] = lRojo_1(i);
+
+                        lineChartData2.datasets[2].label = arrayNombres[2];
+                        lineChartData2.datasets[2].pointColor = color[3];
+                        lineChartData2.datasets[2].pointStrokeColor = color[3];
+                        lineChartData2.datasets[2].pointHighlightStroke = color[3];
+                        lineChartData2.datasets[2].strokeColor = color[3];
+                        lineChartData2.datasets[2].fillColor = color[0];
+                        lineChartData2.datasets[2].data[i] = lAzul_0(i);
+
+                        lineChartData2.datasets[3].label = arrayNombres[3];
+                        lineChartData2.datasets[3].pointColor = color[3];
+                        lineChartData2.datasets[3].pointStrokeColor = color[3];
+                        lineChartData2.datasets[3].pointHighlightStroke = color[3];
+                        lineChartData2.datasets[3].strokeColor = color[3];
+                        lineChartData2.datasets[3].fillColor = color[2];
+                        lineChartData2.datasets[3].data[i] = lAzul_1(i);
+
+                    } else {
+
+                        console.log("Rojo volatil");
+                        lineChartData2.datasets[0].label = arrayNombres[0];
+                        lineChartData2.datasets[0].pointColor = color[3];
+                        lineChartData2.datasets[0].pointStrokeColor = color[3];
+                        lineChartData2.datasets[0].pointHighlightStroke = color[3];
+                        lineChartData2.datasets[0].strokeColor = color[3];
+                        lineChartData2.datasets[0].fillColor = color[0];
+                        lineChartData2.datasets[0].data[i] = lAzul_0(i);
+                        lineChartData2.datasets[3].label = arrayNombres[1];
+                        lineChartData2.datasets[3].pointColor = color[4];
+                        lineChartData2.datasets[3].pointStrokeColor = color[4];
+                        lineChartData2.datasets[3].pointHighlightStroke = color[4];
+                        lineChartData2.datasets[3].strokeColor = color[4];
+                        lineChartData2.datasets[3].fillColor = color[2];
+                        lineChartData2.datasets[3].data[i] = lAzul_1(i);
+                        lineChartData2.datasets[2].label = arrayNombres[2];
+                        lineChartData2.datasets[2].pointColor = color[4];
+                        lineChartData2.datasets[2].pointStrokeColor = color[4];
+                        lineChartData2.datasets[2].pointHighlightStroke = color[4];
+                        lineChartData2.datasets[2].strokeColor = color[4];
+                        lineChartData2.datasets[2].fillColor = color[1];
+                        lineChartData2.datasets[2].data[i] = lRojo_0(i);
+                        lineChartData2.datasets[1].label = arrayNombres[3];
+                        lineChartData2.datasets[1].pointColor = color[3];
+                        lineChartData2.datasets[1].pointStrokeColor = color[3];
+                        lineChartData2.datasets[1].pointHighlightStroke = color[3];
+                        lineChartData2.datasets[1].strokeColor = color[3];
+                        lineChartData2.datasets[1].fillColor = color[2];
+                        lineChartData2.datasets[1].data[i] = lRojo_1(i);
+
+                    }
                 }
-            }
 
-            /*
-            
-            lineChartData.datasets[0].data[i] = lAzul_0(i);
-            lineChartData.datasets[1].data[i] = lAzul_1(i);
-            lineChartData.datasets[2].data[i] = lRojo_0(i);
-            lineChartData.datasets[3].data[i] = lRojo_1(i);
-            */
+                /*
+                
+                lineChartData.datasets[0].data[i] = lAzul_0(i);
+                lineChartData.datasets[1].data[i] = lAzul_1(i);
+                lineChartData.datasets[2].data[i] = lRojo_0(i);
+                lineChartData.datasets[3].data[i] = lRojo_1(i);
+                */
+            };
         };
+        
+        createGraph();
+
+        
+
+        
         
         /*
         console.log("Linea Azul Alta = "+lineChartData.datasets[0].fillColor);
@@ -681,7 +719,31 @@ Chart.numberWithCommas = function(x) {
         console.log("Linea Rojo Baja = "+lineChartData.datasets[3].fillColor);
         */
 
+    var chartUpdate = function() {
 
+        createGraph();
+
+        // Replace the chart canvas element
+        $('#canvas').replaceWith('<canvas id="canvas" height="300" width="600"></canvas>');
+
+        var ctx = document.getElementById("canvas").getContext("2d");
+        new Chart(ctx).Line(lineChartData, {
+            scaleLabel: "$<%=Chart.numberWithCommas(value)%>",
+            responsive: true,
+            scaleShowVerticalLines: false,
+            scaleShowHorizontalLines: false,
+            pointDotRadius : 3,
+            pointDotStrokeWidth : 1,
+            pointHitDetectionRadius : 10,
+            multiTooltipTemplate: "<%= datasetLabel %> - $<%= Chart.numberWithCommas(value) %>",
+            /*,
+            scaleOverride : true,
+            scaleSteps : 10,
+            scaleStepWidth : 100000,
+            scaleStartValue : a
+            */
+        });
+    }
 
 
     window.onload = function(){
@@ -702,6 +764,8 @@ Chart.numberWithCommas = function(x) {
             scaleStartValue : a
             */
         });
+
+
         var ctx2 = document.getElementById("canvas1").getContext("2d");
         window.myLine = new Chart(ctx2).Line(lineChartData2, {
             scaleLabel: "$<%=Chart.numberWithCommas(value)%>",
@@ -720,3 +784,5 @@ Chart.numberWithCommas = function(x) {
             */
         });
     }
+
+  

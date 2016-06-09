@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--[if IE 9]> <html lang="es" class="ie9"> <![endif]-->
 <!--[if !IE]><!-->
-<html lang="es">
+<html lang="es" ng-app="fondoDeAhorro">
     <!--<![endif]-->
     <!-- BEGIN HEAD -->
     <head>
@@ -274,6 +274,15 @@
                 <div class="col-md-6 c-bg-white" >
                     <h3 id="title" class="c-center c-font-bold" style="margin-top:0px;">Información</h3>
                     <p>BLA BLA BLA</p>
+                    <div ng-controller="ExampleController">
+                      <form novalidate class="simple-form">
+                            AportacionesMensuales: <input type="text" ng-model="user.am" /><br />
+                            Tiempo: <input type="text" ng-model="user.t" /><br />
+                            <button class="btn btn-primary" type="submit" class="btn btn-primary" ng-click="save(user)" value="Save">
+                                Comparar
+                            </button>
+                      </form>
+                    </div>
                 </div>
 
                 <div class="col-md-6 c-bg-white">
@@ -302,7 +311,7 @@
                     <table  class="table-no-bordered" 
                             id="table" 
                             data-toggle="table"
-                            data-height="400" 
+                            data-height="250" 
                             data-click-to-select="true" 
                             data-unique-id="id" 
                             data-url="../json/data1.json"
@@ -385,6 +394,9 @@
             <script src="../assets/tablas/components/angular-rangeslider/angular.rangeSlider.js"></script>
             <script src="../assets/tablas/js/app.js"></script>
         <!-- End necesario Grafica -->
+
+        <script src="../angular/fondoDeAhorro.js"></script>
+
         <script>
             $(document).ready(function()
             {
