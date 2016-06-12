@@ -2,45 +2,49 @@
     {
         "id":0,
         "checkbox": true,
-        "nombre": "Item 0",
+        "nombre": "Old Mutual Estabilidad",
         "ti": "$0",
         "am": 0,
         "pa": "Item 0",
         "ir": 0,
         "c": "Item 0",
-        "ct": "<button type='button' class='btn btn-primary'>Primary</button>"
+        "ct": "<button type='button' class='btn btn-primary'>Primary</button>",
+        "b": [1.12,1.05]
     },
     {
         "id":1,
         "checkbox": true,
-        "nombre": "Item 0",
+        "nombre": "Old Mutual Moderado",
         "ti": "$0",
         "am": 0,
         "pa": "Item 0",
         "ir": 0,
         "c": "Item 0",
-        "ct": "<button type='button' class='btn btn-primary'>Primary</button>"
+        "ct": "<button type='button' class='btn btn-primary'>Primary</button>",
+        "b": [1.07,1.04]
     },
     {
         "id":2,
         "checkbox":false,
-        "nombre": "Item 0",
+        "nombre": "Old Mutual Dinamico",
         "ti": "$0",
         "am": 0,
         "pa": "Item 0",
         "ir": 0,
         "c": "Item 0",
-        "ct": "<button type='button' class='btn btn-primary'>Primary</button>"
+        "ct": "<button type='button' class='btn btn-primary'>Primary</button>",
+        "b": [1.10,1.07]
     },
     {
         "id":3,
         "checkbox":false,
-        "nombre": "Item 0",
+        "nombre": "Old Mutual Especulativo",
         "ti": "$0",
         "am": 0,
         "pa": "Item 0",
         "ir": 0,
         "c": "Item 0",
-        "ct": "<button type='button' class='btn btn-primary'>Primary</button>"
+        "ct": "<button type='button' class='btn btn-primary'>Primary</button>",
+        "b": [1.10,1.06]
     }
 ]

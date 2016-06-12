@@ -55,7 +55,7 @@
         <!-- Termina todo lo necesario para la tabla -->
     </head>
 
-    <body class="c-layout-header-fixed c-layout-header-mobile-fixed c-layout-header-fullscreen c-layout-header-topbar c-layout-header-topbar-collapse">
+    <body class="c-layout-header-static c-layout-header-mobile-fixed c-layout-header-fullscreen c-layout-header-topbar c-layout-header-topbar-collapse">
         <!-- BEGIN: LAYOUT/HEADERS/HEADER-1 -->
         <!-- BEGIN: HEADER -->
         <header class="c-layout-header c-layout-header-default c-layout-header-dark-mobile c-header-transparent-light" data-minimize-offset="20">
@@ -274,15 +274,7 @@
                 <div class="col-md-6 c-bg-white" >
                     <h3 id="title" class="c-center c-font-bold" style="margin-top:0px;">Información</h3>
                     <p>BLA BLA BLA</p>
-                    <div ng-controller="ExampleController">
-                      <form novalidate class="simple-form">
-                            AportacionesMensuales: <input type="text" ng-model="user.am" /><br />
-                            Tiempo: <input type="text" ng-model="user.t" /><br />
-                            <button class="btn btn-primary" type="submit" class="btn btn-primary" ng-click="save(user)" value="Save">
-                                Comparar
-                            </button>
-                      </form>
-                    </div>
+                    
                 </div>
 
                 <div class="col-md-6 c-bg-white">
@@ -291,6 +283,30 @@
                                 <div>
                                     <canvas id="canvas" height="300" width="600"></canvas>
                                 </div>
+                            </div>
+                            <div ng-controller="ExampleController">
+                            Aportaciones Mensuales: 
+                                    <select id="aportaciones" name="WorkflowList">
+                                        <option value="1500">$1500</option>
+                                        <option  selected="true" value="2000">$2000</option>
+                                        <option value="2500">$2500</option>
+                                        <option value="3000">$3000</option>
+                                        <option value="3500">$3500</option>
+                                        <option value="4000">$4000</option>
+                                        <option value="4500">$4500</option>
+                                        <option value="5000">$5000</option>
+                                    </select>
+                            Tiempo:
+                                    <select id="tiempo" name="WorkflowList">
+                                        <option value="5">5 años</option>
+                                        <option selected="true" value="10">10 años</option>
+                                        <option value="15">15 años</option>
+                                        <option value="20">20 años</option>
+                                        <option value="25">25 años</option>
+                                    </select>
+                                    <button type="submit" class="btn btn-primary" ng-click="save()" value="Save" >
+                                        Comparar
+                                    </button>
                             </div>
                     <!-- END: Tabla 1 -->
                             <br>
@@ -307,7 +323,6 @@
             </div>
 
             <div class="c-navbar col-md-12 c-bg-white" style="padding-bottom:20px;">
-                    <h3 id="title" class="c-center c-font-bold" style="margin-top:0px;">Información</h3>
                     <table  class="table-no-bordered" 
                             id="table" 
                             data-toggle="table"
@@ -319,7 +334,7 @@
                             data-escape="false">
                     <thead>
                         <tr>
-                            <th data-field="checkbox" data-checkbox="true">Compara</th>
+                            <th data-field="checkbox" data-checkbox="true"></th>
                             <th data-field="nombre" data-sortable="true" >Compañía</th>
                             <th data-field="ti" data-sortable="true">Tasa de Interés</th>
                             <th data-field="am" data-sortable="true">Ahorro Mínimo Mensual</th>
@@ -401,6 +416,7 @@
             $(document).ready(function()
             {
                 $("#form").show();
+
 
                 App.init(); // init core    
             });

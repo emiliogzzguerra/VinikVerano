@@ -356,6 +356,11 @@ label.control-label {
   .btn-default .badge {
     color: #ffffff;
     background: #99a5b9; }
+.btn-primary:focus{
+  color: #ffffff;
+  background: #27366A;
+  border-color: #27366A;
+}
 
 .btn-primary {
   color: #ffffff;
