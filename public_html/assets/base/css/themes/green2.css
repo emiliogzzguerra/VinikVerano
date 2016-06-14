@@ -301,7 +301,7 @@ a {
   border-color: white !important; }
 
 .c-content-line-icon.c-theme {
-  background-image: url(../../img/content/line-icons/green2.png); }
+  background-image: url(../../img/content/line-icons/blue2.png); }
 
 .c-content-list-1.c-theme.c-separator-dot > li:before,
 .c-content-list-1.c-theme > li:before {
@@ -323,7 +323,7 @@ a {
 
 .c-content-tab-2.c-theme > ul > li.active > a > .c-content-line-icon,
 .c-content-tab-2.c-theme > ul > li:hover > a > .c-content-line-icon {
-  background-image: url(../../img/content/line-icons/green2.png); }
+  background-image: url(../../img/content/line-icons/blue2.png); }
 
 .c-content-tab-5.c-theme .c-nav-tab > li.active > a,
 .c-content-tab-5.c-theme .c-nav-tab > li a:hover {
@@ -408,4 +408,4 @@ a {
     background: white; }
 
 .tp-banner-container.c-theme .tparrows.circle {
-  background-image: url(../../img/content/line-icons/green2.png); }
+  background-image: url(../../img/content/line-icons/blue2.png); }
