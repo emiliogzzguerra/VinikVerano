@@ -319,7 +319,9 @@ a {
 
 .c-content-tab-2.c-theme > ul > li.active > a > .c-title,
 .c-content-tab-2.c-theme > ul > li:hover > a > .c-title {
-  color: white; }
+  color: #27366A; }
+
+
 
 .c-content-tab-2.c-theme > ul > li.active > a > .c-content-line-icon,
 .c-content-tab-2.c-theme > ul > li:hover > a > .c-content-line-icon {

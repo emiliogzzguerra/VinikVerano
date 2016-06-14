@@ -183,8 +183,8 @@ $(document).ready(function() {
             return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         };
 
-        var a = 3000; //Aportaciones (Mensuales)
-        var t = 30; //Tiempo en años
+        var a = 2000; //Aportaciones (Mensuales)
+        var t = 10; //Tiempo en años
         var tPasado = 30;
         var d = new Date();
         var A = d.getFullYear();
