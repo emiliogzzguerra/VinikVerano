@@ -27,7 +27,56 @@
 
 
 /* Grid
+
+
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.c-border-sura {
+  border-color: #0053a1 !important;
+}
+.c-border-prof {
+  border-color: #f8b413 !important;
+}
+.c-border-banamex {
+  border-color: #e0081f !important;
+}
+.c-border-pensionissste {
+  border-color: #107c0c !important;
+}
+.c-border-metlife {
+  border-color: #2678c7 !important;
+}
+.c-border-principal {
+  border-color: #00a4d7 !important;
+}
+.c-border-banorte {
+  border-color: #bc1616 !important;
+}
+.c-border-azteca {
+  border-color: #3e7bbd !important;
+}
+.c-border-coppel {
+  border-color: #fee143 !important;
+}
+.c-border-inbursa {
+  border-color: #0f1e3d !important;
+}
+.c-border-invercap {
+  border-color: #026227 !important; 
+}
+
+
+
+.c-content-counter-1 > .row > div > .c-counter{
+  margin: 10px auto 10px auto;
+}
+.col-md-2, .col-sm-6,{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.c-counter:after
+{
+    content:'%';
+}
 
 .preguntas{
     left: 0;
@@ -198,7 +247,17 @@ power{
   box-sizing: border-box; }
 
 /* For devices larger than 400px */
+@media (max-width: 415px) {
+  .aforePartner{
+    background-color: rgba(255,255,255,0.5);
+  }
+}
+
 @media (min-width: 415px) {
+.aforePartner{
+  background-color: rgba(255,255,255,0.5);
+}
+
   .preguntas{
     font-size: 1.5em;
     color:white;
@@ -251,6 +310,9 @@ power{
 
 }
 @media (min-width: 550px) {
+  .aforePartner{
+    background-color: rgba(255,255,255,0.5);
+  }
 .preguntas{
     bottom: 0.8em;
     width: 100%;
@@ -260,6 +322,9 @@ power{
 }
 /* For devices larger than 550px */
 @media (min-width: 550px) {
+  .aforePartner{
+    background-color: transparent;
+  }
 
   .captions{
     font-size:2.5em;
