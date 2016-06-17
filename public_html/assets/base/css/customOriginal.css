@@ -30,6 +30,10 @@
 
 
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.c-content-tab-2.c-opt-1 > .nav li.active > .afore:before{
+  border-bottom-color:#808080;
+}
 .c-border-sura {
   border-color: #0053a1 !important;
 }
@@ -61,7 +65,7 @@
   border-color: #0f1e3d !important;
 }
 .c-border-invercap {
-  border-color: #026227 !important; 
+  border-color: #026227 !important;
 }
 
 
