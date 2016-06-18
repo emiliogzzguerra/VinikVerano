@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <!--[if IE 9]> <html lang="es" class="ie9"> <![endif]-->
 <!--[if !IE]><!-->
-<html lang="es">
+<html lang="es" ng-app="app">
     <!--<![endif]-->
     <!-- BEGIN HEAD -->
     <head>
         <meta charset="utf-8" />
-        <title>VINIK | AAA de vida</title>
+        <title>VINIK | Fondos de Ahorro</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -19,6 +19,7 @@
         <link href="../assets/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
         <link href="../assets/plugins/animate/animate.min.css" rel="stylesheet" type="text/css" />
         <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="../bower_components/bootstrap-table/dist/bootstrap-table.css">
         <!-- END GLOBAL MANDATORY STYLES -->
         <!-- BEGIN: BASE PLUGINS  -->
         <link href="../assets/plugins/revo-slider/css/settings.css" rel="stylesheet" type="text/css" />
@@ -37,18 +38,17 @@
         <!-- END THEME STYLES -->
         <link rel="shortcut icon" href="../vinik.ico" />
         <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300,400italic' rel='stylesheet' type='text/css'>
-        <script type="text/javascript">
 
-        function toggleChat() {
 
-        Tawk_API.toggle(); return false;
 
-        }
-
-        </script>
+        <!-- Inicia todo lo necesario para la tabla -->
+            <script src="../assets/tablas/components/Chart.js/Chart.js"></script>
+            <!-- Angular rangeSlider CSS -->
+            <link href="../assets/tablas/components/angular-rangeslider/angular.rangeSlider.css" rel="stylesheet">
+        <!-- Termina todo lo necesario para la tabla -->
     </head>
 
-    <body class="c-layout-header-fixed c-layout-header-mobile-fixed c-layout-header-fullscreen c-layout-header-topbar c-layout-header-topbar-collapse">
+    <body class="c-layout-header-static c-layout-header-mobile-fixed c-layout-header-fullscreen c-layout-header-topbar c-layout-header-topbar-collapse">
         <!-- BEGIN: LAYOUT/HEADERS/HEADER-1 -->
         <!-- BEGIN: HEADER -->
         <header class="c-layout-header c-layout-header-default c-layout-header-dark-mobile c-header-transparent-light" data-minimize-offset="20">
@@ -59,9 +59,9 @@
                         <div class="c-brand c-pull-left">
                             <a href="index.html" class="c-logo">
 
-                                <img src="../assets/base/img/layout/logos/logo-3.png" alt="VINIK" class="c-desktop-logo">
-                                <img src="../assets/base/img/layout/logos/logo-3.png" alt="VINIK" class="c-desktop-logo-inverse">
-                                <img src="../assets/base/img/layout/logos/logo-1.png" alt="VINIK" class="c-mobile-logo"> </a>
+                                <img src="../assets/base/img/layout/logos/logo-6.png" alt="VINIK" class="c-desktop-logo">
+                                <img src="../assets/base/img/layout/logos/logo-6.png" alt="VINIK" class="c-desktop-logo-inverse">
+                                <img src="../assets/base/img/layout/logos/logo-5.png" alt="VINIK" class="c-mobile-logo"> </a>
                             <button class="c-hor-nav-toggler" type="button" data-target=".c-mega-menu">
                                 <span class="c-line"></span>
                                 <span class="c-line"></span>
@@ -82,7 +82,7 @@
                                     <a id="ahorro" href="javascript:;" class="c-link dropdown-toggle">Ahorro
                                         <span class="c-arrow c-toggler"></span>
                                     </a>
-                                    <!--
+
                                     <ul class="dropdown-menu c-menu-type-classic c-pull-left">
                                         <li>
                                             <a href="#">Fondos de Ahorro</a>
@@ -94,7 +94,7 @@
                                             <a href="#">Afore</a>
                                         </li>
                                     </ul>
-                                    -->
+
                                 </li>
                                 <li class="c-menu-type-classic">
                                     <a id="inversion" href="javascript:;" class="c-link dropdown-toggle">Inversión
@@ -130,15 +130,9 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <!--Start of Tawk.to Status Code-->
-                                    <script type="text/javascript">Tawk_API.onStatusChange = function (status){if(status === 'online'){document.getElementById('status').innerHTML = '<a href="#" onclick="toggleChat()">Online - Click to chat</a>';}else if(status === 'away'){document.getElementById('status').innerHTML = 'We are currently away';}else if(status === 'offline'){document.getElementById('status').innerHTML = 'Live chat is Offline';}};
-                                    </script>
-                                    <!--End of Tawk.to Status Code -->
-                                    <a href="#chat" onclick="toggleChat()" class="c-link dropdown-toggle">Contacto
+                                    <a   href="" onclick="Tawk_API.toggle()" class="c-link dropdown-toggle">Contacto
                                         <span class="c-toggler"></span>
                                     </a>
-
-
                                 </li>
                             </ul>
                         </nav>
@@ -161,7 +155,7 @@
                                 <h3 class="c-font-center c-font-white titles" style="text-align:center;padding-top:50px;">Credito hipotecario</h3>
                                 <ul class="c-grid-row">
                                     <li>
-                                        <div class="c-bg-opacity-1 c-card" data-height="height" style="height: 163px;text-align:center;">
+                                        <div class="c-bg-opacity-1 c-card" data-height="height" style="text-align:center;">
                                             <h3 class=" c-font-bold">Cotizemos tu credito hipotecario</h3>
                                             <p> Solo con un poco de información cotizaremos un credito hipotecario a tu medida. ¡Solo toma 5 minutos!</p>
                                             <br>
@@ -171,7 +165,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <div class="c-bg-opacity-1 c-card" data-height="height" style="height: 163px;text-align:center;">
+                                        <div class="c-bg-opacity-1 c-card" data-height="height" style="text-align:center;">
                                             <h3 class="c-font-bold" >¿Te podemos ayudar?</h3>
                                             <p>Mon - Fri: 8am - 8pm, Sat: 9am - 2:30pm</p>
                                             <br>
@@ -298,7 +292,7 @@
                     <div class="c-content-feedback-1 c-option-1">
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="c-container c-bg-green c-bg-img-bottom-right" style="background-image:url(assets/base/img/content/misc/feedback_box_1.png)">
+                                <div class="c-container c-bg-green c-bg-img-bottom-right">
                                     <div class="c-content-title-1 c-inverse">
                                         <h3 class="c-font-uppercase c-font-bold">Need to know more?</h3>
                                         <div class="c-line-left"></div>
@@ -306,7 +300,7 @@
                                         <a href="#" class="btn btn-md c-btn-border-2x c-btn-white c-btn-uppercase c-btn-square c-btn-bold">Learn More</a>
                                     </div>
                                 </div>
-                                <div class="c-container c-bg-grey-1 c-bg-img-bottom-right" style="background-image:url(assets/base/img/content/misc/feedback_box_2.png)">
+                                <div class="c-container c-bg-grey-1 c-bg-img-bottom-right">
                                     <div class="c-content-title-1">
                                         <h3 class="c-font-uppercase c-font-bold">Have a question?</h3>
                                         <div class="c-line-left"></div>
@@ -322,32 +316,79 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6" ng-controller="CotizaCtrl">
                                 <div class="c-contact">
-                                    <div class="c-content-title-1">
-                                        <h3 class="c-font-uppercase c-font-bold">Keep in touch</h3>
-                                        <div class="c-line-left"></div>
-                                        <p class="c-font-lowercase">Our helpline is always open to receive any inquiry or feedback. Please feel free to drop us an email from the form below and we will get back to you as soon as we can.</p>
+                                  <h1>{{ title }}</h1>
+                                  <br>
+
+                                  <form class="form-horizontal" ng-submit="pushData(frm)">
+                                    <div class="form-group">
+                                      <label for="title" class="col-sm-2 control-label">Nombre</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" ng-model="frm.nombre" class="form-control">
+                                      </div>
                                     </div>
-                                    <form action="#">
-                                        <div class="form-group">
-                                            <input type="text" placeholder="Your Name" class="form-control c-square c-theme input-lg"> </div>
-                                        <div class="form-group">
-                                            <input type="text" placeholder="Your Email" class="form-control c-square c-theme input-lg"> </div>
-                                        <div class="form-group">
-                                            <input type="text" placeholder="Contact Phone" class="form-control c-square c-theme input-lg"> </div>
-                                        <div class="form-group">
-                                            <textarea rows="8" name="message" placeholder="Write comment here ..." class="form-control c-theme c-square input-lg"></textarea>
-                                        </div>
-                                        <button type="submit" class="btn c-theme-btn c-btn-uppercase btn-lg c-btn-bold c-btn-square">Submit</button>
-                                    </form>
-                                </div>
+                                    <div class="form-group">
+                                      <label for="description" class="col-sm-2 control-label">Telefono</label>
+                                      <div class="col-sm-10">
+                                        <textarea class="form-control" ng-model="frm.telefono"></textarea>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="description" class="col-sm-2 control-label">Email</label>
+                                      <div class="col-sm-10">
+                                        <textarea class="form-control" ng-model="frm.email"></textarea>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <div class="col-sm-offset-2 col-sm-10">
+                                        <button type="submit" value="submit" class="btn btn-primary">Insert Blog</button>
+                                      </div>
+                                    </div>
+                                  </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- END: CONTENT/CONTACT/FEEDBACK-1 -->
+            <!-- modal for for creating new product -->
+            <div id="modal-product-form" class="modal">
+                <div class="modal-content">
+                    <h4 id="modal-product-title">Create New Product</h4>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input ng-model="name" type="text" class="validate" id="form-name" placeholder="Type name here..." />
+                            <label for="name">Name</label>
+                        </div>
+
+                        <div class="input-field col s12">
+                            <textarea ng-model="description" type="text" class="validate materialize-textarea" placeholder="Type description here..."></textarea>
+                            <label for="description">Description</label>
+                        </div>
+
+
+                        <div class="input-field col s12">
+                            <input ng-model="price" type="text" class="validate" id="form-price" placeholder="Type price here..." />
+                            <label for="price">Price</label>
+                        </div>
+
+
+                        <div class="input-field col s12">
+                            <a id="btn-create-product" class="waves-effect waves-light btn margin-bottom-1em" ng-click="createProduct()"><i class="material-icons left">add</i>Create</a>
+
+                            <a id="btn-update-product" class="waves-effect waves-light btn margin-bottom-1em" ng-click="updateProduct()"><i class="material-icons left">edit</i>Save Changes</a>
+
+                            <a class="modal-action modal-close waves-effect waves-light btn margin-bottom-1em"><i class="material-icons left">close</i>Close</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- floating button for creating product -->
+            <div class="fixed-action-btn" style="bottom:45px; right:24px;">
+                <a class="waves-effect waves-light btn modal-trigger btn-floating btn-large red" href="#modal-product-form" ng-click="showCreateForm()"><i class="large material-icons">add</i></a>
+            </div>
         </div>
         <!-- END: PAGE CONTAINER -->
         <!-- BEGIN: LAYOUT/FOOTERS/FOOTER-5 -->
@@ -367,8 +408,9 @@
                   </div>
               </div>
           </div>
-        </footer>
+      </footer>
         <!-- END: LAYOUT/FOOTERS/FOOTER-5 -->
+
         <!-- BEGIN: LAYOUT/BASE/BOTTOM -->
         <!-- BEGIN: CORE PLUGINS -->
         <!--[if lt IE 9]>
@@ -377,6 +419,10 @@
         <script src="../assets/plugins/jquery.min.js" type="text/javascript"></script>
         <script src="../assets/plugins/jquery-migrate.min.js" type="text/javascript"></script>
         <script src="../assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+        <script src="../bower_components/bootstrap-table/dist/bootstrap-table.js"></script>
+        <script src="../bower_components/bootstrap-table/dist/locale/bootstrap-table-es-MX.min.js"></script>
+
         <script src="../assets/plugins/jquery.easing.min.js" type="text/javascript"></script>
         <script src="../assets/plugins/reveal-animate/wow.js" type="text/javascript"></script>
         <script src="../assets/base/js/scripts/reveal-animate/reveal-animate.js" type="text/javascript"></script>
@@ -395,58 +441,36 @@
         <script src="../assets/base/js/components.js" type="text/javascript"></script>
         <script src="../assets/base/js/components-shop.js" type="text/javascript"></script>
         <script src="../assets/base/js/app.js" type="text/javascript"></script>
-        <script src="assets/base/js/scripts/scrolling-nav.js" type="text/javascript"></script>
+        <script src="../assets/base/js/scripts/scrolling-nav.js" type="text/javascript"></script>
+
+        <!-- Necesario Grafica -->
+            <!-- and Angular, of course -->
+            <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.js"></script>
+            <!-- and out directive code -->
+            <script src="../assets/tablas/components/angular-rangeslider/angular.rangeSlider.js"></script>
+            <script src="../angular/creditosHipotecarios/js/app.js"></script>
+            <script src="../angular/creditosHipotecarios/js/controller.js"></script>
+        <!-- End necesario Grafica -->
+
+
         <script>
             $(document).ready(function()
             {
-                $("#form").show();
+
+                //$("#form").show();
+
 
                 App.init(); // init core
             });
+
         </script>
         <!-- END: THEME SCRIPTS -->
 
         <!-- BEGIN: PAGE SCRIPTS -->
         <!-- BEGIN: PAGE SCRIPTS -->
-        <script>
-            $(document).ready(function()
-            {
-                var slider = $('.c-layout-revo-slider .tp-banner');
-                var cont = $('.c-layout-revo-slider .tp-banner-container');
-                var api = slider.show().revolution(
-                {
-                    delay: 15000,
-                    startwidth: 1170,
-                    startheight: App.getViewPort().height,
-                    navigationType: "hide",
-                    navigationArrows: "solo",
-                    touchenabled: "on",
-                    onHoverStop: "on",
-                    keyboardNavigation: "off",
-                    navigationType: "bullet",
-                    navigationArrows: "",
-                    navigationStyle: "round c-tparrows-hide c-theme",
-                    navigationHAlign: "right",
-                    navigationVAlign: "bottom",
-                    navigationHOffset: 60,
-                    navigationVOffset: 60,
-                    spinner: "spinner2",
-                    fullScreen: 'on',
-                    fullScreenAlignForce: 'on',
-                    fullScreenOffsetContainer: '.c-layout-header',
-                    shadow: 0,
-                    fullWidth: "off",
-                    forceFullWidth: "on",
-                    hideTimerBar: "on",
-                    hideThumbsOnMobile: "on",
-                    hideNavDelayOnMobile: 1500,
-                    hideBulletsOnMobile: "on",
-                    hideArrowsOnMobile: "on",
-                    hideThumbsUnderResolution: 0
-                });
-            }); //ready
-        </script>
+
         <!--Start of Tawk.to Script-->
+
         <script type="text/javascript">
         var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
         (function(){
@@ -458,9 +482,11 @@
         s0.parentNode.insertBefore(s1,s0);
         })();
         </script>
+
         <!--End of Tawk.to Script-->
-        <script src="assets/base/js/scripts/pages/index-gallery.js" type="text/javascript"></script>
-        <script src="assets/base/js/scripts/pages/faq.js" type="text/javascript"></script>
+        <script src="../assets/base/js/scripts/pages/index-gallery.js" type="text/javascript"></script>
+        <script src="../assets/base/js/scripts/pages/faq.js" type="text/javascript"></script>
+        <script src="../assets/base/js/tablaComparacion/fondodeahorro.js"></script>
         <!-- END: PAGE SCRIPTS -->
         <!-- END: LAYOUT/BASE/BOTTOM -->
         <script>

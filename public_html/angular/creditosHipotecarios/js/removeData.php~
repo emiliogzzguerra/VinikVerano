@@ -1,23 +1,23 @@
 <?php
 
 	$data = json_decode(file_get_contents("php://input"));
-	
+
 	$host = "localhost";
 	$user = "root";
 	$pass = "meAxel9@4!";
 	$db = "project";
 
 	$con = new mysqli($host, $user, $pass, $db);
-	
+
 	if($con->connection_error) {
 		die("DB connection failed:" . $con->connection_error);
 	}
 
-	$sql = "DELETE FROM `blogs` WHERE `id` = $data->id";
+	$sql = "DELETE FROM `prospectos` WHERE `id` = $data->id";
 
 	$qry = $con->query($sql);
-	
-	$sql = "SELECT * FROM `blogs` ORDER BY `id` DESC";
+
+	$sql = "SELECT * FROM `prospectos` ORDER BY `id` DESC";
 
 	$qry = $con->query($sql);
 

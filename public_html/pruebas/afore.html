@@ -37,15 +37,6 @@
         <!-- END THEME STYLES -->
         <link rel="shortcut icon" href="../vinik.ico" />
         <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300,400italic' rel='stylesheet' type='text/css'>
-        <script type="text/javascript">
-
-        function toggleChat() {
-
-        Tawk_API.toggle(); return false;
-
-        }
-
-        </script>
         <script src="/node_modules/angular/angular.js"></script>
     </head>
 
@@ -131,11 +122,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <!--Start of Tawk.to Status Code-->
-                                    <script type="text/javascript">Tawk_API.onStatusChange = function (status){if(status === 'online'){document.getElementById('status').innerHTML = '<a href="#" onclick="toggleChat()">Online - Click to chat</a>';}else if(status === 'away'){document.getElementById('status').innerHTML = 'We are currently away';}else if(status === 'offline'){document.getElementById('status').innerHTML = 'Live chat is Offline';}};
-                                    </script>
-                                    <!--End of Tawk.to Status Code -->
-                                    <a href="#chat" onclick="toggleChat()" class="c-link dropdown-toggle">Contacto
+                                    <a   href="" onclick="Tawk_API.toggle()" class="c-link dropdown-toggle">Contacto
                                         <span class="c-toggler"></span>
                                     </a>
                                 </li>
@@ -637,7 +624,7 @@
                             <h2 class="c-font-uppercase c-font-bold c-font-center">¿No sabes con cual afore cuentas?</h2>
                               <ul class="c-grid-row">
                                   <li>
-                                      <div class="c-bg-opacity-1 c-card c-bg-grey" data-height="height" style="height: 163px;text-align:center;">
+                                      <div class="c-bg-opacity-1 c-card c-bg-grey" data-height="height" style="text-align:center;">
                                           <h3 class=" c-font-bold">Comparemos Seguros</h3>
                                           <p> We bring you some great deals on your life insurance from our panel of providers.</p>
                                           <br>
@@ -646,7 +633,7 @@
                                       </div>
                                   </li>
                                   <li>
-                                      <div class="c-bg-opacity-1 c-card c-bg-grey" data-height="height" style="height: 163px;text-align:center;">
+                                      <div class="c-bg-opacity-1 c-card c-bg-grey" data-height="height" style="text-align:center;">
                                           <h3 class="c-font-bold" >Solicita una llamada</h3>
                                           <p>Mon - Fri: 8am - 8pm, Sat: 9am - 2:30pm</p>
                                           <br>
