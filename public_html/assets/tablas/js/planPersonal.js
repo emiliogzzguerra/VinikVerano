@@ -1,21 +1,39 @@
 var dinero = 15000;
+var tiempo = 20;
+var tInteres = 0.11;
+
+var valorFuturo = dinero*(1+tInteres)*tiempo;
 
 //Dropdown
 $("#dinero").change(function() {
   dinero = $(this).val();
-
-  //use rfiSchooldropdown
+  console.log(dinero);
 }).change();
 
 $("#tiempo").change(function() {
-  tPasado = t;
-  t = $(this).val();
-  //use rfiSchooldropdown
+  tiempo = $(this).val();
+  console.log(tiempo);
 }).change();
+
 //AngularApp
 var app = angular.module("planPersonal", []);
 
 app.controller('ExampleController', ['$scope', function($scope) {
+  var users = [
+      {
+        name: 'Chris',
+        email: ''
+      },
+      {
+        name: 'Holly',
+        email: ''
+      }
+  ];
+
+  $scope.formDataTwo = {};
+  $scope.formDataTwo.users = users;
+
+
   $scope.master = {};
 
   $scope.save = function() {
