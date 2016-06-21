@@ -28,6 +28,16 @@
 
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.img-center {margin:0 auto;}
+
+
+#imageWrapper1 {
+ position: relative;
+} /* height is for display purposes only */
+#bottomImage {
+  position: relative;
+  top: 0;
+}
 
 .c-content-tab-2.c-opt-1 > .nav li.active > .vinik:before{
   border-bottom-color:#F0F0F0;
@@ -61,6 +71,12 @@
 }
 .c-theme-btn-verde:hover{
   background-color: #149e02;
+  color:#ffffff;
+}
+.c-theme-btn-verde:visited{
+  color:#ffffff;
+}
+.c-theme-btn-verde:focus{
   color:#ffffff;
 }
 

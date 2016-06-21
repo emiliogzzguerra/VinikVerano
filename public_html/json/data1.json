@@ -8,7 +8,7 @@
         "pa": "Item 0",
         "ir": 0,
         "c": "Item 0",
-        "ct": "<button type='button' class='btn btn-primary'>Primary</button>",
+        "ct": "<button type='button' class='btn c-theme-btn-verde'>Elegir</button>",
         "b": [1.12,1.05]
     },
     {
@@ -20,7 +20,7 @@
         "pa": "Item 0",
         "ir": 0,
         "c": "Item 0",
-        "ct": "<button type='button' class='btn btn-primary'>Primary</button>",
+        "ct": "<button type='button' class='btn c-theme-btn-verde'>Elegir</button>",
         "b": [1.07,1.04]
     },
     {
@@ -32,7 +32,7 @@
         "pa": "Item 0",
         "ir": 0,
         "c": "Item 0",
-        "ct": "<button type='button' class='btn btn-primary'>Primary</button>",
+        "ct": "<button type='button' class='btn c-theme-btn-verde'>Elegir</button>",
         "b": [1.10,1.07]
     },
     {
@@ -44,7 +44,7 @@
         "pa": "Item 0",
         "ir": 0,
         "c": "Item 0",
-        "ct": "<button type='button' class='btn btn-primary'>Primary</button>",
+        "ct": "<button type='button' class='btn c-theme-btn-verde'>Elegir</button>",
         "b": [1.10,1.06]
     }
 ]
