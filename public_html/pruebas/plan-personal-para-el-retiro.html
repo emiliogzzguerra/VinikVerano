@@ -221,29 +221,43 @@
                                         <div class="c-content animated wow fadeInDown" data-wow-delay="0.7s">
                                             <p class="c-margin-b-30" style="color:#ffffff;"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed elit diam nonummy tincidunt ut laoreet dolore magna aluam erat volutpat. Ut wisi enim ad minim veniam quis nostrud. </p>
                                         </div>
+                                        <form name="userFormTwo" novalidate>
+
+                                            <div class="form-group" ng-class="{ 'has-error' : userFieldForm.input.$invalid }">
+
+                                            <ng-form name="userFieldForm">
+                                                <label>Dinero</label>
+                                                <input type="number" class="form-control" ng-model="dinero" min="0" max="99" required>
+                                                <p class="help-block" ng-show="userFieldForm.input.$invalid">Valid Email Required</p>
+                                            </ng-form>
+
+                                            </div>
+
+                                        </form>
+                                        <!--
                                         <div ng-controller="ExampleController">
-                                        Aportaciones Mensuales:
-                                                <select id="aportaciones" name="WorkflowList">
-                                                    <option value="1500">$1,500</option>
-                                                    <option  selected="true" value="2000">$2,000</option>
-                                                    <option value="2500">$2,500</option>
-                                                    <option value="3000">$3,000</option>
-                                                    <option value="3500">$3,500</option>
-                                                    <option value="4000">$4,000</option>
-                                                    <option value="4500">$4,500</option>
-                                                    <option value="5000">$5,000</option>
-                                                    <option value="5500">$5,500</option>
-                                                    <option value="6000">$6,000</option>
-                                                    <option value="6500">$6,500</option>
-                                                    <option value="7000">$7,000</option>
-                                                    <option value="7500">$7,500</option>
-                                                    <option value="8000">$8,000</option>
-                                                    <option value="8500">$8,500</option>
-                                                    <option value="9000">$9,000</option>
-                                                    <option value="9500">$9,500</option>
-                                                    <option value="10000">$10,000</option>
-                                                    <option value="10500">$10,500</option>
-                                                    <option value="11000">$11,000</option>
+                                                Ingreso Anual:
+                                                <select id="dinero" name="WorkflowList">
+                                                    <option value="15000">$1,500</option>
+                                                    <option  selected="true" value="20000">$2,000</option>
+                                                    <option value="25000">$2,500</option>
+                                                    <option value="30000">$3,000</option>
+                                                    <option value="35000">$3,500</option>
+                                                    <option value="40000">$4,000</option>
+                                                    <option value="45000">$4,500</option>
+                                                    <option value="50000">$5,000</option>
+                                                    <option value="55000">$5,500</option>
+                                                    <option value="60000">$6,000</option>
+                                                    <option value="65000">$6,500</option>
+                                                    <option value="70000">$7,000</option>
+                                                    <option value="75000">$7,500</option>
+                                                    <option value="80000">$8,000</option>
+                                                    <option value="85000">$8,500</option>
+                                                    <option value="90000">$9,000</option>
+                                                    <option value="95000">$9,500</option>
+                                                    <option value="100000">$10,000</option>
+                                                    <option value="105000">$10,500</option>
+                                                    <option value="110000">$11,000</option>
                                                 </select>
                                                 Tiempo:
                                                 <select id="tiempo" name="WorkflowList">
@@ -252,10 +266,12 @@
                                                     <option value="15">15 años</option>
                                                     <option value="20">20 años</option>
                                                 </select>
+                                                <span>{{dinero}}</span>
                                                 <button type="submit" class="btn btn-primary" style="margin-left:20px;" ng-click="save()" value="Save" >
                                                     Comparar
                                                 </button>
                                         </div>
+                                      -->
                                     </div>
                                 </div>
                             </div>
@@ -331,6 +347,8 @@
         <script src="../assets/base/js/components-shop.js" type="text/javascript"></script>
         <script src="../assets/base/js/app.js" type="text/javascript"></script>
         <script src="../assets/base/js/scripts/scrolling-nav.js" type="text/javascript"></script>
+
+        <script src="../assets/tablas/js/planPersonal.js"></script>
 
 
         <script>
@@ -436,6 +454,5 @@
           ga('send', 'pageview');
 
         </script>
-        <script src="angular/planPersonal.js"></script>
     </body>
 </html>
