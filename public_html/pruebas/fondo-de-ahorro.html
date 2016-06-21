@@ -167,7 +167,7 @@
                                             <p>Mon - Fri: 8am - 8pm, Sat: 9am - 2:30pm</p>
                                             <br>
                                             <h4>+55 1106 3951</h4>
-                                            <a href="https://vinik.typeform.com/to/ZHTLAP" class="typeform-share btn btn-sm c-btn-square  c-btn-bold c-btn-uppercase c-theme-btn-verde" data-mode="2" target="_blank">Solicitar una llamada</a>
+                                            <a href="https://oscar78.typeform.com/to/ZHTLAP" class="typeform-share btn btn-sm c-btn-square  c-btn-bold c-btn-uppercase c-theme-btn-verde" data-mode="2" target="_blank">Solicitar una llamada</a>
 
 
                                         </div>
@@ -248,14 +248,14 @@
                 </div>
 
                 <div class="col-md-6 c-bg-white">
-                    <!-- BEGIN: Tabla 1  -->
-                    <img class="img-responsive img-center" style="width:229px;height:56px;" src="../assets/base/img/content/fondoAhorro/compara.jpg"/>
+                  <img class="img-responsive img-center" style="width:229px;height:56px;" src="../assets/base/img/content/fondoAhorro/compara.jpg"/>
 
-                    <div style="width:100%">
-                        <div>
-                            <canvas id="canvas" height="300" width="600"></canvas>
-                        </div>
-                    </div>
+                  <div style="width:100%">
+                      <div>
+                          <canvas id="canvas" height="300" width="600"></canvas>
+                      </div>
+                  </div>
+
                 </div>
             </div>
             <div class="col-md-12 c-bg-white">
@@ -266,46 +266,50 @@
                 </div>
 
                 <div class="bottom-align-text col-md-6 c-bg-white">
-                    <!-- BEGIN: Tabla 1  -->
-                            <img class="img-responsive" style="width:286px;height:56px;" src="../assets/base/img/content/fondoAhorro/personaliza.jpg"/>
-                            <div ng-controller="ExampleController">
-                            Aportaciones Mensuales:
-                                    <select id="aportaciones" name="WorkflowList">
-                                        <option value="1500">$1,500</option>
-                                        <option  selected="true" value="2000">$2,000</option>
-                                        <option value="2500">$2,500</option>
-                                        <option value="3000">$3,000</option>
-                                        <option value="3500">$3,500</option>
-                                        <option value="4000">$4,000</option>
-                                        <option value="4500">$4,500</option>
-                                        <option value="5000">$5,000</option>
-                                        <option value="5500">$5,500</option>
-                                        <option value="6000">$6,000</option>
-                                        <option value="6500">$6,500</option>
-                                        <option value="7000">$7,000</option>
-                                        <option value="7500">$7,500</option>
-                                        <option value="8000">$8,000</option>
-                                        <option value="8500">$8,500</option>
-                                        <option value="9000">$9,000</option>
-                                        <option value="9500">$9,500</option>
-                                        <option value="10000">$10,000</option>
-                                        <option value="10500">$10,500</option>
-                                        <option value="11000">$11,000</option>
-                                    </select>
+                              <img class="img-responsive" style="width:229px;height:56px;" src="../assets/base/img/content/fondoAhorro/personaliza.jpg"/>
+
+                              <div  style="margin-top:20px;margin-bottom:-20px;">
+                                <div ng-controller="ExampleController">
+                                  <div class="text-center" style="float:left;  margin-left:30px;">
+                                        Aportaciones Mensuales:
+                                                <select style="margin-left:5px;" id="aportaciones" ng-init="user.a = 2000" ng-model="user.a" ng-change="save(user)">
+                                                    <option value="1500">$1,500</option>
+                                                    <option  selected="true" value="2000">$2,000</option>
+                                                    <option value="2500">$2,500</option>
+                                                    <option value="3000">$3,000</option>
+                                                    <option value="3500">$3,500</option>
+                                                    <option value="4000">$4,000</option>
+                                                    <option value="4500">$4,500</option>
+                                                    <option value="5000">$5,000</option>
+                                                    <option value="5500">$5,500</option>
+                                                    <option value="6000">$6,000</option>
+                                                    <option value="6500">$6,500</option>
+                                                    <option value="7000">$7,000</option>
+                                                    <option value="7500">$7,500</option>
+                                                    <option value="8000">$8,000</option>
+                                                    <option value="8500">$8,500</option>
+                                                    <option value="9000">$9,000</option>
+                                                    <option value="9500">$9,500</option>
+                                                    <option value="10000">$10,000</option>
+                                                    <option value="10500">$10,500</option>
+                                                    <option value="11000">$11,000</option>
+                                                </select>
+                                  </div>
+                                  <div style="float:left; margin-left:30px;">
                                     Tiempo:
-                                    <select id="tiempo" name="WorkflowList">
-                                        <option value="5">5 años</option>
-                                        <option selected="true" value="10">10 años</option>
-                                        <option value="15">15 años</option>
-                                        <option value="20">20 años</option>
-                                    </select>
-                                    <button type="submit" class="btn btn-primary" style="margin-left:20px;" ng-click="save()" value="Save" >
-                                        Comparar
-                                    </button>
-                            </div>
-                            <div id="imageWrapper2">
-                              <img id="bottomImage" class="img-responsive" style="width:262px;height:77px;" src="../assets/base/img/content/fondoAhorro/select.jpg"/>
-                            </div>
+                                            <select style="margin-left:5px;" id="tiempo" ng-init="user.t = 10" ng-model="user.t" ng-change="save(user)" >
+                                                <option value="5">5 años</option>
+                                                <option selected="true" value="10">10 años</option>
+                                                <option value="15">15 años</option>
+                                                <option value="20">20 años</option>
+                                            </select>
+                                  </div>
+                                </div>
+                                <div id="imageWrapper2">
+                                  <img id="bottomImage" class="img-responsive" style="width:262px;height:77px;" src="../assets/base/img/content/fondoAhorro/select.jpg"/>
+                                </div>
+                                <br/>
+                              </div>
                 </div>
             </div>
 
@@ -328,83 +332,95 @@
                             <th data-field="pa" data-sortable="true">Plazo de ahorro mínimo</th>
                             <th data-field="ir" data-sortable="true">Indicador de Riesgo</th>
                             <th data-field="c" data-sortable="true">Comisión</th>
-                            <th data-field="ct">Contacto</th>
+                            <th data-field="ct" data-sortable="true">Contacto</th>
                         </tr>
                     </thead>
                 </table>
             </div>
 
-            <!-- BEGIN: CONTENT/SLIDERS/CLIENT-LOGOS-1 -->
-            <div class="c-content-box c-size-md c-bg-white" style="padding-bottom:50px;padding-top:0px;">
-                <div class="container">
-                    <div class="c-content-title-1">
-                       <h3 id="title"class="c-center c-font-bold" style="margin-top:0px;">Compara los mejores Fondos de Ahorro</h3>
-                    </div>
-                    <!-- Begin: Testimonals 1 component -->
-                    <div class="c-content-client-logos-slider-1" data-slider="owl" data-items="5" data-desktop-items="4" data-desktop-small-items="3" data-tablet-items="3" data-mobile-small-items="1" data-auto-play="1500" >
 
-                        <!-- Begin: Owlcarousel -->
-                        <div class="owl-carousel owl-theme c-theme" pagination="false">
-                            <div class="item">
-                                <a href="http://www.mnyl.com.mx/" target="_blank">
-                                    <img src="../assets/base/img/partners/segurosmonterreybw.jpg" alt="" />
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="https://www.gnp.com.mx" target="_blank">
-                                    <img src="../assets/base/img/partners/gnpbw.jpg" alt="" />
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="https://axa.mx/home" target="_blank">
-                                    <img src="../assets/base/img/partners/axabw.jpg" alt="" />
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="https://www.mapfre.com.mx/seguros-mx/particulares/" target="_blank">
-                                    <img src="../assets/base/img/partners/mapfrebw.jpg" alt="" />
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="http://www.mnyl.com.mx/" target="_blank">
-                                    <img src="../assets/base/img/partners/segurosmonterreybw.jpg" alt="" />
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="https://www.gnp.com.mx" target="_blank">
-                                    <img src="../assets/base/img/partners/gnpbw.jpg" alt="" />
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="https://axa.mx/home" target="_blank">
-                                    <img src="../assets/base/img/partners/axabw.jpg" alt="" />
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="http://www.portalprudential.com.mx/Paginas/inicio.aspx" target="_blank">
-                                    <img src="../assets/base/img/partners/prudential.jpg" alt="" />
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="http://www.bupa.com.mx/bupaMx/index.html" target="_blank">
-                                    <img src="../assets/base/img/partners/bupabw.jpg" alt="" />
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="https://www.palig.com/es" target="_blank">
-                                    <img src="../assets/base/img/partners/panamericanbw.jpg" alt="" />
-                                </a>
-                            </div>
 
+        </div>
+        <!-- END: PAGE CONTAINER -->
+        <!-- BEGIN: CONTENT/SLIDERS/CLIENT-LOGOS-1 -->
+        <div class="c-content-box c-size-md c-bg-white" style="padding-bottom:50px;padding-top:0px;">
+            <div class="container">
+                <div class="c-content-title-1">
+                   <h3 id="title"class="c-center c-font-bold" style="margin-top:0px;">Compara los mejores Fondos de Ahorro</h3>
+                </div>
+                <!-- Begin: Testimonals 1 component -->
+                <div class="c-content-client-logos-slider-1" data-slider="owl" data-items="5" data-desktop-items="4" data-desktop-small-items="3" data-tablet-items="3" data-mobile-small-items="1" data-auto-play="1500" >
+
+                    <!-- Begin: Owlcarousel -->
+                    <div class="owl-carousel owl-theme c-theme" pagination="false">
+                        <div class="item">
+                            <a href="http://www.mnyl.com.mx/" target="_blank">
+                                <img src="../assets/base/img/partners/segurosmonterreybw.jpg" alt="" />
+                            </a>
                         </div>
-                        <!-- End-->
+                        <div class="item">
+                            <a href="https://www.gnp.com.mx" target="_blank">
+                                <img src="../assets/base/img/partners/gnpbw.jpg" alt="" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="https://axa.mx/home" target="_blank">
+                                <img src="../assets/base/img/partners/axabw.jpg" alt="" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="https://www.mapfre.com.mx/seguros-mx/particulares/" target="_blank">
+                                <img src="../assets/base/img/partners/mapfrebw.jpg" alt="" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="http://w3.metlife.com.mx/" target="_blank">
+                                <img src="../assets/base/img/partners/metlife.jpg" alt="" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="https://www.palig.com/es" target="_blank">
+                                <img src="../assets/base/img/partners/panamericanbw.jpg" alt="" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="http://www.mnyl.com.mx/" target="_blank">
+                                <img src="../assets/base/img/partners/segurosmonterreybw.jpg" alt="" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="https://www.gnp.com.mx" target="_blank">
+                                <img src="../assets/base/img/partners/gnpbw.jpg" alt="" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="https://axa.mx/home" target="_blank">
+                                <img src="../assets/base/img/partners/axabw.jpg" alt="" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="http://www.portalprudential.com.mx/Paginas/inicio.aspx" target="_blank">
+                                <img src="../assets/base/img/partners/prudential.jpg" alt="" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="http://www.bupa.com.mx/bupaMx/index.html" target="_blank">
+                                <img src="../assets/base/img/partners/bupabw.jpg" alt="" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="https://www.palig.com/es" target="_blank">
+                                <img src="../assets/base/img/partners/panamericanbw.jpg" alt="" />
+                            </a>
+                        </div>
+
                     </div>
                     <!-- End-->
                 </div>
+                <!-- End-->
             </div>
-            <!-- END: CONTENT/SLIDERS/CLIENT-LOGOS-1 -->
         </div>
-        <!-- END: PAGE CONTAINER -->
+        <!-- END: CONTENT/SLIDERS/CLIENT-LOGOS-1 -->
         <!-- BEGIN: LAYOUT/FOOTERS/FOOTER-5 -->
         <footer class="c-layout-footer c-layout-footer-3 c-bg-dark">
           <div class="c-postfooter">
@@ -465,38 +481,36 @@
             <script src="../assets/tablas/js/app.js"></script>
         <!-- End necesario Grafica -->
 
-        <script src="../angular/fondoDeAhorro.js"></script>
-
         <script>
-            $(document).ready(function()
-            {
-              if ($(window).width() < 990) {
-                        $("#imageWrapper1").hide();
-                        $("#imageWrapper2").show();
-              };
-              if ($(window).width() > 990) {
-                    $("#imageWrapper1").show();
-                    $("#imageWrapper2").hide();
-              };
+        $(document).ready(function()
+        {
+            if ($(window).width() < 990) {
+                      $("#imageWrapper1").hide();
+                      $("#imageWrapper2").show();
+            };
+            if ($(window).width() > 990) {
+                  $("#imageWrapper1").show();
+                  $("#imageWrapper2").hide();
+            };
 
-              $(window).resize(function() {
-                  if ($(window).width() > 990) {
-                    $("#imageWrapper1").show();
-                    $("#imageWrapper2").hide();
-                  };
-                  if ($(window).width() < 990) {
-                    $("#imageWrapper1").hide();
-                    $("#imageWrapper2").show();
-                  };
+            $(window).resize(function() {
+                if ($(window).width() > 990) {
+                  $("#imageWrapper1").show();
+                  $("#imageWrapper2").hide();
+                };
+                if ($(window).width() < 990) {
+                  $("#imageWrapper1").hide();
+                  $("#imageWrapper2").show();
+                };
 
-              });
-
-
-
-                $("#form").show();
+            });
 
 
-                App.init(); // init core
+
+              $("#form").show();
+
+
+              App.init(); // init core
             });
         </script>
         <!-- END: THEME SCRIPTS -->
@@ -507,15 +521,15 @@
         <!--Start of Tawk.to Script-->
 
         <script type="text/javascript">
-          var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-          (function(){
-          var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-          s1.async=true;
-          s1.src='https://embed.tawk.to/567af1010865e0790f5937b1/default';
-          s1.charset='UTF-8';
-          s1.setAttribute('crossorigin','*');
-          s0.parentNode.insertBefore(s1,s0);
-          })();
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/567af1010865e0790f5937b1/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
         </script>
 
         <!--End of Tawk.to Script-->
