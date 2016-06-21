@@ -1,0 +1,675 @@
+AWSTATS DATA FILE 7.4 (build 20140726)
+# If you remove this file, all statistics for date 201604 will be lost/reset.
+# Last config file used to build this data file was /home/emiliogzzguerra/tmp/awstats/awstats.vinik.com.mx.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 28
+POS_GENERAL 2016                
+POS_TIME 2680                
+POS_VISITOR 14631               
+POS_DAY 20466               
+POS_DOMAIN 3531                
+POS_LOGIN 3932                
+POS_ROBOT 4087                
+POS_WORMS 4694                
+POS_EMAILSENDER 4825                
+POS_EMAILRECEIVER 4968                
+POS_SESSION 21230               
+POS_SIDER 21408               
+POS_FILETYPES 5103                
+POS_DOWNLOADS 5367                
+POS_OS 5415                
+POS_BROWSER 5708                
+POS_SCREENSIZE 6592                
+POS_UNKNOWNREFERER 6666                
+POS_UNKNOWNREFERERBROWSER 7107                
+POS_ORIGIN 7356                
+POS_SEREFERRALS 7496                
+POS_PAGEREFS 7653                
+POS_SEARCHWORDS 7936                
+POS_KEYWORDS 8088                
+POS_MISC 2344                
+POS_ERRORS 8147                
+POS_CLUSTER 3788                
+POS_SIDER_404 8247                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20160501002904 37 6253 8869481733695
+FirstTime 0
+LastTime 20160430162220
+LastUpdate 20160501051247 37 0 36 0 0
+TotalVisits 111                 
+TotalUnique 98                  
+MonthHostsKnown 0                   
+MonthHostsUnknown 170                 
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+QuickTimeSupport 0 0 0
+JavaEnabled 0 0 0
+JavascriptDisabled 0 0 0
+PDFSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+AddToFavourites 0 0 0
+RealPlayerSupport 0 0 0
+TotalMisc 0 0 0
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 14 14 358710 47 201 6244913
+1 1 1 49857 40 80 749738
+2 27 142 1509176 32 80 867182
+3 5 67 1457452 63 142 2607745
+4 6 79 1706746 54 100 879905
+5 2 3 69291 46 93 720790
+6 2 3 57706 31 100 957269
+7 8 183 5461115 33 204 3666938
+8 18 397 11428401 49 165 3961865
+9 9 241 4999650 44 68 1674752
+10 24 479 11390079 43 312 10314436
+11 8 197 4110148 35 162 1717465
+12 8 191 8039464 29 104 2450851
+13 8 256 5399556 34 82 2563652
+14 15 176 4647098 44 70 1588827
+15 1 2 57518 42 63 1082994
+16 9 196 6976267 21 79 546303
+17 9 139 3372844 57 162 2167384
+18 13 285 7486579 59 88 354614
+19 9 196 8433363 32 86 1698870
+20 4 67 2788336 30 128 4312540
+21 11 234 5879190 34 87 575114
+22 3 68 1371582 29 81 956929
+23 3 64 2772256 42 128 1830118
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 25 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 13
+mx 139 3127 87186968
+us 53 286 5544237
+es 6 195 4086512
+zz 5 5 200359
+ca 3 3 23547
+ar 2 55 2458072
+nl 2 2 57706
+ro 2 2 57706
+ua 1 1 49857
+no 1 1 49857
+ru 1 1 49857
+de 1 1 49857
+sk 1 1 7849
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 25 first Hits must be first (order not required for others)
+BEGIN_ROBOT 12
+googlebot 833 19819971 20160430224202 0
+bot[\s_+:,\.\;\/\\-] 401 11639398 20160430200445 0
+bingpreview 231 6477001 20160429230435 0
+crawl 226 9354120 20160415004303 0
+[\s_+:,\.\;\/\\-]bot 70 3418343 20160420212650 0
+google[_+\s]web[_+\s]preview 63 2764407 20160411084012 0
+spider 30 7278 20160430154603 0
+googlebot\-image 15 0 20160430152648 0
+no_user_agent 9 406705 20160425143125 0
+robot 7 97747 20160423211354 0
+slurp 4 15698 20160428063132 0
+php 1 7696 20160414115753 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 10
+css 1006 25885671 0 0
+png 679 4086519 0 0
+ico 51 469499 0 0
+woff 25 1535697 0 0
+woff2 34 1930463 0 0
+html 158 3477301 0 0
+js 1156 15655261 0 0
+jpg 517 46498125 0 0
+svg 2 120240 0 0
+gif 52 163608 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 0
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 17
+linuxandroid 641 21
+winlong 39 2
+winxp 71 8
+ios_iphone 403 23
+win2003 12 4
+win8 81 5
+macosx9 105 5
+macosx7 131 4
+winnt 519 25
+java 1 0
+linuxubuntu 1 1
+linux 121 40
+win7 238 19
+macosx 1231 48
+Unknown 9 4
+win8.1 75 6
+macosx8 2 2
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 43
+msie6.0 1 1
+chrome44.0.2403.125 1 1
+chrome40.0.2214.115 2 2
+chrome50.0.2661.89 64 2
+firefox20.0 7 7
+firefox10.0 8 8
+chrome49.0.2623.110 568 19
+chrome5.0.375.99 1 1
+chrome28.0.1500.94 64 2
+chrome28.0.1500.95 5 5
+firefox4.0 1 1
+chrome38.0.2125.111 1 1
+safari8.0.7 2 1
+safari6.1.6 131 4
+chrome39.0.0.0 65 3
+chrome26.0.1410.65 2 2
+firefox43.0 64 2
+msie7.0 12 3
+chrome37.0.2062.120 8 8
+firefox23.0 1 1
+chrome10.0.648.204 3 3
+safari8.0 129 7
+firefox3.6.10 1 1
+msie9.0 82 2
+chrome50.0.2661.86 128 4
+chrome49.0.2623.112 724 27
+Unknown 11 10
+firefox11.0 1 0
+chrome45.0.2454.99 1 1
+safari9.0.3 63 2
+chrome49.0.2623.87 104 4
+chrome49.0.2623.105 448 14
+safari9.1 452 14
+firefox30.0 1 1
+chrome49.0.2623.75 6 3
+safari8.0.4 67 2
+safari9.0 137 9
+mozilla 11 11
+chrome46.0.2486.0 64 2
+opera10.6 1 1
+chrome10.0.634.0 4 4
+firefox3.6.3 1 1
+safari 233 20
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 6
+Safari/10601.5.17.4_CFNetwork/720.5.7_Darwin/14.5.0_(x86_64) 20160409053738
+Mozilla/5.0_(compatible;_SiteExplorer/1.0b;__http://siteexplorer.info/) 20160426021150
+Ruby 20160407002453
+Whibse 20160430162220
+Safari/11601.4.4_CFNetwork/760.2.6_Darwin/15.3.0_(x86_64) 20160408192550
+Safari/11601.5.17.1_CFNetwork/760.4.2_Darwin/15.4.0_(x86_64) 20160427113945
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 4
+Apache-HttpClient/4.3.5_(java_1.5) 20160407171637
+Ruby 20160407002453
+Whibse 20160430162220
+python-requests/2.7.0_CPython/2.7.6_Linux/3.13.0-85-generic 20160428020527
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 115 152
+From1 1 1
+From2 19 22
+From3 8 8
+From4 74 3497
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 1
+google 19 22
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 25 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 5
+http://burger-imperia.com 4 4
+http://pizza-tycoon.com 1 1
+https://www.linkedin.com 1 1
+http://hvd-store.com 1 1
+http://hundejo.com 1 1
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 25 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 2
+206 10 482830
+404 963 0
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referrer
+BEGIN_SIDER_404 136
+/tag/hashtag/ 1 -
+/productos-y-servicios/video-vigilancia/ 1 -
+/tag/windows/ 2 -
+/tag/facebook/ 1 -
+/productos-y-servicios/reparaciones/ 3 -
+/admin.php 2 -
+/assets/base/img/content/misc/step3-angle-right.png 1 http://vinik.com.mx/assets/base/css/components.css
+/microsoft-quiere-que-windows-phone-sea-un-exito/ 1 -
+/wp-content/plugins/wp-post-frontend/js/plupload-2.1.2/examples/upload.php 10 -
+/wp-content/plugins/wp-symposium/server/php/index.php 10 -
+/portafolios.html 14 -
+/filosofia/ 3 -
+/wp-content/uploads/2013/07/facebook-AP-generic-1200-440x330-300x224.jpg 1 -
+/js/jquery.scrollTo.js 1 -
+/tag/mexico/ 4 -
+/wp-content/plugins/db-backup/download.php 10 -
+/assets/base/img/content/line-icons/dark3.png 1 http://vinik.com.mx/assets/base/css/plugins.css
+/wp-content/plugins/peugeot-music-plugin/js/plupload/examples/upload.php 6 -
+/xmlrpc.php 3 -
+/login.html 1 -
+/el-papa-perdonara-tus-pecados-por-twitter/ 4 -
+/reporte-online/ 3 -
+/apple-recompensara-a-quien-le-a-ayude-contra-la-pirateria/ 1 -
+/televisa-acuerda-compra-de-cablecom/ 3 -
+/el-primer-unboxing-de-xbox-one/ 9 -
+/vinik-noticias/ 3 -
+/tipo-inversionistas.html 14 -
+/assets/base/img/content/line-icons/grey1.png 1 http://vinik.com.mx/assets/base/css/components.css
+/tag/gadget/ 2 -
+/faq.html 1 -
+/impresora-de-tejidos-humanos/ 3 -
+/administrator/ 2 -
+/tag/vinik/ 1 -
+/mexicano-y-su-propia-version-de-google-glass/ 4 -
+/explotan-a-trabajadores-de-fabricas-de-likes/ 5 -
+/wp-login.php 7 -
+/assets/base/img/content/line-icons/default.png 1 http://vinik.com.mx/assets/base/css/components.css
+/author/vinikcom/ 8 -
+/wp/wp-admin/ 2 -
+/assets/plugins/owl-carousel/grabbing.png 1 http://vinik.com.mx/assets/plugins/owl-carousel/owl.carousel.css
+/templates/ja_zeolite_ii 1 -
+/wp-content/plugins/malapascua-agency/js/plupload/examples/upload.php 10 -
+/wp-content/plugins/reflex-gallery/admin/scripts/FileUploader/php.php 8 -
+/tag/mexico/page/2/ 1 -
+/tag/grimaldo/ 2 -
+/wp-admin/admin-ajax.php 31 -
+/assets/base/css/assets/base/img/content/backgrounds/bg-111.jpg 1 http://vinik.com.mx/assets/base/css/custom.css
+/productos-y-servicios/venta-de-equipo/ 1 -
+/wp-content/themes/infocus/lib/scripts/dl-skin.php 10 -
+/virus-en-whatsapp/ 3 -
+/mision-y-vision/ 1 -
+/license.php 1 -
+/index.php/component/index.php 1 -
+/js/jquery.nav.js 1 -
+/valores.html 2 -
+/wp-content/plugins/front-end-editor/lib/aloha-editor/plugins/extra/draganddropfiles/demo/wp-classes.php 8 -
+/assets/plugins/revo-slider/assets/transparent.png 1 http://vinik.com.mx/assets/plugins/revo-slider/css/settings.css
+/administrator/index.php 2 -
+/acer-liquid-s2-primer-smartphone-que-graba-en-4k/ 1 -
+/profe-que-exhibio-a-alumna-por-insultarla-en-twitter-es-removida/ 1 -
+/wordpress/wp-admin/ 2 -
+/asesina-a-su-exnovia-y-se-delata-en-facebook/ 2 -
+/wp-content/themes/churchope/lib/downloadlink.php 10 -
+/contacto/ 1 -
+/wp-content/plugins/levelfourstorefront/scripts/administration/dbuploaderscript.php 10 -
+/robots.txt 321 -
+/wp-content/plugins/levelfourstorefront/products/wp-classes.php 10 -
+/como-funciona.html 2 -
+/tag/redes-sociales/page/2/ 1 -
+//wp-admin/admin-ajax.php 1 -
+/js/easing.js 1 -
+/donde-estamos/ 2 -
+/wp-content/plugins/front-end-editor/lib/aloha-editor/plugins/extra/draganddropfiles/demo/upload.php 7 -
+/feed/ 2 -
+/wp-content/plugins/acf-frontend-display/js/blueimp-jQuery-File-Upload-d45deb1/server/php/index.php 4 -
+/modules/mod_login/tmpl/www.paypal.com/cgi-bin/error_login.html 1 -
+/wordpress/wp-login.php 1 http://vinik.com.mx/wordpress/wp-login.php
+/wp-admin/tools.php 7 -
+/js/jquery.magnific-popup.js 1 -
+/category/productos-y-servicios/ 2 -
+/tag/google/ 2 -
+/wp-content/plugins/formcraft/file-upload/server/php/index.php 3 -
+/wp-admin/ 2 -
+/assets/base/img/content/line-icons/dark1.png 1 http://vinik.com.mx/assets/base/css/plugins.css
+/wp-content/plugins/front-end-upload/lib/plupload/examples/upload.php 4 -
+/tag/hoynovinoachambear/ 2 -
+/assets/base/img/content/line-icons/white.png 76 http://www.vinik.com.mx/assets/base/css/plugins.css
+/wp-content/plugins/sexy-contact-form/includes/fileupload/index.php 10 -
+/tag/medicina/ 1 -
+/calculadora-rendimientos.html 2 -
+/wp-content/themes/awake/lib/scripts/dl-skin.php 8 -
+/historia.html 16 -
+/google-acelera-batalla-contra-apple/ 2 -
+/tag/windows-phone/ 1 -
+/tag/informe-de-gobierno/ 2 -
+/index.php/nuestros-productos 4 -
+/administrator/components/com_extplorer/style/opacity.js 1 -
+/apple-touch-icon-120x120.png 6 -
+/js/jquery-1.11.1.min.js 1 -
+/contact.html 1 -
+/blog/wp-admin/ 2 -
+/blog/wp-login.php 1 http://vinik.com.mx/blog/wp-login.php
+/apple-touch-icon-120x120-precomposed.png 6 -
+/js/move-top.js 1 -
+/assets/plugins/owl-carousel/AjaxLoader.gif 1 http://vinik.com.mx/assets/plugins/owl-carousel/owl.theme.css
+/visionymision.html 3 -
+/test/wp-admin/ 1 -
+/reportan-en-sonora-nuevo-caso-de-suicidio-anunciado-por-facebook/ 2 -
+/wp-content/plugins/wpshop/includes/ajax.php 5 -
+/apple-touch-icon.png 34 -
+/old/wp-admin/ 1 -
+/waze-pone-en-el-mapa-a-israel/ 3 -
+/tag/redes-sociales/ 1 -
+/wp-admin/admin.php 20 -
+/los-legisladores-que-faltaron-al-primer-dia-del-periodo-ordinario/ 3 -
+/wp-content/themes/elegance/lib/scripts/dl-skin.php 10 -
+/reset.css 1 -
+/tag/twitter/ 3 -
+/apple-touch-icon-precomposed.png 22 -
+/wp-content/plugins/use-your-drive/includes/jquery-file-upload/server/php/index.php 8 -
+/modules/help/help.css 1 -
+/assets/base/img/content/line-icons/green2.png 1 http://vinik.com.mx/assets/base/css/themes/green2.css
+/nuestros-valores/ 2 -
+/tag/tecnologia/ 2 -
+/wp-content/plugins/the-viddler-wordpress-plugin/js/plupload/examples/upload.php 12 -
+/tag/smart-phone/ 1 -
+/wp-content/plugins/aviary-image-editor-add-on-for-gravity-forms/includes/upload.php 4 -
+/este-mensaje-se-autodestruira-en-5-4-3-la-aplicacion-para-enviar-mensajes-que-se-autodestruyen-despues-de-un-rato/ 7 -
+/category/uncategorized/ 2 -
+/modules/mod_login/tmpl/paypal.com/cgi-bin/error_login.html 2 -
+/img/bupa.jpg 1 -
+/index.php 16 -
+/tag/microsoft/ 2 -
+/blog-post.html 1 -
+/wp-content/plugins/ultimate-product-catalogue/product-sheets/wp-classes.php 7 -
+/assets/global/plugins/excanvas.min.js 3 -
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 25 first Hits must be first (order not required for others)
+BEGIN_VISITOR 170
+54.200.23.122 11 50 550344 20160428020227
+54.187.9.44 10 49 542544 20160428020527
+189.241.177.19 9 71 1499460 20160418142543
+177.247.99.20 8 8 150502 20160407005208
+187.210.189.224 7 137 1480279 20160417101547
+187.226.203.11 5 69 2922420 20160409190015
+130.211.119.117 5 5 200359 20160407002454
+189.206.175.186 5 81 1550642 20160426100216
+148.241.1.172 5 131 2696065 20160418171335
+189.225.204.103 4 121 4376505 20160415095228
+187.190.164.32 4 128 2699778 20160428113521
+189.210.47.20 3 143 3203706 20160420092559
+187.190.155.212 3 65 2811121 20160406160402
+201.141.27.80 3 64 2814264 20160408073756
+177.233.61.3 3 64 1361092 20160419214809
+187.237.14.195 3 64 1361092 20160426084831
+187.170.99.225 3 101 2254432 20160422074022
+38.100.21.78 3 11 270155 20160419044922
+187.226.162.186 3 65 1372466 20160427221259
+189.189.211.201 3 64 1361092 20160413180552
+66.249.85.159 3 22 787816 20160413204953
+201.141.131.162 3 29 625962 20160417180528
+189.203.218.117 2 64 1349889 20160425094615
+187.237.14.224 2 64 1349889 20160426134931
+83.56.4.176 2 67 1386734 20160429044242
+204.79.180.147 0 2 4359 
+204.79.180.55 0 1 359 
+204.79.180.79 0 2 3145 
+187.227.17.142 1 2 19223 20160415104202
+40.77.167.5 0 6 35537 
+204.79.180.145 0 1 261 
+187.161.82.57 2 64 2761264 20160405081856
+148.241.1.174 2 40 367533 20160418141825
+204.79.180.0 0 1 1423 
+204.79.180.109 0 1 606 
+204.79.180.228 0 1 3535 
+204.79.180.10 0 1 24717 
+204.79.180.132 0 1 3819 
+208.43.225.85 2 2 12480 20160426021150
+66.249.85.252 0 1 7661 
+66.249.85.156 0 26 841379 
+189.223.60.140 1 5 18339 20160412221743
+204.79.180.38 0 1 3852 
+204.79.180.140 0 1 528 
+52.73.242.178 2 2 57706 20160412081141
+201.141.145.147 2 64 2761264 20160408180710
+204.79.180.205 0 1 11650 
+204.79.180.203 0 1 10732 
+204.79.180.231 0 2 44264 
+204.79.180.111 0 1 9820 
+187.227.48.77 1 1 7849 20160422142251
+204.79.180.75 0 1 964 
+189.245.168.175 2 64 1364617 20160425094001
+204.79.180.233 0 1 20177 
+52.207.233.20 1 1 7849 20160415234818
+189.225.250.41 2 64 2761264 20160410194930
+52.90.188.138 1 1 7849 20160416000523
+52.71.64.37 1 1 49857 20160407171636
+176.226.164.126 1 1 49857 20160429032746
+54.144.178.52 1 1 49857 20160427192618
+187.178.130.42 2 64 2761264 20160406163656
+189.245.53.193 2 64 1364617 20160428111846
+204.79.180.255 0 1 2610 
+176.126.252.11 1 1 7849 20160426060218
+189.144.118.255 0 1 0 
+204.79.180.118 0 2 5317 
+204.79.180.149 0 1 244 
+189.144.150.16 1 2 7849 20160424093940
+52.73.200.208 1 1 49857 20160407083644
+204.79.180.12 0 1 3063 
+204.79.180.57 0 1 3819 
+189.149.56.232 2 63 1338515 20160420074553
+187.190.155.0 2 64 1349889 20160425210246
+204.79.180.134 0 1 3719 
+90.174.2.53 2 64 1349889 20160419115901
+189.213.112.22 2 63 1338515 20160414162432
+201.141.133.98 1 1 49857 20160402185728
+142.54.167.98 1 1 49857 20160428010206
+204.79.180.47 0 1 3063 
+204.79.180.102 0 2 32995 
+52.36.222.62 1 1 7849 20160430162220
+204.79.180.158 0 1 1423 
+204.79.180.4 0 1 20177 
+204.79.180.152 0 1 359 
+200.78.16.209 1 1 7849 20160413080412
+204.79.180.135 0 1 3852 
+204.79.180.201 0 1 33225 
+54.174.44.34 1 1 7849 20160418200636
+187.140.80.60 2 64 1349889 20160413182025
+201.141.156.162 1 2 7849 20160416103027
+136.243.48.84 1 1 49857 20160409150139
+204.79.180.43 0 1 10732 
+193.90.12.90 1 1 49857 20160410191923
+216.81.71.70 1 1 49857 20160422034313
+204.79.180.81 0 1 3719 
+187.167.170.200 2 64 2761264 20160404191226
+74.208.180.157 1 1 49857 20160409082434
+186.128.130.251 2 55 2458072 20160401122318
+204.79.180.250 0 1 2161 
+204.79.180.29 0 1 2707 
+204.79.180.70 0 1 1747 
+204.79.180.242 0 2 45467 
+204.79.180.92 0 1 6465 
+204.79.180.168 0 2 49132 
+204.79.180.49 0 1 1747 
+52.87.164.70 1 1 7849 20160416054108
+204.79.180.52 0 1 694 
+188.163.76.54 1 1 49857 20160421023454
+189.144.115.124 1 2 0 20160401120101
+204.79.180.230 0 1 575 
+216.81.71.81 1 1 49857 20160416120823
+62.212.73.49 1 1 7849 20160416072334
+199.87.154.255 1 1 7849 20160426141232
+204.79.180.19 0 2 36434 
+204.79.180.24 0 1 1899 
+187.237.14.230 1 2 0 20160410112657
+216.69.191.97 1 1 49857 20160419095906
+204.79.180.249 0 1 24717 
+54.84.109.62 1 1 7849 20160421030530
+65.19.167.132 1 1 7849 20160418172444
+204.79.180.240 1 1 7849 20160424210506
+187.230.9.249 1 1 71508 20160403103930
+204.79.180.232 0 1 26530 
+204.79.180.141 1 1 4631 20160424024347
+187.191.6.53 2 64 2761264 20160402212026
+204.79.180.35 0 1 13523 
+204.79.180.99 0 1 1899 
+85.248.227.163 1 1 7849 20160427170201
+204.79.180.82 0 1 287 
+204.79.180.15 0 1 276 
+187.237.231.91 2 64 1349889 20160418132036
+204.79.180.138 0 1 9820 
+201.141.154.162 0 1 0 
+189.225.189.5 2 63 2764407 20160404144205
+66.249.85.162 2 22 1231957 20160411084011
+204.79.180.196 0 1 1148 
+189.172.220.5 2 63 2749679 20160408105636
+201.141.154.157 2 64 2761264 20160406203459
+204.79.180.96 0 1 4017 
+142.4.218.201 2 2 15698 20160428020124
+204.79.180.90 0 1 3535 
+131.178.200.65 2 64 1349889 20160419130515
+189.245.15.89 2 64 1349889 20160425100536
+204.79.180.160 0 1 8634 
+204.79.180.127 0 1 606 
+204.79.180.246 0 1 8634 
+204.79.180.34 0 1 244 
+54.198.34.137 1 1 49857 20160429062833
+216.81.71.99 1 1 49857 20160428042749
+187.237.14.218 0 1 0 
+189.189.65.215 2 64 2761264 20160411101014
+189.217.76.90 2 64 1349889 20160421130542
+187.153.61.78 2 63 2749679 20160411082812
+201.134.170.15 2 64 2761264 20160406124916
+52.70.48.63 1 2 57518 20160407171637
+187.216.232.111 2 64 1364617 20160414084718
+46.182.106.190 1 1 49857 20160410164916
+204.79.180.254 0 1 287 
+90.174.2.88 2 64 1349889 20160417034906
+93.115.95.207 1 1 49857 20160411100237
+204.79.180.212 0 1 276 
+204.79.180.153 0 1 964 
+204.79.180.103 0 1 1148 
+201.157.45.187 2 63 1353243 20160415175500
+201.141.158.98 1 2 49857 20160408192549
+204.79.180.197 0 1 33225 
+204.79.180.166 0 1 5443 
+204.79.180.121 0 1 694 
+204.79.180.174 0 1 2161 
+204.79.180.13 0 1 13523 
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 29
+20160401 3 57 2458072 2
+20160402 3 65 2811121 2
+20160403 3 65 2835915 2
+20160404 4 127 5525671 2
+20160405 2 66 2776586 1
+20160406 12 322 13906034 7
+20160407 16 18 508093 5
+20160408 10 200 9021417 5
+20160409 5 68 2922420 4
+20160410 5 68 2860978 4
+20160411 8 194 6972131 5
+20160412 3 8 45411 3
+20160413 7 137 2773590 4
+20160414 4 127 2703132 2
+20160415 8 183 3784289 5
+20160416 5 6 81253 5
+20160417 12 230 3456130 3
+20160418 16 179 3232580 6
+20160419 14 338 7376554 7
+20160420 4 120 2508343 3
+20160421 4 67 1407595 3
+20160422 4 57 1358193 3
+20160424 3 78 603476 3
+20160425 8 256 5414284 4
+20160426 13 212 4281952 6
+20160427 5 67 1430172 4
+20160428 31 295 5272695 7
+20160429 4 69 1486448 3
+20160430 1 1 7849 1
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 4
+2mn-5mn 2
+0s-30s 105
+30s-2mn 3
+30mn-1h 1
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 25 first Pages must be first (order not required for others)
+BEGIN_SIDER 6
+/ 138 3265255 107 62
+/assets/plugins/font-awesome/fonts/fontawesome-webfont.woff2 34 1930463 1 30
+/assets/plugins/font-awesome/fonts/fontawesome-webfont.woff 22 1358607 1 13
+/aviso-de-privacidad.html 10 140559 0 3
+/aviso-legal.html 10 71487 2 3
+/assets/plugins/simple-line-icons/fonts/Simple-Line-Icons.woff 3 177090 0 0
+END_SIDER

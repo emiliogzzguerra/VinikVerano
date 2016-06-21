@@ -1,0 +1,652 @@
+AWSTATS DATA FILE 7.4 (build 20140726)
+# If you remove this file, all statistics for date 201603 will be lost/reset.
+# Last config file used to build this data file was /home/emiliogzzguerra/tmp/awstats/awstats.vinik.com.mx.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 28
+POS_GENERAL 2016                
+POS_TIME 2681                
+POS_VISITOR 12571               
+POS_DAY 18081               
+POS_DOMAIN 3549                
+POS_LOGIN 4031                
+POS_ROBOT 4186                
+POS_WORMS 4771                
+POS_EMAILSENDER 4902                
+POS_EMAILRECEIVER 5045                
+POS_SESSION 18901               
+POS_SIDER 19102               
+POS_FILETYPES 5180                
+POS_DOWNLOADS 5497                
+POS_OS 5545                
+POS_BROWSER 5834                
+POS_SCREENSIZE 6809                
+POS_UNKNOWNREFERER 6883                
+POS_UNKNOWNREFERERBROWSER 7301                
+POS_ORIGIN 7492                
+POS_SEREFERRALS 7634                
+POS_PAGEREFS 7800                
+POS_SEARCHWORDS 8034                
+POS_KEYWORDS 8194                
+POS_MISC 2345                
+POS_ERRORS 8261                
+POS_CLUSTER 3887                
+POS_SIDER_404 8385                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20160401004927 41 7533 19731434231397
+FirstTime 0
+LastTime 20160331170243
+LastUpdate 20160401050102 41 0 40 0 0
+TotalVisits 144                 
+TotalUnique 122                 
+MonthHostsKnown 0                   
+MonthHostsUnknown 141                 
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+QuickTimeSupport 0 0 0
+JavaEnabled 0 0 0
+JavascriptDisabled 0 0 0
+PDFSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+AddToFavourites 0 2 0
+RealPlayerSupport 0 0 0
+TotalMisc 0 0 0
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 13 268 11585856 39 139 4780688
+1 1 2 145299 27 77 2745967
+2 4 66 2860978 29 104 3787643
+3 1 1 49857 19 74 616978
+4 10 76 3253748 23 41 948178
+5 6 68 2917758 35 119 4401854
+6 7 76 3465813 36 77 1676536
+7 7 73 2974544 31 66 2534289
+8 29 443 14078591 42 116 1872873
+9 15 332 10416591 23 43 552207
+10 11 116 4877865 28 108 3356363
+11 16 394 17026543 40 89 2617174
+12 27 676 29012435 30 80 862957
+13 8 49 2261326 27 81 2328848
+14 17 393 17432526 15 33 665372
+15 2 64 2761264 22 56 1965838
+16 12 96 3107662 39 66 591702
+17 17 390 15661156 32 62 2458076
+18 11 142 5989375 38 90 2442909
+19 4 66 2864965 26 115 4534988
+20 11 197 8472097 42 152 3587450
+21 16 327 10399267 50 96 2401149
+22 8 133 5755192 20 92 2230782
+23 12 198 8582934 40 89 2021456
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 25 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 18
+mx 161 3754 147791768
+us 59 347 14703517
+ar 10 258 11162516
+cn 7 131 5522528
+gb 4 4 206351
+pl 4 4 113560
+no 3 64 2825724
+ru 3 3 156494
+ch 3 65 2811121
+fr 2 4 107811
+zz 2 3 107224
+nl 2 2 99714
+md 1 1 49857
+jp 1 2 50444
+ro 1 1 49857
+sk 1 1 49857
+lu 1 1 49857
+de 0 1 95442
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 25 first Hits must be first (order not required for others)
+BEGIN_ROBOT 12
+googlebot 645 32890590 20160331232250 0
+bot[\s_+:,\.\;\/\\-] 383 14066744 20160331213307 0
+bingpreview 81 3352122 20160315065543 0
+[\s_+:,\.\;\/\\-]bot 60 2651294 20160317035425 0
+spider 37 284214 20160331211313 0
+crawl 19 856317 20160331233648 0
+no_user_agent 8 398856 20160329113312 0
+slurp 6 157780 20160327182955 0
+googlebot\-image 5 15224 20160319004705 0
+robot 5 218963 20160330204531 0
+php 2 15392 20160325134931 0
+curl 1 49857 20160320185354 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 13
+css 1274 77352131 0 0
+eot 1 60767 0 0
+png 855 5087265 0 0
+ico 58 532910 0 0
+cgi 8 29112 0 0
+woff 23 1226224 0 0
+woff2 58 3179680 0 0
+html 169 7452143 0 0
+jpg 714 56189873 0 0
+js 1411 34171698 0 0
+Unknown 6 111399 0 0
+gif 67 198896 0 0
+svg 2 361544 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 0
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 16
+linuxandroid 777 32
+macosx6 2 1
+winxp 270 18
+ios_iphone 679 34
+win2003 23 7
+win8 64 4
+macosx9 129 6
+ios_ipad 159 8
+macosx7 64 2
+winnt 257 9
+linuxubuntu 1 1
+linux 76 13
+win7 619 41
+macosx 765 40
+Unknown 115 11
+win8.1 646 38
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 49
+safari5.0.3 1 1
+firefox28.0 1 1
+chrome44.0.2403.125 1 1
+msie6.0 2 1
+firefox44.0 191 6
+chrome49.0.2623.110 64 2
+android 1 1
+chrome48.0.2564.116 1220 54
+chrome5.0.375.99 1 1
+chrome28.0.1500.95 1 1
+firefox4.0 1 1
+chrome38.0.2125.111 2 2
+safari6.1.6 64 2
+msie8.0 6 4
+chrome46.0.2490.76 64 2
+firefox6.0.2 3 3
+msie7.0 24 7
+chrome37.0.2062.120 9 9
+chrome10.0.648.204 10 10
+chrome43.0.2357.93 64 2
+safari8.0 87 3
+chrome49.0.2623.91 257 9
+msie9.0 15 1
+Unknown 6 6
+firefox11.0 3 0
+safari7.1 1 1
+firefox1.5.0.7 2 2
+safari9.0.3 145 5
+chrome49.0.2623.87 806 36
+chrome37.0.2049.0 3 2
+chrome48.0.2564.95 390 17
+chrome49.0.2623.108 64 2
+chrome49.0.2623.75 4 2
+firefox45.0 64 2
+msie11.0 65 3
+firefox3. 1 1
+chrome18.0.1025.133 1 1
+firefox33.0 1 1
+safari9.0 494 29
+mozilla 111 10
+firefox22.0 1 0
+chrome42.0.2311.135 1 1
+msie10.0 3 2
+firefox6.0 2 1
+chrome41.0.2228.0 1 1
+chrome40.0.2214.93 1 1
+safari 323 12
+firefox3.6.8 1 1
+firefox3.6.13 63 2
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 6
+python-requests/2.9.1 20160313172428
+WhatsApp/2.12.510_A 20160315233726
+Mozilla/4.0_(compatible;) 20160329111231
+Safari/11601.4.4_CFNetwork/760.2.6_Darwin/15.3.0_(x86_64) 20160328082303
+python-requests/2.8.1 20160327202253
+Mozilla/5.0_(compatible;_Lipperhey-Kaus-Australis/5.0;__https://www.lipperhey.com/en/about/) 20160304040831
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 3
+python-requests/2.9.1 20160313172428
+WhatsApp/2.12.510_A 20160315233726
+python-requests/2.8.1 20160327202253
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 121 286
+From1 1 1
+From2 36 37
+From3 10 10
+From4 97 4312
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 2
+google 33 33
+bing 3 4
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 25 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 3
+http://burger-imperia.com 8 8
+http://pizza-tycoon.com 1 1
+http://www.linkedin.com 1 1
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 1
+vinik 1
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 25 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 1
+vinik 1
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 4
+302 160 36914
+206 47 987302
+301 1 242
+404 600 0
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referrer
+BEGIN_SIDER_404 112
+/phpMyAdmin/index.php 1 -
+/tag/diputados/ 1 -
+/tag/hashtag/ 1 -
+/productos-y-servicios/video-vigilancia/ 1 -
+/robots.txt 227 -
+/tag/windows/ 1 -
+/admin.php 2 -
+/css/colors/navy.css 1 -
+/productos-y-servicios/reparaciones/ 1 -
+/como-funciona.html 1 -
+/tag/facebook/ 1 -
+/microsoft-quiere-que-windows-phone-sea-un-exito/ 2 -
+/tag/redes-sociales/page/2/ 1 -
+/frugalika/ 1 -
+/wp-content/uploads/2013/07/facebook-AP-generic-1200-440x330-300x224.jpg 1 -
+/portafolios.html 12 -
+/donde-estamos/ 2 -
+/mdocs-posts/ 1 -
+/administrator.php 1 -
+/frugalika/inicio.html 1 -
+/css/bootstrap.css 1 -
+/tag/google/ 2 -
+/wp-admin/ 2 -
+/assets/base/img/content/line-icons/white.png 80 http://www.vinik.com.mx/assets/base/css/plugins.css
+/tag/hoynovinoachambear/ 1 -
+/tag/medicina/ 2 -
+/xmlrpc.php 2 -
+/wp-content/plugins/helo/helo.php 2 -
+/calculadora-rendimientos.html 2 -
+/frugalika/todo.html 1 -
+/pruebas/assets/base/js/scripts/pages/index-gallery.js 7 http://vinik.com.mx/pruebas/seguro-de-vida.html
+/el-papa-perdonara-tus-pecados-por-twitter/ 3 -
+/login.html 2 -
+/css/styles.css 1 -
+/historia.html 8 -
+/js/comment-reply.js 1 -
+/wp-includes/class-wp-media.php 1 -
+/reporte-online/ 1 -
+/tag/windows-phone/ 1 -
+/google-acelera-batalla-contra-apple/ 7 -
+/tag/informe-de-gobierno/ 1 -
+/televisa-acuerda-compra-de-cablecom/ 2 -
+/apple-recompensara-a-quien-le-a-ayude-contra-la-pirateria/ 1 -
+/vinik-noticias/ 1 -
+/el-primer-unboxing-de-xbox-one/ 2 -
+/tipo-inversionistas.html 13 -
+/equipo.html 3 -
+/css/style.css 2 -
+/js/coolstuff2.js 1 -
+/apple-touch-icon-120x120.png 10 -
+/wp-content/uploads/2013/08/facebook-AP-generic-1200-440x330-300x2241-150x150.jpg 2 -
+/contact.html 2 -
+/js/superfish.js 1 -
+/wp-content/plugins/dzs-zoomsounds/admin/admin.js 1 -
+/faq.html 3 -
+/scripts/jquery.isotope.min.js 1 -
+/pruebas/assets/base/js/scripts/pages/faq.js 6 http://vinik.com.mx/pruebas/seguro-de-vida.html
+/administrator/ 2 -
+/blog/wp-admin/ 2 -
+/apple-touch-icon-120x120-precomposed.png 10 -
+/mexicano-y-su-propia-version-de-google-glass/ 1 -
+/tag/vinik/ 1 -
+/explotan-a-trabajadores-de-fabricas-de-likes/ 1 -
+/visionymision.html 9 -
+/wp-login.php 5 -
+/imageextra/Descargas/DLD%20en%20tecamac%20.jpg 2 -
+/test/wp-admin/ 2 -
+/author/vinikcom/ 1 -
+/reportan-en-sonora-nuevo-caso-de-suicidio-anunciado-por-facebook/ 3 -
+/wp/wp-admin/ 2 -
+/pruebas/assets/base/js/scripts/scrolling-nav.js 6 http://vinik.com.mx/pruebas/seguro-de-vida.html
+/administrator/components/com_bt_portfolio/helpers/uploadify/swfobject.js 1 -
+/apple-touch-icon.png 32 -
+/wp-admin/ajax-module.php 1 -
+/templates/ja_zeolite_ii 1 -
+/prueba/segurodegastosmedicos.html 1 -
+/js/thematic-dropdowns.js 1 -
+/wp-content/uploads/2013/08/facebook_i_like_you-1680x1050-1.jpg 1 -
+/old/wp-admin/ 2 -
+/waze-pone-en-el-mapa-a-israel/ 5 -
+/wp-admin/admin-ajax.php 2 -
+/productos-y-servicios/venta-de-equipo/ 1 -
+/wp-content/uploads/2013/08/Xbox-One-el-primer-unboxing-oficial.jpg 1 -
+/tag/google-glass/ 2 -
+/virus-en-whatsapp/ 4 -
+/los-legisladores-que-faltaron-al-primer-dia-del-periodo-ordinario/ 3 -
+/scripts/jquery.selectnav.js 1 -
+/mision-y-vision/ 1 -
+/js/jquery.min.js 1 -
+/css/magnific-popup.css 1 -
+/apple-touch-icon-precomposed.png 12 -
+/js/load.js 1 -
+/valores.html 9 -
+/nuestros-valores/ 3 -
+/wp-content/themes/antioch/lib/scripts/download.php 1 -
+/wp-content/uploads/2013/01/cropped-cropped-logoss.png 1 -
+/productos-y-servicios/polizas-de-mantenimiento/ 1 -
+/prueba/segurogastosmedicos.html 1 -
+/acer-liquid-s2-primer-smartphone-que-graba-en-4k/ 2 -
+/js/supersubs.js 1 -
+/wordpress/wp-admin/ 1 -
+/css/anythingslider.css 1 -
+/modules/mod_login/tmpl/paypal.com/cgi-bin/error_login.html 5 -
+/contacto/ 1 -
+/productos-y-servicios/ 2 -
+/prueba/sgmedicos.html 1 -
+/js/jquery.anythingslider.min.js 1 -
+/index.php 4 -
+/blog-post.html 1 -
+/js/hoverIntent.js 1 -
+/assets/global/plugins/excanvas.min.js 1 http://vinik.com.mx/
+/phpmyadmin/index.php 1 -
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 25 first Hits must be first (order not required for others)
+BEGIN_VISITOR 141
+187.172.44.170 15 226 4614208 20160302085416
+170.70.18.218 13 197 4994179 20160310161908
+38.100.21.64 6 22 1089492 20160324002149
+167.114.174.95 6 6 250216 20160304040832
+201.141.144.130 5 128 5560800 20160316002436
+189.191.250.76 5 128 5289432 20160326081336
+187.190.157.182 5 72 2858982 20160314212443
+8.28.16.254 5 5 263131 20160329111234
+216.69.191.97 4 4 199428 20160309074624
+201.141.15.145 4 7 33276 20160312102447
+189.245.61.41 4 127 5504020 20160318145239
+198.252.44.12 4 4 199428 20160309133713
+187.213.35.137 4 127 5510943 20160307122117
+189.245.170.93 4 66 2860978 20160315234424
+189.204.104.68 4 127 1875817 20160316215514
+201.153.221.105 4 84 3867508 20160303103459
+187.237.14.232 3 64 0 20160303090721
+200.68.128.102 3 63 2814139 20160310125011
+200.68.141.164 3 65 2825849 20160319220448
+52.73.242.178 3 3 149571 20160327202253
+187.232.255.232 3 64 2814264 20160328210856
+201.153.167.58 3 65 2825849 20160321001511
+201.153.223.14 3 87 3806559 20160315110935
+15.65.244.14 3 65 2811121 20160317101015
+187.237.231.20 3 64 2922330 20160317095450
+189.134.85.171 2 64 2761264 20160323144747
+69.64.58.188 2 63 2764407 20160326060511
+189.219.122.70 2 68 2903818 20160327044459
+104.156.251.62 1 1 49857 20160309191817
+148.241.1.174 2 64 2775992 20160304160250
+189.144.205.37 1 1 49857 20160311080900
+85.248.227.164 1 1 49857 20160307021417
+187.199.58.18 2 64 2761264 20160326202824
+216.81.71.82 1 1 49857 20160323045449
+66.249.85.128 0 1 11585 
+40.84.159.73 1 1 49857 20160321180605
+77.247.181.165 1 1 49857 20160329121010
+189.144.98.245 1 2 61442 20160308220811
+66.249.85.252 0 1 11585 
+216.81.71.96 1 1 49857 20160317073756
+190.195.90.6 2 64 2761264 20160316055241
+189.241.10.244 2 63 2749679 20160324083735
+207.46.13.72 0 5 198629 
+189.245.49.29 2 3 99714 20160328082302
+176.126.252.12 1 1 49857 20160308020600
+52.53.225.51 1 1 49857 20160318081745
+78.47.224.148 0 1 95442 
+200.95.0.103 2 64 2761264 20160330111625
+187.226.237.141 2 64 2761264 20160328153540
+201.158.221.11 2 64 2761264 20160309113531
+187.188.86.146 2 64 2761264 20160303124236
+189.209.96.126 2 64 2761264 20160329111234
+189.217.47.134 2 64 2761264 20160324021353
+158.69.172.225 0 1 587 
+201.131.120.222 1 1 49857 20160329120950
+52.6.229.204 1 1 49857 20160328230009
+201.141.135.98 1 2 49857 20160315180753
+187.172.16.241 2 64 2761264 20160327205601
+189.191.36.85 2 64 2761264 20160310125310
+185.75.56.118 1 1 49857 20160306192917
+66.249.84.178 1 1 49857 20160327212133
+187.216.232.46 1 3 0 20160326122833
+52.73.200.208 1 1 49857 20160324052307
+189.245.54.247 2 65 2808474 20160301145041
+94.242.246.23 1 1 49857 20160308032507
+200.68.128.115 2 64 2761264 20160322092728
+216.99.65.10 2 66 2772465 20160316082256
+37.130.227.133 1 1 56780 20160329132636
+52.7.174.126 1 1 3639 20160313172428
+200.68.128.111 0 2 0 
+187.177.157.251 1 1 49857 20160322175419
+150.70.173.42 0 1 587 
+66.249.93.155 0 25 1226323 
+157.55.39.112 0 2 8066 
+66.249.93.149 1 14 496169 20160327122636
+148.241.1.171 0 4 622966 
+52.0.3.61 1 1 49857 20160322200622
+66.249.85.237 0 1 7661 
+201.141.33.47 2 64 2761264 20160328001829
+198.46.81.11 1 1 49857 20160331064026
+64.233.172.196 0 1 7661 
+201.161.5.236 2 63 2749679 20160301175033
+187.177.157.156 2 64 2761264 20160318232631
+107.178.194.48 0 1 587 
+201.131.100.136 2 64 2761264 20160302105545
+216.81.71.100 1 1 49857 20160331170243
+37.146.81.237 1 1 56780 20160329145150
+83.31.184.143 2 2 56780 20160329145238
+178.17.174.99 1 1 49857 20160307080437
+187.237.14.197 1 2 49857 20160320184439
+62.212.73.49 1 1 49857 20160309185149
+187.156.21.201 2 62 2749554 20160326203845
+193.90.12.89 1 1 49857 20160327230956
+5.135.158.101 0 1 587 
+202.46.51.190 1 1 0 20160321204322
+187.230.9.249 2 64 2765251 20160310194006
+37.252.180.21 2 64 2761264 20160327223542
+216.81.71.73 2 2 99714 20160317073213
+178.43.113.203 2 2 56780 20160331052512
+114.112.236.108 2 64 2761264 20160315173204
+66.249.85.249 2 3 107375 20160328175826
+200.56.192.110 2 19 1156279 20160306080807
+65.55.183.62 0 2 15322 
+52.73.20.190 1 1 49857 20160308203558
+52.6.33.127 1 1 49857 20160308083559
+201.110.4.90 2 64 2761264 20160310001649
+66.249.84.179 0 1 11585 
+216.81.71.108 1 1 49857 20160308140347
+189.144.123.132 1 2 0 20160320160412
+187.237.231.17 0 1 0 
+202.46.54.36 1 1 0 20160320004610
+187.237.231.8 1 7 283483 20160310182759
+204.13.201.137 2 3 107224 20160329132625
+150.70.173.58 1 1 49857 20160329121248
+77.40.129.123 2 63 2775867 20160329113623
+176.10.99.204 1 1 49857 20160325130333
+66.249.93.152 1 25 1038772 20160327122628
+189.245.51.3 2 63 2749679 20160307121958
+94.26.140.150 1 1 49857 20160307145408
+131.178.200.65 2 64 2761264 20160301144924
+187.191.7.121 3 63 2814139 20160310124052
+189.219.122.30 2 64 2761264 20160325110416
+52.5.234.39 1 1 3639 20160312172616
+157.55.39.72 0 6 150724 
+189.211.179.39 2 64 2761264 20160310122918
+202.46.50.78 1 1 0 20160320211043
+189.191.249.98 2 64 2761264 20160322140814
+91.121.83.118 2 3 107224 20160329220731
+189.217.221.231 2 64 2761264 20160329122117
+85.236.5.181 1 1 49857 20160330041512
+201.141.144.162 0 1 0 
+113.90.61.205 2 64 2761264 20160322213432
+192.241.160.82 1 1 49857 20160329114536
+107.178.194.46 1 1 56780 20160329132616
+80.255.192.237 1 1 49857 20160325162013
+185.59.30.234 1 1 49857 20160323184900
+170.70.20.180 2 63 2749679 20160311182724
+201.144.87.45 1 25 1527743 20160303090624
+201.161.3.164 2 64 2761264 20160316175314
+148.241.1.172 2 66 2765001 20160318174704
+201.141.135.226 2 63 2645486 20160321184013
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 31
+20160301 11 268 11244308 5
+20160302 21 334 9408940 5
+20160303 10 242 6560114 5
+20160304 10 74 3141244 4
+20160305 0 1 7661 0
+20160306 4 22 1267578 3
+20160307 10 194 8460050 6
+20160308 7 8 360584 7
+20160309 10 156 6272797 8
+20160310 25 490 20349121 9
+20160311 3 67 2814858 2
+20160312 6 12 59274 3
+20160313 1 1 3639 1
+20160314 1 4 22359 1
+20160315 12 261 11255288 5
+20160316 12 384 12920489 5
+20160317 12 139 6662482 5
+20160318 9 255 11064820 4
+20160319 3 65 2825849 1
+20160320 5 7 99714 5
+20160321 8 131 5571049 5
+20160322 8 194 8383506 5
+20160323 4 66 2860978 3
+20160324 8 139 6048600 4
+20160325 4 66 2860978 3
+20160326 12 320 13564657 5
+20160327 11 264 11348766 8
+20160328 10 197 8497948 6
+20160329 21 212 9048376 16
+20160330 3 68 2811121 2
+20160331 4 5 156494 3
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 6
+5mn-15mn 3
+15mn-30mn 3
+2mn-5mn 3
+0s-30s 130
+30s-2mn 4
+30mn-1h 1
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 25 first Pages must be first (order not required for others)
+BEGIN_SIDER 17
+/ 151 7129551 127 78
+/assets/plugins/font-awesome/fonts/fontawesome-webfont.woff2 58 3179680 8 47
+/assets/plugins/font-awesome/fonts/fontawesome-webfont.woff 16 929604 0 7
+/cgi-sys/suspendedpage.cgi 8 29112 5 5
+/assets/plugins/simple-line-icons/fonts/Simple-Line-Icons.woff 7 296620 0 2
+/aviso-legal.html 5 97675 2 0
+/pruebas/seguro-de-gastos-medicos.html 4 96096 2 0
+/aviso-de-privacidad.html 3 93759 0 2
+/frugalika/entradas 3 38369 0 0
+/ajax/lightbox-gallery/preguntasgm2.html 2 1540 0 1
+/pruebas/seguro-de-vida.html 2 31982 0 0
+/frugalika/post1 1 23243 0 1
+/ajax/lightbox-gallery/preguntasgm4.html 1 770 0 0
+/pruebas/seguro-de-vida 1 31982 0 0
+/assets/plugins/font-awesome/fonts/fontawesome-webfont.eot 1 60767 0 1
+/ajax/lightbox-gallery/preguntasgm1.html 1 770 0 0
+/predicciones 1 17805 0 0
+END_SIDER
