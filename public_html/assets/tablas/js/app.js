@@ -1,19 +1,5 @@
 
 
-
-//Dropdown
-$("#aportaciones").change(function() {
-  a = $(this).val();
-
-  //use rfiSchooldropdown
-}).change();
-
-$("#tiempo").change(function() {
-  tPasado = t;
-  t = $(this).val();
-  //use rfiSchooldropdown
-}).change();
-
 //Tabla
 var verde = 0;
 var azul = 1;
@@ -30,7 +16,9 @@ var app = angular.module("fondoDeAhorro", []);
 app.controller('ExampleController', ['$scope', function($scope) {
       $scope.master = {};
 
-      $scope.save = function() {
+      $scope.save = function(user) {
+        t = user.t;
+        a = user.a;
 
         lineChartData.labels = [];
         lineChartData.datasets[0].data = [];
@@ -793,25 +781,6 @@ $(document).ready(function() {
     window.onload = function(){
         var ctx = document.getElementById("canvas").getContext("2d");
         window.myLine = new Chart(ctx).Line(lineChartData, {
-            scaleLabel: "$<%=Chart.numberWithCommas(value)%>",
-            responsive: true,
-            scaleShowVerticalLines: false,
-            scaleShowHorizontalLines: false,
-            pointDotRadius : 3,
-            pointDotStrokeWidth : 1,
-            pointHitDetectionRadius : 10,
-            multiTooltipTemplate: "<%= datasetLabel %> - $<%= Chart.numberWithCommas(value) %>",
-            /*,
-            scaleOverride : true,
-            scaleSteps : 10,
-            scaleStepWidth : 100000,
-            scaleStartValue : a
-            */
-        });
-
-
-        var ctx2 = document.getElementById("canvas1").getContext("2d");
-        window.myLine = new Chart(ctx2).Line(lineChartData2, {
             scaleLabel: "$<%=Chart.numberWithCommas(value)%>",
             responsive: true,
             scaleShowVerticalLines: false,
