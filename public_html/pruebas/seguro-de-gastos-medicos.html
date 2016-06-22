@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <!--[if IE 9]> <html lang="es" class="ie9"> <![endif]-->
 <!--[if !IE]><!-->
-<html lang="es">
+<html lang="es" ng-app="Vinik">
     <!--<![endif]-->
     <!-- BEGIN HEAD -->
     <head>
         <meta charset="utf-8" />
-        <title>VINIK | Seguros de Gastos Médicos</title>
+        <title>VINIK | Seguro de Gastos Médicos</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -37,9 +37,10 @@
         <!-- END THEME STYLES -->
         <link rel="shortcut icon" href="../vinik.ico" />
         <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300,400italic' rel='stylesheet' type='text/css'>
+        <script src="../node_modules/angular/angular.js"></script>
     </head>
 
-    <body class="c-layout-header-fixed c-layout-header-mobile-fixed c-layout-header-fullscreen c-layout-header-topbar c-layout-header-topbar-collapse">
+    <body class="c-layout-header-static c-layout-header-mobile-fixed c-layout-header-fullscreen c-layout-header-topbar c-layout-header-topbar-collapse">
         <!-- BEGIN: LAYOUT/HEADERS/HEADER-1 -->
         <!-- BEGIN: HEADER -->
         <header class="c-layout-header c-layout-header-default c-layout-header-dark-mobile c-header-transparent-light" data-minimize-offset="20">
@@ -138,20 +139,21 @@
         <!-- END: HEADER -->
         <!-- END: LAYOUT/HEADERS/HEADER-1 -->
         <div class="c-layout-page" >
-            <div class="c-content-box c-size-md c-bg-img-top c-bg-parallax ahorroTitle" style="background-image: url(../assets/base/img/content/backgrounds/bg-121.jpg);">
+            <div class="c-content-box c-size-md c-bg-img-top c-bg-parallax ahorroTitle" style="background-image: url(../assets/base/img/content/backgrounds/bg-122.jpg);">
                 <div class="container">
                     <div class="c-content-feature-11">
                         <div class="row">
                             <div class="col-md-12 c-grid" data-auto-height="true" data-related="#c-video-card-3">
-                                <h3 class="c-font-center c-font-white titles" style="text-align:center;padding-top:50px;"> Seguro de Gastos Médicos</h3>
+                                <h3 class="c-font-center c-font-white titles" style="text-align:center;padding-top:50px;">Seguros de Gastos Medicos</h3>
                                 <ul class="c-grid-row">
                                     <li>
                                         <div class="c-bg-opacity-1 c-card" data-height="height" style="text-align:center;">
                                             <h3 class=" c-font-bold">Comparemos Seguros</h3>
                                             <p> We bring you some great deals on your life insurance from our panel of providers.</p>
                                             <br>
-                                            <a href="https://vinik.typeform.com/to/PeXUNF" data-mode="2" target="_blank" class=" btn btn-lg c-btn-square c-theme-btn c-btn-bold c-btn-uppercase page-scroll typeform-share">Cotiza Ahora</a>
+                                            <a href="#form" class="btn btn-md c-btn-square c-theme-btn c-btn-uppercase c-btn-bold page-scroll" ng-click="showme=true">Compara Ahora!</a>
                                             <br>
+
                                         </div>
                                     </li>
                                     <li>
@@ -160,9 +162,7 @@
                                             <p>Mon - Fri: 8am - 8pm, Sat: 9am - 2:30pm</p>
                                             <br>
                                             <h4>+55 1106 3951</h4>
-                                            <a href="https://oscar78.typeform.com/to/ZHTLAP" class="typeform-share btn btn-sm c-btn-square  c-btn-bold c-btn-uppercase c-theme-btn-verde" data-mode="2" target="_blank">Solicitar una llamada</a>
-
-
+                                            <a href="https://vinik.typeform.com/to/ZHTLAP" class="typeform-share btn btn-sm c-btn-square  c-btn-bold c-btn-uppercase c-theme-btn-verde" data-mode="2" target="_blank">Solicitar una llamada</a>
                                         </div>
                                     </li>
                                 </ul>
@@ -171,214 +171,71 @@
                     </div>
                 </div>
             </div>
-            <!-- BEGIN: CONTENT/SLIDERS/CLIENT-LOGOS-1 -->
-            <div class="c-content-box c-size-md c-bg-white" style="padding-bottom:50px;padding-top:0px;">
-                <div class="container">
-                    <div class="c-content-title-1">
-                       <h3 id="title"class="c-center c-font-bold" style="margin-top:0px;">Compara las mejores aseguradoras</h3>
-                    </div>
-                    <!-- Begin: Testimonals 1 component -->
-                    <div class="c-content-client-logos-slider-1" data-slider="owl" data-items="5" data-desktop-items="4" data-desktop-small-items="3" data-tablet-items="3" data-mobile-small-items="1" data-auto-play="1500" >
-
-                        <!-- Begin: Owlcarousel -->
-                        <div class="owl-carousel owl-theme c-theme" pagination="false">
-                            <div class="item">
-                                <a href="http://www.mnyl.com.mx/" target="_blank">
-                                    <img src="../assets/base/img/partners/segurosmonterreybw.jpg" alt="" />
-                                </a>
+            <!-- BEGIN: CONTENT/FEATURES/FEATURES-1 -->
+            <div class="c-content-box c-size-md c-bg-white" style="padding-bottom:30px;padding-top:20px;">
+                <div class="container" >
+                    <div class="row">
+                        <div class="col-sm-3" >
+                            <div id="carUno" class="c-content-feature-1 wow animate fadeInUp">
+                                <img src="../assets/base/img/content/icons/deducible.png"/>
+                                <h3 class="c-font-uppercase c-font-bold">Deducible</h3>
+                                <p class="c-font-thin">Beautiful cinematic designs optimized for all screen sizes and types. Compatible with Retina high pixel density displays.</p>
                             </div>
-                            <div class="item">
-                                <a href="https://www.gnp.com.mx" target="_blank">
-                                    <img src="../assets/base/img/partners/gnpbw.jpg" alt="" />
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="https://axa.mx/home" target="_blank">
-                                    <img src="../assets/base/img/partners/axabw.jpg" alt="" />
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="https://www.mapfre.com.mx/seguros-mx/particulares/" target="_blank">
-                                    <img src="../assets/base/img/partners/mapfrebw.jpg" alt="" />
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="http://www.bupa.com.mx/bupaMx/index.html" target="_blank">
-                                    <img src="../assets/base/img/partners/bupabw.jpg" alt="" />
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="https://www.palig.com/es" target="_blank">
-                                    <img src="../assets/base/img/partners/panamericanbw.jpg" alt="" />
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="http://www.mnyl.com.mx/" target="_blank">
-                                    <img src="../assets/base/img/partners/segurosmonterreybw.jpg" alt="" />
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="https://www.gnp.com.mx" target="_blank">
-                                    <img src="../assets/base/img/partners/gnpbw.jpg" alt="" />
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="https://axa.mx/home" target="_blank">
-                                    <img src="../assets/base/img/partners/axabw.jpg" alt="" />
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="https://www.mapfre.com.mx/seguros-mx/particulares/" target="_blank">
-                                    <img src="../assets/base/img/partners/mapfrebw.jpg" alt="" />
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="http://www.bupa.com.mx/bupaMx/index.html" target="_blank">
-                                    <img src="../assets/base/img/partners/bupabw.jpg" alt="" />
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="https://www.palig.com/es" target="_blank">
-                                    <img src="../assets/base/img/partners/panamericanbw.jpg" alt="" />
-                                </a>
-                            </div>
-
                         </div>
-                        <!-- End-->
-                    </div>
-                    <!-- End-->
-                </div>
-            </div>
-            <!-- END: CONTENT/SLIDERS/CLIENT-LOGOS-1 -->
-
-            <div class="c-content-box c-size-md c-bg-grey" style="padding-top:15px;">
-                <div class="container">
-                    <h3 id="title"class="c-center c-font-bold" style="margin-top:0px;">¿Sabes qué...</h3>
-                    <div class="cbp-panel">
-                        <div id="grid-container" class="cbp">
-
-                            <div class="cbp-item print motion" >
-                                <a href="../ajax/lightbox-gallery/preguntasgm1.html" class="cbp-caption cbp-singlePageInline" data-title="¿Qué es un Seguro de Gastos Médicos?">
-                                    <div class="cbp-caption-defaultWrap">
-                                        <img src="../assets/base/img/content/stock/preguntasgm1.jpg" alt="">
-                                        <div class="c-font-center">
-                                            <h3 class="preguntas">...es un seguro de vida?</h3>
-                                        </div>
-                                    </div>
-                                    <div class="cbp-caption-activeWrap">
-                                        <div class="cbp-l-caption-alignLeft">
-                                            <div class="cbp-l-caption-body">
-                                                <div class="cbp-l-caption-title" style="text-align: center;
-vertical-align: middle;line-height: 40px;">Respuesta</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
+                        <div class="col-sm-3">
+                            <div id="carDos" class="c-content-feature-1 wow animate fadeInUp" data-wow-delay="0.2s">
+                                <img src="../assets/base/img/content/icons/heart.png"/>
+                                <h3 class="c-font-uppercase c-font-bold">Coaseguro</h3>
+                                <p class="c-font-thin">Featuring trending modern web standards.
+                                    <br/>Clean and easy framework design for worry and hassle free customizations.</p>
                             </div>
-                            <div class="cbp-item web-design">
-                                <a href="../ajax/lightbox-gallery/preguntasgm2.html" class="cbp-caption cbp-singlePageInline" data-title="Bolt UI<br>by Tiberiu Neamu">
-                                    <div class="cbp-caption-defaultWrap">
-                                        <img src="../assets/base/img/content/stock/preguntasgm2.jpg" alt="" style="position:relative;">
-                                        <div class="c-font-center">
-                                            <h3 class="preguntas">...es un seguro de vida?</h3>
-                                        </div>
-                                    </div>
-                                    <div class="cbp-caption-activeWrap">
-                                        <div class="cbp-l-caption-alignLeft">
-                                            <div class="cbp-l-caption-body">
-                                                <div class="cbp-l-caption-title" style="text-align: center;
-vertical-align: middle;line-height: 40px;">Respuesta</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
+                        </div>
+                        <div  class="col-sm-3 c-card">
+                            <div id="carTres"class="c-content-feature-1 wow animate fadeInUp" data-wow-delay="0.4s">
+                                <img src="../assets/base/img/content/icons/lock.png"/>
+                                <h3 class="c-font-uppercase c-font-bold">Gama Hospitalaria</h3>
+                                <p class="c-font-thin">Quick response with regular updates.
+                                    <br/>Each update willinclde great new features and enhancements for free.</p>
                             </div>
-                            <div class="cbp-item print motion">
-                                <a href="../ajax/lightbox-gallery/preguntasgm3.html" class="cbp-caption cbp-singlePageInline" data-title="WhereTO App<br>by Tiberiu Neamu">
-                                    <div class="cbp-caption-defaultWrap">
-                                        <img src="../assets/base/img/content/stock/preguntasgm3.jpg" alt="">
-                                        <div class="c-font-center">
-                                            <h3 class="preguntas">...es un seguro de vida?</h3>
-                                        </div>
-                                    </div>
-                                    <div class="cbp-caption-activeWrap">
-                                        <div class="cbp-l-caption-alignLeft">
-                                            <div class="cbp-l-caption-body">
-                                                <div class="cbp-l-caption-title" style="text-align: center;
-vertical-align: middle;line-height: 40px;">Respuesta</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
+                        </div>
+                        <div  class="col-sm-3 c-card">
+                            <div id="carTres"class="c-content-feature-1 wow animate fadeInUp" data-wow-delay="0.4s">
+                                <img src="../assets/base/img/content/icons/lock.png"/>
+                                <h3 class="c-font-uppercase c-font-bold">Suma Asegurada</h3>
+                                <p class="c-font-thin">Quick response with regular updates.
+                                    <br/>Each update willinclde great new features and enhancements for free.</p>
                             </div>
-                            <div class="cbp-item web-design print">
-                                <a href="../ajax/lightbox-gallery/preguntasgm4.html" class="cbp-caption cbp-singlePageInline" data-title="iDevices<br>by Tiberiu Neamu">
-                                    <div class="cbp-caption-defaultWrap">
-                                        <img src="../assets/base/img/content/stock/preguntasgm5.jpg" alt="">
-                                        <div class="c-font-center">
-                                            <h3 class="preguntas">...es un seguro de vida?</h3>
-                                        </div>
-                                    </div>
-                                    <div class="cbp-caption-activeWrap">
-                                        <div class="cbp-l-caption-alignLeft">
-                                            <div class="cbp-l-caption-body">
-                                                <div class="cbp-l-caption-title" style="text-align: center;
-vertical-align: middle;line-height: 40px;">Respuesta</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="cbp-item motion">
-                                <a href="../ajax/lightbox-gallery/preguntasgm5.html" class="cbp-caption cbp-singlePageInline" data-title="Seemple* Music for iPad<br>by Tiberiu Neamu">
-                                    <div class="cbp-caption-defaultWrap">
-                                        <img src="../assets/base/img/content/stock/preguntasgm4.jpg" alt="">
-                                        <div class="c-font-center">
-                                            <h3 class="preguntas">...es un seguro de vida?</h3>
-                                        </div>
-                                    </div>
-                                    <div class="cbp-caption-activeWrap">
-                                        <div class="cbp-l-caption-alignLeft">
-                                            <div class="cbp-l-caption-body">
-                                                <div class="cbp-l-caption-title" style="text-align: center;
-vertical-align: middle;line-height: 40px;">Respuesta</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="cbp-item print motion">
-                                <a href="../ajax/lightbox-gallery/preguntasgm6.html" class="cbp-caption cbp-singlePageInline" data-title="Remind~Me Widget<br>by Tiberiu Neamu">
-                                    <div class="cbp-caption-defaultWrap">
-                                        <img src="../assets/base/img/content/stock/preguntasgm6.jpg" alt="">
-                                        <div class="c-font-center">
-                                            <h3 class="preguntas">...es un seguro de vida?</h3>
-                                        </div>
-                                    </div>
-                                    <div class="cbp-caption-activeWrap">
-                                        <div class="cbp-l-caption-alignLeft">
-                                            <div class="cbp-l-caption-body">
-                                                <div class="cbp-l-caption-title" style="text-align: center;
-vertical-align: middle;line-height: 40px;">Respuesta</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- END: CONTENT/FEATURES/FEATURES-1 -->
+            <div id="form" class="typeform-widget" data-url="https://vinik.typeform.com/to/PeXUNF" data-text="Seguro de Gastos Médicos (Formulario)" style="width:100%;height:800px;"></div>
+            <script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'widget.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}})()</script>
 
+            <!-- BEGIN: CONTENT/BARS/BAR-1 -->
+            <div class="c-content-box c-size-md c-bg-grey-1">
+                <div class="container">
+                    <div class="c-content-bar-1 c-opt-1">
+                        <h3 class="c-font-uppercase c-font-bold">Compara los mejores seguros de gastos médicos</h3>
+                        <p class="c-font-uppercase"> Conoce los diferentes planes que tenemos para tí
+                            <br> providing
+                            <strong>Ultra Flexibility</strong>,
+                            <strong>Increased productivity</strong> and
+                            <strong>Top quality</strong>
+                        </p>
+                        <a href="#form" class="btn btn-md c-btn-square c-theme-btn c-btn-uppercase c-btn-bold page-scroll" ng-click="showme=true">Compara Ahora!</a>
+                    </div>
+                </div>
+            </div>
+            <!-- END: CONTENT/BARS/BAR-1 -->
         </div>
         <!-- END: PAGE CONTAINER -->
         <!-- BEGIN: LAYOUT/FOOTERS/FOOTER-5 -->
         <footer class="c-layout-footer c-layout-footer-3 c-bg-dark">
           <div class="c-postfooter">
               <div class="container-fluid">
-                  <div class="row">
+                  <div class="row" style="padding-right:20px;padding-left:20px;">
                       <div class="col-md-6 col-sm-12 c-col">
                           <p class="c-copyright c-font-grey">2015 &copy; VINIK
                               <span class="c-font-grey-3">Todos los derechos reservados.</span>
@@ -391,16 +248,13 @@ vertical-align: middle;line-height: 40px;">Respuesta</div>
                   </div>
               </div>
           </div>
-      </footer>
+        </footer>
         <!-- END: LAYOUT/FOOTERS/FOOTER-5 -->
-        <!-- BEGIN: LAYOUT/FOOTERS/GO2TOP -->
-
-        <!-- END: LAYOUT/FOOTERS/GO2TOP -->
         <!-- BEGIN: LAYOUT/BASE/BOTTOM -->
         <!-- BEGIN: CORE PLUGINS -->
         <!--[if lt IE 9]>
-	<script src="../assets/global/plugins/excanvas.min.js"></script>
-	<![endif]-->
+    <script src="../assets/global/plugins/excanvas.min.js"></script>
+    <![endif]-->
         <script src="../assets/plugins/jquery.min.js" type="text/javascript"></script>
         <script src="../assets/plugins/jquery-migrate.min.js" type="text/javascript"></script>
         <script src="../assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
@@ -426,8 +280,6 @@ vertical-align: middle;line-height: 40px;">Respuesta</div>
         <script>
             $(document).ready(function()
             {
-                $("#form").show();
-
                 App.init(); // init core
             });
         </script>
@@ -485,9 +337,6 @@ vertical-align: middle;line-height: 40px;">Respuesta</div>
         s0.parentNode.insertBefore(s1,s0);
         })();
         </script>
-        <!--End of Tawk.to Script-->
-        <script src="../assets/base/js/scripts/pages/index-gallery.js" type="text/javascript"></script>
-        <script src="../assets/base/js/scripts/pages/faq.js" type="text/javascript"></script>
         <!-- END: PAGE SCRIPTS -->
         <!-- END: LAYOUT/BASE/BOTTOM -->
         <script>
@@ -506,6 +355,6 @@ vertical-align: middle;line-height: 40px;">Respuesta</div>
         <!-- END: LAYOUT/BASE/BOTTOM -->
 
         <script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}id=id+'_';if(!gi.call(d,id)){qs=ce.call(d,'link');qs.rel='stylesheet';qs.id=id;qs.href=b+'share-button.css';s=gt.call(d,'head')[0];s.appendChild(qs,s)}})()</script>
-
+        <script src="../angular/app.js"></script>
     </body>
 </html>
