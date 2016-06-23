@@ -145,41 +145,7 @@
             </div>
         </header>
         <!-- END: HEADER -->
-        <!-- BEGIN: CONTENT/USER/LOGIN-FORM -->
-        <div class="modal fade c-content-login-form" id="login-form" role="dialog">
-            <div class="modal-dialog">
-                <div class="modal-content c-square">
-                    <img src="../assets/base/img/status_bar.gif" class="img-responsive" style="margin-top:20px;">
-                    <div class="modal-header c-no-border">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
 
-                    <div class="modal-body">
-
-                        <h3 class="c-font-24 c-font-sbold">Ya casi!</h3>
-                        <p style="margin-bottom:2px;">Por favor llene el formulario para ver la cotización de su Crédito Hipotecario</p>
-                        <p style="font-size:0.5em;">Su información está protegida.</p>
-                        <div ng-controller="CotizaCtrl">
-                          <form class="form-horizontal" ng-submit="pushData(frm)">
-                              <div class="form-group">
-                                  <label for="login-email" class="hide">Nombre</label>
-                                  <input type="text" ng-model="frm.nombre" class="form-control input-lg c-square" id="nombre" placeholder="Nombre"> </div>
-                              <div class="form-group">
-                                  <label for="login-password" class="hide">Email</label>
-                                  <input type="email" ng-model="frm.email" class="form-control input-lg c-square" id="email" placeholder="Email">
-                              </div>
-                              <div class="form-group c-center">
-                                  <button type="submit" data-toggle="modal" data-target="#login-form"class="btn c-theme-btn btn-md c-btn-uppercase c-btn-bold c-btn-square c-btn-login">Ir a cotización!</button>
-                              </div>
-                          </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- END: CONTENT/USER/LOGIN-FORM -->
         <!-- END: LAYOUT/HEADERS/HEADER-1 -->
         <div class="c-layout-page" >
             <div class="c-content-box c-size-md c-bg-img-top c-bg-parallax ahorroTitle" style="background-image: url(../assets/base/img/content/backgrounds/bg-127.jpg);">
@@ -187,28 +153,8 @@
                     <div class="c-content-feature-11">
                         <div class="row">
                             <div class="col-md-12 c-grid" data-auto-height="true" data-related="#c-video-card-3">
-                                <h3 class="c-font-center c-font-white titles" style="text-align:center;padding-top:50px;">Credito hipotecario</h3>
-                                <ul class="c-grid-row">
-                                    <li>
-                                        <div class="c-bg-opacity-1 c-card" data-height="height" style="text-align:center;">
-                                            <h3 class=" c-font-bold">Cotizemos tu credito hipotecario</h3>
-                                            <p> Solo con un poco de información cotizaremos un credito hipotecario a tu medida. ¡Solo toma 5 minutos!</p>
-                                            <br>
-                                            <a href="https://vinik.typeform.com/to/utRcyj" data-mode="2" target="_blank" class=" btn btn-lg c-btn-square c-theme-btn c-btn-bold c-btn-uppercase page-scroll typeform-share">Cotiza Ahora</a>
-                                            <br>
+                                <h3 class="c-font-center c-font-white titles" style="text-align:center;padding-top:50px;">Cotización Crédito Hipotecario</h3>
 
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="c-bg-opacity-1 c-card" data-height="height" style="text-align:center;">
-                                            <h3 class="c-font-bold" >¿Te podemos ayudar?</h3>
-                                            <p>Mon - Fri: 8am - 8pm, Sat: 9am - 2:30pm</p>
-                                            <br>
-                                            <h4>+55 1106 3951</h4>
-                                            <a href="https://vinik.typeform.com/to/utRcyj" class="typeform-share btn btn-sm c-btn-square  c-btn-bold c-btn-uppercase c-theme-btn-verde" data-mode="2" target="_blank">Solicitar una llamada</a>
-                                        </div>
-                                    </li>
-                                </ul>
                             </div>
                         </div>
                     </div>
@@ -245,6 +191,18 @@
                 <div class="container">
                     <div class="c-content-feedback-1 c-option-1">
                         <div class="row">
+                          <div ng-controller="CotizaCtrl" >{{leads}}</div>
+                            <div class="col-md-6">
+                                <div class="c-container c-bg-green c-bg-img-bottom-right">
+                                    <div class="c-content-title-1 c-inverse">
+                                        <h3 class="c-font-uppercase c-font-bold">{{leads}}</h3>
+                                        <div class="c-line-left"></div>
+                                        <p class="c-font-lowercase">La reforma ... (Explicación)</p>
+                                        <!--<a href="#" class="btn btn-md c-btn-border-2x c-btn-white c-btn-uppercase c-btn-square c-btn-bold">Learn More</a>-->
+                                    </div>
+                                </div>
+
+                            </div>
                             <div class="col-md-6">
                                 <div class="c-container c-bg-green c-bg-img-bottom-right">
                                     <div class="c-content-title-1 c-inverse">
@@ -255,35 +213,6 @@
                                     </div>
                                 </div>
 
-                            </div>
-                            <div class="col-md-6" ng-controller="VarCtrl">
-                                <div class="c-contact">
-                                  <form class="form-horizontal" ng-submit="pushData(frm)">
-                                    <div class="form-group">
-                                      <label for="title" class="col-sm-2 control-label">Nombre</label>
-                                      <div class="col-sm-10">
-                                        <input type="text" ng-model="frm.nombre" class="form-control">
-                                      </div>
-                                    </div>
-                                    <div class="form-group">
-                                      <label for="description" class="col-sm-2 control-label">Telefono</label>
-                                      <div class="col-sm-10">
-                                        <textarea class="form-control" ng-model="frm.telefono"></textarea>
-                                      </div>
-                                    </div>
-                                    <div class="form-group">
-                                      <label for="description" class="col-sm-2 control-label">Email</label>
-                                      <div class="col-sm-10">
-                                        <textarea class="form-control" ng-model="frm.email"></textarea>
-                                      </div>
-                                    </div>
-                                    <div class="form-group">
-                                      <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="submit"  data-toggle="modal" data-target="#login-form" value="submit" class="btn btn-primary">Insert Blog</button>
-                                        <!--<button type="submit" value="submit" class="btn btn-primary">ASD Blog</button>-->
-                                      </div>
-                                    </div>
-                                  </form>
                             </div>
                         </div>
                     </div>
