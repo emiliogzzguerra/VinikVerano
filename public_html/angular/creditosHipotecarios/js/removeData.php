@@ -6,7 +6,7 @@
 
 	$db = new DB();
 
-	$sql = "DELETE FROM `prospectos` WHERE `id` = $data->id";
+	$sql = "DELETE FROM `leads` WHERE `id` = $data->id";
 
 	$data = $db->qryFire($sql);
 

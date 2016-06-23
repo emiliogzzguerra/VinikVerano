@@ -3,9 +3,9 @@
 	$data = json_decode(file_get_contents("php://input"));
 
 	$host = "localhost";
-	$user = "root";
-	$pass = "meAxel9@4!";
-	$db = "project";
+	$user = "vinikAdmin";
+	$pass = "2B&WXqbJZ=T9";
+	$db = "vinik";
 
 	$con = new mysqli($host, $user, $pass, $db);
 
@@ -13,11 +13,11 @@
 		die("DB connection failed:" . $con->connection_error);
 	}
 
-	$sql = "DELETE FROM `prospectos` WHERE `id` = $data->id";
+	$sql = "DELETE FROM `leads` WHERE `id` = $data->id";
 
 	$qry = $con->query($sql);
 
-	$sql = "SELECT * FROM `prospectos` ORDER BY `id` DESC";
+	$sql = "SELECT * FROM `leads` ORDER BY `id` DESC";
 
 	$qry = $con->query($sql);
 

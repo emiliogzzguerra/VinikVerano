@@ -4,7 +4,7 @@ angular.module('controller',[])
 
 	$http.get('../angular/creditosHipotecarios/js/popData.php')
 		.success(function(data) {
-			$scope.prospectos = data;
+			$scope.leads = data;
 		})
 		.error(function(err) {
 			$log.error(err);
@@ -13,7 +13,7 @@ angular.module('controller',[])
 	$scope.pushData = function($params) {
 		$http.post('../angular/creditosHipotecarios//js/pushData.php',{'nombre':$params.nombre, 'telefono':$params.telefono, 'email':$params.email})
 			.success(function(data) {
-				$scope.prospectos = data;
+				$scope.leads = data;
 			})
 			.error(function(err) {
 				$log.error(err);
@@ -25,7 +25,7 @@ angular.module('controller',[])
 		if(cnfrm) {
 			$http.post('../angular/creditosHipotecarios//js/removeData.php', {'id':$params})
 			.success(function(data) {
-				$scope.prospectos = data;
+				$scope.leads = data;
 			})
 			.error(function(err) {
 				$log.error(err);

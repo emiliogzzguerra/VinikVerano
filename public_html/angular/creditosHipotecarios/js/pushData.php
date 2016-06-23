@@ -5,7 +5,7 @@
 
 	$db = new DB();
 
-	$sql = "INSERT INTO `prospectos`(`nombre`,`telefono`,`email`)VALUES('$data->nombre','$data->telefono','$data->email')";
+	$sql = "INSERT INTO `leads`(`nombre`,`telefono`,`email`)VALUES('$data->nombre','$data->telefono','$data->email')";
 
 	$data = $db->qryFire($sql);
 
