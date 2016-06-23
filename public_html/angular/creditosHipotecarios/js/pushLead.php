@@ -10,5 +10,3 @@
 	$data = $db->qryFire($sql);
 
 	echo json_encode($data);
-
-//	header("Location:https://www.vinik.com.mx");
