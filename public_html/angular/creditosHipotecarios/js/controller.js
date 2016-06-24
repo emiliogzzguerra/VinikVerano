@@ -17,7 +17,6 @@ angular.module('controller',[])
 		$http.post('../angular/creditosHipotecarios//js/pushData.php',{'nombre':$params.nombre, 'telefono':$params.telefono, 'email':$params.email})
 			.success(function(data) {
 				$scope.leads = data;
-				$window.location.href = 'cotizacion-cred-hipotecario.html';
 			})
 			.error(function(err) {
 				$log.error(err);
@@ -43,6 +42,7 @@ angular.module('controller',[])
 }])
 .controller('VarCtrl', ['$scope', '$http', '$log','$window', function($scope, $http, $log,$window) {
 
+
 	$http.get('../angular/creditosHipotecarios/js/popData.php')
 		.success(function(data) {
 			$scope.leads = data;
@@ -52,9 +52,11 @@ angular.module('controller',[])
 		})
 
 	$scope.pushData = function($params) {
+		$scope.total = $params.telefono;
 		$http.post('../angular/creditosHipotecarios//js/pushVar.php',{'nombre':$params.nombre, 'telefono':$params.telefono, 'email':$params.email})
 			.success(function(data) {
 				$scope.leads = data;
+				//$scope.total = data.telefono;
 				//$window.location.href = 'fondo-de-ahorro.html';
 			})
 			.error(function(err) {

@@ -171,7 +171,7 @@
                                   <input type="email" ng-model="frm.email" class="form-control input-lg c-square" id="email" placeholder="Email">
                               </div>
                               <div class="form-group c-center">
-                                  <button type="submit" data-toggle="modal" data-target="#login-form"class="btn c-theme-btn btn-md c-btn-uppercase c-btn-bold c-btn-square c-btn-login">Ir a cotización!</button>
+                                  <button  type="submit" onclick="showCotizacion()" data-toggle="modal" data-target="#login-form"class="btn c-theme-btn btn-md c-btn-uppercase c-btn-bold c-btn-square c-btn-login">Ir a cotización!</button>
                               </div>
                           </form>
                         </div>
@@ -241,55 +241,75 @@
             </div>
             -->
             <!-- BEGIN: CONTENT/CONTACT/FEEDBACK-1 -->
-            <div class="c-content-box c-size-md c-bg-white">
-                <div class="container">
-                    <div class="c-content-feedback-1 c-option-1">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="c-container c-bg-green c-bg-img-bottom-right">
-                                    <div class="c-content-title-1 c-inverse">
-                                        <h3 class="c-font-uppercase c-font-bold">Paga menos con tu crédito hipotecario</h3>
-                                        <div class="c-line-left"></div>
-                                        <p class="c-font-lowercase">La reforma ... (Explicación)</p>
-                                        <!--<a href="#" class="btn btn-md c-btn-border-2x c-btn-white c-btn-uppercase c-btn-square c-btn-bold">Learn More</a>-->
-                                    </div>
-                                </div>
 
-                            </div>
-                            <div class="col-md-6" ng-controller="VarCtrl">
-                                <div class="c-contact">
-                                  <form class="form-horizontal" ng-submit="pushData(frm)">
-                                    <div class="form-group">
-                                      <label for="title" class="col-sm-2 control-label">Nombre</label>
-                                      <div class="col-sm-10">
-                                        <input type="text" ng-model="frm.nombre" class="form-control">
+            <div ng-controller="VarCtrl">
+
+              <div class="c-content-box c-size-md c-bg-white">
+                  <div class="container">
+                      <div class="c-content-feedback-1 c-option-1">
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <div class="c-container c-bg-green c-bg-img-bottom-right">
+                                      <div class="c-content-title-1 c-inverse">
+                                          <h3 class="c-font-uppercase c-font-bold">Paga menos con tu crédito hipotecario</h3>
+                                          <div class="c-line-left"></div>
+                                          <p class="c-font-lowercase">La reforma ... (Explicación)</p>
+                                          <!--<a href="#" class="btn btn-md c-btn-border-2x c-btn-white c-btn-uppercase c-btn-square c-btn-bold">Learn More</a>-->
                                       </div>
-                                    </div>
-                                    <div class="form-group">
-                                      <label for="description" class="col-sm-2 control-label">Telefono</label>
-                                      <div class="col-sm-10">
-                                        <textarea class="form-control" ng-model="frm.telefono"></textarea>
+                                  </div>
+
+                              </div>
+                              <div class="col-md-6">
+                                  <div class="c-contact">
+                                    <form class="form-horizontal" ng-submit="pushData(frm)">
+                                      <div class="form-group">
+                                        <label for="title" class="col-sm-2 control-label">Nombre</label>
+                                        <div class="col-sm-10">
+                                          <input type="text" ng-model="frm.nombre" class="form-control">
+                                        </div>
                                       </div>
-                                    </div>
-                                    <div class="form-group">
-                                      <label for="description" class="col-sm-2 control-label">Email</label>
-                                      <div class="col-sm-10">
-                                        <textarea class="form-control" ng-model="frm.email"></textarea>
+                                      <div class="form-group">
+                                        <label for="description" class="col-sm-2 control-label">Telefono</label>
+                                        <div class="col-sm-10">
+                                          <textarea class="form-control" ng-model="frm.telefono"></textarea>
+                                        </div>
                                       </div>
-                                    </div>
-                                    <div class="form-group">
-                                      <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="submit"  data-toggle="modal" data-target="#login-form" value="submit" class="btn btn-primary">Insert Blog</button>
-                                        <!--<button type="submit" value="submit" class="btn btn-primary">ASD Blog</button>-->
+                                      <div class="form-group">
+                                        <label for="description" class="col-sm-2 control-label">Email</label>
+                                        <div class="col-sm-10">
+                                          <textarea class="form-control" ng-model="frm.email"></textarea>
+                                        </div>
                                       </div>
-                                    </div>
-                                  </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                                      <div class="form-group">
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                          <button type="submit"  data-toggle="modal" data-target="#login-form" value="submit" class="btn btn-primary">Cotizar</button>
+                                          <!--<button type="submit" value="submit" class="btn btn-primary">ASD Blog</button>-->
+                                        </div>
+                                      </div>
+                                    </form>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- END: CONTENT/CONTACT/FEEDBACK-1 -->
+              <!-- BEGIN: CONTENT/MISC/ABOUT-1 -->
+              <div id="cotizacion" class="c-content-box c-size-md c-bg-white">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-sm-12">
+                              <br>
+                              <div class="c-content-title-1">
+                                  <h3 class="c-font-uppercase c-font-bold c-font-center">Cotización</h3>
+                                  <div class="c-line-center c-theme-bg"></div>
+                              </div>
+                              <span>{{total}}</span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- END: CONTENT/MISC/ABOUT-1 -->
             </div>
-            <!-- END: CONTENT/CONTACT/FEEDBACK-1 -->
             <!-- modal for for creating new product -->
             <div id="modal-product-form" class="modal">
                 <div class="modal-content">
@@ -325,6 +345,7 @@
             <!-- floating button for creating product -->
         </div>
         <!-- END: PAGE CONTAINER -->
+
         <!-- BEGIN: LAYOUT/FOOTERS/FOOTER-5 -->
         <footer class="c-layout-footer c-layout-footer-3 c-bg-dark">
           <div class="c-postfooter">
@@ -391,7 +412,15 @@
             $(document).ready(function()
             {
 
-                //$("#form").show();
+                $("#cotizacion").hide();
+
+                showCotizacion = function(){
+                  console.log("Wazaaabe");
+                  $("#cotizacion").show();
+                  $('html, body').animate({
+                      scrollTop: $("#cotizacion").offset().top
+                  }, 2000);
+                }
 
 
                 App.init(); // init core
