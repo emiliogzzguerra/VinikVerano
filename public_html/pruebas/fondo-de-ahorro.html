@@ -242,13 +242,18 @@
 
             <div class="col-md-12 c-bg-white" style="padding-top:40px">
                 <div class="col-md-6 c-bg-white" >
-                    <h3 id="title" class="c-center c-font-bold" style="margin-top:0px;">Información</h3>
-                    <p>BLA BLA BLA</p>
-
+                  <div class="c-container c-bg-green c-bg-img-bottom-right">
+                      <div class="c-content-title-1 c-inverse">
+                          <h3 class="c-font-uppercase c-font-bold">Paga menos con tu crédito hipotecario</h3>
+                          <div class="c-line-left"></div>
+                          <p class="c-font-lowercase">La reforma ... (Explicación)</p>
+                          <!--<a href="#" class="btn btn-md c-btn-border-2x c-btn-white c-btn-uppercase c-btn-square c-btn-bold">Learn More</a>-->
+                      </div>
+                  </div>
                 </div>
 
                 <div class="col-md-6 c-bg-white">
-                  <img class="img-responsive img-center" style="width:229px;height:56px;" src="../assets/base/img/content/fondoAhorro/compara.jpg"/>
+                  <!--<img class="img-responsive img-center" style="width:229px;height:56px;" src="../assets/base/img/content/fondoAhorro/compara.jpg"/>-->
 
                   <div style="width:100%">
                       <div>
@@ -261,17 +266,17 @@
             <div class="col-md-12 c-bg-white">
                 <div class="col-md-6 c-bg-white" >
                   <div id="imageWrapper1">
-                    <img id="bottomImage" class="img-responsive" style="width:262px;height:77px;margin-top:50px;" src="../assets/base/img/content/fondoAhorro/select.jpg"/>
+                    <!--<img id="bottomImage" class="img-responsive" style="width:262px;height:77px;margin-top:50px;" src="../assets/base/img/content/fondoAhorro/select.jpg"/>-->
                   </div>
                 </div>
 
                 <div class="bottom-align-text col-md-6 c-bg-white">
-                              <img class="img-responsive" style="width:229px;height:56px;" src="../assets/base/img/content/fondoAhorro/personaliza.jpg"/>
+                              <!--<img class="img-responsive" style="width:229px;height:56px;" src="../assets/base/img/content/fondoAhorro/personaliza.jpg"/>-->
 
                               <div  style="margin-top:20px;margin-bottom:-20px;">
                                 <div ng-controller="ExampleController">
-                                  <div class="text-center" style="float:left;  margin-left:30px;">
-                                        Aportaciones Mensuales:
+                                  <div class="text-center" style="float:left;  margin-left:20px;">
+                                        <span style="font-size:1.0em">Aportaciones Mensuales:</span>
                                                 <select style="margin-left:5px;" id="aportaciones" ng-init="user.a = 2000" ng-model="user.a" ng-change="save(user)">
                                                     <option value="1500">$1,500</option>
                                                     <option  selected="true" value="2000">$2,000</option>
@@ -295,8 +300,8 @@
                                                     <option value="11000">$11,000</option>
                                                 </select>
                                   </div>
-                                  <div style="float:left; margin-left:30px;">
-                                    Tiempo:
+                                  <div style="float:left; margin-left:20px;">
+                                    <span style="font-size:1.0em">Tiempo:</span>
                                             <select style="margin-left:5px;" id="tiempo" ng-init="user.t = 10" ng-model="user.t" ng-change="save(user)" >
                                                 <option value="5">5 años</option>
                                                 <option selected="true" value="10">10 años</option>
@@ -306,7 +311,7 @@
                                   </div>
                                 </div>
                                 <div id="imageWrapper2">
-                                  <img id="bottomImage" class="img-responsive" style="width:262px;height:77px;" src="../assets/base/img/content/fondoAhorro/select.jpg"/>
+                                  <!--<img id="bottomImage" class="img-responsive" style="width:262px;height:77px;" src="../assets/base/img/content/fondoAhorro/select.jpg"/>-->
                                 </div>
                                 <br/>
                               </div>
@@ -317,7 +322,7 @@
                     <table  class="table-no-bordered"
                             id="table"
                             data-toggle="table"
-                            data-height="250"
+                            data-height="450"
                             data-click-to-select="true"
                             data-unique-id="id"
                             data-url="../json/data1.json"
