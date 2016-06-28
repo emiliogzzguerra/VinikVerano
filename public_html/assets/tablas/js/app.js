@@ -292,7 +292,7 @@ $(document).ready(function() {
         var createGraph = function(){
             for (var i = 0; i <= t; i++) {
                 if (i%intervalo) {}
-                lineChartData.labels[i] = (A+i);
+                lineChartData.labels[i] = "Año #" + ((A+i)-2016);
                 if(Bazul[0]>=Bverde[0]){
                     if(Bazul[1]>=Bverde[0]){
 
@@ -516,7 +516,7 @@ $(document).ready(function() {
                 */
             };
             for (var i = 0; i <= t; i++) {
-                lineChartData2.labels[i] = (A+i);
+                lineChartData2.labels[i] = "Año #" + ((A+i)-2016);
                 if(B2[iAzul][0]>=B2[iRojo][0]){
                     if(B2[iAzul][1]>=B2[iRojo][0]){
 
