@@ -28,6 +28,10 @@
 
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.vcenter {
+  padding: 15% 0;
+
+}
 select {
    margin: 10px;
     border: 1px solid #111;

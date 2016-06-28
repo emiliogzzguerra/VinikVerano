@@ -2,49 +2,37 @@
     {
         "id":0,
         "checkbox": true,
-        "nombre": "Old Mutual Estabilidad",
+        "nombre": "<img src='../assets/base/img/content/icons/oldmutual.png' style='height:50px;width:170px;float:left;'/> <br><p style='margin-bottom:0px;text-align:center;font-weight: bold;'>Old Mutual Estabilidad</p>",
         "ti": "$0",
         "am": 0,
         "pa": "Item 0",
         "ir": 0,
         "c": "Item 0",
-        "ct": "<button type='button' class='btn c-theme-btn-verde'>Elegir</button>",
+        "ct": "<div class='vcenter'><button type='button' class='btn c-theme-btn-verde'>Elegir</button></div>",
         "b": [1.12,1.05]
     },
     {
         "id":1,
         "checkbox": true,
-        "nombre": "Old Mutual Moderado",
+        "nombre": "<img src='../assets/base/img/content/icons/oldmutual.png' style='height:50px;width:170px;float:left;'/> <br><p style='margin-bottom:0px;text-align:center;font-weight: bold;'>Old Mutual Moderado</p>",
         "ti": "$0",
         "am": 0,
         "pa": "Item 0",
         "ir": 0,
         "c": "Item 0",
-        "ct": "<button type='button' class='btn c-theme-btn-verde'>Elegir</button>",
+        "ct": "<div class='vcenter'><button type='button' class='btn c-theme-btn-verde'>Elegir</button></div>",
         "b": [1.07,1.04]
     },
     {
         "id":2,
         "checkbox":false,
-        "nombre": "Old Mutual Dinamico",
+        "nombre": "<img src='../assets/base/img/content/icons/oldmutual.png' style='height:50px;width:170px;float:left;'/> <br><p style='margin-bottom:0px;text-align:center;font-weight: bold;'>Old Mutual Dinámico</p>",
         "ti": "$0",
         "am": 0,
         "pa": "Item 0",
         "ir": 0,
         "c": "Item 0",
-        "ct": "<button type='button' class='btn c-theme-btn-verde'>Elegir</button>",
+        "ct": "<div class='vcenter'><button type='button' class='btn c-theme-btn-verde'>Elegir</button></div>",
         "b": [1.10,1.07]
-    },
-    {
-        "id":3,
-        "checkbox":false,
-        "nombre": "Old Mutual Especulativo",
-        "ti": "$0",
-        "am": 0,
-        "pa": "Item 0",
-        "ir": 0,
-        "c": "Item 0",
-        "ct": "<button type='button' class='btn c-theme-btn-verde'>Elegir</button>",
-        "b": [1.10,1.06]
     }
 ]
