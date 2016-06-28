@@ -145,41 +145,43 @@
             </div>
         </header>
         <!-- END: HEADER -->
-        <!-- BEGIN: CONTENT/USER/LOGIN-FORM -->
-        <div class="modal fade c-content-login-form" id="login-form" role="dialog">
-            <div class="modal-dialog">
-                <div class="modal-content c-square">
-                    <img src="../assets/base/img/status_bar.gif" class="img-responsive" style="margin-top:20px;">
-                    <div class="modal-header c-no-border">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
 
-                    <div class="modal-body">
+        <!-- LEADS
+          <div class="modal fade c-content-login-form" id="login-form" role="dialog">
+              <div class="modal-dialog">
+                  <div class="modal-content c-square">
+                      <img src="../assets/base/img/status_bar.gif" class="img-responsive" style="margin-top:20px;">
+                      <div class="modal-header c-no-border">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
 
-                        <h3 class="c-font-24 c-font-sbold">Ya casi!</h3>
-                        <p style="margin-bottom:2px;">Por favor llene el formulario para ver la cotización de su Crédito Hipotecario</p>
-                        <p style="font-size:0.5em;">Su información está protegida.</p>
-                        <div ng-controller="CotizaCtrl">
-                          <form class="form-horizontal" ng-submit="pushData(frm)">
-                              <div class="form-group">
-                                  <label for="login-email" class="hide">Nombre</label>
-                                  <input type="text" ng-model="frm.nombre" class="form-control input-lg c-square" id="nombre" placeholder="Nombre"> </div>
-                              <div class="form-group">
-                                  <label for="login-password" class="hide">Email</label>
-                                  <input type="email" ng-model="frm.email" class="form-control input-lg c-square" id="email" placeholder="Email">
-                              </div>
-                              <div class="form-group c-center">
-                                  <button  type="submit" onclick="showCotizacion()" data-toggle="modal" data-target="#login-form"class="btn c-theme-btn btn-md c-btn-uppercase c-btn-bold c-btn-square c-btn-login">Ir a cotización!</button>
-                              </div>
-                          </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- END: CONTENT/USER/LOGIN-FORM -->
+                      <div class="modal-body">
+
+                          <h3 class="c-font-24 c-font-sbold">Ya casi!</h3>
+                          <p style="margin-bottom:2px;">Por favor llene el formulario para ver la cotización de su Crédito Hipotecario</p>
+                          <p style="font-size:0.5em;">Su información está protegida.</p>
+                          <div ng-controller="CotizaCtrl">
+                            <form class="form-horizontal" ng-submit="pushData(frm)">
+                                <div class="form-group">
+                                    <label for="login-email" class="hide">Nombre</label>
+                                    <input type="text" ng-model="frm.nombre" class="form-control input-lg c-square" id="nombre" placeholder="Nombre"> </div>
+                                <div class="form-group">
+                                    <label for="login-password" class="hide">Email</label>
+                                    <input type="email" ng-model="frm.email" class="form-control input-lg c-square" id="email" placeholder="Email">
+                                </div>
+                                <div class="form-group c-center">
+                                    <button  type="submit" onclick="showCotizacion()" data-toggle="modal" data-target="#login-form"class="btn c-theme-btn btn-md c-btn-uppercase c-btn-bold c-btn-square c-btn-login">Ir a cotización!</button>
+                                </div>
+                            </form>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        ENDS LEADS-->
+
         <!-- END: LAYOUT/HEADERS/HEADER-1 -->
         <div class="c-layout-page" >
             <div class="c-content-box c-size-md c-bg-img-top c-bg-parallax ahorroTitle" style="background-image: url(../assets/base/img/content/backgrounds/bg-127.jpg);">
@@ -215,31 +217,6 @@
                 </div>
             </div>
 
-            <!--
-            <div class="c-content-box c-size-md c-bg-white" style="padding-bottom:0px;">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-6 wow animate fadeInLeft">
-                            <div class="c-content-title-1">
-                                <h3 class="c-font-uppercase c-font-bold">¿Qué es un AFORE?</h3>
-                                <div class="c-line-left c-theme-bg"></div>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed elit diam nonummy nibh euismod tincidunt ut laoreet dolore magna aluam erat volutpat. Ut wisi enim ad minim veniam quis nostrud exerci et tation diam nisl ut aliquip
-                                ex ea commodo consequat euismod tincidunt ut laoreet dolore magna aluam. </p>
-                            <ul class="c-content-list-1 c-theme  c-font-uppercase">
-                                <li>Perfect Design interface</li>
-                                <li>Huge Community</li>
-                                <li>Support for Everyone</li>
-                            </ul>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed elit diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
-                        </div>
-                        <div class="col-sm-6 wow animate fadeInRight">
-                            <img class="img-responsive" src="../assets/base/img/content/stock/afore.jpg">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            -->
             <!-- BEGIN: CONTENT/CONTACT/FEEDBACK-1 -->
 
             <div ng-controller="VarCtrl">
@@ -263,19 +240,19 @@
                                   <div class="c-contact">
                                     <form class="form-horizontal" ng-submit="pushData(frm)">
                                       <div class="form-group">
-                                        <label for="title" class="col-sm-2 control-label">Nombre</label>
+                                        <label for="title" class="col-sm-2 control-label">Variable 1</label>
                                         <div class="col-sm-10">
                                           <input type="text" ng-model="frm.nombre" class="form-control">
                                         </div>
                                       </div>
                                       <div class="form-group">
-                                        <label for="description" class="col-sm-2 control-label">Telefono</label>
+                                        <label for="description" class="col-sm-2 control-label">Variable 2</label>
                                         <div class="col-sm-10">
                                           <textarea class="form-control" ng-model="frm.telefono"></textarea>
                                         </div>
                                       </div>
                                       <div class="form-group">
-                                        <label for="description" class="col-sm-2 control-label">Email</label>
+                                        <label for="description" class="col-sm-2 control-label">Variable 3</label>
                                         <div class="col-sm-10">
                                           <textarea class="form-control" ng-model="frm.email"></textarea>
                                         </div>
@@ -310,39 +287,7 @@
               </div>
               <!-- END: CONTENT/MISC/ABOUT-1 -->
             </div>
-            <!-- modal for for creating new product -->
-            <div id="modal-product-form" class="modal">
-                <div class="modal-content">
-                    <h4 id="modal-product-title">Create New Product</h4>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input ng-model="name" type="text" class="validate" id="form-name" placeholder="Type name here..." />
-                            <label for="name">Name</label>
-                        </div>
 
-                        <div class="input-field col s12">
-                            <textarea ng-model="description" type="text" class="validate materialize-textarea" placeholder="Type description here..."></textarea>
-                            <label for="description">Description</label>
-                        </div>
-
-
-                        <div class="input-field col s12">
-                            <input ng-model="price" type="text" class="validate" id="form-price" placeholder="Type price here..." />
-                            <label for="price">Price</label>
-                        </div>
-
-
-                        <div class="input-field col s12">
-                            <a id="btn-create-product" class="waves-effect waves-light btn margin-bottom-1em" ng-click="createProduct()"><i class="material-icons left">add</i>Create</a>
-
-                            <a id="btn-update-product" class="waves-effect waves-light btn margin-bottom-1em" ng-click="updateProduct()"><i class="material-icons left">edit</i>Save Changes</a>
-
-                            <a class="modal-action modal-close waves-effect waves-light btn margin-bottom-1em"><i class="material-icons left">close</i>Close</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- floating button for creating product -->
         </div>
         <!-- END: PAGE CONTAINER -->
 
