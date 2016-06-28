@@ -40,7 +40,7 @@ select {
    -webkit-appearance: none;
    -moz-appearance: none;
    appearance: none;
-    background: url(../assets/base/img/content/icons/drop.ico) 96% / 15% no-repeat #eee;
+    background: url(../img/content/icons/dropdown.png) 96% / 15% no-repeat #eee;
 
 }
 
