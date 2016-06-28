@@ -40,7 +40,8 @@ select {
    -webkit-appearance: none;
    -moz-appearance: none;
    appearance: none;
-    background: url(http://www.stackoverflow.com/favicon.ico) 96% / 15% no-repeat #eee;
+    background: url(../assets/base/img/content/icons/drop.ico) 96% / 15% no-repeat #eee;
+
 }
 
 .img-center {margin:0 auto;}
