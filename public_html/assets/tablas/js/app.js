@@ -1,14 +1,14 @@
 
 
 //Tabla
-var verde = 0;
-var azul = 1;
+var verde = 1;
+var azul = 0;
 var AzulOVerde = false; //False = Verde, True = Azul
 var selections;
 var all;
 var $table = $('#table');
-var nAzul = "HolaAzul";
-var nVerde = "HolaVerde";
+var nAzul = "Old Mutual Estabilidad";
+var nVerde = "Old Mutual Moderado";
 
 //AngularApp
 var app = angular.module("fondoDeAhorro", []);
@@ -53,7 +53,15 @@ $(document).ready(function() {
   }).resize();
 
 });
-
+function cellStyle(value, row, index) {
+    var classes = ['active', 'success', 'info', 'warning', 'danger'];
+    if (index < classes.length) {
+        return {
+            classes: 'active'
+        };
+    }
+    return {};
+}
 
         $(function () {
             var sum=2;
@@ -61,8 +69,11 @@ $(document).ready(function() {
 
             var $result = $('#eventsResult');
 
+
+
             $('#table')
             .on('all.bs.table', function (e, name, args) {
+
 
                 $("tr[data-uniqueid='"+verde+"']").addClass('table-green');
                 $("tr[data-uniqueid='"+azul+"']").addClass('table-blue');
@@ -95,23 +106,53 @@ $(document).ready(function() {
             })
             .on('check.bs.table', function (e, row) {
                 //$result.text('Event: check.bs.table');
-
-
-
-
-
                 if (azul == -1) {
                     azul = row.id;
                     $("tr[data-uniqueid='"+row.id+"']").addClass('table-blue');
 
                     Bazul = row.b;
-                    nAzul = row.nombre;
+                    switch (row.id) {
+                        case 0:
+                          nAzul = "Old Mutual Estabilidad";
+                          console.log("Row Old Mutual Estabilidad AZUL");
+                          break;
+                        case 1:
+                          nAzul = "Old Mutual Moderado";
+                          console.log("Row Old Mutual Moderado AZUL");
+                          break;
+                        case 2:
+                          nAzul = "Old Mutual Dinámico";
+                          console.log("Row Old Mutual Dinámico AZUL");
+                          break;
+                      default:
+                        console.log("NadaSeleccionado")
+                        break;
+                    }
+
+
                 } else if (verde == -1) {
                     verde = row.id;
                     $("tr[data-uniqueid='"+row.id+"']").addClass('table-green');
 
                     Bverde = row.b;
-                    nVerde = row.nombre;
+
+                    switch (row.id) {
+                        case 0:
+                          nVerde = "Old Mutual Estabilidad";
+                          console.log("Row Old Mutual Estabilidad VERDE");
+                          break;
+                        case 1:
+                          nVerde = "Old Mutual Moderado";
+                          console.log("Row Old Mutual Moderado VERDE");
+                          break;
+                        case 2:
+                          nVerde = "Old Mutual Dinámico";
+                          console.log("Row Old Mutual Dinámico VERDE");
+                          break;
+                      default:
+                        console.log("NadaSeleccionado")
+                        break;
+                    }
                 }
 
                 if(sum < 2){
@@ -182,10 +223,10 @@ $(document).ready(function() {
         var intervalo = 10;
         var iAzul = 0; //Determinante de la fila de betas
         var iRojo = 1; //Determinante de la fila de betas
-        var Bverde = [1.10,1.06];
-        var Bazul = [1.12,1.08];
+        var Bverde = [1.07,1.04];
+        var Bazul = [1.12,1.05];
 
-        var B2 = [[1.10,1.07],[1.12,1.05],[1.07,1.04]];
+        //var B2 = [[1.10,1.07],[1.12,1.05],[1.07,1.04]];
         var color = ["rgba(14,14,141,0.2)","rgba(25, 187, 0,0.2)","rgba(255,255,255,1)","rgba(14,14,141,0.8)","rgba(25, 187, 0,0.8)"];
         var arrayNombres = ["Axa  Max","Axa Min","Old Mutual  Max","Old Mutual Min","Banorte  Max","Banorte Min"];
 
@@ -209,7 +250,7 @@ $(document).ready(function() {
                 return n;
             };
 
-            var lRojo_0 = function(i){ //Rojo Alta
+            var lVerde_0 = function(i){ //Rojo Alta
                 var res = a*(Math.pow(Bverde[0],(i+1))-1)/(Bverde[0]-1);
 
                 var n = res.toFixed(0);
@@ -217,7 +258,7 @@ $(document).ready(function() {
                 return n;
             };
 
-            var lRojo_1 = function(i){ //Rojo Baja
+            var lVerde_1 = function(i){ //Rojo Baja
                 var res = a*(Math.pow(Bverde[1],(i+1))-1)/(Bverde[1]-1);
                 var n = res.toFixed(0);
                 t2 += 12;
@@ -290,451 +331,260 @@ $(document).ready(function() {
         }
 
         var createGraph = function(){
+        //Pruebas
+        if(Bazul[0]>=Bverde[0]){
+                console.log("0");
+                console.log("Bazul[0]>=Bverde[0]");
+                  if(Bazul[1]>=Bverde[0]){
+                  console.log("0.1");
+                  console.log("Bazul[1]>=Bverde[0]");
+                  console.log("Azul,Azul,Verde,Verde");
+                } else if (Bazul[1]>=Bverde[1]) {
+                console.log("0.2");
+                console.log("Bazul[1]>=Bverde[1]");
+                console.log("Azul,Azul,Verde,Verde");
+              } else {
+              console.log("0.3");
+              console.log("Verde,Verde,Azul,Azul");
+              }
+          } else {
+                console.log("1");
+                console.log("Bazul[0]<Bverde[0]");
+                    if(Bverde[1]>=Bazul[0]){
+                    console.log("1.1");
+                    console.log("Bverde[1]>=Bazul[0]");
+                    console.log("Verde,Verde,Azul,Azul");
+                  } else if (Bverde[1]>=Bazul[1]) {
+                  console.log("1.2");
+                  console.log("Bverde[1]>=Bazul[1]");
+                  console.log("Verde,Verde,Azul,Azul");
+                } else {
+                console.log("1.3");
+                console.log("Azul,Azul,Verde,Verde");
+                }
+        }
+
+
             for (var i = 0; i <= t; i++) {
                 if (i%intervalo) {}
                 lineChartData.labels[i] = "Año #" + ((A+i)-2016);
                 if(Bazul[0]>=Bverde[0]){
-                    if(Bazul[1]>=Bverde[0]){
+
+                        if(Bazul[1]>=Bverde[0]){
+
+                            lineChartData.datasets[0].label = nAzul + " Max";
+                            lineChartData.datasets[0].pointStrokeColor = color[3]
+                            lineChartData.datasets[0].pointHighlightStroke = color[3];;
+                            lineChartData.datasets[0].pointColor = color[3];
+                            lineChartData.datasets[0].strokeColor = color[3];
+                            lineChartData.datasets[0].fillColor = color[0];
+                            lineChartData.datasets[0].data[i] = lAzul_0(i);
+
+                            lineChartData.datasets[1].pointStrokeColor = color[3];
+                            lineChartData.datasets[1].pointHighlightStroke = color[3];
+                            lineChartData.datasets[1].label = nAzul + " Min";
+                            lineChartData.datasets[1].pointColor = color[3];
+                            lineChartData.datasets[1].strokeColor = color[3];
+                            lineChartData.datasets[1].fillColor = color[2];
+                            lineChartData.datasets[1].data[i] = lAzul_1(i);
+
+                            lineChartData.datasets[2].pointStrokeColor = color[4];
+                            lineChartData.datasets[2].pointHighlightStroke = color[4];
+                            lineChartData.datasets[2].label = nVerde + " Max";
+                            lineChartData.datasets[2].pointColor = color[4];
+                            lineChartData.datasets[2].strokeColor = color[4];
+                            lineChartData.datasets[2].fillColor = color[1];
+                            lineChartData.datasets[2].data[i] = lVerde_0(i);
+
+                            lineChartData.datasets[3].pointStrokeColor = color[4];
+                            lineChartData.datasets[3].pointHighlightStroke = color[4];
+                            lineChartData.datasets[3].label = nVerde + " Min";
+                            lineChartData.datasets[3].pointColor = color[4];
+                            lineChartData.datasets[3].strokeColor = color[4];
+                            lineChartData.datasets[3].fillColor = color[2];
+                            lineChartData.datasets[3].data[i] = lVerde_1(i);
+
+                      } else if (Bazul[1]>=Bverde[1]) {
 
 
-                        lineChartData.datasets[0].label = nAzul + " Max";
-                        lineChartData.datasets[0].pointStrokeColor = color[3]
-                        lineChartData.datasets[0].pointHighlightStroke = color[3];;
-                        lineChartData.datasets[0].pointColor = color[3];
-                        lineChartData.datasets[0].strokeColor = color[3];
-                        lineChartData.datasets[0].fillColor = color[0];
-                        lineChartData.datasets[0].data[i] = lAzul_0(i);
-
-                        lineChartData.datasets[1].pointStrokeColor = color[3];
-                        lineChartData.datasets[1].pointHighlightStroke = color[3];
-                        lineChartData.datasets[1].label = nAzul + " Min";
-                        lineChartData.datasets[1].pointColor = color[3];
-                        lineChartData.datasets[1].strokeColor = color[3];
-                        lineChartData.datasets[1].fillColor = color[2];
-                        lineChartData.datasets[1].data[i] = lAzul_1(i);
-
-                        lineChartData.datasets[2].pointStrokeColor = color[4];
-                        lineChartData.datasets[2].pointHighlightStroke = color[4];
-                        lineChartData.datasets[2].label = nVerde + " Max";
-                        lineChartData.datasets[2].pointColor = color[4];
-                        lineChartData.datasets[2].strokeColor = color[4];
-                        lineChartData.datasets[2].fillColor = color[1];
-                        lineChartData.datasets[2].data[i] = lRojo_0(i);
-
-                        lineChartData.datasets[3].pointStrokeColor = color[4];
-                        lineChartData.datasets[3].pointHighlightStroke = color[4];
-                        lineChartData.datasets[3].label = nVerde + " Min";
-                        lineChartData.datasets[3].pointColor = color[4];
-                        lineChartData.datasets[3].strokeColor = color[4];
-                        lineChartData.datasets[3].fillColor = color[2];
-                        lineChartData.datasets[3].data[i] = lRojo_1(i);
-
-                    } else if (Bazul[1]>=Bverde[1]) {
 
 
-                        lineChartData.datasets[0].label = nAzul + " Max";
-                        lineChartData.datasets[0].pointColor = color[3];
-                        lineChartData.datasets[0].pointStrokeColor = color[3];
-                        lineChartData.datasets[0].pointHighlightStroke = color[3];
-                        lineChartData.datasets[0].strokeColor = color[3];
-                        lineChartData.datasets[0].fillColor = color[0];
-                        lineChartData.datasets[0].data[i] = lAzul_0(i);
+                            lineChartData.datasets[0].label = nAzul + " Max";
+                            lineChartData.datasets[0].pointColor = color[3];
+                            lineChartData.datasets[0].pointStrokeColor = color[3];
+                            lineChartData.datasets[0].pointHighlightStroke = color[3];
+                            lineChartData.datasets[0].strokeColor = color[3];
+                            lineChartData.datasets[0].fillColor = color[0];
+                            lineChartData.datasets[0].data[i] = lAzul_0(i);
 
-                        lineChartData.datasets[1].label = nAzul + " Min";
-                        lineChartData.datasets[1].pointColor = color[3];
-                        lineChartData.datasets[1].pointStrokeColor = color[3];
-                        lineChartData.datasets[1].pointHighlightStroke = color[3];
-                        lineChartData.datasets[1].strokeColor = color[3];
-                        lineChartData.datasets[1].fillColor = color[2];
-                        lineChartData.datasets[1].data[i] = lAzul_1(i);
+                            lineChartData.datasets[1].label = nAzul + " Min";
+                            lineChartData.datasets[1].pointColor = color[3];
+                            lineChartData.datasets[1].pointStrokeColor = color[3];
+                            lineChartData.datasets[1].pointHighlightStroke = color[3];
+                            lineChartData.datasets[1].strokeColor = color[3];
+                            lineChartData.datasets[1].fillColor = color[2];
+                            lineChartData.datasets[1].data[i] = lAzul_1(i);
 
-                        lineChartData.datasets[2].label = nVerde + " Max";
-                        lineChartData.datasets[2].pointColor = color[4];
-                        lineChartData.datasets[2].pointStrokeColor = color[4];
-                        lineChartData.datasets[2].pointHighlightStroke = color[4];
-                        lineChartData.datasets[2].strokeColor = color[4];
-                        lineChartData.datasets[2].fillColor = color[1];
-                        lineChartData.datasets[2].data[i] = lRojo_0(i);
+                            lineChartData.datasets[2].label = nVerde + " Max";
+                            lineChartData.datasets[2].pointColor = color[4];
+                            lineChartData.datasets[2].pointStrokeColor = color[4];
+                            lineChartData.datasets[2].pointHighlightStroke = color[4];
+                            lineChartData.datasets[2].strokeColor = color[4];
+                            lineChartData.datasets[2].fillColor = color[1];
+                            lineChartData.datasets[2].data[i] = lVerde_0(i);
 
-                        lineChartData.datasets[3].label = nVerde + " Min";
-                        lineChartData.datasets[3].pointColor = color[4];
-                        lineChartData.datasets[3].pointStrokeColor = color[4];
-                        lineChartData.datasets[3].pointHighlightStroke = color[4];
-                        lineChartData.datasets[3].strokeColor = color[4];
-                        lineChartData.datasets[3].fillColor = color[2];
-                        lineChartData.datasets[3].data[i] = lRojo_1(i);
+                            lineChartData.datasets[3].label = nVerde + " Min";
+                            lineChartData.datasets[3].pointColor = color[4];
+                            lineChartData.datasets[3].pointStrokeColor = color[4];
+                            lineChartData.datasets[3].pointHighlightStroke = color[4];
+                            lineChartData.datasets[3].strokeColor = color[4];
+                            lineChartData.datasets[3].fillColor = color[2];
+                            lineChartData.datasets[3].data[i] = lVerde_1(i);
+
                     } else {
 
 
-                        lineChartData.datasets[0].label = nAzul + " Max";
-                        lineChartData.datasets[0].pointColor = color[4];
-                        lineChartData.datasets[0].pointStrokeColor = color[4];
-                        lineChartData.datasets[0].pointHighlightStroke = color[4];
-                        lineChartData.datasets[0].strokeColor = color[4];
-                        lineChartData.datasets[0].fillColor = color[1];
-                        lineChartData.datasets[0].data[i] = lRojo_0(i);
+                            lineChartData.datasets[0].label = nVerde + " Max";
+                            lineChartData.datasets[0].pointColor = color[4];
+                            lineChartData.datasets[0].pointStrokeColor = color[4];
+                            lineChartData.datasets[0].pointHighlightStroke = color[4];
+                            lineChartData.datasets[0].strokeColor = color[4];
+                            lineChartData.datasets[0].fillColor = color[1];
+                            lineChartData.datasets[0].data[i] = lVerde_0(i);
 
-                        lineChartData.datasets[1].label = nAzul + " Min";
-                        lineChartData.datasets[1].pointColor = color[4];
-                        lineChartData.datasets[1].pointStrokeColor = color[4];
-                        lineChartData.datasets[1].pointHighlightStroke = color[4];
-                        lineChartData.datasets[1].strokeColor = color[4];
-                        lineChartData.datasets[1].fillColor = color[2];
-                        lineChartData.datasets[1].data[i] = lRojo_1(i);
+                            lineChartData.datasets[1].label = nVerde + " Min";
+                            lineChartData.datasets[1].pointColor = color[4];
+                            lineChartData.datasets[1].pointStrokeColor = color[4];
+                            lineChartData.datasets[1].pointHighlightStroke = color[4];
+                            lineChartData.datasets[1].strokeColor = color[4];
+                            lineChartData.datasets[1].fillColor = color[2];
+                            lineChartData.datasets[1].data[i] = lVerde_1(i);
 
-                        lineChartData.datasets[2].label = nVerde + " Max";
-                        lineChartData.datasets[2].pointColor = color[3];
-                        lineChartData.datasets[2].pointStrokeColor = color[3];
-                        lineChartData.datasets[2].pointHighlightStroke = color[3];
-                        lineChartData.datasets[2].strokeColor = color[3];
-                        lineChartData.datasets[2].fillColor = color[0];
-                        lineChartData.datasets[2].data[i] = lAzul_0(i);
+                            lineChartData.datasets[2].label = nAzul + " Max";
+                            lineChartData.datasets[2].pointColor = color[3];
+                            lineChartData.datasets[2].pointStrokeColor = color[3];
+                            lineChartData.datasets[2].pointHighlightStroke = color[3];
+                            lineChartData.datasets[2].strokeColor = color[3];
+                            lineChartData.datasets[2].fillColor = color[0];
+                            lineChartData.datasets[2].data[i] = lAzul_0(i);
 
-                        lineChartData.datasets[3].label = nVerde + " Min";
-                        lineChartData.datasets[3].pointColor = color[3];
-                        lineChartData.datasets[3].pointStrokeColor = color[3];
-                        lineChartData.datasets[3].pointHighlightStroke = color[3];
-                        lineChartData.datasets[3].strokeColor = color[3];
-                        lineChartData.datasets[3].fillColor = color[2];
-                        lineChartData.datasets[3].data[i] = lAzul_1(i);
+                            lineChartData.datasets[3].label = nAzul + " Min";
+                            lineChartData.datasets[3].pointColor = color[3];
+                            lineChartData.datasets[3].pointStrokeColor = color[3];
+                            lineChartData.datasets[3].pointHighlightStroke = color[3];
+                            lineChartData.datasets[3].strokeColor = color[3];
+                            lineChartData.datasets[3].fillColor = color[2];
+                            lineChartData.datasets[3].data[i] = lAzul_1(i);
+
                     }
+
                 } else {
-                    if(Bverde[1]>=Bazul[0]){
 
 
-                        lineChartData.datasets[0].label = nAzul + " Max";
-                        lineChartData.datasets[0].pointColor = color[4];
-                        lineChartData.datasets[0].pointStrokeColor = color[4];
-                        lineChartData.datasets[0].pointHighlightStroke = color[4];
-                        lineChartData.datasets[0].strokeColor = color[4];
-                        lineChartData.datasets[0].fillColor = color[1];
-                        lineChartData.datasets[0].data[i] = lRojo_0(i);
+                          if(Bverde[1]>=Bazul[0]){
 
-                        lineChartData.datasets[1].label = nAzul + " Min";
-                        lineChartData.datasets[1].pointColor = color[4];
-                        lineChartData.datasets[1].pointStrokeColor = color[4];
-                        lineChartData.datasets[1].pointHighlightStroke = color[4];
-                        lineChartData.datasets[1].strokeColor = color[4];
-                        lineChartData.datasets[1].fillColor = color[2];
-                        lineChartData.datasets[1].data[i] = lRojo_1(i);
+                              lineChartData.datasets[0].label = nVerde + " Max";
+                              lineChartData.datasets[0].pointColor = color[4];
+                              lineChartData.datasets[0].pointStrokeColor = color[4];
+                              lineChartData.datasets[0].pointHighlightStroke = color[4];
+                              lineChartData.datasets[0].strokeColor = color[4];
+                              lineChartData.datasets[0].fillColor = color[1];
+                              lineChartData.datasets[0].data[i] = lVerde_0(i);
 
-                        lineChartData.datasets[2].label = nVerde + " Max";
-                        lineChartData.datasets[2].pointColor = color[3];
-                        lineChartData.datasets[2].pointStrokeColor = color[3];
-                        lineChartData.datasets[2].pointHighlightStroke = color[3];
-                        lineChartData.datasets[2].strokeColor = color[3];
-                        lineChartData.datasets[2].fillColor = color[0];
-                        lineChartData.datasets[2].data[i] = lAzul_0(i);
+                              lineChartData.datasets[1].label = nVerde + " Min";
+                              lineChartData.datasets[1].pointColor = color[4];
+                              lineChartData.datasets[1].pointStrokeColor = color[4];
+                              lineChartData.datasets[1].pointHighlightStroke = color[4];
+                              lineChartData.datasets[1].strokeColor = color[4];
+                              lineChartData.datasets[1].fillColor = color[2];
+                              lineChartData.datasets[1].data[i] = lVerde_1(i);
 
-                        lineChartData.datasets[3].label = nVerde + " Min";
-                        lineChartData.datasets[3].pointColor = color[3];
-                        lineChartData.datasets[3].pointStrokeColor = color[3];
-                        lineChartData.datasets[3].pointHighlightStroke = color[3];
-                        lineChartData.datasets[3].strokeColor = color[3];
-                        lineChartData.datasets[3].fillColor = color[2];
-                        lineChartData.datasets[3].data[i] = lAzul_1(i);
+                              lineChartData.datasets[2].label =  nAzul + " Max";
+                              lineChartData.datasets[2].pointColor = color[3];
+                              lineChartData.datasets[2].pointStrokeColor = color[3];
+                              lineChartData.datasets[2].pointHighlightStroke = color[3];
+                              lineChartData.datasets[2].strokeColor = color[3];
+                              lineChartData.datasets[2].fillColor = color[0];
+                              lineChartData.datasets[2].data[i] = lAzul_0(i);
 
-                    } else if (Bverde[1]>=Bazul[1]) {
+                              lineChartData.datasets[3].label =  nAzul + " Min";
+                              lineChartData.datasets[3].pointColor = color[3];
+                              lineChartData.datasets[3].pointStrokeColor = color[3];
+                              lineChartData.datasets[3].pointHighlightStroke = color[3];
+                              lineChartData.datasets[3].strokeColor = color[3];
+                              lineChartData.datasets[3].fillColor = color[2];
+                              lineChartData.datasets[3].data[i] = lAzul_1(i);
 
+                        } else if (Bverde[1]>=Bazul[1]) {
 
-                        lineChartData.datasets[0].label = nAzul + " Max";
-                        lineChartData.datasets[0].pointColor = color[4];
-                        lineChartData.datasets[0].pointStrokeColor = color[4];
-                        lineChartData.datasets[0].pointHighlightStroke = color[4];
-                        lineChartData.datasets[0].strokeColor = color[4];
-                        lineChartData.datasets[0].fillColor = color[1];
-                        lineChartData.datasets[0].data[i] = lRojo_0(i);
+                              lineChartData.datasets[0].label = nVerde + " Max";
+                              lineChartData.datasets[0].pointColor = color[4];
+                              lineChartData.datasets[0].pointStrokeColor = color[4];
+                              lineChartData.datasets[0].pointHighlightStroke = color[4];
+                              lineChartData.datasets[0].strokeColor = color[4];
+                              lineChartData.datasets[0].fillColor = color[1];
+                              lineChartData.datasets[0].data[i] = lVerde_0(i);
 
-                        lineChartData.datasets[1].label = nAzul + " Min";
-                        lineChartData.datasets[1].pointColor = color[4];
-                        lineChartData.datasets[1].pointStrokeColor = color[4];
-                        lineChartData.datasets[1].pointHighlightStroke = color[4];
-                        lineChartData.datasets[1].strokeColor = color[4];
-                        lineChartData.datasets[1].fillColor = color[2];
-                        lineChartData.datasets[1].data[i] = lRojo_1(i);
+                              lineChartData.datasets[1].label = nVerde + " Min";
+                              lineChartData.datasets[1].pointColor = color[4];
+                              lineChartData.datasets[1].pointStrokeColor = color[4];
+                              lineChartData.datasets[1].pointHighlightStroke = color[4];
+                              lineChartData.datasets[1].strokeColor = color[4];
+                              lineChartData.datasets[1].fillColor = color[2];
+                              lineChartData.datasets[1].data[i] = lVerde_1(i);
 
-                        lineChartData.datasets[2].label = nVerde + " Max";
-                        lineChartData.datasets[2].pointColor = color[3];
-                        lineChartData.datasets[2].pointStrokeColor = color[3];
-                        lineChartData.datasets[2].pointHighlightStroke = color[3];
-                        lineChartData.datasets[2].strokeColor = color[3];
-                        lineChartData.datasets[2].fillColor = color[0];
-                        lineChartData.datasets[2].data[i] = lAzul_0(i);
+                              lineChartData.datasets[2].label =  nAzul+ " Max";
+                              lineChartData.datasets[2].pointColor = color[3];
+                              lineChartData.datasets[2].pointStrokeColor = color[3];
+                              lineChartData.datasets[2].pointHighlightStroke = color[3];
+                              lineChartData.datasets[2].strokeColor = color[3];
+                              lineChartData.datasets[2].fillColor = color[0];
+                              lineChartData.datasets[2].data[i] = lAzul_0(i);
 
-                        lineChartData.datasets[3].label = nVerde + " Min";
-                        lineChartData.datasets[3].pointColor = color[3];
-                        lineChartData.datasets[3].pointStrokeColor = color[3];
-                        lineChartData.datasets[3].pointHighlightStroke = color[3];
-                        lineChartData.datasets[3].strokeColor = color[3];
-                        lineChartData.datasets[3].fillColor = color[2];
-                        lineChartData.datasets[3].data[i] = lAzul_1(i);
+                              lineChartData.datasets[3].label =  nAzul+ " Min";
+                              lineChartData.datasets[3].pointColor = color[3];
+                              lineChartData.datasets[3].pointStrokeColor = color[3];
+                              lineChartData.datasets[3].pointHighlightStroke = color[3];
+                              lineChartData.datasets[3].strokeColor = color[3];
+                              lineChartData.datasets[3].fillColor = color[2];
+                              lineChartData.datasets[3].data[i] = lAzul_1(i);
 
-                    } else {
+                      } else {
+                              lineChartData.datasets[0].label = nAzul + " Max";
+                              lineChartData.datasets[0].pointColor = color[3];
+                              lineChartData.datasets[0].pointStrokeColor = color[3];
+                              lineChartData.datasets[0].pointHighlightStroke = color[3];
+                              lineChartData.datasets[0].strokeColor = color[3];
+                              lineChartData.datasets[0].fillColor = color[3];
+                              lineChartData.datasets[0].data[i] = lAzul_0(i);
 
+                              lineChartData.datasets[1].label = nAzul + " Min";
+                              lineChartData.datasets[1].pointColor = color[3];
+                              lineChartData.datasets[1].pointStrokeColor = color[3];
+                              lineChartData.datasets[1].pointHighlightStroke = color[3];
+                              lineChartData.datasets[1].strokeColor = color[3];
+                              lineChartData.datasets[1].fillColor = color[2];
+                              lineChartData.datasets[1].data[i] = lAzul_1(i);
 
-                        lineChartData.datasets[0].label = nAzul + " Max";
-                        lineChartData.datasets[0].pointColor = color[3];
-                        lineChartData.datasets[0].pointStrokeColor = color[3];
-                        lineChartData.datasets[0].pointHighlightStroke = color[3];
-                        lineChartData.datasets[0].strokeColor = color[3];
-                        lineChartData.datasets[0].fillColor = color[3];
-                        lineChartData.datasets[0].data[i] = lAzul_0(i);
+                              lineChartData.datasets[2].label = nVerde + " Max";
+                              lineChartData.datasets[2].pointColor = color[4];
+                              lineChartData.datasets[2].pointStrokeColor = color[4];
+                              lineChartData.datasets[2].pointHighlightStroke = color[4];
+                              lineChartData.datasets[2].strokeColor = color[4];
+                              lineChartData.datasets[2].fillColor = color[1];
+                              lineChartData.datasets[2].data[i] = lVerde_0(i);
 
-                        lineChartData.datasets[1].label = nAzul + " Min";
-                        lineChartData.datasets[1].pointColor = color[3];
-                        lineChartData.datasets[1].pointStrokeColor = color[3];
-                        lineChartData.datasets[1].pointHighlightStroke = color[3];
-                        lineChartData.datasets[1].strokeColor = color[3];
-                        lineChartData.datasets[1].fillColor = color[2];
-                        lineChartData.datasets[1].data[i] = lAzul_1(i);
+                              lineChartData.datasets[3].label = nVerde + " Min";
+                              lineChartData.datasets[3].pointColor = color[4];
+                              lineChartData.datasets[3].pointStrokeColor = color[4];
+                              lineChartData.datasets[3].pointHighlightStroke = color[4];
+                              lineChartData.datasets[3].strokeColor = color[4];
+                              lineChartData.datasets[3].fillColor = color[2];
+                              lineChartData.datasets[3].data[i] = lVerde_1(i);
 
-                        lineChartData.datasets[2].label = nVerde + " Max";
-                        lineChartData.datasets[2].pointColor = color[4];
-                        lineChartData.datasets[2].pointStrokeColor = color[4];
-                        lineChartData.datasets[2].pointHighlightStroke = color[4];
-                        lineChartData.datasets[2].strokeColor = color[4];
-                        lineChartData.datasets[2].fillColor = color[1];
-                        lineChartData.datasets[2].data[i] = lRojo_0(i);
+                      }
 
-                        lineChartData.datasets[3].label = nVerde + " Min";
-                        lineChartData.datasets[3].pointColor = color[4];
-                        lineChartData.datasets[3].pointStrokeColor = color[4];
-                        lineChartData.datasets[3].pointHighlightStroke = color[4];
-                        lineChartData.datasets[3].strokeColor = color[4];
-                        lineChartData.datasets[3].fillColor = color[2];
-                        lineChartData.datasets[3].data[i] = lRojo_1(i);
-
-                    }
                 }
-
-                /*
-
-                lineChartData.datasets[0].data[i] = lAzul_0(i);
-                lineChartData.datasets[1].data[i] = lAzul_1(i);
-                lineChartData.datasets[2].data[i] = lRojo_0(i);
-                lineChartData.datasets[3].data[i] = lRojo_1(i);
-                */
-            };
-            for (var i = 0; i <= t; i++) {
-                lineChartData2.labels[i] = "Año #" + ((A+i)-2016);
-                if(B2[iAzul][0]>=B2[iRojo][0]){
-                    if(B2[iAzul][1]>=B2[iRojo][0]){
-
-
-                        lineChartData2.datasets[0].label = nAzul + " Max";
-                        lineChartData2.datasets[0].pointStrokeColor = color[3]
-                        lineChartData2.datasets[0].pointHighlightStroke = color[3];;
-                        lineChartData2.datasets[0].pointColor = color[3];
-                        lineChartData2.datasets[0].strokeColor = color[3];
-                        lineChartData2.datasets[0].fillColor = color[0];
-                        lineChartData2.datasets[0].data[i] = lAzul_0(i);
-
-                        lineChartData2.datasets[1].pointStrokeColor = color[3];
-                        lineChartData2.datasets[1].pointHighlightStroke = color[3];
-                        lineChartData2.datasets[1].label = nAzul + " Min";
-                        lineChartData2.datasets[1].pointColor = color[3];
-                        lineChartData2.datasets[1].strokeColor = color[3];
-                        lineChartData2.datasets[1].fillColor = color[2];
-                        lineChartData2.datasets[1].data[i] = lAzul_1(i);
-
-                        lineChartData2.datasets[2].pointStrokeColor = color[4];
-                        lineChartData2.datasets[2].pointHighlightStroke = color[4];
-                        lineChartData2.datasets[2].label = nVerde + " Max";
-                        lineChartData2.datasets[2].pointColor = color[4];
-                        lineChartData2.datasets[2].strokeColor = color[4];
-                        lineChartData2.datasets[2].fillColor = color[1];
-                        lineChartData2.datasets[2].data[i] = lRojo_0(i);
-
-                        lineChartData2.datasets[3].pointStrokeColor = color[4];
-                        lineChartData2.datasets[3].pointHighlightStroke = color[4];
-                        lineChartData2.datasets[3].label = nVerde + " Min";
-                        lineChartData2.datasets[3].pointColor = color[4];
-                        lineChartData2.datasets[3].strokeColor = color[4];
-                        lineChartData2.datasets[3].fillColor = color[2];
-                        lineChartData2.datasets[3].data[i] = lRojo_1(i);
-
-                    } else if (B2[iAzul][1]>=B2[iRojo][1]) {
-
-
-                        lineChartData2.datasets[0].label = nAzul + " Max";
-                        lineChartData2.datasets[0].pointColor = color[3];
-                        lineChartData2.datasets[0].pointStrokeColor = color[3];
-                        lineChartData2.datasets[0].pointHighlightStroke = color[3];
-                        lineChartData2.datasets[0].strokeColor = color[3];
-                        lineChartData2.datasets[0].fillColor = color[0];
-                        lineChartData2.datasets[0].data[i] = lAzul_0(i);
-
-                        lineChartData2.datasets[1].label = nAzul + " Min";
-                        lineChartData2.datasets[1].pointColor = color[3];
-                        lineChartData2.datasets[1].pointStrokeColor = color[3];
-                        lineChartData2.datasets[1].pointHighlightStroke = color[3];
-                        lineChartData2.datasets[1].strokeColor = color[3];
-                        lineChartData2.datasets[1].fillColor = color[2];
-                        lineChartData2.datasets[1].data[i] = lAzul_1(i);
-
-                        lineChartData2.datasets[2].label = nVerde + " Max";
-                        lineChartData2.datasets[2].pointColor = color[4];
-                        lineChartData2.datasets[2].pointStrokeColor = color[4];
-                        lineChartData2.datasets[2].pointHighlightStroke = color[4];
-                        lineChartData2.datasets[2].strokeColor = color[4];
-                        lineChartData2.datasets[2].fillColor = color[1];
-                        lineChartData2.datasets[2].data[i] = lRojo_0(i);
-
-                        lineChartData2.datasets[3].label = nVerde + " Min";
-                        lineChartData2.datasets[3].pointColor = color[4];
-                        lineChartData2.datasets[3].pointStrokeColor = color[4];
-                        lineChartData2.datasets[3].pointHighlightStroke = color[4];
-                        lineChartData2.datasets[3].strokeColor = color[4];
-                        lineChartData2.datasets[3].fillColor = color[2];
-                        lineChartData2.datasets[3].data[i] = lRojo_1(i);
-                    } else {
-
-
-                        lineChartData2.datasets[0].label = nAzul + " Max";
-                        lineChartData2.datasets[0].pointColor = color[4];
-                        lineChartData2.datasets[0].pointStrokeColor = color[4];
-                        lineChartData2.datasets[0].pointHighlightStroke = color[4];
-                        lineChartData2.datasets[0].strokeColor = color[4];
-                        lineChartData2.datasets[0].fillColor = color[1];
-                        lineChartData2.datasets[0].data[i] = lRojo_0(i);
-
-                        lineChartData2.datasets[1].label = nAzul + " Min";
-                        lineChartData2.datasets[1].pointColor = color[4];
-                        lineChartData2.datasets[1].pointStrokeColor = color[4];
-                        lineChartData2.datasets[1].pointHighlightStroke = color[4];
-                        lineChartData2.datasets[1].strokeColor = color[4];
-                        lineChartData2.datasets[1].fillColor = color[2];
-                        lineChartData2.datasets[1].data[i] = lRojo_1(i);
-
-                        lineChartData2.datasets[2].label = nVerde + " Max";
-                        lineChartData2.datasets[2].pointColor = color[3];
-                        lineChartData2.datasets[2].pointStrokeColor = color[3];
-                        lineChartData2.datasets[2].pointHighlightStroke = color[3];
-                        lineChartData2.datasets[2].strokeColor = color[3];
-                        lineChartData2.datasets[2].fillColor = color[0];
-                        lineChartData2.datasets[2].data[i] = lAzul_0(i);
-
-                        lineChartData2.datasets[3].label = nVerde + " Min";
-                        lineChartData2.datasets[3].pointColor = color[3];
-                        lineChartData2.datasets[3].pointStrokeColor = color[3];
-                        lineChartData2.datasets[3].pointHighlightStroke = color[3];
-                        lineChartData2.datasets[3].strokeColor = color[3];
-                        lineChartData2.datasets[3].fillColor = color[2];
-                        lineChartData2.datasets[3].data[i] = lAzul_1(i);
-                    }
-                } else {
-                    if(B2[iRojo][1]>=B2[iAzul][0]){
-
-
-                        lineChartData2.datasets[0].label = nAzul + " Max";
-                        lineChartData2.datasets[0].pointColor = color[4];
-                        lineChartData2.datasets[0].pointStrokeColor = color[4];
-                        lineChartData2.datasets[0].pointHighlightStroke = color[4];
-                        lineChartData2.datasets[0].strokeColor = color[4];
-                        lineChartData2.datasets[0].fillColor = color[1];
-                        lineChartData2.datasets[0].data[i] = lRojo_0(i);
-
-                        lineChartData2.datasets[1].label = nAzul + " Min";
-                        lineChartData2.datasets[1].pointColor = color[4];
-                        lineChartData2.datasets[1].pointStrokeColor = color[4];
-                        lineChartData2.datasets[1].pointHighlightStroke = color[4];
-                        lineChartData2.datasets[1].strokeColor = color[4];
-                        lineChartData2.datasets[1].fillColor = color[2];
-                        lineChartData2.datasets[1].data[i] = lRojo_1(i);
-
-                        lineChartData2.datasets[2].label = nVerde + " Max";
-                        lineChartData2.datasets[2].pointColor = color[3];
-                        lineChartData2.datasets[2].pointStrokeColor = color[3];
-                        lineChartData2.datasets[2].pointHighlightStroke = color[3];
-                        lineChartData2.datasets[2].strokeColor = color[3];
-                        lineChartData2.datasets[2].fillColor = color[0];
-                        lineChartData2.datasets[2].data[i] = lAzul_0(i);
-
-                        lineChartData2.datasets[3].label = nVerde + " Min";
-                        lineChartData2.datasets[3].pointColor = color[3];
-                        lineChartData2.datasets[3].pointStrokeColor = color[3];
-                        lineChartData2.datasets[3].pointHighlightStroke = color[3];
-                        lineChartData2.datasets[3].strokeColor = color[3];
-                        lineChartData2.datasets[3].fillColor = color[2];
-                        lineChartData2.datasets[3].data[i] = lAzul_1(i);
-
-                    } else if (B2[iRojo][1]>=B2[iAzul][1]) {
-
-
-                        lineChartData2.datasets[0].label = nAzul + " Max";
-                        lineChartData2.datasets[0].pointColor = color[4];
-                        lineChartData2.datasets[0].pointStrokeColor = color[4];
-                        lineChartData2.datasets[0].pointHighlightStroke = color[4];
-                        lineChartData2.datasets[0].strokeColor = color[4];
-                        lineChartData2.datasets[0].fillColor = color[1];
-                        lineChartData2.datasets[0].data[i] = lRojo_0(i);
-
-                        lineChartData2.datasets[1].label = nAzul + " Min";
-                        lineChartData2.datasets[1].pointColor = color[4];
-                        lineChartData2.datasets[1].pointStrokeColor = color[4];
-                        lineChartData2.datasets[1].pointHighlightStroke = color[4];
-                        lineChartData2.datasets[1].strokeColor = color[4];
-                        lineChartData2.datasets[1].fillColor = color[2];
-                        lineChartData2.datasets[1].data[i] = lRojo_1(i);
-
-                        lineChartData2.datasets[2].label = nVerde + " Max";
-                        lineChartData2.datasets[2].pointColor = color[3];
-                        lineChartData2.datasets[2].pointStrokeColor = color[3];
-                        lineChartData2.datasets[2].pointHighlightStroke = color[3];
-                        lineChartData2.datasets[2].strokeColor = color[3];
-                        lineChartData2.datasets[2].fillColor = color[0];
-                        lineChartData2.datasets[2].data[i] = lAzul_0(i);
-
-                        lineChartData2.datasets[3].label = nVerde + " Min";
-                        lineChartData2.datasets[3].pointColor = color[3];
-                        lineChartData2.datasets[3].pointStrokeColor = color[3];
-                        lineChartData2.datasets[3].pointHighlightStroke = color[3];
-                        lineChartData2.datasets[3].strokeColor = color[3];
-                        lineChartData2.datasets[3].fillColor = color[2];
-                        lineChartData2.datasets[3].data[i] = lAzul_1(i);
-
-                    } else {
-
-
-                        lineChartData2.datasets[0].label = nAzul + " Max";
-                        lineChartData2.datasets[0].pointColor = color[3];
-                        lineChartData2.datasets[0].pointStrokeColor = color[3];
-                        lineChartData2.datasets[0].pointHighlightStroke = color[3];
-                        lineChartData2.datasets[0].strokeColor = color[3];
-                        lineChartData2.datasets[0].fillColor = color[0];
-                        lineChartData2.datasets[0].data[i] = lAzul_0(i);
-                        lineChartData2.datasets[3].label = nAzul + " Min";
-                        lineChartData2.datasets[3].pointColor = color[4];
-                        lineChartData2.datasets[3].pointStrokeColor = color[4];
-                        lineChartData2.datasets[3].pointHighlightStroke = color[4];
-                        lineChartData2.datasets[3].strokeColor = color[4];
-                        lineChartData2.datasets[3].fillColor = color[2];
-                        lineChartData2.datasets[3].data[i] = lAzul_1(i);
-                        lineChartData2.datasets[2].label = nVerde + " Max";
-                        lineChartData2.datasets[2].pointColor = color[4];
-                        lineChartData2.datasets[2].pointStrokeColor = color[4];
-                        lineChartData2.datasets[2].pointHighlightStroke = color[4];
-                        lineChartData2.datasets[2].strokeColor = color[4];
-                        lineChartData2.datasets[2].fillColor = color[1];
-                        lineChartData2.datasets[2].data[i] = lRojo_0(i);
-                        lineChartData2.datasets[1].label = nVerde + " Min";
-                        lineChartData2.datasets[1].pointColor = color[3];
-                        lineChartData2.datasets[1].pointStrokeColor = color[3];
-                        lineChartData2.datasets[1].pointHighlightStroke = color[3];
-                        lineChartData2.datasets[1].strokeColor = color[3];
-                        lineChartData2.datasets[1].fillColor = color[2];
-                        lineChartData2.datasets[1].data[i] = lRojo_1(i);
-
-                    }
-                }
-
-                /*
-
-                lineChartData.datasets[0].data[i] = lAzul_0(i);
-                lineChartData.datasets[1].data[i] = lAzul_1(i);
-                lineChartData.datasets[2].data[i] = lRojo_0(i);
-                lineChartData.datasets[3].data[i] = lRojo_1(i);
-                */
             };
         };
 
@@ -767,6 +617,7 @@ $(document).ready(function() {
             pointDotRadius : 3,
             pointDotStrokeWidth : 1,
             pointHitDetectionRadius : 10,
+            tooltipFillColor: "rgba(0,0,0,0.8)",
             multiTooltipTemplate: "<%= datasetLabel %> - $<%= Chart.numberWithCommas(value) %>",
             /*,
             scaleOverride : true,
@@ -788,6 +639,7 @@ $(document).ready(function() {
             pointDotRadius : 3,
             pointDotStrokeWidth : 1,
             pointHitDetectionRadius : 10,
+            tooltipFillColor: "rgba(0,0,0,0.8)",
             multiTooltipTemplate: "<%= datasetLabel %> - $<%= Chart.numberWithCommas(value) %>",
             /*,
             scaleOverride : true,

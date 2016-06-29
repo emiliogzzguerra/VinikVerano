@@ -622,7 +622,7 @@
                 <div class="container">
                     <div class="c-content-bar-2 c-opt-1">
                         <div class="row" data-auto-height="true">
-                          <h2 class="c-font-uppercase c-font-bold c-font-center">Compara tu afore con la competencia</h2>
+                          <h2 class="c-font-uppercase c-font-bold c-font-center">Si te cambias de afore</h2>
                           <div ng-controller="AforeCtrl">
                             <div class="col-md-6" >
                               <div class="c-content-title-1 c-bg-grey" data-height="height" style="height: 167px;padding:30px 30px 30px 30px;">
@@ -644,12 +644,55 @@
                                         </select>
                                   </div>
                                   <div style="float:left; margin-left:20px;">
-                                    <span style="font-size:1.0em">Tiempo:</span>
-                                    <select style="margin-left:5px;" id="tiempo" ng-init="user.tiempo = '10';" ng-model="user.tiempo" ng-change="pushData(user)" >
-                                        <option value="5">5 años</option>
-                                        <option selected="true" value="10">10 años</option>
-                                        <option value="15">15 años</option>
+                                    <span style="font-size:1.0em">Edad:</span>
+                                    <select style="margin-left:5px;" id="tiempo" ng-init="user.tiempo = '25';" ng-model="user.tiempo" ng-change="pushData(user)" >
+                                        <option value="18">18 años</option>
+                                        <option selected="true" value="19">19 años</option>
                                         <option value="20">20 años</option>
+                                        <option value="21">21 años</option>
+                                        <option value="22">22 años</option>
+                                        <option value="23">23 años</option>
+                                        <option value="24">24 años</option>
+                                        <option value="25">25 años</option>
+                                        <option value="26">26 años</option>
+                                        <option value="27">27 años</option>
+                                        <option value="28">28 años</option>
+                                        <option value="29">29 años</option>
+                                        <option value="30">30 años</option>
+                                        <option value="31">31 años</option>
+                                        <option value="32">32 años</option>
+                                        <option value="33">33 años</option>
+                                        <option value="34">34 años</option>
+                                        <option value="35">35 años</option>
+                                        <option value="36">36 años</option>
+                                        <option value="37">37 años</option>
+                                        <option value="38">38 años</option>
+                                        <option value="39">39 años</option>
+                                        <option value="40">40 años</option>
+                                        <option value="41">41 años</option>
+                                        <option value="42">42 años</option>
+                                        <option value="43">43 años</option>
+                                        <option value="44">44 años</option>
+                                        <option value="45">45 años</option>
+                                        <option value="46">46 años</option>
+                                        <option value="47">47 años</option>
+                                        <option value="48">48 años</option>
+                                        <option value="49">49 años</option>
+                                        <option value="50">50 años</option>
+                                        <option value="51">51 años</option>
+                                        <option value="52">52 años</option>
+                                        <option value="53">53 años</option>
+                                        <option value="54">54 años</option>
+                                        <option value="55">55 años</option>
+                                        <option value="56">56 años</option>
+                                        <option value="57">57 años</option>
+                                        <option value="58">58 años</option>
+                                        <option value="59">59 años</option>
+                                        <option value="60">60 años</option>
+                                        <option value="61">61 años</option>
+                                        <option value="62">62 años</option>
+                                        <option value="63">63 años</option>
+                                        <option value="64">64 años</option>
                                     </select>
                                   </div>
                                   <div class="text-center" style="float:left;  margin-left:20px;">
@@ -678,8 +721,8 @@
                                     <div class="c-wrapper">
                                         <div class="c-body">
                                             <!--<h3 class="c-font-white c-font-bold">Just another option from an endless list of choices within JANGO.</h3>-->
-                                            <h4 class="c-font-white c-font-uppercase c-font-bold c-font-center">En los próximos {{tiempo}} años ahorrarás</h4>
-                                            <h5 class="c-font-white c-font-uppercase c-font-bold c-font-center"><span style="color:#19BB00;">${{perdida}}</span> pesos!</h5>
+                                            <h4 class="c-font-white c-font-uppercase c-font-bold c-font-center">En los próximos {{tiempo}} años obtendrás</h4>
+                                            <h5 class="c-font-white c-font-uppercase c-font-bold c-font-center"><span style="color:#19BB00;">{{ perdida | currency : "$"}}</span> pesos extra!</h5>
                                         </div>
                                     </div>
                                 </div>
