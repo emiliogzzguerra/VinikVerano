@@ -247,74 +247,54 @@
                           <h3 class="c-font-uppercase c-font-bold" style="color:white;">Paga menos con tu crédito hipotecario</h3>
                           <div class="c-line-left"></div>
                           <p class="c-font-lowercase" style="color:white;">La reforma ... (Explicación)<br/>asdfasdf<br />asdfasdf</p>
-                          <!--<a href="#" class="btn btn-md c-btn-border-2x c-btn-white c-btn-uppercase c-btn-square c-btn-bold">Learn More</a>-->
                       </div>
                   </div>
                 </div>
 
                 <div class="col-md-6 c-bg-white">
-                  <!--<img class="img-responsive img-center" style="width:229px;height:56px;" src="../assets/base/img/content/fondoAhorro/compara.jpg"/>-->
 
                   <div style="width:100%">
                       <div>
                           <canvas id="canvas" height="300" width="600"></canvas>
                       </div>
                   </div>
-
-                </div>
-            </div>
-            <div class="col-md-12 c-bg-white">
-                <div class="col-md-6 c-bg-white" >
-                  <div id="imageWrapper1">
-                    <!--<img id="bottomImage" class="img-responsive" style="width:262px;height:77px;margin-top:50px;" src="../assets/base/img/content/fondoAhorro/select.jpg"/>-->
+                  <div ng-controller="ExampleController">
+                    <div class="text-center" style="float:left;  margin-left:20px;">
+                          <span style="font-size:1.0em">Aportaciones Mensuales:</span>
+                                  <select style="margin-left:5px;" id="aportaciones" ng-init="user.a = 2000" ng-model="user.a" ng-change="save(user)">
+                                      <option value="1500">$1,500</option>
+                                      <option  selected="true" value="2000">$2,000</option>
+                                      <option value="2500">$2,500</option>
+                                      <option value="3000">$3,000</option>
+                                      <option value="3500">$3,500</option>
+                                      <option value="4000">$4,000</option>
+                                      <option value="4500">$4,500</option>
+                                      <option value="5000">$5,000</option>
+                                      <option value="5500">$5,500</option>
+                                      <option value="6000">$6,000</option>
+                                      <option value="6500">$6,500</option>
+                                      <option value="7000">$7,000</option>
+                                      <option value="7500">$7,500</option>
+                                      <option value="8000">$8,000</option>
+                                      <option value="8500">$8,500</option>
+                                      <option value="9000">$9,000</option>
+                                      <option value="9500">$9,500</option>
+                                      <option value="10000">$10,000</option>
+                                      <option value="10500">$10,500</option>
+                                      <option value="11000">$11,000</option>
+                                  </select>
+                    </div>
+                    <div style="float:left; margin-left:20px;">
+                      <span style="font-size:1.0em">Tiempo:</span>
+                              <select style="margin-left:5px;" id="tiempo" ng-init="user.t = 10" ng-model="user.t" ng-change="save(user)" >
+                                  <option value="5">5 años</option>
+                                  <option selected="true" value="10">10 años</option>
+                                  <option value="15">15 años</option>
+                                  <option value="20">20 años</option>
+                              </select>
+                    </div>
                   </div>
-                </div>
 
-                <div class="bottom-align-text col-md-6 c-bg-white">
-                              <!--<img class="img-responsive" style="width:229px;height:56px;" src="../assets/base/img/content/fondoAhorro/personaliza.jpg"/>-->
-
-                              <div  style="margin-top:20px;margin-bottom:-20px;">
-                                <div ng-controller="ExampleController">
-                                  <div class="text-center" style="float:left;  margin-left:20px;">
-                                        <span style="font-size:1.0em">Aportaciones Mensuales:</span>
-                                                <select style="margin-left:5px;" id="aportaciones" ng-init="user.a = 2000" ng-model="user.a" ng-change="save(user)">
-                                                    <option value="1500">$1,500</option>
-                                                    <option  selected="true" value="2000">$2,000</option>
-                                                    <option value="2500">$2,500</option>
-                                                    <option value="3000">$3,000</option>
-                                                    <option value="3500">$3,500</option>
-                                                    <option value="4000">$4,000</option>
-                                                    <option value="4500">$4,500</option>
-                                                    <option value="5000">$5,000</option>
-                                                    <option value="5500">$5,500</option>
-                                                    <option value="6000">$6,000</option>
-                                                    <option value="6500">$6,500</option>
-                                                    <option value="7000">$7,000</option>
-                                                    <option value="7500">$7,500</option>
-                                                    <option value="8000">$8,000</option>
-                                                    <option value="8500">$8,500</option>
-                                                    <option value="9000">$9,000</option>
-                                                    <option value="9500">$9,500</option>
-                                                    <option value="10000">$10,000</option>
-                                                    <option value="10500">$10,500</option>
-                                                    <option value="11000">$11,000</option>
-                                                </select>
-                                  </div>
-                                  <div style="float:left; margin-left:20px;">
-                                    <span style="font-size:1.0em">Tiempo:</span>
-                                            <select style="margin-left:5px;" id="tiempo" ng-init="user.t = 10" ng-model="user.t" ng-change="save(user)" >
-                                                <option value="5">5 años</option>
-                                                <option selected="true" value="10">10 años</option>
-                                                <option value="15">15 años</option>
-                                                <option value="20">20 años</option>
-                                            </select>
-                                  </div>
-                                </div>
-                                <div id="imageWrapper2">
-                                  <!--<img id="bottomImage" class="img-responsive" style="width:262px;height:77px;" src="../assets/base/img/content/fondoAhorro/select.jpg"/>-->
-                                </div>
-                                <br/>
-                              </div>
                 </div>
             </div>
 
@@ -330,7 +310,7 @@
                             data-escape="false">
                     <thead>
                         <tr>
-                            <th data-field="checkbox" data-checkbox="true" class="table-active"></th>
+                            <th data-field="checkbox" data-checkbox="true"></th>
                             <th data-field="nombre" data-sortable="true" data-cell-style="cellStyle">Compañía</th>
                             <th data-field="ti" data-sortable="true">Tasa de Interés</th>
                             <th data-field="am" data-sortable="true">Ahorro Mínimo Mensual</th>
@@ -489,26 +469,6 @@
         <script>
         $(document).ready(function()
         {
-            if ($(window).width() < 990) {
-                      $("#imageWrapper1").hide();
-                      $("#imageWrapper2").show();
-            };
-            if ($(window).width() > 990) {
-                  $("#imageWrapper1").show();
-                  $("#imageWrapper2").hide();
-            };
-
-            $(window).resize(function() {
-                if ($(window).width() > 990) {
-                  $("#imageWrapper1").show();
-                  $("#imageWrapper2").hide();
-                };
-                if ($(window).width() < 990) {
-                  $("#imageWrapper1").hide();
-                  $("#imageWrapper2").show();
-                };
-
-            });
 
 
               $("#form").show();

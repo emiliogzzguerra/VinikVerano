@@ -28,6 +28,23 @@
 
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.table-green:hover,
+.table-green:hover{
+  background-color: rgba(25, 187, 0,0.3);
+}
+
+.table-blue:hover,
+.table-blue:hover{
+  background-color: rgba(14,14,141,0.3);
+}
+
+.table tbody tr:not(.table-green):not(.table-blue):hover td,
+.table tbody tr:not(.table-green):not(.table-blue):hover th{
+  background-color: rgba(213, 213, 213,0.4);
+}
+
+
 .vcenter {
   padding: 15% 0;
 
