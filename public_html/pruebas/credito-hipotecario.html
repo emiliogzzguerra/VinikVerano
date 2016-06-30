@@ -234,7 +234,9 @@
                                           <!--<a href="#" class="btn btn-md c-btn-border-2x c-btn-white c-btn-uppercase c-btn-square c-btn-bold">Learn More</a>-->
                                       </div>
                                   </div>
-
+                                  <div style="width: 100%">
+                              			<canvas id="canvas" height="100%" width="100%"></canvas>
+                              		</div>
                               </div>
                               <div class="col-md-6">
                                   <div class="c-contact">
@@ -242,55 +244,28 @@
                                       <div class="form-group">
                                         <label for="title" class="col-sm-2 control-label">Variable 1</label>
                                         <div class="col-sm-10">
-                                          <input type="text" ng-model="frm.nombre" class="form-control">
+                                          <input type="text" ng-model="frm.var1"ng-init="frm.var1=23000"  class="form-control" ng-change="save(frm)">
                                         </div>
                                       </div>
                                       <div class="form-group">
                                         <label for="description" class="col-sm-2 control-label">Variable 2</label>
                                         <div class="col-sm-10">
-                                          <textarea class="form-control" ng-model="frm.telefono"></textarea>
+                                          <textarea class="form-control" ng-model="frm.var2"ng-init="frm.var2=200" ng-change="save(frm)"></textarea>
                                         </div>
                                       </div>
                                       <div class="form-group">
                                         <label for="description" class="col-sm-2 control-label">Variable 3</label>
                                         <div class="col-sm-10">
-                                          <textarea class="form-control" ng-model="frm.email"></textarea>
-                                        </div>
-                                      </div>
-                                      <div class="form-group">
-                                        <div class="col-sm-offset-2 col-sm-10">
-                                          <button type="submit"  data-toggle="modal" data-target="#login-form" value="submit" class="btn btn-primary">Cotizar</button>
-                                          <!--<button type="submit" value="submit" class="btn btn-primary">ASD Blog</button>-->
+                                          <textarea class="form-control" ng-model="frm.var3"ng-init="frm.var3=4000" ng-change="save(frm)"></textarea>
                                         </div>
                                       </div>
                                     </form>
                               </div>
-
-                              <div style="width: 50%">
-                          			<canvas id="canvas" height="100%" width="100%"></canvas>
-                          		</div>
                           </div>
                       </div>
                   </div>
               </div>
               <!-- END: CONTENT/CONTACT/FEEDBACK-1 -->
-
-              <!-- BEGIN: CONTENT/MISC/ABOUT-1 -->
-              <div id="cotizacion" class="c-content-box c-size-md c-bg-white">
-                  <div class="container">
-                      <div class="row">
-                          <div class="col-sm-12">
-                              <br>
-                              <div class="c-content-title-1">
-                                  <h3 class="c-font-uppercase c-font-bold c-font-center">Cotización</h3>
-                                  <div class="c-line-center c-theme-bg"></div>
-                              </div>
-                              <span>{{total}}</span>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <!-- END: CONTENT/MISC/ABOUT-1 -->
             </div>
 
         </div>
