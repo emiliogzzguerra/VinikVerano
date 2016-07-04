@@ -239,26 +239,78 @@
                               		</div>
                               </div>
                               <div class="col-md-6">
+                                <h5 class="c-font-uppercase c-font-bold">Datos del solicitante</h5>
                                   <div class="c-contact">
                                     <form class="form-horizontal" ng-submit="pushData(frm)">
                                       <div class="form-group">
-                                        <label for="title" class="col-sm-2 control-label">Variable 1</label>
-                                        <div class="col-sm-10">
-                                          <input type="text" ng-model="frm.var1"ng-init="frm.var1=23000"  class="form-control" ng-change="save(frm)">
+                                        <label for="title" class="col-sm-6 control-label">Nombre</label>
+                                        <div class="col-sm-6">
+                                          <input type="text" ng-model="frm.sNombre" ng-init="frm.sNombre=23000"  class="form-control" ng-change="save(frm)">
                                         </div>
                                       </div>
                                       <div class="form-group">
-                                        <label for="description" class="col-sm-2 control-label">Variable 2</label>
-                                        <div class="col-sm-10">
-                                          <textarea class="form-control" ng-model="frm.var2"ng-init="frm.var2=200" ng-change="save(frm)"></textarea>
+                                        <label for="description" class="col-sm-6 control-label">Edad</label>
+                                        <div class="col-sm-6">
+                                          <input type="number" ng-model="frm.iEdad" ng-init="frm.iEdad=200"  class="form-control" ng-change="save(frm)">
                                         </div>
                                       </div>
                                       <div class="form-group">
-                                        <label for="description" class="col-sm-2 control-label">Variable 3</label>
-                                        <div class="col-sm-10">
-                                          <textarea class="form-control" ng-model="frm.var3"ng-init="frm.var3=4000" ng-change="save(frm)"></textarea>
+                                        <label for="description" class="col-sm-6 control-label">Coacreditado</label>
+                                        <div class="col-sm-6" style="padding-top:5px;">
+                                          <input type="radio" name="gender" value="true" checked> Si
+                                          <input type="radio" name="gender" style="margin-left:20px;" value="false"> No
                                         </div>
                                       </div>
+                                      <div class="form-group">
+                                        <label for="description" class="col-sm-6 control-label">Edad Coacreditado</label>
+                                        <div class="col-sm-6">
+                                          <input type="number" ng-model="frm.iEdadCoa" ng-init="frm.iEdadCoa=4000"  class="form-control" ng-change="save(frm)">
+                                        </div>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="description" class="col-sm-6 control-label">Opciones de Crédito</label>
+                                        <div class="col-sm-6" style="padding-top:5px;">
+                                          <input type="radio" name="gender" value="true" checked> Paga lo mismo + monto adicional
+                                          <input type="radio" name="gender" style="margin-left:20px;" value="false"> Paga Menos
+                                        </div>
+                                      </div>
+
+                                      <h5 class="c-font-uppercase c-font-bold">Datos del crédito actual</h5>
+                                      <div class="form-group">
+                                        <label for="description" class="col-sm-6 control-label">Saldo Inicial</label>
+                                        <div class="col-sm-6">
+                                          <input type="number" ng-model="frm.iSdoIns" ng-init="frm.iSdoIns=200"  class="form-control" ng-change="save(frm)">
+                                        </div>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="description" class="col-sm-6 control-label">Por lo que pagas mensualmente</label>
+                                        <div class="col-sm-6">
+                                          <input type="number" ng-model="frm.iPago" ng-init="frm.iPago=200"  class="form-control" ng-change="save(frm)">
+                                        </div>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="description" class="col-sm-6 control-label">Plazo Restante (Meses)</label>
+                                        <div class="col-sm-6">
+                                          <input type="number" ng-model="frm.iPlazo" ng-init="frm.iPlazo=200"  class="form-control" ng-change="save(frm)">
+                                        </div>
+                                      </div>
+                                      <!--
+                                      Datos del solicitante
+                                      sNombre = Nombre (Texto)
+                                      iEdad = Edad (Num)
+                                      bCoa = Coacreditado
+                                      	True = Si
+                                      	False = No
+                                      iEdadCoa = Edad Coacreditado (Num)
+                                      bOpcCred = Opciones de credito
+                                      	True = Paga lo mismo + monto adicional
+                                      	False = Paga menos
+
+                                      Datos del crédito actual
+                                      iSdoIns = Saldo insoluto (Num)
+                                      iPago = Por lo que pagas mensualmente (Num)
+                                      iPlazo = Plazo restante en meses (Num)
+                                      -->
                                     </form>
                               </div>
                           </div>
