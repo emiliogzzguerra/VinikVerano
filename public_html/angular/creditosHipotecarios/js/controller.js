@@ -3,28 +3,34 @@ angular.module('controller',[])
 
 
 .controller('VarCtrl', ['$scope', '$http', '$log','$window', function($scope, $http, $log,$window) {
-
-	$scope.perdida = 23000;
-  $scope.tiempo = 19000;
-
-	$scope.pushData = function($params) {
-		var aforeActual = $params.var1;
-		var tiempo = $params.var2;
-		var rangoSalario = $params.var3;
-    $scope.tiempo = $params.var1 - $params.var3;
-    $scope.perdida = $params.var1;
-		createGraph();
-
+	$scope.changeChecked = function($params){
+		$scope.frm.bCoa = $params;
+	}
+	$scope.changeOpc = function($params){
+		$scope.frm.bCoa = $params;
 	}
 
-	$scope.save = function($params) {
-		var aforeActual = $params.var1;
-		var tiempo = $params.var2;
-		var rangoSalario = $params.var3;
-    $scope.tiempo = $params.var1 - $params.var3;
-    $scope.perdida = $params.var1;
-		chartUpdate();
+	$scope.frm = {
+		sNombre:"Emilio Gzz",
+		iEdad:32 ,
+		bCoa: 0,
+		iEdadCoa: 19,
+		bOpcCred: 1,
+		iSdoIns:2000,
+		iPago:200 ,
+		iPlazo: 12
+	};
 
+	$scope.save = function($params) {
+		$scope.frm.sNombre = $params.sNombre;
+		$scope.frm.iEdad = $params.iEdad;
+		$scope.frm.bCoa = $params.bCoa;
+		$scope.frm.iEdadCoa = $params.iEdadCoa;
+		$scope.frm.bOpcCred = $params.bOpcCred;
+		$scope.frm.iSdoIns = $params.iSdoIns;
+		$scope.frm.iPago = $params.iPago;
+		$scope.frm.iPlazo = $params.iPlazo;
+		console.log($scope.frm);
 	}
 	var barChartData = {
 		labels : ["Pago"],

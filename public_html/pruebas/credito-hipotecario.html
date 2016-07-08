@@ -245,14 +245,14 @@
                                       <div class="form-group">
                                         <label for="title" class="col-sm-6 control-label">Nombre</label>
                                         <div class="col-sm-6">
-                                          <input type="text" ng-model="frm.sNombre" ng-init="frm.sNombre='Emilio Gzz'"  class="form-control" ng-change="save(frm)">
+                                          <input type="text" ng-model="frm.sNombre"  class="form-control" ng-change="save(frm)">
                                         </div>
                                       </div>
                                       <div class="form-group">
                                         <label for="description" class="col-sm-6 control-label">Edad</label>
                                         <div class="col-sm-6">
                                           <!--<input type="number" ng-model="frm.iEdad" ng-init="frm.iEdad=200"  class="form-control" ng-change="save(frm)">-->
-                                          <select style="margin-left:5px;" ng-init="frm.iEdad = '32';" ng-model="frm.iEdad" ng-change="save(frm)" >
+                                          <select style="margin-left:5px;" ng-model="frm.iEdad" ng-change="save(frm)" >
                                               <option value="18">18 años</option>
                                               <option value="19">19 años</option>
                                               <option value="20">20 años</option>
@@ -305,15 +305,15 @@
                                       </div>
                                       <div class="form-group">
                                         <label for="description" class="col-sm-6 control-label">Coacreditado</label>
-                                        <div class="col-sm-6" style="padding-top:5px;" ng-init="checked=0">
-                                          <input type="radio" name="gender" ng-model="checked" value="1" > Si
-                                          <input type="radio" name="gender" style="margin-left:20px;" ng-model="checked"  value="0"> No
+                                        <div class="col-sm-6" style="padding-top:5px;" ng-init="checked=0" >
+                                          <input type="radio" name="gender" ng-model="checked" value="1" ng-change="changeChecked(checked)"> Si
+                                          <input type="radio" name="gender" style="margin-left:20px;" ng-model="checked"  value="0" ng-change="changeChecked(checked)"> No
                                         </div>
                                       </div>
                                       <div class="form-group">
                                         <label for="description" class="col-sm-6 control-label">Edad Coacreditado</label>
                                         <div class="col-sm-6">
-                                          <select style="margin-left:5px;" ng-init="frm.iEdadCoa = '19';" ng-disabled="checked == 0" ng-model="frm.iEdadCoa" ng-change="save(frm)" >
+                                          <select style="margin-left:5px;" ng-disabled="checked == 0" ng-model="frm.iEdadCoa" ng-init="frm.iEdadCoa='19';" ng-change="save(frm)" >
                                               <option value="18">18 años</option>
                                               <option selected="true" value="19">19 años</option>
                                               <option value="20">20 años</option>
@@ -367,7 +367,7 @@
                                       <div class="form-group">
                                         <label for="description" class="col-sm-6 control-label">Opciones de Crédito</label>
                                         <div class="col-sm-6" style="padding-top:5px;">
-                                          <select style="margin-left:5px;" ng-init="frm.bOpcCred = '1'" ng-model="frm.bOpcCred" ng-change="save(frm)" >
+                                          <select style="margin-left:5px;" ng-model="frm.bOpcCred" ng-change="save(frm)" >
                                                <option value="0" >Paga lo mismo + monto adicional</option>
                                                <option value="1">Paga Menos</option>
                                            </select>
@@ -378,20 +378,20 @@
                                       <div class="form-group">
                                         <label for="description" class="col-sm-6 control-label">Saldo Inicial</label>
                                         <div class="col-sm-6">
-                                          <input type="text" fcsa-number="{ prepend: '$' }" ng-model="frm.iSdoIns" ng-init="frm.iSdoIns=2000" class="form-control"  ng-change="save(frm)"/>
+                                          <input type="text" fcsa-number="{ prepend: '$' }" ng-model="frm.iSdoIns"  class="form-control"  ng-change="save(frm)"/>
 
                                         </div>
                                       </div>
                                       <div class="form-group">
                                         <label for="description" class="col-sm-6 control-label">Por lo que pagas mensualmente</label>
                                         <div class="col-sm-6">
-                                          <input type="text" fcsa-number="{ prepend: '$' }" ng-model="frm.iPago" ng-init="frm.iPago=200" class="form-control"  ng-change="save(frm)"/>
+                                          <input type="text" fcsa-number="{ prepend: '$' }" ng-model="frm.iPago" class="form-control"  ng-change="save(frm)"/>
                                         </div>
                                       </div>
                                       <div class="form-group">
                                         <label for="description" class="col-sm-6 control-label">Plazo Restante (Meses)</label>
                                         <div class="col-sm-6">
-                                          <input type="text" fcsa-number="{ append: ' meses' }" ng-model="frm.iPlazo" ng-init="frm.iPlazo=12" class="form-control"  ng-change="save(frm)"/>
+                                          <input type="text" fcsa-number="{ append: ' meses' }" ng-model="frm.iPlazo" class="form-control"  ng-change="save(frm)"/>
                                         </div>
                                       </div>
                                       <!--
