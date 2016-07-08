@@ -1,1 +1,1 @@
-angular.module('app', ['controller'])
+angular.module('app', ['controller','fcsa-number'])

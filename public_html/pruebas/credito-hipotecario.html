@@ -241,37 +241,136 @@
                               <div class="col-md-6">
                                 <h5 class="c-font-uppercase c-font-bold">Datos del solicitante</h5>
                                   <div class="c-contact">
-                                    <form class="form-horizontal" ng-submit="pushData(frm)">
+                                    <form class="form-horizontal" ng-submit="save(frm)">
                                       <div class="form-group">
                                         <label for="title" class="col-sm-6 control-label">Nombre</label>
                                         <div class="col-sm-6">
-                                          <input type="text" ng-model="frm.sNombre" ng-init="frm.sNombre=23000"  class="form-control" ng-change="save(frm)">
+                                          <input type="text" ng-model="frm.sNombre" ng-init="frm.sNombre='Emilio Gzz'"  class="form-control" ng-change="save(frm)">
                                         </div>
                                       </div>
                                       <div class="form-group">
                                         <label for="description" class="col-sm-6 control-label">Edad</label>
                                         <div class="col-sm-6">
-                                          <input type="number" ng-model="frm.iEdad" ng-init="frm.iEdad=200"  class="form-control" ng-change="save(frm)">
+                                          <!--<input type="number" ng-model="frm.iEdad" ng-init="frm.iEdad=200"  class="form-control" ng-change="save(frm)">-->
+                                          <select style="margin-left:5px;" ng-init="frm.iEdad = '32';" ng-model="frm.iEdad" ng-change="save(frm)" >
+                                              <option value="18">18 años</option>
+                                              <option value="19">19 años</option>
+                                              <option value="20">20 años</option>
+                                              <option value="21">21 años</option>
+                                              <option value="22">22 años</option>
+                                              <option value="23">23 años</option>
+                                              <option value="24">24 años</option>
+                                              <option value="25">25 años</option>
+                                              <option value="26">26 años</option>
+                                              <option value="27">27 años</option>
+                                              <option value="28">28 años</option>
+                                              <option value="29">29 años</option>
+                                              <option value="30">30 años</option>
+                                              <option value="31">31 años</option>
+                                              <option value="32">32 años</option>
+                                              <option value="33">33 años</option>
+                                              <option value="34">34 años</option>
+                                              <option value="35">35 años</option>
+                                              <option value="36">36 años</option>
+                                              <option value="37">37 años</option>
+                                              <option value="38">38 años</option>
+                                              <option value="39">39 años</option>
+                                              <option value="40">40 años</option>
+                                              <option value="41">41 años</option>
+                                              <option value="42">42 años</option>
+                                              <option value="43">43 años</option>
+                                              <option value="44">44 años</option>
+                                              <option value="45">45 años</option>
+                                              <option value="46">46 años</option>
+                                              <option value="47">47 años</option>
+                                              <option value="48">48 años</option>
+                                              <option value="49">49 años</option>
+                                              <option value="50">50 años</option>
+                                              <option value="51">51 años</option>
+                                              <option value="52">52 años</option>
+                                              <option value="53">53 años</option>
+                                              <option value="54">54 años</option>
+                                              <option value="55">55 años</option>
+                                              <option value="56">56 años</option>
+                                              <option value="57">57 años</option>
+                                              <option value="58">58 años</option>
+                                              <option value="59">59 años</option>
+                                              <option value="60">60 años</option>
+                                              <option value="61">61 años</option>
+                                              <option value="62">62 años</option>
+                                              <option value="63">63 años</option>
+                                              <option value="64">64 años</option>
+                                          </select>
                                         </div>
                                       </div>
                                       <div class="form-group">
                                         <label for="description" class="col-sm-6 control-label">Coacreditado</label>
-                                        <div class="col-sm-6" style="padding-top:5px;">
-                                          <input type="radio" name="gender" value="true" checked> Si
-                                          <input type="radio" name="gender" style="margin-left:20px;" value="false"> No
+                                        <div class="col-sm-6" style="padding-top:5px;" ng-init="checked=0">
+                                          <input type="radio" name="gender" ng-model="checked" value="1" > Si
+                                          <input type="radio" name="gender" style="margin-left:20px;" ng-model="checked"  value="0"> No
                                         </div>
                                       </div>
                                       <div class="form-group">
                                         <label for="description" class="col-sm-6 control-label">Edad Coacreditado</label>
                                         <div class="col-sm-6">
-                                          <input type="number" ng-model="frm.iEdadCoa" ng-init="frm.iEdadCoa=4000"  class="form-control" ng-change="save(frm)">
+                                          <select style="margin-left:5px;" ng-init="frm.iEdadCoa = '19';" ng-disabled="checked == 0" ng-model="frm.iEdadCoa" ng-change="save(frm)" >
+                                              <option value="18">18 años</option>
+                                              <option selected="true" value="19">19 años</option>
+                                              <option value="20">20 años</option>
+                                              <option value="21">21 años</option>
+                                              <option value="22">22 años</option>
+                                              <option value="23">23 años</option>
+                                              <option value="24">24 años</option>
+                                              <option value="25">25 años</option>
+                                              <option value="26">26 años</option>
+                                              <option value="27">27 años</option>
+                                              <option value="28">28 años</option>
+                                              <option value="29">29 años</option>
+                                              <option value="30">30 años</option>
+                                              <option value="31">31 años</option>
+                                              <option value="32">32 años</option>
+                                              <option value="33">33 años</option>
+                                              <option value="34">34 años</option>
+                                              <option value="35">35 años</option>
+                                              <option value="36">36 años</option>
+                                              <option value="37">37 años</option>
+                                              <option value="38">38 años</option>
+                                              <option value="39">39 años</option>
+                                              <option value="40">40 años</option>
+                                              <option value="41">41 años</option>
+                                              <option value="42">42 años</option>
+                                              <option value="43">43 años</option>
+                                              <option value="44">44 años</option>
+                                              <option value="45">45 años</option>
+                                              <option value="46">46 años</option>
+                                              <option value="47">47 años</option>
+                                              <option value="48">48 años</option>
+                                              <option value="49">49 años</option>
+                                              <option value="50">50 años</option>
+                                              <option value="51">51 años</option>
+                                              <option value="52">52 años</option>
+                                              <option value="53">53 años</option>
+                                              <option value="54">54 años</option>
+                                              <option value="55">55 años</option>
+                                              <option value="56">56 años</option>
+                                              <option value="57">57 años</option>
+                                              <option value="58">58 años</option>
+                                              <option value="59">59 años</option>
+                                              <option value="60">60 años</option>
+                                              <option value="61">61 años</option>
+                                              <option value="62">62 años</option>
+                                              <option value="63">63 años</option>
+                                              <option value="64">64 años</option>
+                                          </select>
                                         </div>
                                       </div>
                                       <div class="form-group">
                                         <label for="description" class="col-sm-6 control-label">Opciones de Crédito</label>
                                         <div class="col-sm-6" style="padding-top:5px;">
-                                          <input type="radio" name="gender" value="true" checked> Paga lo mismo + monto adicional
-                                          <input type="radio" name="gender" style="margin-left:20px;" value="false"> Paga Menos
+                                          <select style="margin-left:5px;" ng-init="frm.bOpcCred = '1'" ng-model="frm.bOpcCred" ng-change="save(frm)" >
+                                               <option value="0" >Paga lo mismo + monto adicional</option>
+                                               <option value="1">Paga Menos</option>
+                                           </select>
                                         </div>
                                       </div>
 
@@ -279,19 +378,20 @@
                                       <div class="form-group">
                                         <label for="description" class="col-sm-6 control-label">Saldo Inicial</label>
                                         <div class="col-sm-6">
-                                          <input type="number" ng-model="frm.iSdoIns" ng-init="frm.iSdoIns=200"  class="form-control" ng-change="save(frm)">
+                                          <input type="text" fcsa-number="{ prepend: '$' }" ng-model="frm.iSdoIns" ng-init="frm.iSdoIns=2000" class="form-control"  ng-change="save(frm)"/>
+
                                         </div>
                                       </div>
                                       <div class="form-group">
                                         <label for="description" class="col-sm-6 control-label">Por lo que pagas mensualmente</label>
                                         <div class="col-sm-6">
-                                          <input type="number" ng-model="frm.iPago" ng-init="frm.iPago=200"  class="form-control" ng-change="save(frm)">
+                                          <input type="text" fcsa-number="{ prepend: '$' }" ng-model="frm.iPago" ng-init="frm.iPago=200" class="form-control"  ng-change="save(frm)"/>
                                         </div>
                                       </div>
                                       <div class="form-group">
                                         <label for="description" class="col-sm-6 control-label">Plazo Restante (Meses)</label>
                                         <div class="col-sm-6">
-                                          <input type="number" ng-model="frm.iPlazo" ng-init="frm.iPlazo=200"  class="form-control" ng-change="save(frm)">
+                                          <input type="text" fcsa-number="{ append: ' meses' }" ng-model="frm.iPlazo" ng-init="frm.iPlazo=12" class="form-control"  ng-change="save(frm)"/>
                                         </div>
                                       </div>
                                       <!--
@@ -383,6 +483,9 @@
             <script src="../angular/creditosHipotecarios/js/app.js"></script>
             <script src="../angular/creditosHipotecarios/js/controller.js"></script>
         <!-- End necesario Grafica -->
+        <!--ADD COMAS -->
+        <script src="../bower_components/angular-fcsa-number/src/fcsaNumber.js"></script>
+        <!-- END ADD COMAS -->
 
 
         <script>
