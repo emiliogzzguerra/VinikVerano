@@ -193,8 +193,8 @@
                                 <ul class="c-grid-row">
                                     <li>
                                         <div class="c-bg-opacity-1 c-card" data-height="height" style="text-align:center;">
-                                            <h3 class=" c-font-bold">Cotizemos tu credito hipotecario</h3>
-                                            <p> Solo con un poco de información cotizaremos un credito hipotecario a tu medida. ¡Solo toma 5 minutos!</p>
+                                            <h3 class=" c-font-bold">Cuentas actualmente con un crédito hipotecario</h3>
+                                            <p> Traspasar un crédito a otra institución es muy sencillo y tiene excelentes beneficios para ti ¡conócelos!</p>
                                             <br>
                                             <a href="https://vinik.typeform.com/to/utRcyj" data-mode="2" target="_blank" class=" btn btn-lg c-btn-square c-theme-btn c-btn-bold c-btn-uppercase page-scroll typeform-share">Cotiza Ahora</a>
                                             <br>
@@ -203,11 +203,10 @@
                                     </li>
                                     <li>
                                         <div class="c-bg-opacity-1 c-card" data-height="height" style="text-align:center;">
-                                            <h3 class="c-font-bold" >¿Te podemos ayudar?</h3>
-                                            <p>Mon - Fri: 8am - 8pm, Sat: 9am - 2:30pm</p>
+                                            <h3 class="c-font-bold" >Buscas un crédito nuevo</h3>
+                                            <p>Comprar un inmueble es una decisión importante en tu vida, no lo dejes a la ligera ¡En solo 5 minutos puedes ahorrarte en promedio $350,000 pesos!</p>
                                             <br>
-                                            <h4>+55 1106 3951</h4>
-                                            <a href="https://vinik.typeform.com/to/utRcyj" class="typeform-share btn btn-sm c-btn-square  c-btn-bold c-btn-uppercase c-theme-btn-verde" data-mode="2" target="_blank">Solicitar una llamada</a>
+                                            <a href="https://vinik.typeform.com/to/utRcyj" class="typeform-share btn btn-sm c-btn-square  c-btn-bold c-btn-uppercase c-theme-btn-verde" data-mode="2" target="_blank">Ahorrar ahora!</a>
                                         </div>
                                     </li>
                                 </ul>
@@ -228,31 +227,40 @@
                               <div class="col-md-6">
                                   <div class="c-container c-bg-green c-bg-img-bottom-right">
                                       <div class="c-content-title-1 c-inverse">
-                                          <h3 class="c-font-uppercase c-font-bold">Paga menos con tu crédito hipotecario</h3>
+                                          <h3 class="c-font-uppercase c-font-bold">Traspasa tu crédito hipotecario</h3>
                                           <div class="c-line-left"></div>
-                                          <p class="c-font-lowercase">La reforma ... (Explicación)</p>
+
+                                          <p class="c-font-lowercase">Actualmente puedes traspasar tu deuda a un banco que te ofrezca <b>mejores beneficios</b> sin comisión por apertura, sin gastos de subrogación, sin penalización por prepago y sin gastos notariales.</p>
+                                          <br>
+
+                                          <p class="c-font-lowercase">
+                                            Puedes:
+                                            <br>
+                                            1. Pagar menos mensualmente
+                                            <br>
+                                            2. Pagar lo mismo y recibir hasta <b>$300,000 pesos</b>  solo por cambiar tu crédito de banco.
+                                          </p>
+                                          <br>
+
                                           <!--<a href="#" class="btn btn-md c-btn-border-2x c-btn-white c-btn-uppercase c-btn-square c-btn-bold">Learn More</a>-->
                                       </div>
                                   </div>
-                                  <div style="width: 100%">
-                              			<canvas id="canvas" height="100%" width="100%"></canvas>
-                              		</div>
+
                               </div>
                               <div class="col-md-6">
-                                <h5 class="c-font-uppercase c-font-bold">Datos del solicitante</h5>
                                   <div class="c-contact">
                                     <form class="form-horizontal" ng-submit="save(frm)">
+                                      <h5 class="c-font-uppercase c-font-bold">Datos del solicitante</h5>
                                       <div class="form-group">
                                         <label for="title" class="col-sm-6 control-label">Nombre</label>
                                         <div class="col-sm-6">
-                                          <input type="text" ng-model="frm.sNombre"  class="form-control" ng-change="save(frm)">
+                                          <input type="text" ng-model="frm.sNombre"  class="form-control">
                                         </div>
                                       </div>
                                       <div class="form-group">
                                         <label for="description" class="col-sm-6 control-label">Edad</label>
                                         <div class="col-sm-6">
-                                          <!--<input type="number" ng-model="frm.iEdad" ng-init="frm.iEdad=200"  class="form-control" ng-change="save(frm)">-->
-                                          <select style="margin-left:5px;" ng-model="frm.iEdad" ng-change="save(frm)" >
+                                          <select style="margin-left:5px;" ng-model="frm.iEdad" >
                                               <option value="18">18 años</option>
                                               <option value="19">19 años</option>
                                               <option value="20">20 años</option>
@@ -303,115 +311,54 @@
                                           </select>
                                         </div>
                                       </div>
-                                      <div class="form-group">
-                                        <label for="description" class="col-sm-6 control-label">Coacreditado</label>
-                                        <div class="col-sm-6" style="padding-top:5px;" ng-init="checked=0" >
-                                          <input type="radio" name="gender" ng-model="checked" value="1" ng-change="changeChecked(checked)"> Si
-                                          <input type="radio" name="gender" style="margin-left:20px;" ng-model="checked"  value="0" ng-change="changeChecked(checked)"> No
-                                        </div>
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="description" class="col-sm-6 control-label">Edad Coacreditado</label>
-                                        <div class="col-sm-6">
-                                          <select style="margin-left:5px;" ng-disabled="checked == 0" ng-model="frm.iEdadCoa" ng-init="frm.iEdadCoa='19';" ng-change="save(frm)" >
-                                              <option value="18">18 años</option>
-                                              <option selected="true" value="19">19 años</option>
-                                              <option value="20">20 años</option>
-                                              <option value="21">21 años</option>
-                                              <option value="22">22 años</option>
-                                              <option value="23">23 años</option>
-                                              <option value="24">24 años</option>
-                                              <option value="25">25 años</option>
-                                              <option value="26">26 años</option>
-                                              <option value="27">27 años</option>
-                                              <option value="28">28 años</option>
-                                              <option value="29">29 años</option>
-                                              <option value="30">30 años</option>
-                                              <option value="31">31 años</option>
-                                              <option value="32">32 años</option>
-                                              <option value="33">33 años</option>
-                                              <option value="34">34 años</option>
-                                              <option value="35">35 años</option>
-                                              <option value="36">36 años</option>
-                                              <option value="37">37 años</option>
-                                              <option value="38">38 años</option>
-                                              <option value="39">39 años</option>
-                                              <option value="40">40 años</option>
-                                              <option value="41">41 años</option>
-                                              <option value="42">42 años</option>
-                                              <option value="43">43 años</option>
-                                              <option value="44">44 años</option>
-                                              <option value="45">45 años</option>
-                                              <option value="46">46 años</option>
-                                              <option value="47">47 años</option>
-                                              <option value="48">48 años</option>
-                                              <option value="49">49 años</option>
-                                              <option value="50">50 años</option>
-                                              <option value="51">51 años</option>
-                                              <option value="52">52 años</option>
-                                              <option value="53">53 años</option>
-                                              <option value="54">54 años</option>
-                                              <option value="55">55 años</option>
-                                              <option value="56">56 años</option>
-                                              <option value="57">57 años</option>
-                                              <option value="58">58 años</option>
-                                              <option value="59">59 años</option>
-                                              <option value="60">60 años</option>
-                                              <option value="61">61 años</option>
-                                              <option value="62">62 años</option>
-                                              <option value="63">63 años</option>
-                                              <option value="64">64 años</option>
-                                          </select>
-                                        </div>
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="description" class="col-sm-6 control-label">Opciones de Crédito</label>
-                                        <div class="col-sm-6" style="padding-top:5px;">
-                                          <select style="margin-left:5px;" ng-model="frm.bOpcCred" ng-change="save(frm)" >
-                                               <option value="0" >Paga lo mismo + monto adicional</option>
-                                               <option value="1">Paga Menos</option>
-                                           </select>
-                                        </div>
-                                      </div>
-
                                       <h5 class="c-font-uppercase c-font-bold">Datos del crédito actual</h5>
                                       <div class="form-group">
                                         <label for="description" class="col-sm-6 control-label">Saldo Inicial</label>
                                         <div class="col-sm-6">
-                                          <input type="text" fcsa-number="{ prepend: '$' }" ng-model="frm.iSdoIns"  class="form-control"  ng-change="save(frm)"/>
-
+                                          <input type="text" fcsa-number="{ prepend: '$' }" ng-model="frm.iSdoIns"  class="form-control" />
                                         </div>
                                       </div>
                                       <div class="form-group">
                                         <label for="description" class="col-sm-6 control-label">Por lo que pagas mensualmente</label>
                                         <div class="col-sm-6">
-                                          <input type="text" fcsa-number="{ prepend: '$' }" ng-model="frm.iPago" class="form-control"  ng-change="save(frm)"/>
+                                          <input type="text" fcsa-number="{ prepend: '$' }" ng-model="frm.iPago" class="form-control" />
                                         </div>
                                       </div>
                                       <div class="form-group">
                                         <label for="description" class="col-sm-6 control-label">Plazo Restante (Meses)</label>
                                         <div class="col-sm-6">
-                                          <input type="text" fcsa-number="{ append: ' meses' }" ng-model="frm.iPlazo" class="form-control"  ng-change="save(frm)"/>
+                                          <input type="text" fcsa-number="{ append: ' meses' }" ng-model="frm.iPlazo" class="form-control" />
                                         </div>
                                       </div>
-                                      <!--
-                                      Datos del solicitante
-                                      sNombre = Nombre (Texto)
-                                      iEdad = Edad (Num)
-                                      bCoa = Coacreditado
-                                      	True = Si
-                                      	False = No
-                                      iEdadCoa = Edad Coacreditado (Num)
-                                      bOpcCred = Opciones de credito
-                                      	True = Paga lo mismo + monto adicional
-                                      	False = Paga menos
-
-                                      Datos del crédito actual
-                                      iSdoIns = Saldo insoluto (Num)
-                                      iPago = Por lo que pagas mensualmente (Num)
-                                      iPlazo = Plazo restante en meses (Num)
-                                      -->
+                                      <button href="#resultados" type="submit" class=" btn btn-lg c-btn-square c-theme-btn c-btn-bold c-btn-uppercase page-scroll">Cotiza Ahora</button>
                                     </form>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div id="resultados" class="c-content-box c-size-md c-bg-white">
+                  <div class="container">
+                      <div class="c-content-feedback-1 c-option-1">
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <div style="width: 100%">
+                              			<canvas id="canvas" height="90%" width="100%"></canvas>
+                              		</div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="c-container c-bg-green c-bg-img-bottom-right" style="margin-right:0px;">
+                                    <div class="c-content-title-1 c-inverse">
+                                        <h3 class="c-font-uppercase c-font-bold">Ahorrarás</h3>
+                                        <div class="c-line-left"></div>
+                                        <h4 style="color:white;"><span style="color:#19BB00;">${{ahorroMensual}}</span> pesos <b>cada mes</b>!</h4>
+                                        <p class="c-font-lowercase">Actualmente puedes traspasar tu deuda a un banco que te ofrezca <b>mejores beneficios</b> sin comisión por apertura, sin gastos de subrogación, sin penalización por prepago y sin gastos notariales.</p>
+                                        <br>
+                                        <div class="c-right">
+                                            <a href="#" class="btn btn-sm c-btn-square  c-btn-bold c-btn-uppercase c-theme-btn-verde " target="_blank">Traspasar ahora!</a>
+                                        </div>
+                                    </div>
+                                </div>
                               </div>
                           </div>
                       </div>
