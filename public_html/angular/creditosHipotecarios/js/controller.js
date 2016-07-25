@@ -26,7 +26,18 @@ angular.module('controller',[])
 		iPlazo: 12
 	};
 
-	$scope.save = function($params) {
+	$scope.frmSimula = {
+		sNombre:"Emilio Gzz",
+		iEdad:32 ,
+		iAntLab:7, //7 años
+		iValIn:3000000,
+		iEnganche:40000,
+		iPlazo:4,
+		iPagoSimula:4416
+		 //6 años
+	};
+
+	$scope.saveTraspasa = function($params) {
 		$scope.frm.sNombre = $params.sNombre;
 		$scope.frm.iEdad = $params.iEdad;
 		$scope.frm.iSdoIns = $params.iSdoIns;
@@ -55,6 +66,27 @@ angular.module('controller',[])
 		console.log("formula = "+ formula);
 		console.log("pago2 = " + $scope.pago2);
 		chartUpdate();
+	}
+/*
+Nombre √
+Edad √
+Ingreso mensual
+Antigüedad laboral
+Valor del inmueble
+Enganche
+Plazo del crédito
+Arroja: pago mensual
+*/
+	$scope.saveSimula = function($params) {
+		$scope.frmSimula.sNombre = $params.sNombre;
+		$scope.frmSimula.iEdad = $params.iEdad;
+		$scope.frmSimula.iAntLab = $params.iAntLab;
+		$scope.frmSimula.iValIn = $params.iValIn;
+		$scope.frmSimula.iEnganche = $params.iEnganche;
+		$scope.frmSimula.iPlazo = $params.iPlazo;
+		$scope.frmSimula.iPlazoMeses = $scope.frmSimula.iPlazo*12;
+		$scope.frmSimula.iPagoSimula =  Math.floor(($scope.frmSimula.iValIn)/(((1+(0.106^-$scope.frmSimula.iPlazoMeses))-1)/(0.106)));
+		console.log("pago = " + $scope.pago);
 	}
 	var barChartData = {
 		labels : ["Pago"],

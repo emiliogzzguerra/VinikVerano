@@ -249,7 +249,7 @@
                               </div>
                               <div class="col-md-6">
                                   <div class="c-contact">
-                                    <form class="form-horizontal" ng-submit="save(frm)">
+                                    <form class="form-horizontal" ng-submit="saveTraspasa(frm)">
                                       <h5 class="c-font-uppercase c-font-bold">Datos del solicitante</h5>
                                       <div class="form-group">
                                         <label for="title" class="col-sm-6 control-label">Nombre</label>
@@ -330,16 +330,18 @@
                                           <input type="text" fcsa-number="{ append: ' meses' }" ng-model="frm.iPlazo" class="form-control" />
                                         </div>
                                       </div>
-                                      <button href="#resultados" type="submit" class=" btn btn-lg c-btn-square c-theme-btn c-btn-bold c-btn-uppercase page-scroll">Cotiza Ahora</button>
+                                      <button id="res" href="#resultados" type="submit" class=" btn btn-lg c-btn-square c-theme-btn c-btn-bold c-btn-uppercase page-scroll">Cotiza Ahora</button>
                                     </form>
                               </div>
                           </div>
                       </div>
                   </div>
               </div>
-              <div id="resultados" class="c-content-box c-size-md c-bg-white">
+              <div id="resultados" class="c-content-box c-size-md c-bg-white" style="padding-bottom:0px;">
                   <div class="container">
+
                       <div class="c-content-feedback-1 c-option-1">
+
                           <div class="row">
                               <div class="col-md-6">
                                   <div style="width: 100%">
@@ -366,7 +368,122 @@
               </div>
               <!-- END: CONTENT/CONTACT/FEEDBACK-1 -->
             </div>
-
+            <!-- BEGIN: CONTENT/BARS/BAR-1 -->
+            <div class="c-content-box c-size-md c-bg-grey-1">
+                <div class="container">
+                  <div class="c-content-feedback-1 c-option-1">
+                    <h3 class="c-font-uppercase c-font-bold c-center">Simulemos tu crédito hipotecario</h3>
+                      <div class="row">
+                          <div class="col-md-6">
+                            <div class="c-container c-bg-green c-bg-img-bottom-right" style="margin-right:0px;">
+                                <div class="c-content-title-1 c-inverse">
+                                    <h3 class="c-font-uppercase c-font-bold">Pagarás</h3>
+                                    <div class="c-line-left"></div>
+                                    <h4 style="color:white;"><span style="color:#19BB00;">${{frmSimula.iPagoSimula}}</span> pesos <b>cada mes</b>!</h4>
+                                    <p class="c-font-lowercase">Si estás pensando en comprar un inmueble nosotros te recomendamos las instituciones con las tasas de interés más bajas del mercado.</p>
+                                    <br>
+                                    <div class="c-right">
+                                        <a href="#" class="btn btn-sm c-btn-square  c-btn-bold c-btn-uppercase c-theme-btn-verde " target="_blank">Traspasar ahora!</a>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <form class="form-horizontal" ng-submit="saveSimula(frmSimula)">
+                              <h5 class="c-font-uppercase c-font-bold">Datos del solicitante</h5>
+                              <div class="form-group">
+                                <label for="title" class="col-sm-6 control-label">Nombre</label>
+                                <div class="col-sm-6">
+                                  <input type="text" ng-model="frm.sNombre"  class="form-control">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label for="description" class="col-sm-6 control-label">Edad</label>
+                                <div class="col-sm-6">
+                                  <select style="margin-left:5px;" ng-model="frmSimula.iEdad" >
+                                      <option value="18">18 años</option>
+                                      <option value="19">19 años</option>
+                                      <option value="20">20 años</option>
+                                      <option value="21">21 años</option>
+                                      <option value="22">22 años</option>
+                                      <option value="23">23 años</option>
+                                      <option value="24">24 años</option>
+                                      <option value="25">25 años</option>
+                                      <option value="26">26 años</option>
+                                      <option value="27">27 años</option>
+                                      <option value="28">28 años</option>
+                                      <option value="29">29 años</option>
+                                      <option value="30">30 años</option>
+                                      <option value="31">31 años</option>
+                                      <option value="32">32 años</option>
+                                      <option value="33">33 años</option>
+                                      <option value="34">34 años</option>
+                                      <option value="35">35 años</option>
+                                      <option value="36">36 años</option>
+                                      <option value="37">37 años</option>
+                                      <option value="38">38 años</option>
+                                      <option value="39">39 años</option>
+                                      <option value="40">40 años</option>
+                                      <option value="41">41 años</option>
+                                      <option value="42">42 años</option>
+                                      <option value="43">43 años</option>
+                                      <option value="44">44 años</option>
+                                      <option value="45">45 años</option>
+                                      <option value="46">46 años</option>
+                                      <option value="47">47 años</option>
+                                      <option value="48">48 años</option>
+                                      <option value="49">49 años</option>
+                                      <option value="50">50 años</option>
+                                      <option value="51">51 años</option>
+                                      <option value="52">52 años</option>
+                                      <option value="53">53 años</option>
+                                      <option value="54">54 años</option>
+                                      <option value="55">55 años</option>
+                                      <option value="56">56 años</option>
+                                      <option value="57">57 años</option>
+                                      <option value="58">58 años</option>
+                                      <option value="59">59 años</option>
+                                      <option value="60">60 años</option>
+                                      <option value="61">61 años</option>
+                                      <option value="62">62 años</option>
+                                      <option value="63">63 años</option>
+                                      <option value="64">64 años</option>
+                                  </select>
+                                </div>
+                                <div class="form-group">
+                                  <label for="description" class="col-sm-6 control-label">Antiguedad Laboral</label>
+                                  <div class="col-sm-6">
+                                    <input type="text" fcsa-number="{ append: ' años' }" ng-model="frmSimula.iAntLab" class="form-control" />
+                                  </div>
+                                </div>
+                              </div>
+                              <h5 class="c-font-uppercase c-font-bold">Datos del crédito</h5>
+                              <div class="form-group">
+                                <label for="description" class="col-sm-6 control-label">Valor del Inmueble</label>
+                                <div class="col-sm-6">
+                                  <input type="text" fcsa-number="{ prepend: '$' }" ng-model="frmSimula.iValIn"  class="form-control" />
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label for="description" class="col-sm-6 control-label">Enganche</label>
+                                <div class="col-sm-6">
+                                  <input type="text" fcsa-number="{ prepend: '$' }" ng-model="frmSimula.iEnganche" class="form-control" />
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label for="description" class="col-sm-6 control-label">Plazo Restante</label>
+                                <div class="col-sm-6">
+                                  <input type="text" fcsa-number="{ append: ' años' }" ng-model="frmSimula.iPlazo" class="form-control" />
+                                </div>
+                              </div>
+                              <button type="submit" class=" btn btn-lg c-btn-square c-theme-btn c-btn-bold c-btn-uppercase page-scroll">Cotiza Ahora</button>
+                            </form>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+            </div>
+            <!-- END: CONTENT/BARS/BAR-1 -->
         </div>
         <!-- END: PAGE CONTAINER -->
 
@@ -438,6 +555,12 @@
         <script>
             $(document).ready(function()
             {
+                $("#res").click(function() {
+                    $('html, body').animate({
+                        scrollTop: $("#resultados").offset().top
+                    }, 1000);
+                });
+
 
                 $("#cotizacion").hide();
 
