@@ -196,7 +196,7 @@
                                             <h3 class=" c-font-bold">Cuentas actualmente con un crédito hipotecario</h3>
                                             <p> Traspasar un crédito a otra institución es muy sencillo y tiene excelentes beneficios para ti ¡conócelos!</p>
                                             <br>
-                                            <a href="https://vinik.typeform.com/to/utRcyj" data-mode="2" target="_blank" class=" btn btn-lg c-btn-square c-theme-btn c-btn-bold c-btn-uppercase page-scroll typeform-share">Cotiza Ahora</a>
+                                            <a href="#traspasa" class=" btn btn-lg c-btn-square c-theme-btn c-btn-bold c-btn-uppercase page-scroll">Comparar Ahora</a>
                                             <br>
 
                                         </div>
@@ -204,9 +204,9 @@
                                     <li>
                                         <div class="c-bg-opacity-1 c-card" data-height="height" style="text-align:center;">
                                             <h3 class="c-font-bold" >Buscas un crédito nuevo</h3>
-                                            <p>Comprar un inmueble es una decisión importante en tu vida, no lo dejes a la ligera ¡En solo 5 minutos puedes ahorrarte en promedio $350,000 pesos!</p>
+                                            <p>Comprar un inmueble es una decisión importante en tu vida, no lo dejes a la ligera <b>¡En solo 5 minutos puedes ahorrarte en promedio $350,000 pesos!</b></p>
                                             <br>
-                                            <a href="https://vinik.typeform.com/to/utRcyj" class="typeform-share btn btn-sm c-btn-square  c-btn-bold c-btn-uppercase c-theme-btn-verde" data-mode="2" target="_blank">Ahorrar ahora!</a>
+                                            <a href="#simulacion" class="btn btn-sm c-btn-square  c-btn-bold c-btn-uppercase c-theme-btn-verde page-scroll">Ahorrar ahora!</a>
                                         </div>
                                     </li>
                                 </ul>
@@ -220,10 +220,10 @@
 
             <div ng-controller="VarCtrl">
 
-              <div class="c-content-box c-size-md c-bg-white">
+              <div class="c-content-box c-size-md c-bg-white" id="traspasa">
                   <div class="container">
                       <div class="c-content-feedback-1 c-option-1">
-                          <div class="row">
+                          <div class="row" >
                               <div class="col-md-6">
                                   <div class="c-container c-bg-green c-bg-img-bottom-right">
                                       <div class="c-content-title-1 c-inverse">
@@ -330,14 +330,16 @@
                                           <input type="text" fcsa-number="{ append: ' meses' }" ng-model="frm.iPlazo" class="form-control" />
                                         </div>
                                       </div>
-                                      <button id="res" href="#resultados" type="submit" class=" btn btn-lg c-btn-square c-theme-btn c-btn-bold c-btn-uppercase page-scroll">Cotiza Ahora</button>
+                                      <div class="c-center">
+                                        <button id="res" href="#resultados" type="submit" class=" btn c-theme-btn c-btn-bold c-btn-uppercase  page-scroll">Cotiza Ahora</button>
+                                      </div>
                                     </form>
                               </div>
                           </div>
                       </div>
                   </div>
               </div>
-              <div id="resultados" class="c-content-box c-size-md c-bg-white" style="padding-bottom:0px;">
+              <div id="resultados" class="c-content-box c-size-md c-bg-white" style="padding-bottom:0px; padding-top:100px;">
                   <div class="container">
 
                       <div class="c-content-feedback-1 c-option-1">
@@ -369,7 +371,7 @@
               <!-- END: CONTENT/CONTACT/FEEDBACK-1 -->
             </div>
             <!-- BEGIN: CONTENT/BARS/BAR-1 -->
-            <div class="c-content-box c-size-md c-bg-grey-1">
+            <div class="c-content-box c-size-md c-bg-grey-1" id="simulacion">
                 <div class="container">
                   <div class="c-content-feedback-1 c-option-1">
                     <h3 class="c-font-uppercase c-font-bold c-center">Simulemos tu crédito hipotecario</h3>
@@ -476,7 +478,9 @@
                                   <input type="text" fcsa-number="{ append: ' años' }" ng-model="frmSimula.iPlazo" class="form-control" />
                                 </div>
                               </div>
-                              <button type="submit" class=" btn btn-lg c-btn-square c-theme-btn c-btn-bold c-btn-uppercase page-scroll">Cotiza Ahora</button>
+                              <div class="c-center">
+                                <button type="submit" class=" btn c-theme-btn c-btn-bold c-btn-uppercase  page-scroll">Cotiza Ahora</button>
+                              </div>
                             </form>
                           </div>
                       </div>
@@ -555,6 +559,12 @@
         <script>
             $(document).ready(function()
             {
+                $("#tras").click(function() {
+                    $('html, body').animate({
+                        scrollTop: $("#traspasa").offset().top
+                    }, 1000);
+                });
+
                 $("#res").click(function() {
                     $('html, body').animate({
                         scrollTop: $("#resultados").offset().top
