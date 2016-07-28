@@ -29,6 +29,11 @@
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
+.small {
+  max-width: 200px;
+  max-height: 200px;
+}
+
 .table-green:hover,
 .table-green:hover{
   background-color: rgba(25, 187, 0,0.3);
