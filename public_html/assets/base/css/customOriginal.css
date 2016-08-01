@@ -166,6 +166,10 @@ power{
   background-color:rgba(21, 36, 90, 0.8);
   color:white;
 }
+#credito.active{
+  background-color:rgba(21, 36, 90, 0.8);
+  color:white;
+}
 
 .c-layout-header .c-navbar .c-mega-menu.c-mega-menu-dark-mobile > .nav.navbar-nav > li > .c-link:active{
   background-color:rgba(21, 36, 90, 0.8);

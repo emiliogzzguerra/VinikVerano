@@ -772,7 +772,7 @@
                                   <li>
                                       <div class="c-bg-opacity-1 c-card c-bg-grey" data-height="height" style="text-align:center;">
                                           <h3 class="c-font-bold" >Solicita una llamada</h3>
-                                          <p>Mon - Fri: 8am - 8pm, Sat: 9am - 2:30pm</p>
+                                          <p>Lun - Vie: 8am - 8pm, Sab: 9am - 2:30pm</p>
                                           <br>
                                           <h4>+55 1106 3951</h4>
                                           <a href="https://vinik.typeform.com/to/IXKHgd" class="typeform-share btn btn-sm c-btn-square  c-btn-bold c-btn-uppercase c-theme-btn-verde" data-mode="2" target="_blank">Solicitar una llamada</a>
@@ -877,7 +877,17 @@
                     };
                 });
 
-                $('#ahorro').click(function(){
+                $(window).resize(function() {
+                    if ($(window).width() > 990) {
+                        $('#ahorro').removeClass('active');
+                        $('#seguro').removeClass('active');
+                        $('#inversion').removeClass('active');
+                        $('#credito').removeClass('active');
+                    };
+
+                });
+
+                $('#ahorro').click(function(){
                     $(this).toggleClass('active');
                 });
                 $('#seguro').click(function(){
@@ -886,7 +896,9 @@
                 $('#inversion').click(function(){
                     $(this).toggleClass('active');
                 });
-
+                $('#credito').click(function(){
+                    $(this).toggleClass('active');
+                });
 
                 App.init(); // init core
             });

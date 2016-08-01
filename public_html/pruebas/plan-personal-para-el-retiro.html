@@ -79,13 +79,13 @@
 
                                     <ul class="dropdown-menu c-menu-type-classic c-pull-left">
                                         <li>
-                                            <a href="#">Fondos de Ahorro</a>
+                                            <a href="../fondo-de-ahorro.html">Fondos de Ahorro</a>
                                         </li>
                                         <li>
-                                            <a href="#">Plan Personal de Retiro</a>
+                                            <a href="../plan-personal-para-el-retiro.html">Plan Personal de Retiro</a>
                                         </li>
                                         <li>
-                                            <a href="#">Afore</a>
+                                            <a href="../afore.html">Afore</a>
                                         </li>
                                     </ul>
 
@@ -106,25 +106,37 @@
                                     -->
                                 </li>
                                 <li class="c-menu-type-classic">
+                                    <a id="credito" href="javascript:;" class="c-link dropdown-toggle">Crédito
+                                        <span class="c-arrow c-toggler"></span>
+                                    </a>
+                                    <ul class="dropdown-menu c-menu-type-classic c-pull-left">
+                                        <li>
+                                            <a href="../credito-hipotecarios.html" >Crédito Hipotecario</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="c-menu-type-classic">
                                     <a id="seguro" href="javascript:;" class="c-link dropdown-toggle">Seguros
                                         <span class="c-arrow c-toggler"></span>
                                     </a>
                                     <ul class="dropdown-menu c-menu-type-classic c-pull-left">
                                         <li>
-                                            <a href="#">Seguros de Vida</a>
+                                            <a href="../seguro-de-vida.html">Seguros de Vida</a>
                                         </li>
                                         <li>
-                                            <a href="#">Gastos Médicos Mayores</a>
+                                            <a href="../seguro-de-gastos-medicos.html">Gastos Médicos Mayores</a>
                                         </li>
                                     </ul>
                                 </li>
+                                <!--
                                 <li>
                                     <a href="javascript:;" class="c-link dropdown-toggle">Blog
                                         <span class="c-toggler"></span>
                                     </a>
                                 </li>
+                                -->
                                 <li>
-                                    <a   href="" onclick="Tawk_API.toggle()" class="c-link dropdown-toggle">Contacto
+                                    <a href="" onclick="Tawk_API.toggle()" class="c-link dropdown-toggle">Contacto
                                         <span class="c-toggler"></span>
                                     </a>
                                 </li>
@@ -336,12 +348,7 @@
               <div class="container">
                 <div class="c-content-bar-1 c-opt-1">
                     <h3 class="c-font-uppercase c-font-bold" style="color:white;">Compara los mejores planes para el retiro</h3>
-                    <p class="c-font-uppercase" style="color:white;"> Conoce los diferentes planes que tenemos para tí
-                        <br> providing
-                        <strong>Ultra Flexibility</strong>,
-                        <strong>Increased productivity</strong> and
-                        <strong>Top quality</strong>
-                    </p>
+                    <p class="c-font-uppercase" style="color:white;">Conoce los diferentes planes que tenemos para tí</p>
                     <a href="../fondo-de-ahorro.html" class="btn btn-sm c-btn-square  c-btn-bold c-btn-uppercase c-theme-btn-verde" target="_blank">Compara ahora!</a>
                 </div>
               </div>
@@ -417,17 +424,21 @@
                         $('#ahorro').removeClass('active');
                         $('#seguro').removeClass('active');
                         $('#inversion').removeClass('active');
+                        $('#credito').removeClass('active');
                     };
 
                 });
 
-                $('#ahorro').click(function(){
+                $('#ahorro').click(function(){
                     $(this).toggleClass('active');
                 });
                 $('#seguro').click(function(){
                     $(this).toggleClass('active');
                 });
                 $('#inversion').click(function(){
+                    $(this).toggleClass('active');
+                });
+                $('#credito').click(function(){
                     $(this).toggleClass('active');
                 });
 

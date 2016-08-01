@@ -83,13 +83,13 @@
 
                                     <ul class="dropdown-menu c-menu-type-classic c-pull-left">
                                         <li>
-                                            <a href="#">Fondos de Ahorro</a>
+                                            <a href="../fondo-de-ahorro.html">Fondos de Ahorro</a>
                                         </li>
                                         <li>
-                                            <a href="#">Plan Personal de Retiro</a>
+                                            <a href="../plan-personal-para-el-retiro.html">Plan Personal de Retiro</a>
                                         </li>
                                         <li>
-                                            <a href="#">Afore</a>
+                                            <a href="../afore.html">Afore</a>
                                         </li>
                                     </ul>
 
@@ -110,25 +110,37 @@
                                     -->
                                 </li>
                                 <li class="c-menu-type-classic">
+                                    <a id="credito" href="javascript:;" class="c-link dropdown-toggle">Crédito
+                                        <span class="c-arrow c-toggler"></span>
+                                    </a>
+                                    <ul class="dropdown-menu c-menu-type-classic c-pull-left">
+                                        <li>
+                                            <a href="../credito-hipotecarios.html" >Crédito Hipotecario</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="c-menu-type-classic">
                                     <a id="seguro" href="javascript:;" class="c-link dropdown-toggle">Seguros
                                         <span class="c-arrow c-toggler"></span>
                                     </a>
                                     <ul class="dropdown-menu c-menu-type-classic c-pull-left">
                                         <li>
-                                            <a href="#">Seguros de Vida</a>
+                                            <a href="../seguro-de-vida.html">Seguros de Vida</a>
                                         </li>
                                         <li>
-                                            <a href="#">Gastos Médicos Mayores</a>
+                                            <a href="../seguro-de-gastos-medicos.html">Gastos Médicos Mayores</a>
                                         </li>
                                     </ul>
                                 </li>
+                                <!--
                                 <li>
                                     <a href="javascript:;" class="c-link dropdown-toggle">Blog
                                         <span class="c-toggler"></span>
                                     </a>
                                 </li>
+                                -->
                                 <li>
-                                    <a   href="" onclick="Tawk_API.toggle()" class="c-link dropdown-toggle">Contacto
+                                    <a href="" onclick="Tawk_API.toggle()" class="c-link dropdown-toggle">Contacto
                                         <span class="c-toggler"></span>
                                     </a>
                                 </li>
@@ -164,7 +176,7 @@
                                     <li>
                                         <div class="c-bg-opacity-1 c-card" data-height="height" style="text-align:center;">
                                             <h3 class="c-font-bold" >¿Te podemos ayudar?</h3>
-                                            <p>Mon - Fri: 8am - 8pm, Sat: 9am - 2:30pm</p>
+                                            <p>Lun - Vie: 8am - 8pm, Sab: 9am - 2:30pm</p>
                                             <br>
                                             <h4>+55 1106 3951</h4>
                                             <a href="https://oscar78.typeform.com/to/ZHTLAP" class="typeform-share btn btn-sm c-btn-square  c-btn-bold c-btn-uppercase c-theme-btn-verde" data-mode="2" target="_blank">Solicitar una llamada</a>
@@ -470,12 +482,31 @@
         $(document).ready(function()
         {
 
+            $(window).resize(function() {
+                if ($(window).width() > 990) {
+                    $('#ahorro').removeClass('active');
+                    $('#seguro').removeClass('active');
+                    $('#inversion').removeClass('active');
+                    $('#credito').removeClass('active');
+                };
 
-              $("#form").show();
-
-
-              App.init(); // init core
             });
+
+            $('#ahorro').click(function(){
+                $(this).toggleClass('active');
+            });
+            $('#seguro').click(function(){
+                $(this).toggleClass('active');
+            });
+            $('#inversion').click(function(){
+                $(this).toggleClass('active');
+            });
+            $('#credito').click(function(){
+                $(this).toggleClass('active');
+            });
+
+            App.init(); // init core
+        });
         </script>
         <!-- END: THEME SCRIPTS -->
 

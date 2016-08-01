@@ -21,9 +21,9 @@ angular.module('controller',[])
 	$scope.frm = {
 		sNombre:"Emilio Gzz",
 		iEdad:32 ,
-		iSdoIns:2000,
-		iPago:200 ,
-		iPlazo: 12
+		iSdoIns:1354212.08,
+		iPago:20000 ,
+		iPlazo: 180
 	};
 
 	$scope.frmSimula = {
@@ -44,8 +44,13 @@ angular.module('controller',[])
 		$scope.frm.iPago = $params.iPago;
 		$scope.frm.iPlazo = $params.iPlazo;
 		$scope.pago1 = $scope.frm.iSdoIns;
-		var formula = Math.abs(($scope.frm.iSdoIns)/(((1+(0.106^-$scope.frm.iPlazo))-1)/(0.106)));
-		$scope.pago2 = Math.floor($scope.pago1-formula);
+
+		var a = Math.pow((1+(.106/12)), -$scope.frm.iPlazo);
+
+		var formula = ($scope.frm.iSdoIns)/((a-1)/(.106/12));
+
+		$scope.pago2 = Math.floor(formula);
+
 		if ($scope.pago1 > $scope.pago2) {
 			if ($scope.pago1%5000 == 0) {
 				tope = Math.ceil($scope.pago1/5000) + 1;
@@ -62,9 +67,6 @@ angular.module('controller',[])
 
 		$scope.ahorroMensual = Math.floor(($scope.frm.iPago)-($scope.pago2/$scope.frm.iPlazo));
 
-		console.log("pago1 = " + $scope.pago1);
-		console.log("formula = "+ formula);
-		console.log("pago2 = " + $scope.pago2);
 		chartUpdate();
 	}
 /*
@@ -85,7 +87,9 @@ Arroja: pago mensual
 		$scope.frmSimula.iEnganche = $params.iEnganche;
 		$scope.frmSimula.iPlazo = $params.iPlazo;
 		$scope.frmSimula.iPlazoMeses = $scope.frmSimula.iPlazo*12;
-		$scope.frmSimula.iPagoSimula =  Math.floor(($scope.frmSimula.iValIn)/(((1+(0.106^-$scope.frmSimula.iPlazoMeses))-1)/(0.106)));
+		var a = Math.pow((1+(.106/12)), -$scope.frm.iPlazo);
+		$scope.frmSimula.iPagoSimula =  Math.floor(($scope.frm.iSdoIns)/((a-1)/(.106/12)));
+
 		console.log("pago = " + $scope.pago);
 	}
 	var barChartData = {
