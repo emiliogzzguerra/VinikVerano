@@ -29,6 +29,14 @@
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
+.next {
+  margin-right:50px;
+}
+
+.col {
+  float:left;
+  text-align:center;
+}
 
 .small {
   max-width: 200px;
@@ -87,10 +95,10 @@ select:disabled{
 }
 
 .c-content-tab-2.c-opt-1 > .nav li.active > .vinik:before{
-  border-bottom-color:#F0F0F0;
+  border-bottom-color:#27366A;
 }
 .c-content-tab-2.c-opt-1 > .nav li.active > .afore:before{
-  border-bottom-color:#808080;
+  border-bottom-color:#27366A;
 }
 
 

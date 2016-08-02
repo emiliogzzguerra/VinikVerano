@@ -2,7 +2,7 @@
     {
         "id":0,
         "checkbox": true,
-        "nombre": "<img src='../assets/base/img/content/icons/oldmutual.png' style='height:50px;width:170px;float:left;'/> <br><p style='margin-bottom:0px;text-align:center;font-weight: bold;'>Old Mutual Estabilidad</p>",
+        "nombre": "<div class='c-center'><img src='../assets/base/img/content/icons/old.png' style='height:50%;width:70%;'/></div><p style='margin-bottom:0px;text-align:center;font-weight: bold;'>Old Mutual Estabilidad</p>",
         "ti": "<h4>$0</h4>",
         "am": 0,
         "pa": "Item 0",
@@ -14,7 +14,7 @@
     {
         "id":1,
         "checkbox": true,
-        "nombre": "<img src='../assets/base/img/content/icons/oldmutual.png' style='height:50px;width:170px;float:left;'/> <br><p style='margin-bottom:0px;text-align:center;font-weight: bold;'>Old Mutual Moderado</p>",
+        "nombre": "<div class='c-center'><img src='../assets/base/img/content/icons/old.png' style='height:50%;width:70%;'/></div><p style='margin-bottom:0px;text-align:center;font-weight: bold;'>Old Mutual Moderado</p>",
         "ti": "<h4>$0</h4>",
         "am": 0,
         "pa": "Item 0",
@@ -26,10 +26,22 @@
     {
         "id":2,
         "checkbox":false,
-        "nombre": "<img src='../assets/base/img/content/icons/oldmutual.png' style='height:50px;width:170px;float:left;'/> <br><p style='margin-bottom:0px;text-align:center;font-weight: bold;'>Old Mutual Dinámico</p>",
+        "nombre": "<div class='c-center'><img src='../assets/base/img/content/icons/old.png' style='height:50%;width:70%;'/></div><p style='margin-bottom:0px;text-align:center;font-weight: bold;'>Old Mutual Dinámico</p>",
         "ti": "<h4>$0</h4>",
         "am": 0,
         "pa": "Item 0",
+        "ir": 0,
+        "c": "Item 0",
+        "ct": "<div class='vcenter'><button type='button' class='btn c-theme-btn-verde'>Elegir</button></div>",
+        "b": [1.10,1.07]
+    },
+    {
+        "id":3,
+        "checkbox":false,
+        "nombre": "<div class='c-center'><img src='../assets/base/img/content/icons/banamex.png' style='height:50%;width:70%;'/> </div><p style='margin-bottom:0px;text-align:center;font-weight: bold;'>Banamex Integral</p>",
+        "ti": "<h4>1.78%</h4>",
+        "am": 100,
+        "pa": " ",
         "ir": 0,
         "c": "Item 0",
         "ct": "<div class='vcenter'><button type='button' class='btn c-theme-btn-verde'>Elegir</button></div>",

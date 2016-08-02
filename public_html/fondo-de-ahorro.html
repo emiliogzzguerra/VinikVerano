@@ -82,9 +82,11 @@
                                     </a>
 
                                     <ul class="dropdown-menu c-menu-type-classic c-pull-left">
-                                        <li>
-                                            <a href="../fondo-de-ahorro.html">Fondos de Ahorro</a>
-                                        </li>
+                                      <!--
+                                      <li>
+                                          <a href="../fondo-de-ahorro.html">Fondos de Ahorro</a>
+                                      </li>
+                                      -->
                                         <li>
                                             <a href="../plan-personal-para-el-retiro.html">Plan Personal de Retiro</a>
                                         </li>
@@ -98,16 +100,11 @@
                                     <a id="inversion" href="javascript:;" class="c-link dropdown-toggle">Inversión
                                         <span class="c-arrow c-toggler"></span>
                                     </a>
-                                    <!--
                                     <ul class="dropdown-menu c-menu-type-classic c-pull-left">
                                         <li>
-                                            <a href="#" >Fondos de Inversión</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Inversion con Seguro de Vida</a>
+                                            <a href="https://vinik.typeform.com/to/L2H2AU">Fondos de Inversión</a>
                                         </li>
                                     </ul>
-                                    -->
                                 </li>
                                 <li class="c-menu-type-classic">
                                     <a id="credito" href="javascript:;" class="c-link dropdown-toggle">Crédito
@@ -115,7 +112,7 @@
                                     </a>
                                     <ul class="dropdown-menu c-menu-type-classic c-pull-left">
                                         <li>
-                                            <a href="../credito-hipotecarios.html" >Crédito Hipotecario</a>
+                                            <a href="../credito-hipotecario.html" >Crédito Hipotecario</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -319,17 +316,19 @@
                             data-unique-id="id"
                             data-url="../json/data1.json"
                             data-checkbox-header="false"
-                            data-escape="false">
+                            data-escape="false"
+                            data-sort-name="pa"
+                            data-sort-order="desc">
                     <thead>
                         <tr>
                             <th data-field="checkbox" data-checkbox="true"></th>
-                            <th data-field="nombre" data-sortable="true" data-cell-style="cellStyle">Compañía</th>
+                            <th data-field="nombre" data-sortable="false" data-cell-style="cellStyle">Compañía</th>
                             <th data-field="ti" data-sortable="true">Tasa de Interés</th>
                             <th data-field="am" data-sortable="true">Ahorro Mínimo Mensual</th>
                             <th data-field="pa" data-sortable="true">Plazo de ahorro mínimo</th>
                             <th data-field="ir" data-sortable="true">Indicador de Riesgo</th>
                             <th data-field="c" data-sortable="true">Comisión</th>
-                            <th data-field="ct" data-sortable="true">Contacto</th>
+                            <th data-field="ct" data-sortable="false">Contacto</th>
                         </tr>
                     </thead>
                 </table>
