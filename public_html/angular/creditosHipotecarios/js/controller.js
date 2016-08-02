@@ -4,7 +4,11 @@ angular.module('controller',[])
 
 .controller('VarCtrl', ['$scope', '$http', '$log','$window', function($scope, $http, $log,$window) {
 
-	var tope = 30000/5000;
+	var tope = 14;
+
+	Chart.numberWithCommas = function(x) {
+			return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	};
 
 	$scope.changeChecked = function($params){
 		$scope.frm.bCoa = $params;
@@ -13,9 +17,9 @@ angular.module('controller',[])
 		$scope.frm.bCoa = $params;
 	}
 
-	$scope.pago1 = 10000;
-	$scope.pago2 = 15000;
-	$scope.ahorroMensual = 150;
+	$scope.pago1 = 1354212;
+	$scope.pago2 = 1339159;
+	$scope.ahorroMensual = 12560;
 
 
 	$scope.frm = {
@@ -43,27 +47,31 @@ angular.module('controller',[])
 		$scope.frm.iSdoIns = $params.iSdoIns;
 		$scope.frm.iPago = $params.iPago;
 		$scope.frm.iPlazo = $params.iPlazo;
-		$scope.pago1 = $scope.frm.iSdoIns;
+		$scope.pago1 = Math.floor($scope.frm.iSdoIns);
 
-		var a = Math.pow((1+(.106/12)), -$scope.frm.iPlazo);
+		var a = Math.pow((1+(.106/12)), - $scope.frm.iPlazo);
 
-		var formula = ($scope.frm.iSdoIns)/((a-1)/(.106/12));
+		var formula = Math.abs(($scope.frm.iSdoIns)/((a-1)/(.106/12)));
 
-		$scope.pago2 = Math.floor(formula);
+		$scope.pago2 =  Math.floor($scope.pago1 - Math.floor(formula));
+
+		console.log(formula);
+		console.log($scope.pago2);
 
 		if ($scope.pago1 > $scope.pago2) {
-			if ($scope.pago1%5000 == 0) {
-				tope = Math.ceil($scope.pago1/5000) + 1;
+			if ($scope.pago1%100000 == 0) {
+				tope = Math.ceil($scope.pago1/100000) + 1;
 			} else {
-				tope = Math.ceil($scope.pago1/5000);
+				tope = Math.ceil($scope.pago1/100000);
 			}
 		} else {
-			if ($scope.pago2%5000 == 0) {
-				tope = Math.ceil($scope.pago2/5000) + 1;
+			if ($scope.pago2%100000 == 0) {
+				tope = Math.ceil($scope.pago2/100000) + 1;
 			} else {
-				tope = Math.ceil($scope.pago2/5000);
+				tope = Math.ceil($scope.pago2/100000);
 			}
 		}
+		console.log(tope);
 
 		$scope.ahorroMensual = Math.floor(($scope.frm.iPago)-($scope.pago2/$scope.frm.iPlazo));
 
@@ -140,12 +148,13 @@ Arroja: pago mensual
 
 	  var ctx = document.getElementById("canvas").getContext("2d");
 	  window.myBar = new Chart(ctx).Bar(barChartData, {
-	    responsive : true,
-	    showTooltips: false,
-	    scaleOverride : true,
-	    scaleSteps : tope,
-	    scaleStepWidth : 5000,
-	    scaleStartValue : 0,
+			scaleLabel: "$<%=Chart.numberWithCommas(value)%>",
+			responsive : true,
+			showTooltips: false,
+			scaleOverride : true,
+			scaleSteps : tope,
+			scaleStepWidth : 100000,
+			scaleStartValue : 0,
 	    onAnimationComplete: function () {
 
 	        var ctx = this.chart.ctx;
@@ -156,7 +165,7 @@ Arroja: pago mensual
 
 	        this.datasets.forEach(function (dataset) {
 	            dataset.bars.forEach(function (bar) {
-	                ctx.fillText("$" + bar.value, bar.x, bar.y - 5);
+	                ctx.fillText("$" + Chart.numberWithCommas(bar.value), bar.x, bar.y - 5);
 	            });
 	        })
 	    }
@@ -172,11 +181,12 @@ Arroja: pago mensual
 
 			var ctx = document.getElementById("canvas").getContext("2d");
 		  window.myBar = new Chart(ctx).Bar(barChartData, {
+				scaleLabel: "$<%=Chart.numberWithCommas(value)%>",
 		    responsive : true,
 		    showTooltips: false,
 		    scaleOverride : true,
 		    scaleSteps : tope,
-		    scaleStepWidth : 5000,
+		    scaleStepWidth : 100000,
 		    scaleStartValue : 0,
 		    onAnimationComplete: function () {
 
@@ -188,7 +198,7 @@ Arroja: pago mensual
 
 		        this.datasets.forEach(function (dataset) {
 		            dataset.bars.forEach(function (bar) {
-		                ctx.fillText(bar.value, bar.x, bar.y - 5);
+		                ctx.fillText("$" + Chart.numberWithCommas(bar.value), bar.x, bar.y - 5);
 		            });
 		        })
 		    }
