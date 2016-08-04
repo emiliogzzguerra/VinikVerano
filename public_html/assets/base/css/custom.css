@@ -29,6 +29,10 @@
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
+.pad {
+  padding: 20px 20px 20px 20px;
+}
+
 .next {
   margin-right:50px;
 }
@@ -813,12 +817,12 @@ there.
 @media (min-width: 767px) {
 #contLeft{
     width: 50%;
-    padding-top: 175px;
+    padding-top: 120px;
   }
   #contRight{
     margin-top:0px;
     width: 50%;
-    padding-top: 175px;
+    padding-top: 120px;
   }
   #cotizaAhorro{
     margin-top:-20px;
