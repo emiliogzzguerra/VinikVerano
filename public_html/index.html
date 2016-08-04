@@ -333,28 +333,28 @@
                                 <ul class="nav c-tab-icon-stack c-font-sbold c-font-uppercase">
                                     <li class="active">
                                         <a id="opcion" href="#c-tab2-opt1-1" data-toggle="tab">
-                                            <img class="small" src="../assets/base/img/content/stock/ahorro.png"/>
+                                            <img id="ahorro" class="small" src="../assets/base/img/content/stock/ahorro.png"/>
                                             <span class="c-title">Ahorro</span>
                                         </a>
                                         <div class="c-arrow vinik"></div>
                                     </li>
                                     <li>
                                         <a  id="opcion2" href="#c-tab2-opt1-2" data-toggle="tab">
-                                            <img class="small"  src="../assets/base/img/content/stock/inversion.png"/>
+                                            <img id="inversion" class="small"  src="../assets/base/img/content/stock/inversion.png"/>
                                             <span class="c-title">Inversión</span>
                                         </a>
                                         <div class="c-arrow vinik"></div>
                                     </li>
                                     <li>
                                         <a  id="opcion3" href="#c-tab2-opt1-3" data-toggle="tab">
-                                            <img class="small"  src="../assets/base/img/content/stock/credito.png"/>
+                                            <img id="credito" class="small"  src="../assets/base/img/content/stock/credito.png"/>
                                             <span class="c-title">Crédito</span>
                                         </a>
                                         <div class="c-arrow vinik"></div>
                                     </li>
                                     <li>
                                         <a  id="opcion4" href="#c-tab2-opt1-4" data-toggle="tab">
-                                            <img class="small" src="../assets/base/img/content/stock/seguros.png"/>
+                                            <img id="seguros" class="small" src="../assets/base/img/content/stock/seguros.png"/>
                                             <span class="c-title">Seguros</span>
                                         </a>
                                         <div class="c-arrow vinik"></div>
@@ -380,13 +380,13 @@
                                                           </div>
                                                           <div class="col-sm-4 c-center">
                                                             <a href="../plan-personal-para-el-retiro.html">
-                                                                <img class="small" style="width:30%" src="../assets/base/img/content/icons/saving.png"/><br/>
+                                                                <img id="ppr" class="small" style="width:30%" src="../assets/base/img/content/icons/saving.png"/><br/>
                                                                 <span class="c-title" style="color:white;">Plan Personal de Retiro</span>
                                                             </a>
                                                           </div>
                                                           <div class="col-sm-4 c-center">
                                                             <a href="../afore.html">
-                                                                <img class="small" style="width:30%" src="../assets/base/img/content/icons/goldBars.png"/><br/>
+                                                                <img id="afore" class="small" style="width:30%" src="../assets/base/img/content/icons/goldBars.png"/><br/>
                                                                 <span class="c-title" style="color:white;">Afore</span>
                                                             </a>
                                                           </div>
@@ -399,7 +399,7 @@
                                                       <div class="row">
                                                         <div class="col-sm-12 c-center">
                                                           <a href="https://vinik.typeform.com/to/L2H2AU">
-                                                              <img class="small" style="width:10%" src="../assets/base/img/content/icons/invest.png"/><br/>
+                                                              <img id="fdi" class="small" style="width:9%" src="../assets/base/img/content/icons/invest.png"/><br/>
                                                               <span class="c-title" style="color:white;">Fondo de Inversión</span>
                                                           </a>
                                                         </div>
@@ -411,7 +411,7 @@
                                                       <div class="row">
                                                         <div class="col-sm-12 c-center">
                                                           <a href="../credito-hipotecario.html">
-                                                              <img class="small" style="width:10%" src="../assets/base/img/content/icons/credito.png"/><br/>
+                                                              <img id="credHip" class="small" style="width:9%" src="../assets/base/img/content/icons/credito.png"/><br/>
                                                               <span class="c-title" style="color:white;">Crédito Hipotecario</span>
                                                           </a>
                                                         </div>
@@ -423,13 +423,13 @@
                                                           <div class="row">
                                                             <div class="col-sm-6 c-center">
                                                               <a href="../seguro-de-vida.html">
-                                                                  <img class="small" style="width:20%" src="../assets/base/img/content/icons/heart.png"/><br/>
+                                                                  <img id="sDeVida" class="small" style="width:18%" src="../assets/base/img/content/icons/heart.png"/><br/>
                                                                   <span class="c-title" style="color:white;">Seguro de Vida</span>
                                                               </a>
                                                             </div>
                                                             <div class="col-sm-6 c-center">
                                                               <a href="../seguro-de-gastos-medicos.html">
-                                                                  <img class="small" style="width:20%" src="../assets/base/img/content/icons/hospital.png"/><br/>
+                                                                  <img id="sDeGastos" class="small" style="width:18%" src="../assets/base/img/content/icons/hospital.png"/><br/>
                                                                   <span class="c-title" style="color:white;">Seguro de Gastos Médicos</span>
                                                               </a>
                                                             </div>
@@ -737,6 +737,13 @@
                         $('#elige').prepend('<img class="bigScreen" src="assets/base/img/elige.png" style="width:5.75em;display:block;margin-right:auto;margin-left:auto;">');
                         $('#contacta').prepend('<img class="bigScreen" src="assets/base/img/contacta.png" style="width:5.75em;display:block;margin-right:auto;margin-left:auto;">');
                         $('#contrata').prepend('<img class="bigScreen" src="assets/base/img/contrata.png" style="width:5.75em;display:block;margin-right:auto;margin-left:auto;">');
+                        $("#ppr").width("25%");
+                        $("#afore").width("25%");
+                        $("#fdi").width("20%");
+                        $("#credHip").width("25%");
+                        $("#sDeVida").width("25%");
+                        $("#sDeGastos").width("25%");
+
                         offset = 40;
                 };
 
