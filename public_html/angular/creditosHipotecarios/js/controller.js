@@ -96,12 +96,13 @@ Arroja: pago mensual
 		$scope.frmSimula.iPlazo = $params.iPlazo;
 		$scope.frmSimula.iPlazoMeses = $scope.frmSimula.iPlazo*12;
 		var a = Math.pow((1+(.106/12)), -$scope.frm.iPlazo);
-		$scope.frmSimula.iPagoSimula =  Math.floor(($scope.frm.iSdoIns)/((a-1)/(.106/12)));
+		$scope.frmSimula.iPagoSimula =  Math.abs(Math.floor(($scope.frm.iSdoIns)/((a-1)/(.106/12))));
 
-		console.log("pago = " + $scope.pago);
 	}
+
+
 	var barChartData = {
-		labels : ["Pago"],
+		labels : ["Crédito Actual | Crédito Nuevo"],
 		datasets : [
 			{
 				fillColor : "rgba(220,220,220,0.5)",
@@ -123,7 +124,7 @@ Arroja: pago mensual
 
 	var createGraph = function(){
 		barChartData = {
-			labels : ["Pago"],
+			labels : ["Crédito Actual | Crédito Nuevo"],
 			datasets : [
 				{
 					fillColor : "rgba(220,220,220,0.5)",
