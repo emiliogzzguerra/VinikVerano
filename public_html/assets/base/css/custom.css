@@ -104,10 +104,10 @@ select:disabled{
 }
 
 .c-content-tab-2.c-opt-1 > .nav li.active > .vinik:before{
-  border-bottom-color:#27366A;
+  border-bottom-color:#0065BD;
 }
 .c-content-tab-2.c-opt-1 > .nav li.active > .afore:before{
-  border-bottom-color:#27366A;
+  border-bottom-color:#0065BD;
 }
 
 
@@ -129,12 +129,13 @@ select:disabled{
 }
 
 .c-theme-btn-verde{
-  background-color: #19bb02;
-  border-color: #149e02;
+  background-color: #69BE28;
+  border-color: #69BE28;
   color:#ffffff;
 }
 .c-theme-btn-verde:hover{
-  background-color: #149e02;
+  border-color: #4E9B13;
+  background-color: #4E9B13;
   color:#ffffff;
 }
 .c-theme-btn-verde:visited{
@@ -167,8 +168,8 @@ power{
 }
 
 .cotiza:hover{
-  background-color:#111E4E;
-  border-color:#111E4E;
+  background-color:#004C91;
+  border-color:#004C91;
 }
 
 #textCarouselLeft{

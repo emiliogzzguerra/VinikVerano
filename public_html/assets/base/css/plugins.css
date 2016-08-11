@@ -358,14 +358,14 @@ label.control-label {
     background: #99a5b9; }
 .btn-primary:focus{
   color: #ffffff;
-  background: #27366A;
-  border-color: #27366A;
+  background: #0065BD;
+  border-color: #0065BD;
 }
 
 .btn-primary {
   color: #ffffff;
-  background: #27366A;
-  border-color: #27366A; }
+  background: #0065BD;
+  border-color: #0065BD; }
   .btn-primary.btn-no-focus:focus,
   .btn-primary.btn-no-focus.focus {
     color: #ffffff;
@@ -6951,7 +6951,7 @@ label.control-label {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  color: #27366A;
+  color: #0065BD;
    }
   .cbp-caption-expand .cbp-caption-defaultWrap .fa {
     margin-right: 6px;

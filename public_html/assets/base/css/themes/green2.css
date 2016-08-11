@@ -155,8 +155,8 @@ a {
 
 .c-theme-btn.btn {
   color: #ffffff;
-  background: #27366A;
-  border-color: #27366A; }
+  background: #0065BD;
+  border-color: #0065BD; }
   .c-theme-btn.btn.btn-no-focus:focus,
   .c-theme-btn.btn.btn-no-focus.focus {
     color: #ffffff;
@@ -169,8 +169,8 @@ a {
   .c-theme-btn.btn.active,
   .open > .c-theme-btn.btn.dropdown-toggle {
     color: #ffffff;
-    background: rgb(21, 36, 90);
-    border-color: rgb(21, 36, 90); }
+    background: #004C91;
+    border-color: #004C91; }
   .c-theme-btn.btn:active,
   .c-theme-btn.btn.active,
   .open > .c-theme-btn.btn.dropdown-toggle {
@@ -319,7 +319,7 @@ a {
 
 .c-content-tab-2.c-theme > ul > li.active > a > .c-title,
 .c-content-tab-2.c-theme > ul > li:hover > a > .c-title {
-  color: #27366A; }
+  color: #0065BD; }
 
 
 

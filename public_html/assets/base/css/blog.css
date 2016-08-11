@@ -45,7 +45,7 @@
 
 .c-layout-breadcrumbs-1 {
     padding: 25px 0;
-    background: #27366A;
+    background: #0065BD;
 }
 
 .preguntas{
@@ -60,12 +60,12 @@
 }
 
 .c-theme-btn-verde{
-  background-color: #19bb02;
-  border-color: #149e02;
+  background-color: #69BE28;
+  border-color: #4E9B13;
   color:#ffffff;
 }
 .c-theme-btn-verde:hover{
-  background-color: #149e02;
+  background-color: #4E9B13;
   color:#ffffff;
 }
 
@@ -92,8 +92,8 @@ power{
 }
 
 .cotiza:hover{
-  background-color:#111E4E;
-  border-color:#111E4E;
+  background-color:#004C91;
+  border-color:#004C91;
 }
 
 #textCarouselLeft{
