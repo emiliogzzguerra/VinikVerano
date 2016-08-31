@@ -1,14 +1,93 @@
-
 angular.module('app', [])
 
 .controller("AforeCtrl", function ($scope) {
+  var mesesRestantes = [0,0,0,0];
+  var etapas = [[25,36],[37,45],[46,59],[60,65]];
+  var afores  =
+          [[9.19,8.33,7.13,3.22],//Sura
+  				 [9.13,8.01,6.88,2.87],//Profuturo
+  				 [8.92,8.80,7.46,3.66],//PensionISSSTE
+  				 [8.88,7.88,6.82,2.83],//Banamex
+  				 [8.10,7.36,6.13,2.46],//Metlife
+  				 [8.06,7.43,6.24,2.41],//Principal
+  				 [7.82,7.22,5.70,2.25],//Invercap
+  				 [7.77,7.21,6.07,2.85],//XXI
+  				 [7.38,6.96,6.05,2.93],//Azteca
+  				 [7.13,6.83,6.17,2.73],//Coppel
+  				 [4.96,4.71,4.15,3.44]];//Inbursa
+
+  var maxSB4 = Math.max.apply(Math, afores.map(function(v) { return v[0]; }));
+  var maxSB3 = Math.max.apply(Math, afores.map(function(v) { return v[1]; }));
+  var maxSB2 = Math.max.apply(Math, afores.map(function(v) { return v[2]; }));
+  var maxSB1 = Math.max.apply(Math, afores.map(function(v) { return v[3]; }));
+
+  var supuestosFijos = [65, //Edad de retiro
+                    .065,//Aportaciones fijas % salario
+                    .045,//CrecimientoAnualDelSalario
+                    25]; //edadLaboralPromedio
+  var capital = [0,0,0,0];
+  var salarioInicio = [0,0,0,0];
+  var crecimientoMensualDelSalario = 0.0038;
+
+  var edad = 25;
+
+  var rendimientoMejorAfore = [maxSB4,maxSB3,maxSB2,maxSB1];
+
   $scope.perdida = 1500*100;
   $scope.tiempo = 65 - 25;
 
 	$scope.pushData = function($params) {
+    capital = [0,0,0,0];
+    salarioInicio = [0,0,0,0];
+    var saldo = $params.saldo;
 		var aforeActual = $params.afore;
 		var tiempo = $params.tiempo;
-		var rangoSalario = $params.salario;
+		var salario = $params.salario;
+    var rendimientoAforeActual = afores[aforeActual];
+
+    console.log("Tiempo = " +tiempo);
+    console.log("Edad = " +edad);
+
+    mesesRestantes = [0,0,0,0];
+    for (var j = tiempo; j < 65; j++) {
+      if (j <= 36) {
+        mesesRestantes[0] += 12;
+      } else if (j >36 && j <=45) {
+        mesesRestantes[1] += 12;
+      } else if (j >46 && j <=59){
+        mesesRestantes[2] += 12;
+      } else {
+        mesesRestantes[3] += 12;
+      }
+    }
+    /*
+    for (var i = 0; i < 4; i++) {
+      console.log("Meses restantes en "+i+ " = "+mesesRestantes[i]);
+    }
+    */
+
+    var iTemp = 0;
+    var iTemp2 = 0;
+
+    for (var i = 0; i < 4; i++) {
+      if (i == 0) {
+        salarioInicio[i] = salario;
+        iTemp = Math.pow((1+(rendimientoAforeActual/100)),mesesRestantes[i])
+        capital[i] = saldo*iTemp;
+      } else {
+
+        iTemp = Math.pow((1+crecimientoMensualDelSalario),(mesesRestantes[i-1]));
+
+        salarioInicio[i] = salarioInicio[i-1]*(iTemp);
+
+        iTemp = Math.pow((1+rendimientoAforeActual[i]),(mesesRestantes[i]));
+        iTemp2 = Math.pow((1+crecimientoMensualDelSalario),(mesesRestantes[i]));
+        capital[i] = salarioInicio[i]*supuestosFijos[1]*((iTemp)-(1+rendimientoAforeActual)*(iTemp2))/(rendimientoAforeActual-crecimientoMensualDelSalario);
+      }
+      console.log("Salario en " + (i+1) + " = " + salarioInicio[i]);
+      //console.log("Capital en " + i + " = " + capital[i]);
+    }
+
     $scope.tiempo = 65 - $params.tiempo;
     $scope.perdida = $params.salario*$scope.tiempo;
 

@@ -647,29 +647,29 @@
                           <h2 class="c-font-uppercase c-font-bold c-font-center">Si te cambias de afore...</h2>
                           <div ng-controller="AforeCtrl">
                             <div class="col-md-6" >
-                              <div class="c-content-title-1 c-bg-grey" data-height="height" style="height: 167px;padding:30px 30px 30px 30px;">
+                              <div class="c-content-title-1 c-bg-grey"  style="height: 265px;padding:30px 30px 30px 30px;">
                                   <h3 class="c-font-uppercase c-font-sbold">Ingresa tu información </h3>
                                   <div class="text-center" style="float:left;  margin-left:20px;">
                                         <span style="font-size:1.0em">Afore Actual:</span>
-                                        <select style="margin-left:5px;" id="afore" ng-init="user.afore = 'profuturo';" ng-model="user.afore" ng-change="pushData(user)">
-                                            <option value="issste">PensionISSSTE</option>
-                                            <option value="sura">SURA</option>
-                                            <option value="inbursa">Inbursa</option>
-                                            <option value="profuturo">Profuturo GNP</option>
-                                            <option value="azteca">Azteca</option>
-                                            <option value="banorte">XXI Banorte</option>
-                                            <option value="banamex">Banamex</option>
-                                            <option value="coppel">Coppel</option>
-                                            <option value="metlife">MetLife</option>
-                                            <option value="invercap">Invercap</option>
-                                            <option value="principal">Principal</option>
+                                        <select style="margin-left:5px;" id="afore" ng-init="user.afore = '1';" ng-model="user.afore" ng-change="pushData(user)">
+                                            <option value="0">SURA</option>
+                                            <option value="1">Profuturo GNP</option>
+                                            <option value="2">PensionISSSTE</option>
+                                            <option value="3">Banamex</option>
+                                            <option value="4">MetLife</option>
+                                            <option value="5">Principal</option>
+                                            <option value="6">Invercap</option>
+                                            <option value="7">XXI Banorte</option>
+                                            <option value="8">Azteca</option>
+                                            <option value="9">Coppel</option>
+                                            <option value="10">Inbursa</option>
                                         </select>
                                   </div>
                                   <div style="float:left; margin-left:20px;">
                                     <span style="font-size:1.0em">Edad:</span>
                                     <select style="margin-left:5px;" id="tiempo" ng-init="user.tiempo = '25';" ng-model="user.tiempo" ng-change="pushData(user)" >
                                         <option value="18">18 años</option>
-                                        <option selected="true" value="19">19 años</option>
+                                        <option value="19">19 años</option>
                                         <option value="20">20 años</option>
                                         <option value="21">21 años</option>
                                         <option value="22">22 años</option>
@@ -734,11 +734,36 @@
                                             <option value="110000">$110,000 - $120,000</option>
                                         </select>
                                   </div>
+                                  <div class="text-center" style="float:left;  margin-left:20px;">
+                                        <span style="font-size:1.0em">Saldo a la fecha:</span>
+                                        <select style="margin-left:5px;" id="salario" ng-init="user.saldo = '75000';" ng-model="user.saldo" ng-change="pushData(user)">
+                                            <option value="25000">$0 - $50,000</option>
+                                            <option value="75000">$50,000 - $100,000</option>
+                                            <option value="125000">$100,000 - $150,000</option>
+                                            <option value="175000">$150,000 - $200,000</option>
+                                            <option value="225000">$200,000 - $250,000</option>
+                                            <option value="275000">$250,000 - $300,000</option>
+                                            <option value="325000">$300,000 - $350,000</option>
+                                            <option value="375000">$350,000 - $400,000</option>
+                                            <option value="425000">$400,000 - $450,000</option>
+                                            <option value="475000">$450,000 - $500,000</option>
+                                            <option value="525000">$500,000 - $550,000</option>
+                                            <option value="575000">$550,000 - $600,000</option>
+                                            <option value="625000">$600,000 - $650,000</option>
+                                            <option value="675000">$650,000 - $700,000</option>
+                                            <option value="725000">$700,000 - $750,000</option>
+                                            <option value="775000">$750,000 - $800,000</option>
+                                            <option value="825000">$800,000 - $850,000</option>
+                                            <option value="875000">$850,000 - $900,000</option>
+                                            <option value="925000">$900,000 - $950,000</option>
+                                            <option value="975000">$950,000 - $1,000,000</option>
+                                        </select>
+                                  </div>
                               </div>
 
                             </div>
                             <div class="col-md-6">
-                                <div class="c-content-v-center c-bg-green" data-height="height" style="height: 167px;">
+                                <div class="c-content-v-center c-bg-green" style="height: 265px;">
                                     <div class="c-wrapper">
                                         <div class="c-body">
                                             <!--<h3 class="c-font-white c-font-bold">Just another option from an endless list of choices within JANGO.</h3>-->
