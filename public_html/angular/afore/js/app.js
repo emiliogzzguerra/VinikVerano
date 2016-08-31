@@ -49,9 +49,31 @@ angular.module('app', [])
     console.log("Edad = " +edad);
 
     mesesRestantes = [0,0,0,0];
+
+    if (tiempo <= 36) {
+      mesesRestantes[0] = (36-tiempo)*12;
+      mesesRestantes[1] = 8*12;
+      mesesRestantes[2] = 13*12;
+      mesesRestantes[3] = 5*12;
+    } else if (tiempo >36 && tiempo <=45){
+      mesesRestantes[0] = 0;
+      mesesRestantes[1] = (45-tiempo)*12;
+      mesesRestantes[2] = 13*12;
+      mesesRestantes[3] = 5*12;
+    } else if (tiempo > 45 && tiempo <=59){
+      mesesRestantes[0] = 0;
+      mesesRestantes[1] = 0;
+      mesesRestantes[2] = (59-tiempo)*12;
+      mesesRestantes[3] = 5*12;
+    } else if (tiempo > 59 && tiempo <=65){
+      mesesRestantes[0] = 0;
+      mesesRestantes[1] = 0;
+      mesesRestantes[2] = 0;
+      mesesRestantes[3] = (65-tiempo)*12;
+    }
+    /*
     for (var j = tiempo; j < 65; j++) {
       if (j <= 36) {
-        mesesRestantes[0] += 12;
       } else if (j >36 && j <=45) {
         mesesRestantes[1] += 12;
       } else if (j >46 && j <=59){
@@ -60,6 +82,7 @@ angular.module('app', [])
         mesesRestantes[3] += 12;
       }
     }
+    */
     /*
     for (var i = 0; i < 4; i++) {
       console.log("Meses restantes en "+i+ " = "+mesesRestantes[i]);
@@ -84,6 +107,7 @@ angular.module('app', [])
         iTemp2 = Math.pow((1+crecimientoMensualDelSalario),(mesesRestantes[i]));
         capital[i] = salarioInicio[i]*supuestosFijos[1]*((iTemp)-(1+rendimientoAforeActual)*(iTemp2))/(rendimientoAforeActual-crecimientoMensualDelSalario);
       }
+      console.log("Meses restantes en " + (i+1) + " = " + mesesRestantes[i]);
       console.log("Salario en " + (i+1) + " = " + salarioInicio[i]);
       //console.log("Capital en " + i + " = " + capital[i]);
     }
