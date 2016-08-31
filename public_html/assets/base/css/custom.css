@@ -197,27 +197,27 @@ power{
   }
 
 #ahorro.active{
-  background-color:rgba(21, 36, 90, 0.8);
+  background-color:rgba(0,101,198, 0.8);
   color:white;
 }
 #inversion.active{
-  background-color:rgba(21, 36, 90, 0.8);
+  background-color:rgba(0,101,198, 0.8);
   color:white;
 }
 #seguro.active{
-  background-color:rgba(21, 36, 90, 0.8);
+  background-color:rgba(0,101,198, 0.8);
   color:white;
 }
 #credito.active{
-  background-color:rgba(21, 36, 90, 0.8);
+  background-color:rgba(0,101,198, 0.8);
   color:white;
 }
 .c-layout-header .c-navbar .c-mega-menu.c-mega-menu-dark-mobile > .nav.navbar-nav > li > .c-link:active{
-  background-color:rgba(21, 36, 90, 0.8);
+  background-color:rgba(0,101,198, 0.8);
 }
 
 .c-layout-header .c-navbar .c-mega-menu.c-mega-menu-dark-mobile > .nav.navbar-nav > li > .c-link:hover{
-  background-color:rgba(21, 36, 90, 0.8);
+  background-color:rgba(0,101,198, 0.8);
 }
 
 .c-layout-header .c-navbar .c-mega-menu.c-mega-menu-dark-mobile > .nav.navbar-nav > li .dropdown-menu > li > a{
@@ -225,7 +225,7 @@ power{
 }
 
 .c-layout-header .c-navbar .c-mega-menu.c-mega-menu-dark-mobile > .nav.navbar-nav > li .dropdown-menu > li > a:hover{
-  background-color:rgba(21, 36, 90, 0.8);
+  background-color:rgba(0,101,198, 0.8);
 }
 .c-layout-header .c-navbar .c-mega-menu{
   border-top: 1px;
@@ -850,7 +850,7 @@ there.
   ul.nav.navbar-nav.c-theme-nav > li.c-menu-type-classic > ul.dropdown-menu.c-menu-type-classic.c-pull-left > li > a{
   }
   ul.nav.navbar-nav.c-theme-nav > li.c-menu-type-classic > ul.dropdown-menu.c-menu-type-classic.c-pull-left > li > a:hover{
-    background-color:rgba(21, 36, 90, 0.8);
+    background-color:rgba(0,101,198, 0.8);
   }
   .c-layout-header .c-navbar .c-mega-menu.c-mega-menu-dark-mobile > .nav.navbar-nav > li .dropdown-menu > li > a{
     color:white;
