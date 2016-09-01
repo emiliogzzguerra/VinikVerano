@@ -2,6 +2,7 @@ angular.module('app', [])
 
 .controller("AforeCtrl", function ($scope) {
   var mesesRestantes = [0,0,0,0];
+
   var etapas = [[25,36],[37,45],[46,59],[60,65]];
   var afores  =
           [[9.19,8.33,7.13,3.22],//Sura
@@ -38,12 +39,17 @@ angular.module('app', [])
 
 	$scope.pushData = function($params) {
     capital = [0,0,0,0];
+    capitalOptimo = [0,0,0,0];
     salarioInicio = [0,0,0,0];
     var saldo = $params.saldo;
 		var aforeActual = $params.afore;
 		var tiempo = $params.tiempo;
 		var salario = $params.salario;
     var rendimientoAforeActual = afores[aforeActual];
+    var iTemp = 0;
+    var iTemp2 = 0;
+    var salarioVariableActual = [0,0,0,0];
+    var salarioVariableOptimo = [0,0,0,0];
 
     console.log("Tiempo = " +tiempo);
     console.log("Edad = " +edad);
@@ -71,49 +77,51 @@ angular.module('app', [])
       mesesRestantes[2] = 0;
       mesesRestantes[3] = (65-tiempo)*12;
     }
-    /*
-    for (var j = tiempo; j < 65; j++) {
-      if (j <= 36) {
-      } else if (j >36 && j <=45) {
-        mesesRestantes[1] += 12;
-      } else if (j >46 && j <=59){
-        mesesRestantes[2] += 12;
-      } else {
-        mesesRestantes[3] += 12;
-      }
-    }
-    */
-    /*
-    for (var i = 0; i < 4; i++) {
-      console.log("Meses restantes en "+i+ " = "+mesesRestantes[i]);
-    }
-    */
 
-    var iTemp = 0;
-    var iTemp2 = 0;
+
 
     for (var i = 0; i < 4; i++) {
       if (i == 0) {
         salarioInicio[i] = salario;
-        iTemp = Math.pow((1+(rendimientoAforeActual/100)),mesesRestantes[i])
+        iTemp = Math.pow((1+((rendimientoAforeActual[i]/100)/12)),mesesRestantes[i]);
+        iTemp2 = Math.pow((1+((rendimientoMejorAfore[i]/100)/12)),mesesRestantes[i])
         capital[i] = saldo*iTemp;
+        capitalOptimo[i] = saldo*iTemp2;
       } else {
 
         iTemp = Math.pow((1+crecimientoMensualDelSalario),(mesesRestantes[i-1]));
 
         salarioInicio[i] = salarioInicio[i-1]*(iTemp);
 
-        iTemp = Math.pow((1+rendimientoAforeActual[i]),(mesesRestantes[i]));
-        iTemp2 = Math.pow((1+crecimientoMensualDelSalario),(mesesRestantes[i]));
-        capital[i] = salarioInicio[i]*supuestosFijos[1]*((iTemp)-(1+rendimientoAforeActual)*(iTemp2))/(rendimientoAforeActual-crecimientoMensualDelSalario);
+        iTemp = Math.pow((1+((rendimientoAforeActual[i]/100)/12)),(mesesRestantes[i]));
+        iTemp2 = Math.pow((1+((rendimientoMejorAfore[i]/100)/12)),(mesesRestantes[i]));
+
+        capital[i] = (capital[i-1]+salarioVariableActual[i-1])*iTemp;
+        capitalOptimo[i] = (capitalOptimo[i-1]+salarioVariableOptimo[i-1])*iTemp2;
+
       }
-      console.log("Meses restantes en " + (i+1) + " = " + mesesRestantes[i]);
-      console.log("Salario en " + (i+1) + " = " + salarioInicio[i]);
+
+      // console.log("Meses restantes en " + (i+1) + " = " + mesesRestantes[i]);
+      // console.log("Salario en " + (i+1) + " = " + salarioInicio[i]);
+
+      iTemp = Math.pow((1+((rendimientoAforeActual[i]/100)/12)),(mesesRestantes[i]+1));
+      iTemp2 = Math.pow((1+crecimientoMensualDelSalario),(mesesRestantes[i]));
+
+      salarioVariableActual[i] = (salarioInicio[i]*supuestosFijos[1]*(iTemp-(1+((rendimientoAforeActual[i]/100)/12))*iTemp2))/(((rendimientoAforeActual[i]/100)/12)-crecimientoMensualDelSalario);
+
+      iTemp = Math.pow((1+((rendimientoMejorAfore[i]/100)/12)),(mesesRestantes[i]+1));
+      salarioVariableOptimo[i] = (salarioInicio[i]*supuestosFijos[1]*(iTemp-(1+((rendimientoMejorAfore[i]/100)/12))*iTemp2))/(((rendimientoMejorAfore[i]/100)/12)-crecimientoMensualDelSalario);
+
+      // console.log("SalarioVariableActual en " + (i+1) + " = " + salarioVariableActual[i]);
+      // console.log("salarioVariableOptimo en " + (i+1) + " = " + salarioVariableOptimo[i]);
+      //
+      // console.log("Capital en " + (i+1) + " = " + capital[i]);
+      // console.log("CapitalOptimo en " + (i+1) + " = " + capitalOptimo[i]);
       //console.log("Capital en " + i + " = " + capital[i]);
     }
 
     $scope.tiempo = 65 - $params.tiempo;
-    $scope.perdida = $params.salario*$scope.tiempo;
+    $scope.perdida = capitalOptimo[3]-capital[3];
 
 	}
 });
