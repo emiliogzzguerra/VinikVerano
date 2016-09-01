@@ -121,7 +121,7 @@ angular.module('app', [])
     }
 
     $scope.tiempo = 65 - $params.tiempo;
-    $scope.perdida = capitalOptimo[3]-capital[3];
+    $scope.perdida = Math.round((capitalOptimo[3]-capital[3])/10000)*10000;
 
 	}
 });
