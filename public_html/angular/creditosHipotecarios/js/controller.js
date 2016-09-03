@@ -4,11 +4,27 @@ angular.module('controller',[])
 
 .controller('VarCtrl', ['$scope', '$http', '$log','$window', function($scope, $http, $log,$window) {
 
-	var tope = 14;
+	var tope;
 
 	Chart.numberWithCommas = function(x) {
 			return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	};
+
+	var resizeChart = function(a,b){
+		if (a > b) {
+			if (a%100000 == 0) {
+				tope = Math.ceil(a/100000) + 1;
+			} else {
+				tope = Math.ceil(a/100000);
+			}
+		} else {
+			if (b%100000 == 0) {
+				tope = Math.ceil(b/100000) + 1;
+			} else {
+				tope = Math.ceil(b/100000);
+			}
+		}
+	}
 
 	$scope.changeChecked = function($params){
 		$scope.frm.bCoa = $params;
@@ -17,17 +33,20 @@ angular.module('controller',[])
 		$scope.frm.bCoa = $params;
 	}
 
-	$scope.pago1 = 1354212;
-	$scope.pago2 = 1339159;
-	$scope.ahorroMensual = 12560;
+	$scope.pago1 = 4000000;
+	$scope.pago2 = Math.floor(3724344);
+	$scope.ahorroMensual = 1378;
 
+	resizeChart($scope.pago1,$scope.pago2);
+
+	$scope.tazaInteres = .106;
 
 	$scope.frm = {
 		sNombre:"Emilio Gzz",
 		iEdad:32 ,
-		iSdoIns:1354212.08,
+		iSdoIns:2000000,
 		iPago:20000 ,
-		iPlazo: 180
+		iPlazo: 200
 	};
 
 	$scope.frmSimula = {
@@ -47,33 +66,26 @@ angular.module('controller',[])
 		$scope.frm.iSdoIns = $params.iSdoIns;
 		$scope.frm.iPago = $params.iPago;
 		$scope.frm.iPlazo = $params.iPlazo;
-		$scope.pago1 = Math.floor($scope.frm.iSdoIns);
 
-		var a = Math.pow((1+(.106/12)), - $scope.frm.iPlazo);
+		var a = Math.pow((1+($scope.tazaInteres/12)),$scope.frm.iPlazo);
 
-		var formula = Math.abs(($scope.frm.iSdoIns)/((a-1)/(.106/12)));
+		$scope.frm.iPagoVinik = -(  ($scope.frm.iSdoIns) / ((a)-(1/($scope.tazaInteres/12)))  );
 
-		$scope.pago2 =  Math.floor($scope.pago1 - Math.floor(formula));
+		console.log($scope.frm.iPagoVinik);
 
-		console.log(formula);
+		$scope.pago1 = Math.floor($scope.frm.iPago*$scope.frm.iPlazo); //SIN VINIK
+
+		console.log($scope.pago1);
+
+		$scope.pago2 =  Math.floor($scope.frm.iPagoVinik*$scope.frm.iPlazo); //CON VINIK
+
 		console.log($scope.pago2);
 
-		if ($scope.pago1 > $scope.pago2) {
-			if ($scope.pago1%100000 == 0) {
-				tope = Math.ceil($scope.pago1/100000) + 1;
-			} else {
-				tope = Math.ceil($scope.pago1/100000);
-			}
-		} else {
-			if ($scope.pago2%100000 == 0) {
-				tope = Math.ceil($scope.pago2/100000) + 1;
-			} else {
-				tope = Math.ceil($scope.pago2/100000);
-			}
-		}
-		console.log(tope);
+		resizeChart($scope.pago1,$scope.pago2);
 
-		$scope.ahorroMensual = Math.floor(($scope.frm.iPago)-($scope.pago2/$scope.frm.iPlazo));
+		//console.log(tope);
+
+		$scope.ahorroMensual = Math.floor($scope.frm.iPago-$scope.frm.iPagoVinik);
 
 		chartUpdate();
 	}
@@ -152,24 +164,36 @@ Arroja: pago mensual
 			scaleLabel: "$<%=Chart.numberWithCommas(value)%>",
 			responsive : true,
 			showTooltips: false,
-			scaleOverride : true,
-			scaleSteps : tope,
-			scaleStepWidth : 100000,
-			scaleStartValue : 0,
-	    onAnimationComplete: function () {
-
-	        var ctx = this.chart.ctx;
-	        ctx.font = this.scale.font;
-	        ctx.fillStyle = this.scale.textColor
-	        ctx.textAlign = "center";
-	        ctx.textBaseline = "bottom";
-
-	        this.datasets.forEach(function (dataset) {
-	            dataset.bars.forEach(function (bar) {
-	                ctx.fillText("$" + Chart.numberWithCommas(bar.value), bar.x, bar.y - 5);
-	            });
-	        })
-	    }
+			showInlineValues : true,
+			centeredInllineValues : true,
+			tooltipCaretSize : 0,
+			tooltipTemplate : "<%= value %>",
+			onAnimationComplete: function(){
+            if (this.options.showInlineValues) {
+                if (this.name == "Bar") {
+                    this.eachBars(function(bar){
+                        var tooltipPosition = bar.tooltipPosition();
+                        new Chart.Tooltip({
+                            x: Math.round(tooltipPosition.x),
+                            y: this.options.centeredInllineValues
+                                ? Math.round( bar.y + (bar.height() / 2) + ((this.options.tooltipFontSize + this.options.tooltipYPadding) / 2) )
+                                : Math.round(tooltipPosition.y),
+                            xPadding: this.options.tooltipXPadding,
+                            yPadding: this.options.tooltipYPadding,
+                            fillColor: this.options.tooltipFillColor,
+                            textColor: this.options.tooltipFontColor,
+                            fontFamily: this.options.tooltipFontFamily,
+                            fontStyle: this.options.tooltipFontStyle,
+                            fontSize: this.options.tooltipFontSize,
+                            caretHeight: this.options.tooltipCaretSize,
+                            cornerRadius: this.options.tooltipCornerRadius,
+                            text: "$" + Chart.numberWithCommas(bar.value),
+                            chart: this.chart
+                        }).draw();
+                    });
+                }
+            }
+        }
 	  });
 
 }
@@ -183,26 +207,38 @@ Arroja: pago mensual
 			var ctx = document.getElementById("canvas").getContext("2d");
 		  window.myBar = new Chart(ctx).Bar(barChartData, {
 				scaleLabel: "$<%=Chart.numberWithCommas(value)%>",
-		    responsive : true,
-		    showTooltips: false,
-		    scaleOverride : true,
-		    scaleSteps : tope,
-		    scaleStepWidth : 100000,
-		    scaleStartValue : 0,
-		    onAnimationComplete: function () {
-
-		        var ctx = this.chart.ctx;
-		        ctx.font = this.scale.font;
-		        ctx.fillStyle = this.scale.textColor
-		        ctx.textAlign = "center";
-		        ctx.textBaseline = "bottom";
-
-		        this.datasets.forEach(function (dataset) {
-		            dataset.bars.forEach(function (bar) {
-		                ctx.fillText("$" + Chart.numberWithCommas(bar.value), bar.x, bar.y - 5);
-		            });
-		        })
-		    }
+				responsive : true,
+				showTooltips: false,
+				showInlineValues : true,
+				centeredInllineValues : true,
+				tooltipCaretSize : 0,
+				tooltipTemplate : "<%= value %>",
+				onAnimationComplete: function(){
+	            if (this.options.showInlineValues) {
+	                if (this.name == "Bar") {
+	                    this.eachBars(function(bar){
+	                        var tooltipPosition = bar.tooltipPosition();
+	                        new Chart.Tooltip({
+	                            x: Math.round(tooltipPosition.x),
+	                            y: this.options.centeredInllineValues
+	                                ? Math.round( bar.y + (bar.height() / 2) + ((this.options.tooltipFontSize + this.options.tooltipYPadding) / 2) )
+	                                : Math.round(tooltipPosition.y),
+	                            xPadding: this.options.tooltipXPadding,
+	                            yPadding: this.options.tooltipYPadding,
+	                            fillColor: this.options.tooltipFillColor,
+	                            textColor: this.options.tooltipFontColor,
+	                            fontFamily: this.options.tooltipFontFamily,
+	                            fontStyle: this.options.tooltipFontStyle,
+	                            fontSize: this.options.tooltipFontSize,
+	                            caretHeight: this.options.tooltipCaretSize,
+	                            cornerRadius: this.options.tooltipCornerRadius,
+	                            text: "$" + Chart.numberWithCommas(bar.value),
+	                            chart: this.chart
+	                        }).draw();
+	                    });
+	                }
+	            }
+	        }
 		  });
 	}
 
