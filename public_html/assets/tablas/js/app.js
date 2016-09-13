@@ -255,7 +255,7 @@ function cellStyle3(value, row, index, field) {
         //Color[3] = Azul Mas Fuerte
         //Color[4] = Rojo Mas Fuerte
             var lAzul_0 = function(i){ //Azul Alta
-                var res = a*(Math.pow(Bazul[0],(i+1))-1)/(Bazul[0]-1);
+                var res = a*12*(Math.pow(Bazul[0],(i+1))-1)/(Bazul[0]-1);
 
                 var n = res.toFixed(0);
                 t1 += 12;
@@ -263,14 +263,14 @@ function cellStyle3(value, row, index, field) {
             };
 
             var lAzul_1 = function(i){ //Azul Baja
-                var res = a*(Math.pow(Bazul[1],(i+1))-1)/(Bazul[1]-1);
+                var res = a*12*(Math.pow(Bazul[1],(i+1))-1)/(Bazul[1]-1);
                 var n = res.toFixed(0);
                 t2 += 12;
                 return n;
             };
 
             var lVerde_0 = function(i){ //Rojo Alta
-                var res = a*(Math.pow(Bverde[0],(i+1))-1)/(Bverde[0]-1);
+                var res = a*12*(Math.pow(Bverde[0],(i+1))-1)/(Bverde[0]-1);
 
                 var n = res.toFixed(0);
                 t1 += 12;
@@ -278,7 +278,7 @@ function cellStyle3(value, row, index, field) {
             };
 
             var lVerde_1 = function(i){ //Rojo Baja
-                var res = a*(Math.pow(Bverde[1],(i+1))-1)/(Bverde[1]-1);
+                var res = a*12*(Math.pow(Bverde[1],(i+1))-1)/(Bverde[1]-1);
                 var n = res.toFixed(0);
                 t2 += 12;
                 return n;
