@@ -2,49 +2,49 @@
     {
         "id":0,
         "checkbox": true,
-        "nombre": "<div class='c-center'><img src='../assets/base/img/content/icons/old.png' style='height:50%;width:70%;'/></div><p style='margin-bottom:0px;text-align:center;font-weight: bold;'>Old Mutual Estabilidad</p>",
-        "ti": "<h4>$0</h4>",
-        "am": 0,
-        "pa": "Item 0",
-        "ir": 0,
-        "c": "Item 0",
+        "nombre": "<div class='c-center'><img src='../assets/base/img/content/icons/oldm.png' style='height:20%;width:70%;'/></div><p style='margin-bottom:0px;text-align:center;padding-bottom:0px;;font-weight: bold;'>Old Mutual Estabilidad</p>",
+        "ti": "<h4 style='padding-bottom:0px;'>4.5%</h4>",
+        "am": "<h4 style='padding-bottom:0px;'>$1,500</h4>",
+        "pa": "<h4 style='padding-bottom:0px;'>1 año</h4>",
+        "ir": "<div class='c-center'><img src='../assets/base/img/content/icons/estable.png' style='height:20%;width:40%;'/></div>",
+        "c": "<h4 style='padding-bottom:0px;'>0.165% <span style='font-size:16px;'>Mensual</span></h4>",
         "ct": "<div class='vcenter'><button type='button' class='btn c-theme-btn-verde'>Elegir</button></div>",
-        "b": [1.12,1.05]
+        "b": [1.05,1.040]
     },
     {
         "id":1,
         "checkbox": true,
-        "nombre": "<div class='c-center'><img src='../assets/base/img/content/icons/old.png' style='height:50%;width:70%;'/></div><p style='margin-bottom:0px;text-align:center;font-weight: bold;'>Old Mutual Moderado</p>",
-        "ti": "<h4>$0</h4>",
-        "am": 0,
-        "pa": "Item 0",
-        "ir": 0,
-        "c": "Item 0",
+        "nombre": "<div class='c-center'><img src='../assets/base/img/content/icons/oldm.png' style='height:20%;width:70%;'/></div><p style='margin-bottom:0px;text-align:center;padding-bottom:0px;;font-weight: bold;'>Old Mutual Moderado</p>",
+        "ti": "<h4 style='padding-bottom:0px;'>6%</h4>",
+        "am": "<h4 style='padding-bottom:0px;'>$1,500</h4>",
+        "pa": "<h4 style='padding-bottom:0px;'>2 años</h4>",
+        "ir": "<div class='c-center'><img src='../assets/base/img/content/icons/pocoarriesgado.png' style='height:20%;width:40%;'/></div>",
+        "c": "<h4 style='padding-bottom:0px;'>0.165% <span style='font-size:16px;'>Mensual</span></h4>",
         "ct": "<div class='vcenter'><button type='button' class='btn c-theme-btn-verde'>Elegir</button></div>",
-        "b": [1.07,1.04]
+        "b": [1.08,1.035]
     },
     {
         "id":2,
         "checkbox":false,
-        "nombre": "<div class='c-center'><img src='../assets/base/img/content/icons/old.png' style='height:50%;width:70%;'/></div><p style='margin-bottom:0px;text-align:center;font-weight: bold;'>Old Mutual Dinámico</p>",
-        "ti": "<h4>$0</h4>",
-        "am": 0,
-        "pa": "Item 0",
-        "ir": 0,
-        "c": "Item 0",
+        "nombre": "<div class='c-center'><img src='../assets/base/img/content/icons/oldm.png' style='height:20%;width:70%;'/></div><p style='margin-bottom:0px;text-align:center;padding-bottom:0px;;font-weight: bold;'>Old Mutual Dinámico</p>",
+        "ti": "<h4 style='padding-bottom:0px;'>8%</h4>",
+        "am": "<h4 style='padding-bottom:0px;'>$1,500</h4>",
+        "pa": "<h4 style='padding-bottom:0px;'>3 años</h4>",
+        "ir": "<div class='c-center'><img src='../assets/base/img/content/icons/masarriesgado.png' style='height:20%;width:40%;'/></div>",
+        "c": "<h4 style='padding-bottom:0px;'>0.165% <span style='font-size:16px;'>Mensual</span></h4>",
         "ct": "<div class='vcenter'><button type='button' class='btn c-theme-btn-verde'>Elegir</button></div>",
-        "b": [1.10,1.07]
+        "b": [1.11,1.029]
     },
     {
         "id":3,
         "checkbox":false,
-        "nombre": "<div class='c-center'><img src='../assets/base/img/content/icons/banamex.png' style='height:50%;width:70%;'/> </div><p style='margin-bottom:0px;text-align:center;font-weight: bold;'>Banamex Integral</p>",
-        "ti": "<h4>1.78%</h4>",
-        "am": 100,
-        "pa": " ",
-        "ir": 0,
-        "c": "Item 0",
+        "nombre": "<div class='c-center'><img src='../assets/base/img/content/icons/oldm.png' style='height:20%;width:70%;'/> </div><p style='margin-bottom:0px;text-align:center;padding-bottom:0px;;font-weight: bold;'>Old Mutual Especulativo</p>",
+        "ti": "<h4 style='padding-bottom:0px;'>12%</h4>",
+        "am": "<h4 style='padding-bottom:0px;'>$1,500</h4>",
+        "pa": "<h4 style='padding-bottom:0px;'>+5 años</h4>",
+        "ir": "<div class='c-center'><img src='../assets/base/img/content/icons/arriesgado.png' style='height:20%;width:40%;'/></div>",
+        "c": "<h4 style='padding-bottom:0px;'>0.165% <span style='font-size:16px;'>Mensual</span></h4>",
         "ct": "<div class='vcenter'><button type='button' class='btn c-theme-btn-verde'>Elegir</button></div>",
-        "b": [1.10,1.07]
+        "b": [1.2,1.010]
     }
 ]

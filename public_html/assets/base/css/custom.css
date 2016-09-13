@@ -29,6 +29,14 @@
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
+.emilio2{
+  color:#3F444B;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-weight: 300;
+  font-size: 3.0rem; line-height: 1.35; letter-spacing: -.08rem;
+}
+
 .pad {
   padding: 20px 20px 20px 20px;
 }

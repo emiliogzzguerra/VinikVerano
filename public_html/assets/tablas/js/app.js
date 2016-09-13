@@ -63,6 +63,17 @@ function cellStyle(value, row, index) {
     return {};
 }
 
+
+function cellStyle2(value, row, index, field) {
+  return {
+    css: {"padding":"25px 0px 0px 0px"}
+  };
+}
+function cellStyle3(value, row, index, field) {
+  return {
+    css: {"padding":"10px 0px 0px 0px"}
+  };
+}
         $(function () {
             var sum=2;
             all = $table.bootstrapTable('getData');
@@ -124,6 +135,10 @@ function cellStyle(value, row, index) {
                           nAzul = "Old Mutual Dinámico";
                           console.log("Row Old Mutual Dinámico AZUL");
                           break;
+                        case 3:
+                          nAzul = "Old Mutual Especulativo";
+                          console.log("Row Old Mutual Dinámico AZUL");
+                          break;
                       default:
                         console.log("NadaSeleccionado")
                         break;
@@ -148,6 +163,10 @@ function cellStyle(value, row, index) {
                         case 2:
                           nVerde = "Old Mutual Dinámico";
                           console.log("Row Old Mutual Dinámico VERDE");
+                        case 3:
+                          nVerde = "Old Mutual Especulativo";
+                          console.log("Row Old Mutual Dinámico AZUL");
+                          break;
                           break;
                       default:
                         console.log("NadaSeleccionado")
