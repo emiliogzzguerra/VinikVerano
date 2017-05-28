@@ -63,13 +63,13 @@ var LayoutHeaderCart = function () {
 // BEGIN: Layout Header
 var LayoutHeader = function () {
 	var offset = parseInt($('.c-layout-header').attr('data-minimize-offset') > 0 ? parseInt($('.c-layout-header').attr('data-minimize-offset')) : 0);
-	// var _handleHeaderOnScroll = function () {
-	// 		if ($(window).scrollTop() > offset) {
-	// 		$("body").addClass("c-page-on-scroll");
-	// 		} else {
-	// 		$("body").removeClass("c-page-on-scroll");
-	// 		}		
-	// }
+	var _handleHeaderOnScroll = function () {
+			if ($(window).scrollTop() > offset) {
+			$("body").addClass("c-page-on-scroll");
+			} else {
+			$("body").removeClass("c-page-on-scroll");
+			}		
+	}
 
 	var _handleTopbarCollapse = function () {
 		$('.c-layout-header .c-topbar-toggler').on('click', function (e) {
