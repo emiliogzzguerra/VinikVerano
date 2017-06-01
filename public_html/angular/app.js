@@ -1,7 +1,14 @@
-var app = angular.module("Vinik", [])
+var app = angular.module("Vinik", ['ui.bootstrap-slider'])
+
+IndexController.$inject = [];
+function IndexController() {
+    console.log('IndexController');
+}
+
+app.controller('IndexController', IndexController);
 
 app.controller("FooterController", function ($scope) {
- 
+    console.log('App.js');
     $scope.submitFeedback = function(action) {
         //good or bad...
         if (action) {
