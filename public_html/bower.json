@@ -1,0 +1,23 @@
+{
+  "name": "public_html",
+  "homepage": "https://github.com/emiliogzzguerra/VinikVerano",
+  "authors": [
+    "Fernando Contreras <fercreek@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-bootstrap": "^2.5.0"
+  },
+  "resolutions": {
+    "seiyria-bootstrap-slider": "^9.8.0"
+  }
+}

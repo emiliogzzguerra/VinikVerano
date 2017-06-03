@@ -11,7 +11,34 @@ var nAzul = "Old Mutual Estabilidad";
 var nVerde = "Old Mutual Moderado";
 
 //AngularApp
-var app = angular.module("fondoDeAhorro", []);
+var app = angular.module("fondoDeAhorro", ['ui.bootstrap', 'ui.bootstrap-slider']);
+
+FondoAhorroController.$inject - [];
+function FondoAhorroController(){
+    console.log('FondoAhorroController');
+    var vm = this;
+
+    vm.aportacionMensual = 0; 
+    vm.aniosAhorro = 0;
+
+    vm.aportacionOptions = {};
+    vm.ahorroOptions = {};
+
+    vm.aportacionOptions = {
+        min : 0,
+        step : 1,
+        max : 20,
+        value : 0
+    };
+    vm.ahorroOptions = {
+        min : 0,
+        step : 1,
+        max : 20,
+        value : 0
+    };
+
+}
+app.controller('FondoAhorroController', FondoAhorroController);
 
 app.controller('ExampleController', ['$scope', function($scope) {
       $scope.master = {};
@@ -352,34 +379,34 @@ function cellStyle3(value, row, index, field) {
         var createGraph = function(){
         //Pruebas
         if(Bazul[0]>=Bverde[0]){
-                console.log("0");
-                console.log("Bazul[0]>=Bverde[0]");
+                // console.log("0");
+                // console.log("Bazul[0]>=Bverde[0]");
                   if(Bazul[1]>=Bverde[0]){
-                  console.log("0.1");
-                  console.log("Bazul[1]>=Bverde[0]");
-                  console.log("Azul,Azul,Verde,Verde");
+                  // console.log("0.1");
+                  // console.log("Bazul[1]>=Bverde[0]");
+                  // console.log("Azul,Azul,Verde,Verde");
                 } else if (Bazul[1]>=Bverde[1]) {
-                console.log("0.2");
-                console.log("Bazul[1]>=Bverde[1]");
-                console.log("Azul,Azul,Verde,Verde");
+                // console.log("0.2");
+                // console.log("Bazul[1]>=Bverde[1]");
+                // console.log("Azul,Azul,Verde,Verde");
               } else {
-              console.log("0.3");
-              console.log("Verde,Verde,Azul,Azul");
+              // console.log("0.3");
+              // console.log("Verde,Verde,Azul,Azul");
               }
           } else {
-                console.log("1");
-                console.log("Bazul[0]<Bverde[0]");
+                // console.log("1");
+                // console.log("Bazul[0]<Bverde[0]");
                     if(Bverde[1]>=Bazul[0]){
-                    console.log("1.1");
-                    console.log("Bverde[1]>=Bazul[0]");
-                    console.log("Verde,Verde,Azul,Azul");
+                    // console.log("1.1");
+                    // console.log("Bverde[1]>=Bazul[0]");
+                    // console.log("Verde,Verde,Azul,Azul");
                   } else if (Bverde[1]>=Bazul[1]) {
-                  console.log("1.2");
-                  console.log("Bverde[1]>=Bazul[1]");
-                  console.log("Verde,Verde,Azul,Azul");
+                  // console.log("1.2");
+                  // console.log("Bverde[1]>=Bazul[1]");
+                  // console.log("Verde,Verde,Azul,Azul");
                 } else {
-                console.log("1.3");
-                console.log("Azul,Azul,Verde,Verde");
+                // console.log("1.3");
+                // console.log("Azul,Azul,Verde,Verde");
                 }
         }
 
