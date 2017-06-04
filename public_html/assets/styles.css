@@ -1,0 +1,4 @@
+.container--padding {
+	background-clip: padding-box;
+    border: 10px solid transparent;
+}
