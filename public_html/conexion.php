@@ -1,7 +1,12 @@
 <?php
 /*mysql_connect es un método especial para realizar la conexión a la BD,
 los parámetros pueden ser revisados en www.php.net*/
+
+//Conexion Godaddy
 $conexion =  mysql_connect('localhost:3306', 'vinikAdmin', 'wazAbe1123*Ç*');
+
+//Conexion XAMPP
+//$conexion =  mysql_connect('localhost', 'root', '');
 
 //Se establece el charset para la conexión
 mysql_set_charset('utf8',$conexion);
