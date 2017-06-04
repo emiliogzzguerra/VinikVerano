@@ -257,7 +257,25 @@ Follow: http://www.twitter.com/themehats
                                     <button type="button">Start pension</button>
                                   </div>
                                 </div>
-                            </div>
+                                <div class="col-md-4 c-bg-white">
+                                    <form method="post" action="controllers/insertar_lead.php"> 
+                                        <fieldset>
+                                            <label for="name">Name:</label>
+                                            <input name="name" type="text"/>
+                                            <label for="phone">Phone:</label>
+                                            <input name="phone" type="number"/>
+                                            <label for="postal_code">Postal Code:</label>
+                                            <input name="postal_code" type="number"/>
+                                            <label for="email">Email:</label>
+                                            <input id="email" name="email" type="email"/>
+                                            <label for="taxes">Taxes:</label>
+                                            <input name="taxes" type="checkbox"/>
+                                            <input class="form_button" type="submit" value="Enviar">
+                                            <input class="form_button" type="reset" value="Borrar Todo">
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div> 
                         </div>
                     </div>
                 </div>
