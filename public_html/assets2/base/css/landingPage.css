@@ -64,8 +64,6 @@ select {
    -webkit-appearance: none;
    -moz-appearance: none;
    appearance: none;
-    background: url(../img/content/icons/dropdown.png) 96% / 15% no-repeat #eee;
-
 }
 
 select:disabled{
