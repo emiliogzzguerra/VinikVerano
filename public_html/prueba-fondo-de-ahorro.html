@@ -114,7 +114,6 @@ Follow: http://www.twitter.com/themehats
             </div>
         </div>
     </header>
-
     <!-- Modal -->
     <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -123,16 +122,49 @@ Follow: http://www.twitter.com/themehats
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
-                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    <h4 class="modal-title" id="myModalLabel">Contact info</h4>
                 </div>
                 <div class="modal-body">
-                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                        mollit anim id est laborum </p>
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="Name" class="col-md-4 control-label">Name</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control  c-square c-theme" id="Name"> 
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Name" class="col-md-4 control-label">Phone</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control  c-square c-theme" id="Name"> 
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Name" class="col-md-4 control-label">Postal Code</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control  c-square c-theme" id="Name"> 
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Name" class="col-md-4 control-label">Email</label>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control  c-square c-theme" id="Name"> 
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Taxes</label>
+                            <div class="col-md-6">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value=""></label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
+
                 <div class="modal-footer">
-                    <button type="button" class="btn c-theme-btn c-btn-square c-btn-bold c-btn-uppercase">Submit</button>
-                    <button type="button" class="btn c-theme-btn c-btn-border-2x c-btn-square c-btn-bold c-btn-uppercase" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn c-theme-btn c-btn-square c-btn-bold c-btn-uppercase">Enviar</button>
+                    <button type="button" class="btn c-theme-btn c-btn-border-2x c-btn-square c-btn-bold c-btn-uppercase" data-dismiss="modal">Borrar todo</button>
                 </div>
             </div>
             <!-- /.modal-content -->
@@ -140,7 +172,6 @@ Follow: http://www.twitter.com/themehats
         <!-- /.modal-dialog -->
     </div>
     <!-- /Modal -->
-
     <!-- END: HEADER -->
     <!-- END: LAYOUT/HEADERS/HEADER-1 -->
     <!-- BEGIN: PAGE CONTAINER -->
@@ -277,24 +308,6 @@ Follow: http://www.twitter.com/themehats
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                                 </div>
                             </div>
-                            <!--                                 <div class="col-md-4 c-bg-white">
-                                    <form method="post" action="controllers/insertar_lead.php"> 
-                                        <fieldset>
-                                            <label for="name">Name:</label>
-                                            <input name="name" type="text"/>
-                                            <label for="phone">Phone:</label>
-                                            <input name="phone" type="number"/>
-                                            <label for="postal_code">Postal Code:</label>
-                                            <input name="postal_code" type="number"/>
-                                            <label for="email">Email:</label>
-                                            <input id="email" name="email" type="email"/>
-                                            <label for="taxes">Taxes:</label>
-                                            <input name="taxes" type="checkbox"/>
-                                            <input class="form_button" type="submit" value="Enviar">
-                                            <input class="form_button" type="reset" value="Borrar Todo">
-                                        </fieldset>
-                                    </form>
-                                </div> -->
                         </div>
                     </div>
                 </div>
@@ -305,17 +318,17 @@ Follow: http://www.twitter.com/themehats
                                 <div class="col-md-4 c-bg-white">
                                     <form id="buscarEmpleado" class="frontend" onchange="reqListener(this)">
                                         <label for="monthly_cash">Monthly Cash:</label>
-                                        <input id="monthly_cash" name="monthly_cash" type="text"/>aaa
+                                        <input id="monthly_cash" name="monthly_cash" type="text" />
                                         <label for="years">Years:</label>
-                                        <input name="years" type="text"/>
+                                        <input name="years" type="text" />
                                         <label for="risk">Risk:</label>
                                         <p>//low, medium, high</p>
-                                        <input name="risk" type="text"/>
+                                        <input name="risk" type="text" />
                                         <label>Result:</label>
                                         <p id="comission_text"></p>
                                     </form>
                                 </div>
-                            </div> 
+                            </div>
                         </div>
                     </div>
                 </div>
