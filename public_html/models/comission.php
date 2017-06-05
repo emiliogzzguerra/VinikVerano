@@ -19,8 +19,13 @@
 				$busqueda_query.="highOld WHERE monthly_cash = $monthly_cash AND years = $years";
 			}
 
+			//Conexion Godaddy
+			$conexion =  mysql_connect('localhost', 'whatup', 'whAtup1123***Ç');
+
 			//Una vez formado el query este se ejecuta
 			$resultado_busqueda = mysql_query($busqueda_query) or die ("ERROR EN EL QUERY en comission.php: " . mysql_error());
+
+			mysql_close($conexion);
 
 			if (!$resultado_busqueda) {
 			    die('No hay resultado en comission: ' . mysql_error());
