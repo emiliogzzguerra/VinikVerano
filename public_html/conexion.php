@@ -1,11 +1,5 @@
 <?php
 
-function console_log( $data ){
-  echo '<script>';
-  echo 'console.log('. json_encode( $data ) .')';
-  echo '</script>';
-}
-
 /*mysql_connect es un método especial para realizar la conexión a la BD,
 los parámetros pueden ser revisados en www.php.net*/
 
