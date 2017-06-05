@@ -1,10 +1,12 @@
 //AngularApp
 var app = angular.module("fondoDeAhorro", ['ui.bootstrap', 'ui.bootstrap-slider']);
 
-FondoAhorroController.$inject = [];
-function FondoAhorroController(){
+FondoAhorroController.$inject = ['VinikService'];
+function FondoAhorroController(VinikService){
     console.log('FondoAhorroController');
     var vm = this;
+
+    VinikService.getComission();
 
     vm.aportacionMensual = 0; 
     vm.aniosAhorro = 0;
