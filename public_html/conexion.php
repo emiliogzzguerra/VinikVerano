@@ -17,7 +17,7 @@ if (!$conexion) {
 }
 
 //Abrir base de datos
-$conexion_base = mysql_select_db('company', $conexion);
+$conexion_base = mysql_select_db('vinik', $conexion);
 
 //Verificando que la conexión se haya hecho a la BD
 if (!$conexion_base) {

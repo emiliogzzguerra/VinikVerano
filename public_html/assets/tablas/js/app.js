@@ -27,9 +27,7 @@ function FondoAhorroController(){
 
 }
 app.controller('FondoAhorroController', FondoAhorroController);
-
-
-
+/*
 // HighCharts
 Highcharts.chart('container', {
     chart: {
@@ -98,3 +96,4 @@ Highcharts.chart('container', {
         pointPadding: 0
     }]
 });
+*/
