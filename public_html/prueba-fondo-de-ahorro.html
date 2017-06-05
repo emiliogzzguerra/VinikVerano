@@ -279,6 +279,27 @@ Follow: http://www.twitter.com/themehats
                         </div>
                     </div>
                 </div>
+                <div class="c-content-box c-size-md c-bg-white">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 c-bg-white" style="padding-top:40px">
+                                <div class="col-md-4 c-bg-white">
+                                    <form id="buscarEmpleado" class="frontend" onchange="reqListener(this)">
+                                        <label for="monthly_cash">Monthly Cash:</label>
+                                        <input id="monthly_cash" name="monthly_cash" type="text"/>aaa
+                                        <label for="years">Years:</label>
+                                        <input name="years" type="text"/>
+                                        <label for="risk">Risk:</label>
+                                        <p>//low, medium, high</p>
+                                        <input name="risk" type="text"/>
+                                        <label>Result:</label>
+                                        <p id="comission_text"></p>
+                                    </form>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- END: Herramienta -->
             <!-- BEGIN: CONTENT/BARS/BAR-6 -->
@@ -849,6 +870,7 @@ Follow: http://www.twitter.com/themehats
             <!-- and out directive code -->
             <script src="../assets/tablas/components/angular-rangeslider/angular.rangeSlider.js"></script>
             <script src="../assets/tablas/js/app.js"></script>
+            <script src="../assets/tablas/js/comission.js"></script>
             <script src="https://rawgit.com/seiyria/bootstrap-slider/v4.8.1/js/bootstrap-slider.js"></script>
 
             <script src="https://rawgit.com/seiyria/angular-bootstrap-slider/master/slider.js"></script>
