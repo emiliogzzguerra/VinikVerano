@@ -1,6 +1,10 @@
 <?php
 
-include_once "conexion.php";
+$conexion =  mysql_pconnect('localhost:3306', 'whatup', 'whAtup1123***Ç');
+if (!$conexion) {
+    die('No pudo conectarse: ' . mysql_error());
+}
+
 include($_SERVER["DOCUMENT_ROOT"] . "/models/comission.php");
 
 //Se verifica si se ha presionado el botón de buscar, si es así se forma el query de la búsqueda
