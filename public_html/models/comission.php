@@ -20,10 +20,10 @@
 			}
 
 			//Una vez formado el query este se ejecuta
-			$resultado_busqueda = mysql_query($busqueda_query) or die ("ERROR EN EL QUERY en comission.php: " . mysql_error());
+			$resultado_busqueda = mysqli_query($busqueda_query) or die ("ERROR EN EL QUERY en comission.php: " . mysqli_error());
 
 			if (!$resultado_busqueda) {
-			    die('No hay resultado en comission: ' . mysql_error());
+			    die('No hay resultado en comission: ' . mysqli_error());
 			}
 			
 			return $resultado_busqueda;
