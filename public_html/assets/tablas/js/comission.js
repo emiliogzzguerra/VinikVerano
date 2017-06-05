@@ -13,7 +13,7 @@ function reqListener (a) {
         }
     };
 
-    xmlhttp.open("GET", "controllers/getComission.php?monthly_cash="+ monthly_cash + "&years=" + years + "&risk=" + risk, true);
+    xmlhttp.open("GET", "../controllers/getComission.php?monthly_cash="+ monthly_cash + "&years=" + years + "&risk=" + risk, true);
     console.log("Still Alive2");
     xmlhttp.send();
     console.log("Sent");

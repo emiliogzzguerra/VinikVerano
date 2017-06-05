@@ -1,6 +1,6 @@
 <?php
 include 'conexion.php';
-include '../models/comission.php';
+include 'models/comission.php';
 
 //Se verifica si se ha presionado el botón de buscar, si es así se forma el query de la búsqueda
 
