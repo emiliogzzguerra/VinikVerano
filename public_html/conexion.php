@@ -4,7 +4,7 @@
 los parámetros pueden ser revisados en www.php.net*/
 
 //Conexion Godaddy
-$conexion =  mysql_connect('localhost:3306', 'vinikAdmin', 'wazAbe1123*Ç*');
+$conexion =  mysql_connect('localhost', 'emiliogzzguerra', 'Emilio1212');
 
 //Conexion XAMPP
 //$conexion =  mysql_connect('localhost', 'root', '');
