@@ -19,9 +19,13 @@
 				$busqueda_query.="highOld WHERE monthly_cash = $monthly_cash AND years = $years";
 			}
 
-			//Una vez formado el query este se ejecuta
-			$resultado_busqueda = mysql_query($busqueda_query) or die ("ERROR EN EL QUERY: " . mysql_error());
 
+			//Una vez formado el query este se ejecuta
+			$resultado_busqueda = mysql_query($busqueda_query) or die ("ERROR EN EL QUERY en comission.php: " . mysql_error());
+
+			if (!$resultado_busqueda) {
+			    die('No hay resultado en comission: ' . mysql_error());
+			}
 			
 			return $resultado_busqueda;
 		}

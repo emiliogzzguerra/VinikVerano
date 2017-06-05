@@ -29,9 +29,7 @@ function FondoAhorroController(VinikService){
 
 }
 app.controller('FondoAhorroController', FondoAhorroController);
-
-
-
+/*
 // HighCharts
 var myChart = Highcharts.chart('container', {
     chart: {
@@ -100,3 +98,4 @@ var myChart = Highcharts.chart('container', {
         pointPadding: 0
     }]
 });
+*/
