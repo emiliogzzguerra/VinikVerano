@@ -31,7 +31,7 @@ app.controller('FondoAhorroController', FondoAhorroController);
 
 
 // HighCharts
-Highcharts.chart('container', {
+var myChart = Highcharts.chart('container', {
     chart: {
         type: 'waterfall',
         inverted: true
