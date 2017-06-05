@@ -1,6 +1,6 @@
 <?php
 
-include($_SERVER["DOCUMENT_ROOT"] . "/conexion.php");
+include($_SERVER["DOCUMENT_ROOT"] . "conexion.php");
 include($_SERVER["DOCUMENT_ROOT"] . "/models/comission.php");
 
 //Se verifica si se ha presionado el botón de buscar, si es así se forma el query de la búsqueda
