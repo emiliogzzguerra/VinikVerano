@@ -16,9 +16,18 @@ $risk = $_GET['risk'];
 
 $resultado_busqueda = Comission::SearchComission($monthly_cash, $years, $risk);
 
+if (!$resultado_busqueda) {
+    die('No hay resultado en getComission.php: ' . mysql_error());
+}
+
 //echo $resultado_busqueda;
 
 $row = mysql_fetch_assoc($resultado_busqueda);
+
+if (!$row) {
+    die('Mal fetch en getComission.php: ' . mysql_error());
+}
+
 
 //echo $resultado_busqueda;
 

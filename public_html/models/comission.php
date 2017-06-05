@@ -19,11 +19,12 @@
 				$busqueda_query.="highOld WHERE monthly_cash = $monthly_cash AND years = $years";
 			}
 
-			print $busqueda_query
-
 			//Una vez formado el query este se ejecuta
 			$resultado_busqueda = mysql_query($busqueda_query) or die ("ERROR EN EL QUERY: " . mysql_error());
 
+			if (!$resultado_busqueda) {
+			    die('No hay resultado: ' . mysql_error());
+			}
 			
 			return $resultado_busqueda;
 		}
