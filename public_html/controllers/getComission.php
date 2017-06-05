@@ -3,6 +3,7 @@
 $conexion =  mysql_pconnect('localhost:3306', 'whatup', 'whAtup1123***Ç');
 if (!$conexion) {
     die('No pudo conectarse: ' . mysql_error());
+    
 }
 
 //Abrir base de datos
