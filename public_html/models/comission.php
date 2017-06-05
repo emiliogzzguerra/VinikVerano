@@ -1,4 +1,5 @@
 <?php
+	include($_SERVER["DOCUMENT_ROOT"] . "conexion.php");
 	class Comission
 	{
 		public $monthly_cash;
