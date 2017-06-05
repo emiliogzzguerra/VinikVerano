@@ -5,6 +5,15 @@ if (!$conexion) {
     die('No pudo conectarse: ' . mysql_error());
 }
 
+//Abrir base de datos
+$conexion_base = mysql_select_db('vinik', $conexion);
+
+//Verificando que la conexión se haya hecho a la BD
+if (!$conexion_base) {
+    die ('No se encuentra la base de datos seleccionada : ' . mysql_error());
+    
+}
+
 include($_SERVER["DOCUMENT_ROOT"] . "/models/comission.php");
 
 //Se verifica si se ha presionado el botón de buscar, si es así se forma el query de la búsqueda
