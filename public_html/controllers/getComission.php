@@ -1,6 +1,6 @@
 <?php
-include '../conexion.php';
-include '../models/comission.php';
+include 'conexion.php';
+include 'models/comission.php';
 
 //Se verifica si se ha presionado el botón de buscar, si es así se forma el query de la búsqueda
 
@@ -19,7 +19,7 @@ echo $resultado_busqueda;
 
 $row = mysql_fetch_assoc($resultado_busqueda);
 
-echo $row;
+echo $resultado_busqueda;
 
 echo json_encode($row);
 
