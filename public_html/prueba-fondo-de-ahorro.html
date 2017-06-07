@@ -51,50 +51,6 @@ Follow: http://www.twitter.com/themehats
     <link rel="stylesheet" href="https://rawgit.com/seiyria/bootstrap-slider/v4.8.1/css/bootstrap-slider.css">
     <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap-select/dist/css/bootstrap-select.css">
     <link rel="stylesheet" type="text/css" href="../assets/styles.css">
-
-    <!--Load the AJAX API-->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-    google.charts.load('current', {
-        'packages': ['timeline']
-    });
-    google.charts.setOnLoadCallback(drawChart);
-
-    function drawChart() {
-        var container = document.getElementById('timeline');
-        var chart = new google.visualization.Timeline(container);
-        var dataTable = new google.visualization.DataTable();
-
-        dataTable.addColumn({
-            type: 'string',
-            id: 'President'
-        });
-        dataTable.addColumn({
-            type: 'date',
-            id: 'Start'
-        });
-        dataTable.addColumn({
-            type: 'date',
-            id: 'End'
-        });
-        dataTable.addRows([
-            ['Washington', new Date(1789, 3, 30), new Date(1797, 2, 4)],
-            ['Adams', new Date(1797, 2, 4), new Date(1801, 2, 4)],
-            ['Ahorro acumulado', new Date(1789, 2, 4), new Date(1809, 2, 4)]
-        ]);
-
-        var options = {
-            // colors: ["#FFF","#FFF","#FFF"],
-            timeline: {
-                rowLabelStyle: {
-                    color: "#FFF"
-                }
-            },
-            backgroundColor: "#02AE4E"
-        }
-        chart.draw(dataTable, options);
-    }
-    </script>
 </head>
 
 <body class="c-layout-header-fixed c-layout-header-mobile-fixed">
@@ -295,7 +251,6 @@ Follow: http://www.twitter.com/themehats
                         </div>
                     </div>
 
-
                     <div class="row row-restore saving-param">
                         <p class="c-font-lowercase no-margins">Años de ahorro</p>
                         <div class="col-md-8 col-sm-8 col-xs-12">
@@ -303,33 +258,31 @@ Follow: http://www.twitter.com/themehats
                             </slider>
                         </div>
                         <div class="col-md-4 col-sm-4 col-xs-12">
-                            <button type="button" class="btn btn-default input-fit input-alt">$ {{vm.aniosAhorro}}</button>
+                            <button type="button" class="btn btn-default input-fit input-alt">{{vm.aniosAhorro}}</button>
                         </div>
                     </div>
-
 
                     <div class="row row-restore saving-param">
                         <p class="c-font-lowercase no-margins">Riesgo del portafolio</p>
                         <div class="col-md-8 col-sm-8 col-xs-12">
                         </div>
+                        <!-- <div class="col-md-4 col-sm-4 col-xs-12"> -->
                         <div class="col-md-4 col-sm-4 col-xs-12">
-                            <select ng-model="vm.risk" class="selectpicker input-fit input-alt">
-                                <option>Alta</option>
-                                <option>Media</option>
-                                <option>Baja</option>
+                            <select ng-model="vm.risk" 
+                                class="col-sm-9"
+                                ng-options="item for item in vm.riskOptions">
                             </select>
                         </div>
                     </div>
 
-
                     <div class="row row-restore saving-param">
-                        <p class="no-margins">Quieres hacer deducible tu ahorro?</p>
+                        <p class="c-font-lowercase no-margins">Quieres hacer deducible tu ahorro?</p>
                         <div class="col-md-8 col-sm-8 col-xs-12">
                         </div>
-                        <div class="col-sm-4">
-                            <select ng-model="vm.ahorro" class="selectpicker input-fit input-alt">
-                                <option>Si</option>
-                                <option>No</option>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <select ng-model="vm.ahorro" 
+                                class="col-sm-9"
+                                ng-options="item for item in vm.ahorroBoolean">
                             </select>
                         </div>
                     </div>
@@ -446,7 +399,7 @@ Follow: http://www.twitter.com/themehats
                                                     </select>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div>`
                                     </div>
                                 </div>
                             </div>
@@ -605,12 +558,12 @@ Follow: http://www.twitter.com/themehats
                                             <a href="#">
                                                 <i class="icon-link"></i>
                                             </a>
-                                            <a href="../assets/base/img/content/team/person7.jpg" data-lightbox="fancybox" data-fancybox-group="gallery-1">
+                                            <a href="" data-lightbox="fancybox" data-fancybox-group="gallery-1">
                                                 <i class="icon-magnifier"></i>
                                             </a>
                                         </div>
                                     </div>
-                                    <img class="c-overlay-object img-responsive" src="../assets/base/img/content/team/person7.jpg" alt=""> </div>
+                                    <img class="c-overlay-object img-responsive" src="" alt=""> </div>
                                 <div class="c-body">
                                     <div class="c-head">
                                         <div class="c-name c-font-uppercase c-font-bold">John Doe</div>
@@ -645,12 +598,12 @@ Follow: http://www.twitter.com/themehats
                                             <a href="#">
                                                 <i class="icon-link"></i>
                                             </a>
-                                            <a href="../assets/base/img/content/team/person6.jpg" data-lightbox="fancybox" data-fancybox-group="gallery-1">
+                                            <a href="" data-lightbox="fancybox" data-fancybox-group="gallery-1">
                                                 <i class="icon-magnifier"></i>
                                             </a>
                                         </div>
                                     </div>
-                                    <img src="../assets/base/img/content/team/person6.jpg" class="img-responsive c-overlay-object" alt=""> </div>
+                                    <img src="" class="img-responsive c-overlay-object" alt=""> </div>
                                 <div class="c-body">
                                     <div class="c-head">
                                         <div class="c-name c-font-uppercase c-font-bold">Jim Raynor</div>
@@ -685,12 +638,12 @@ Follow: http://www.twitter.com/themehats
                                             <a href="#">
                                                 <i class="icon-link"></i>
                                             </a>
-                                            <a href="../assets/base/img/content/team/person5.jpg" data-lightbox="fancybox" data-fancybox-group="gallery-1">
+                                            <a href="" data-lightbox="fancybox" data-fancybox-group="gallery-1">
                                                 <i class="icon-magnifier"></i>
                                             </a>
                                         </div>
                                     </div>
-                                    <img src="../assets/base/img/content/team/person5.jpg" class="img-responsive c-overlay-object" alt=""> </div>
+                                    <img src="" class="img-responsive c-overlay-object" alt=""> </div>
                                 <div class="c-body">
                                     <div class="c-head">
                                         <div class="c-name c-font-uppercase c-font-bold">Drake Hiro</div>
@@ -725,12 +678,12 @@ Follow: http://www.twitter.com/themehats
                                             <a href="#">
                                                 <i class="icon-link"></i>
                                             </a>
-                                            <a href="../assets/base/img/content/team/person4.jpg" data-lightbox="fancybox" data-fancybox-group="gallery-1">
+                                            <a href="" data-lightbox="fancybox" data-fancybox-group="gallery-1">
                                                 <i class="icon-magnifier"></i>
                                             </a>
                                         </div>
                                     </div>
-                                    <img src="../assets/base/img/content/team/person4.jpg" class="img-responsive c-overlay-object" alt=""> </div>
+                                    <img src="" class="img-responsive c-overlay-object" alt=""> </div>
                                 <div class="c-body">
                                     <div class="c-head">
                                         <div class="c-name c-font-uppercase c-font-bold">Maxell Heart</div>
@@ -765,12 +718,12 @@ Follow: http://www.twitter.com/themehats
                                             <a href="#">
                                                 <i class="icon-link"></i>
                                             </a>
-                                            <a href="../assets/base/img/content/team/person1.jpg" data-lightbox="fancybox" data-fancybox-group="gallery-1">
+                                            <a href="" data-lightbox="fancybox" data-fancybox-group="gallery-1">
                                                 <i class="icon-magnifier"></i>
                                             </a>
                                         </div>
                                     </div>
-                                    <img src="../assets/base/img/content/team/person1.jpg" class="img-responsive c-overlay-object" alt=""> </div>
+                                    <img src="" class="img-responsive c-overlay-object" alt=""> </div>
                                 <div class="c-body">
                                     <div class="c-head">
                                         <div class="c-name c-font-uppercase c-font-bold">Phil Garner</div>
@@ -819,62 +772,62 @@ Follow: http://www.twitter.com/themehats
                     <div class="owl-carousel owl-theme c-theme owl-bordered1 c-owl-nav-center" data-items="6" data-desktop-items="4" data-desktop-small-items="3" data-tablet-items="3" data-mobile-small-items="2" data-slide-speed="5000" data-rtl="false">
                         <div class="item">
                             <a href="#">
-                                <img src="../assets/base/img/content/client-logos/client1.jpg" alt="" />
+                                <img src="" alt="" />
                             </a>
                         </div>
                         <div class="item">
                             <a href="#">
-                                <img src="../assets/base/img/content/client-logos/client2.jpg" alt="" />
+                                <img src="" alt="" />
                             </a>
                         </div>
                         <div class="item">
                             <a href="#">
-                                <img src="../assets/base/img/content/client-logos/client3.jpg" alt="" />
+                                <img src="" alt="" />
                             </a>
                         </div>
                         <div class="item">
                             <a href="#">
-                                <img src="../assets/base/img/content/client-logos/client4.jpg" alt="" />
+                                <img src="" alt="" />
                             </a>
                         </div>
                         <div class="item">
                             <a href="#">
-                                <img src="../assets/base/img/content/client-logos/client5.jpg" alt="" />
+                                <img src="" alt="" />
                             </a>
                         </div>
                         <div class="item">
                             <a href="#">
-                                <img src="../assets/base/img/content/client-logos/client6.jpg" alt="" />
+                                <img src="" alt="" />
                             </a>
                         </div>
                         <div class="item">
                             <a href="#">
-                                <img src="../assets/base/img/content/client-logos/client5.jpg" alt="" />
+                                <img src="" alt="" />
                             </a>
                         </div>
                         <div class="item">
                             <a href="#">
-                                <img src="../assets/base/img/content/client-logos/client6.jpg" alt="" />
+                                <img src="" alt="" />
                             </a>
                         </div>
                         <div class="item">
                             <a href="#">
-                                <img src="../assets/base/img/content/client-logos/client5.jpg" alt="" />
+                                <img src="" alt="" />
                             </a>
                         </div>
                         <div class="item">
                             <a href="#">
-                                <img src="../assets/base/img/content/client-logos/client6.jpg" alt="" />
+                                <img src="" alt="" />
                             </a>
                         </div>
                         <div class="item">
                             <a href="#">
-                                <img src="../assets/base/img/content/client-logos/client5.jpg" alt="" />
+                                <img src="" alt="" />
                             </a>
                         </div>
                         <div class="item">
                             <a href="#">
-                                <img src="../assets/base/img/content/client-logos/client6.jpg" alt="" />
+                                <img src="" alt="" />
                             </a>
                         </div>
                     </div>
@@ -1082,6 +1035,7 @@ Follow: http://www.twitter.com/themehats
     <!-- Necesario Grafica -->
     <!-- and Angular, of course -->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-sanitize.js"></script> -->
     <!-- and out directive code -->
     <script src="../assets/tablas/components/angular-rangeslider/angular.rangeSlider.js"></script>
     <script src="https://rawgit.com/seiyria/bootstrap-slider/v4.8.1/js/bootstrap-slider.js"></script>

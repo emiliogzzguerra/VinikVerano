@@ -5,11 +5,13 @@ FondoAhorroController.$inject = ['VinikService'];
 function FondoAhorroController(VinikService){
     console.log('FondoAhorroController');
     var vm = this;
-
+    var jsonResponse = {"admin_cost":"8864.12"};
     // VinikService.getComission();
 
     vm.aportacionMensual = 2000; 
     vm.aniosAhorro = 15;
+    vm.risk = "Baja";
+    vm.ahorro = "No";
 
     vm.aportacionOptions = {};
     vm.ahorroOptions = {};
@@ -26,6 +28,15 @@ function FondoAhorroController(VinikService){
         max : 25,
         value : vm.aniosAhorro
     };
+    vm.riskOptions = ['Alta', 'Media', 'Baja']
+    vm.ahorroBoolean = ["Si", "No"]
+
+    vm.country = {};
+    vm.countries = [ // Taken from https://gist.github.com/unceus/6501985
+      {name: 'Afghanistan', code: 'AF'},
+      {name: 'Zambia', code: 'ZM'},
+      {name: 'Zimbabwe', code: 'ZW'}
+    ];  
 
 }
 app.controller('FondoAhorroController', FondoAhorroController);
