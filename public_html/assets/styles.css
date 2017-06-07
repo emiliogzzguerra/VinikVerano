@@ -2,3 +2,109 @@
 	background-clip: padding-box;
     border: 10px solid transparent;
 }
+
+
+/* NEW STYLES */
+
+/* Se restan 40px para los margin
+ * de en medio. Y otros 40px para
+ * los de los lados de afuera.
+ */
+.container-base {
+	padding: 5px;
+	/*width: calc((100% - (40px + 40px)) / 3);*/
+	height: 650px;
+}
+
+.container-base:first-child,
+.container-base:nth-child(2) {
+	/*margin-right: 20px;*/
+}
+
+.container-base:first-child {
+	/*margin-left: 20px;*/
+}
+
+.container-customize {
+	padding: 30px;
+	color: #333;
+	background-color: #DDD;
+}
+
+.container-pension {
+	padding: 30px 5px 0;
+	color: #FFF;
+	background-color: #0E7970;
+	text-align: center;
+}
+
+.container-pension h3,
+.container-pension h2,
+.container-pension small {
+	color: #FFF;
+}
+
+.container-chart {
+	padding: 10px;
+	color: #FFF;
+	background-color: #02AE4E;
+}
+
+.container-chart em {
+	color: #0f3a7f;
+}
+
+.btn-pension {
+	padding: 0px 30px;
+	height: 50px;
+	background-color: #F49F0A;
+}
+
+.c-line-left {
+	margin: 0px 0 20px;
+	height: 3px;
+	background-color: #aaa;
+}
+
+.font-title {
+	font-size: 24px;
+}
+
+.input-fit {
+	width: 100%;
+	overflow: hidden;
+	margin: 0;
+}
+
+.input-alt {
+	background-color: #BBB;
+	color: #444;
+}
+
+.no-margins {
+	margin: 0;
+}
+
+/* Bootstrap overrides */
+#fondoDeAhorro [class*="col-"] {
+	padding: 10px;
+}
+
+.btn {
+	border: none;
+	border-radius: 0;
+	text-transform: none;
+}
+
+.row-restore {
+	margin: 0;
+}
+
+.saving-param {
+	margin-bottom: 50px;
+}
+
+/* Bootstrap overrides */
+
+
+/* ---------- */
