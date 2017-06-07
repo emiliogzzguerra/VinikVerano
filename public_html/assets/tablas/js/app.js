@@ -8,28 +8,26 @@ function FondoAhorroController(VinikService){
 
     VinikService.getComission();
 
-    vm.aportacionMensual = 0; 
-    vm.aniosAhorro = 0;
-
-    vm.aportacionOptions = {};
-    vm.ahorroOptions = {};
+    vm.aportacionMensual = 2000;
+     
+    vm.aniosAhorro = 15;
 
     vm.aportacionOptions = {
         min : 0,
-        step : 1,
-        max : 20,
-        value : 0
-    };
-    vm.ahorroOptions = {
-        min : 0,
-        step : 1,
-        max : 20,
-        value : 0
+        step : 1000,
+        max : 30000,
+        value : vm.aportacionMensual
     };
 
+    vm.ahorroOptions = {
+        min : 3,
+        step : 1,
+        max : 25,
+        value : vm.aniosAhorro
+    };
 }
 app.controller('FondoAhorroController', FondoAhorroController);
-/*
+
 // HighCharts
 var myChart = Highcharts.chart('container', {
     chart: {
@@ -63,24 +61,21 @@ var myChart = Highcharts.chart('container', {
         upColor: Highcharts.getOptions().colors[2],
         color: Highcharts.getOptions().colors[3],
         data: [{
-            name: 'Start',
+            name: 'Aportaciones Mensuales',
             y: 120000
         }, {
-            name: 'Product Revenue',
+            name: 'Interés Ganado',
             y: 569000
         }, {
-            name: 'Service Revenue',
+            name: 'Costo de Administración',
             y: 231000
         }, {
-            name: 'Positive Balance',
+            name: 'Ahorro esperado',
             isIntermediateSum: true,
             color: Highcharts.getOptions().colors[1]
         }, {
-            name: 'Fixed Costs',
+            name: 'Devoluciones Fiscales',
             y: -342000
-        }, {
-            name: 'Variable Costs',
-            y: -233000
         }, {
             name: 'Balance',
             isSum: true,
@@ -98,4 +93,52 @@ var myChart = Highcharts.chart('container', {
         pointPadding: 0
     }]
 });
-*/
+
+app.directive("watch", function() {
+  return function(scope, element, attrs) {
+    element.on('mouseup', function(event) {
+        console.log("Trying to update");
+        myChart.update({
+            series: [{
+            upColor: Highcharts.getOptions().colors[2],
+            color: Highcharts.getOptions().colors[3],
+            data: [{
+                name: 'Aportaciones Mensuales',
+                y: 80000
+            }, {
+                name: 'Interés Ganado',
+                y: 569000
+            }, {
+                name: 'Costo de Administración',
+                y: 231000
+            }, {
+                name: 'Ahorro esperado',
+                isIntermediateSum: true,
+                color: Highcharts.getOptions().colors[1]
+            }, {
+                name: 'Devoluciones Fiscales',
+                y: -342000
+            }, {
+                name: 'Balance',
+                isSum: true,
+                color: Highcharts.getOptions().colors[1]
+            }],
+            dataLabels: {
+                enabled: true,
+                formatter: function () {
+                    return Highcharts.numberFormat(this.y / 1000, 0, ',') + 'k';
+                },
+                style: {
+                    fontWeight: 'bold'
+                }
+            },
+            pointPadding: 0
+            }]
+        });
+    })
+  }
+})
+
+
+
+

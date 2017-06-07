@@ -52,23 +52,36 @@ Follow: http://www.twitter.com/themehats
     <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap-select/dist/css/bootstrap-select.css">
     <link rel="stylesheet" type="text/css" href="../assets/styles.css">
 
-<!--Load the AJAX API-->
+    <!--Load the AJAX API-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript">
-      google.charts.load('current', {'packages':['timeline']});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
+    <script type="text/javascript">
+    google.charts.load('current', {
+        'packages': ['timeline']
+    });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
         var container = document.getElementById('timeline');
         var chart = new google.visualization.Timeline(container);
         var dataTable = new google.visualization.DataTable();
 
-        dataTable.addColumn({ type: 'string', id: 'President' });
-        dataTable.addColumn({ type: 'date', id: 'Start' });
-        dataTable.addColumn({ type: 'date', id: 'End' });
+        dataTable.addColumn({
+            type: 'string',
+            id: 'President'
+        });
+        dataTable.addColumn({
+            type: 'date',
+            id: 'Start'
+        });
+        dataTable.addColumn({
+            type: 'date',
+            id: 'End'
+        });
         dataTable.addRows([
-          [ 'Washington', new Date(1789, 3, 30), new Date(1797, 2, 4) ],
-          [ 'Adams',      new Date(1797, 2, 4),  new Date(1801, 2, 4) ],
-          [ 'Ahorro acumulado',  new Date(1789, 2, 4),  new Date(1809, 2, 4) ]]);
+            ['Washington', new Date(1789, 3, 30), new Date(1797, 2, 4)],
+            ['Adams', new Date(1797, 2, 4), new Date(1801, 2, 4)],
+            ['Ahorro acumulado', new Date(1789, 2, 4), new Date(1809, 2, 4)]
+        ]);
 
         var options = {
             // colors: ["#FFF","#FFF","#FFF"],
@@ -80,10 +93,8 @@ Follow: http://www.twitter.com/themehats
             backgroundColor: "#02AE4E"
         }
         chart.draw(dataTable, options);
-      }
+    }
     </script>
-
-
 </head>
 
 <body class="c-layout-header-fixed c-layout-header-mobile-fixed">
@@ -270,99 +281,93 @@ Follow: http://www.twitter.com/themehats
 
             <div class="col-md-4 col-sm-6 col-xs-12">
                 <div class="container-base container-customize">
-                <strong class="c-font-uppercase c-font-bold font-title">Paga menos con tu crédito hipotecario</strong>
-                <div class="c-line-left"></div>
+                    <strong class="c-font-uppercase c-font-bold font-title">Paga menos con tu crédito hipotecario</strong>
+                    <div class="c-line-left"></div>
 
 
-                <div class="row row-restore saving-param">
-                    <p class="c-font-lowercase no-margins">Aportacion mensual</p>
-                    <div class="col-md-8 col-sm-8 col-xs-12">
-                        <slider ng-model="vm.aportacionMensual" max="vm.aportacionOptions.max" min="vm.aportacionOptions.min" step="vm.aportacionOptions.step" value="vm.aportacionMensual"></slider>
+                    <div class="row row-restore saving-param">
+                        <p class="c-font-lowercase no-margins">Aportacion mensual</p>
+                        <div class="col-md-8 col-sm-8 col-xs-12">
+                            <slider ng-model="vm.aportacionMensual" max="vm.aportacionOptions.max" min="vm.aportacionOptions.min" step="vm.aportacionOptions.step" value="vm.aportacionMensual"></slider>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <button type="button" class="btn btn-default input-fit input-alt">$ {{vm.aportacionMensual}}</button>
+                        </div>
                     </div>
-                    <div class="col-md-4 col-sm-4 col-xs-12">
-                        <button type="button" class="btn btn-default input-fit input-alt">$ {{vm.aportacionMensual}}</button>
-                    </div>
-                </div>
 
 
-                <div class="row row-restore saving-param">
-                    <p class="c-font-lowercase no-margins">Años de ahorro</p>
-                    <div class="col-md-8 col-sm-8 col-xs-12">
-                        <slider ng-model="vm.aniosAhorro" min="vm.ahorroOptions.min" step="vm.ahorroOptions.step" max="vm.ahorroOptions.max" value="vm.ahorroOptions.value">
-                        </slider>
+                    <div class="row row-restore saving-param">
+                        <p class="c-font-lowercase no-margins">Años de ahorro</p>
+                        <div class="col-md-8 col-sm-8 col-xs-12">
+                            <slider ng-model="vm.aniosAhorro" min="vm.ahorroOptions.min" step="vm.ahorroOptions.step" max="vm.ahorroOptions.max" value="vm.ahorroOptions.value">
+                            </slider>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <button type="button" class="btn btn-default input-fit input-alt">$ {{vm.aniosAhorro}}</button>
+                        </div>
                     </div>
-                    <div class="col-md-4 col-sm-4 col-xs-12">
-                        <button type="button" class="btn btn-default input-fit input-alt">$ {{vm.aniosAhorro}}</button>
-                    </div>
-                </div>
 
 
-                <div class="row row-restore saving-param">
-                    <p class="c-font-lowercase no-margins">Riesgo del portafolio</p>
-                    <div class="col-md-8 col-sm-8 col-xs-12">
+                    <div class="row row-restore saving-param">
+                        <p class="c-font-lowercase no-margins">Riesgo del portafolio</p>
+                        <div class="col-md-8 col-sm-8 col-xs-12">
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <select ng-model="vm.risk" class="selectpicker input-fit input-alt">
+                                <option>Alta</option>
+                                <option>Media</option>
+                                <option>Baja</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="col-md-4 col-sm-4 col-xs-12">
-                        <select ng-model="vm.risk" class="selectpicker input-fit input-alt">
-                            <option>Alta</option>
-                            <option>Media</option>
-                            <option>Baja</option>
-                        </select>
-                    </div>
-                </div>
 
 
-                <div class="row row-restore saving-param">
-                    <p class="no-margins">Quieres hacer deducible tu ahorro?</p>
-                    <div class="col-md-8 col-sm-8 col-xs-12">
+                    <div class="row row-restore saving-param">
+                        <p class="no-margins">Quieres hacer deducible tu ahorro?</p>
+                        <div class="col-md-8 col-sm-8 col-xs-12">
+                        </div>
+                        <div class="col-sm-4">
+                            <select ng-model="vm.ahorro" class="selectpicker input-fit input-alt">
+                                <option>Si</option>
+                                <option>No</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="col-sm-4">
-                        <select ng-model="vm.ahorro" class="selectpicker input-fit input-alt">
-                            <option>Si</option>
-                            <option>No</option>
-                        </select>
-                    </div>
-                </div>
 
                 </div> <!-- .container-customize -->
             </div> <!-- .col-md-4 -->
 
-
             <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="container-base container-pension">
-                <div class="container">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-                    <h3>$25,000</h3>
-                    <p>Tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <p>Duis aute irure dolor</p>
-                    <p>Ut enim ad minim veniam.</p>
-                    <h2>$2,500<small>/mes</small> </h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-warning btn-pension">Start pension</button>
+                <div class="container-base container-pension">
+                    <div class="container">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                        <h3>$25,000</h3>
+                        <p>Tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p>Duis aute irure dolor</p>
+                        <p>Ut enim ad minim veniam.</p>
+                        <h2>$2,500<small>/mes</small> </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-warning btn-pension">Start pension</button>
+                    </div>
                 </div>
             </div>
-            </div>
-
-
 
             <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="container-base container-chart">
-                <div class="container_x">
-                    <strong>Crecimiento de tu ahorro</strong>
-                    <p>Miles de pesos</p>
-                     <!--Div that will hold the pie chart-->
-                    <div id="timeline"></div>
-                    <p>Lorem <em>ipsum</em> dolor sit amet, consectetur <em>$35,000</em> adipisicing elit, sed do eiusmod</p>
+                <div class="container-base container-chart">
+                    <div id="container" >
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                    <!-- <div class="container_x">
+                        <strong>Crecimiento de tu ahorro</strong>
+                        <p>Miles de pesos</p>
+                        <div id="timeline"></div>
+                        <p>Lorem <em>ipsum</em> dolor sit amet, consectetur <em>$35,000</em> adipisicing elit, sed do eiusmod</p>
+                    </div> -->
                 </div>
             </div>
-            </div>
-
-
 
         </div> <!-- .row -->
-
-
-
-        <div class="c-content-box c-size-md c-bg-white">
+<!--         <div class="c-content-box c-size-md c-bg-white">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 c-bg-white" style="padding-top:40px">
@@ -382,11 +387,137 @@ Follow: http://www.twitter.com/themehats
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
+        <!-- BEGIN: Herramienta -->
+
+        <!-- Emilio -->
+<!--         <div ng-app="fondoDeAhorro">
+            <div ng-controller="FondoAhorroController as vm" class="c-content-box c-size-md c-bg-white">
+                <div class="container">
+                    <div class="row">
+                        <div class="c-bg-white" style="padding-top:40px">
+                            <div class="col-md-4 container--padding">
+                                <div class="c-container c-bg-green c-bg-img-bottom-right">
+                                    <div class="container">
+                                        <div class="c-content-title-1 c-inverse">
+                                            <h3 class="c-font-uppercase c-font-bold" style="color:white;">Paga menos con tu crédito hipotecario</h3>
+                                            <div class="c-line-left"></div>
+                                            <div class="row">
+                                                <p class="c-font-lowercase" style="color:white;">Aportacion mensual</p>
+                                                <div class="col-sm-8" watch="active">
+                                                    <slider ng-model="vm.aportacionMensual" max="vm.aportacionOptions.max" min="vm.aportacionOptions.min" step="vm.aportacionOptions.step" value="vm.aportacionMensual" > 
+                                                    </slider>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <button type="button" class="btn btn-default">$ {{vm.aportacionMensual}}</button>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <p class="c-font-lowercase" style="color:white;">Años de ahorro</p>
+                                                <div class="col-sm-8">
+                                                    <slider ng-model="vm.aniosAhorro" min="vm.ahorroOptions.min" step="vm.ahorroOptions.step" max="vm.ahorroOptions.max" value="vm.ahorroOptions.value" onmouseup="update(aportacionMensual,vm.ahorroOptions,vm.ahorro)">
+                                                    </slider>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <button type="button" class="btn btn-default">$ {{vm.aniosAhorro}}</button>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <p class="c-font-lowercase" style="color:white;">Riesgo del portafolio</p>
+                                                <div class="col-sm-8">
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <select ng-model="vm.risk" class="selectpicker col-sm-8">
+                                                        <option>Alta</option>
+                                                        <option>Media</option>
+                                                        <option>Baja</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <p style="color:white;">Quieres hacer deducible tu ahorro?</p>
+                                                <div class="col-sm-8">
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <select ng-model="vm.ahorro" class="selectpicker col-sm-8">
+                                                        <option>Si</option>
+                                                        <option>No</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 container--padding" style="background-color: #00C851">
+                                <div class="container" style="color: white; text-align: justify; text-align-last: center;">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                                    <br>
+                                    <h3>25,000</h3>
+                                    <p>blablal</p>
+                                    <p>blablalbalballb</p>
+                                    <p>blalbalbla</p>
+                                    <h2>2,500</h2>
+                                    <br>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <button type="button" data-toggle="modal" data-target="#myModal">Start pension</button>
+                                </div>
+                            </div>
+                            <div class="col-md-4 " style="background-color: green">
+                                <div id="container" >
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="c-content-box c-size-md c-bg-white">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 c-bg-white" style="padding-top:40px">
+                                <div class="col-md-4 c-bg-white">
+                                    <form id="buscarEmpleado" class="frontend" onchange="reqListener(this)">
+                                        <label for="monthly_cash">Monthly Cash:</label>
+                                        <input id="monthly_cash" name="monthly_cash" type="text" />
+                                        <label for="years">Years:</label>
+                                        <input name="years" type="text" />
+                                        <label for="risk">Risk:</label>
+                                        <p>//low, medium, high</p>
+                                        <input name="risk" type="text" />
+                                        <label>Result:</label>
+                                        <p id="comission_text">hello</p>
+                                    </form>
+                                </div>
+                                <div class="col-md-4 c-bg-white">
+                                    <form method="post" action="controllers/insertar_lead.php"> 
+                                        <fieldset>
+                                            <label for="name">Name:</label>
+                                            <input name="name" type="text"/>
+                                            <label for="phone">Phone:</label>
+                                            <input name="phone" type="number"/>
+                                            <label for="postal_code">Postal Code:</label>
+                                            <input name="postal_code" type="number"/>
+                                            <label for="email">Email:</label>
+                                            <input id="email" name="email" type="email"/>
+                                            <label for="taxes">Taxes:</label>
+                                            <input name="taxes" type="checkbox"/>
+                                            <input class="form_button" type="submit" value="Enviar">
+                                            <input class="form_button" type="reset" value="Borrar Todo">
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- /Emilio -->
 
     </div> <!-- CONTROLLER -->
-</div> <!-- APP -->
+</div> 
+<!-- APP -->
 <!-- END: Herramienta -->
         <!-- BEGIN: CONTENT/BARS/BAR-6 -->
         <div class="c-content-box c-size-md">
@@ -984,16 +1115,12 @@ Follow: http://www.twitter.com/themehats
     <!--<script src="assets2/base/js/components.js" type="text/javascript"></script>-->
     <script src="../assets2/base/js/components-shop.js" type="text/javascript"></script>
     <script src="assets/base/js/app.js" type="text/javascript"></script>
-    <!--<script src="https://code.highcharts.com/highcharts.js"></script>-->
-    <!--<script src="https://code.highcharts.com/highcharts-more.js"></script>-->
-    <!--<script src="https://code.highcharts.com/modules/exporting.js"></script>-->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="../assets/tablas/js/app.js"></script>
-<<<<<<< HEAD
     <script src="../assets/tablas/js/service.js"></script>
-=======
-    <script src="../assets/tablas/js/comission.js"></script>
 
->>>>>>> 1c12a42d7f8d790baa546c5fd720062d1d1d0236
     <script>
     $(document).ready(function() {
         App.init(); // init core    
