@@ -65,10 +65,10 @@ function FondoAhorroController(VinikService){
         jsonResponse.then(function(value){
             console.log(value);
             console.log(value[data]);
-            console.log(value["data"]);
-            console.log(value['data']);
-            console.log(value.data);
-            console.log(value[0]);
+            var a = value[data];
+            console.log(a[admin_cost]);
+
+
         });
 
 
