@@ -68,6 +68,7 @@ function FondoAhorroController(VinikService){
         } else {
             vm.interesAnual = 0.12; //Alta
         }
+        console.log(jsonResponse.data.admin_cost);
         vm.interesMensual = (Math.pow(vm.interesAnual+1,(1/12))-1);
         var f1 = Math.pow(1+vm.interesMensual, vm.aniosAhorro*12+1);
         var f2 = f1 - (1+vm.interesMensual);
