@@ -8,14 +8,19 @@ function FondoAhorroController(VinikService){
     var jsonResponse = {"admin_cost":"8864.12"};
     // VinikService.getComission();
 
-    vm.aportacionMensual = 1500; 
-    vm.aniosAhorro = 3;
+    // Variables
+    vm.aportacionMensual = 4000; 
+    vm.aniosAhorro = 5;
     vm.risk = "Baja";
     vm.ahorro = "No";
 
+    vm.interesAnual = 0.1; //default
+    vm.interesMensual = (Math.pow(vm.interesAnual+1,(1/12))-1);
+    console.log(vm.interesMensual)
     vm.aportacionOptions = {};
     vm.ahorroOptions = {};
 
+    // Options
     vm.aportacionOptions = {
         min : 1500,
         step : 500,
@@ -31,24 +36,49 @@ function FondoAhorroController(VinikService){
     vm.riskOptions = ['Alta', 'Media', 'Baja']
     vm.ahorroBoolean = ["Si", "No"]
 
-    vm.country = {};
-    vm.countries = [ // Taken from https://gist.github.com/unceus/6501985
-      {name: 'Afghanistan', code: 'AF'},
-      {name: 'Zambia', code: 'ZM'},
-      {name: 'Zimbabwe', code: 'ZW'}
-    ];  
 
+    // params
+    var params = {};
+    params = {
+        comisionVariable: 0.00001667,       //Contrato Old Mutual 14/05/17 
+        comisionFija: 0.075,                //Contrato Old Mutual 14/05/17 
+        salarioMinimo: 63.92,             //Supuesto Oscar (solver) 
+        inflacion: 0.029,                 //Supuesto Oscar (solver) 
+        isr: 0.30,                        //Supuesto Oscar 
+        deduccionAnualMaxima: 137769.25   //Ley ISR 2017 (Gustavo)   
+    };
+
+    // Results
+    vm.results = {
+        aportacionesTotales: 0,
+        interesGanado: 0,
+        costoAdministracion: 0,
+        ahorroEsperado: 0,
+        devolucionesFiscales: 0,
+        ahorroAcumulado: 0
+    };
+
+    // Functions
     vm.changes = changes;
     function changes(){
-        var test = {
-            aportacionMensual: vm.aportacionMensual,
-            aniosAhorro: vm.aniosAhorro,
-            risk: vm.risk,
-            ahorro: vm.ahorro
-        };
-        console.log(test);
-    }
 
+        // InteresGanadoLogic
+        var f1 = Math.pow(1+vm.interesMensual, vm.aniosAhorro*12+1);
+        var f2 = f1 - (1+vm.interesMensual);
+        var f3 = vm.aportacionMensual * f2 / vm.interesMensual;
+        vm.results.aportacionesTotales = vm.aportacionMensual * vm.aniosAhorro * 12;
+        vm.results.interesGanado = f3 - vm.results.aportacionesTotales;
+        vm.results.costoAdministracion = jsonResponse.admin_cost;
+        vm.results.ahorroEsperado = vm.results.aportacionesTotales + vm.results.interesGanado;
+        vm.results.devolucionesFiscales = Math.min(params.isr * vm.aportacionMensual * vm.aniosAhorro * 12, params.deduccionAnualMaxima * vm.aniosAhorro);
+        vm.results.ahorroAcumulado = vm.results.ahorroEsperado + vm.results.devolucionesFiscales ;
+
+        // console.log('aportacionesTotales', vm.results.aportacionesTotales);
+        // console.log('interesGanado', vm.results.interesGanado);
+        vm.results.ahorroAcumuladoFixed = angular.copy(vm.results.ahorroAcumulado.toFixed(2));
+        console.log(vm.results)
+    }
+    console.log(vm.results);
 }
 app.controller('FondoAhorroController', FondoAhorroController);
 
