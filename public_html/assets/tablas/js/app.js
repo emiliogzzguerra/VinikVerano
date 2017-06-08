@@ -191,7 +191,7 @@ var myChart = Highcharts.chart('container', {
     },
 
     title: {
-        text: 'Highcharts Waterfall',
+        text: 'Crecimiento de tu ahorro',
          style: {
             color: colors.text
          }
@@ -208,7 +208,7 @@ var myChart = Highcharts.chart('container', {
 
     yAxis: {
         title: {
-            text: 'USD',
+            text: 'MX',
             style: {
                 color: colors.text
             }
@@ -226,7 +226,10 @@ var myChart = Highcharts.chart('container', {
     },
 
     tooltip: {
-        pointFormat: '<b>${point.y:,.2f}</b> USD',
+        pointFormat: '<b>${point.y:,.2f}</b> MX',
+    },
+    exporting: { 
+        enabled: false 
     },
 
     series: [{
