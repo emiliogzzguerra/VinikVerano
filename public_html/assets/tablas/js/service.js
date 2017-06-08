@@ -14,10 +14,10 @@ function VinikService($http){
 		return $http.get(url + '/controllers/getComission.php?monthly_cash='+monthly_cash+'&years='+years+'&risk='+risk)
 	            .then(function(res){
 	            	//console.log('res', res);
-            		return res.data[0];
+            		return res.data['admin_cost'];
 	            })
 	            .catch(function(res){
-            		return res.data[0];
+            		return res.data['admin_cost'];
 	            });	
 	}
 }
