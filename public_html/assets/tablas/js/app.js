@@ -106,7 +106,7 @@ function FondoAhorroController(VinikService){
                         y: vm.results.interesGanado
                     }, {
                         name: 'Costo de Administración',
-                        y: (-20050)
+                        y: (-vm.results.costoAdministracion)
                     }, {
                         name: 'Ahorro acumulado',
                         isIntermediateSum: true,
@@ -139,7 +139,7 @@ function FondoAhorroController(VinikService){
                         y: vm.results.interesGanado
                     }, {
                         name: 'Costo de Administración',
-                        y: (-20050)
+                        y: (-vm.results.costoAdministracion)
                     }, {
                         name: 'Ahorro esperado',
                         isIntermediateSum: true,
