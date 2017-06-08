@@ -8,8 +8,8 @@ function FondoAhorroController(VinikService){
     var jsonResponse = {"admin_cost":"8864.12"};
     // VinikService.getComission();
 
-    vm.aportacionMensual = 2000; 
-    vm.aniosAhorro = 15;
+    vm.aportacionMensual = 1500; 
+    vm.aniosAhorro = 3;
     vm.risk = "Baja";
     vm.ahorro = "No";
 
@@ -17,8 +17,8 @@ function FondoAhorroController(VinikService){
     vm.ahorroOptions = {};
 
     vm.aportacionOptions = {
-        min : 0,
-        step : 1000,
+        min : 1500,
+        step : 500,
         max : 30000,
         value : vm.aportacionMensual
     };
@@ -37,6 +37,17 @@ function FondoAhorroController(VinikService){
       {name: 'Zambia', code: 'ZM'},
       {name: 'Zimbabwe', code: 'ZW'}
     ];  
+
+    vm.changes = changes;
+    function changes(){
+        var test = {
+            aportacionMensual: vm.aportacionMensual,
+            aniosAhorro: vm.aniosAhorro,
+            risk: vm.risk,
+            ahorro: vm.ahorro
+        };
+        console.log(test);
+    }
 
 }
 app.controller('FondoAhorroController', FondoAhorroController);

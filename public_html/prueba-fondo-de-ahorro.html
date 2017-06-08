@@ -244,7 +244,7 @@ Follow: http://www.twitter.com/themehats
                     <div class="row row-restore saving-param">
                         <p class="c-font-lowercase no-margins">Aportacion mensual</p>
                         <div class="col-md-8 col-sm-8 col-xs-12">
-                            <slider ng-model="vm.aportacionMensual" max="vm.aportacionOptions.max" min="vm.aportacionOptions.min" step="vm.aportacionOptions.step" value="vm.aportacionMensual"></slider>
+                            <slider ng-change="vm.changes()" ng-model="vm.aportacionMensual" max="vm.aportacionOptions.max" min="vm.aportacionOptions.min" step="vm.aportacionOptions.step" value="vm.aportacionMensual"></slider>
                         </div>
                         <div class="col-md-4 col-sm-4 col-xs-12">
                             <button type="button" class="btn btn-default input-fit input-alt">$ {{vm.aportacionMensual}}</button>
@@ -254,7 +254,7 @@ Follow: http://www.twitter.com/themehats
                     <div class="row row-restore saving-param">
                         <p class="c-font-lowercase no-margins">Años de ahorro</p>
                         <div class="col-md-8 col-sm-8 col-xs-12">
-                            <slider ng-model="vm.aniosAhorro" min="vm.ahorroOptions.min" step="vm.ahorroOptions.step" max="vm.ahorroOptions.max" value="vm.ahorroOptions.value">
+                            <slider ng-change="vm.changes()" ng-model="vm.aniosAhorro" min="vm.ahorroOptions.min" step="vm.ahorroOptions.step" max="vm.ahorroOptions.max" value="vm.ahorroOptions.value">
                             </slider>
                         </div>
                         <div class="col-md-4 col-sm-4 col-xs-12">
@@ -268,7 +268,7 @@ Follow: http://www.twitter.com/themehats
                         </div>
                         <!-- <div class="col-md-4 col-sm-4 col-xs-12"> -->
                         <div class="col-md-4 col-sm-4 col-xs-12">
-                            <select ng-model="vm.risk" 
+                            <select ng-change="vm.changes()" ng-model="vm.risk" 
                                 class="col-sm-9"
                                 ng-options="item for item in vm.riskOptions">
                             </select>
@@ -280,7 +280,7 @@ Follow: http://www.twitter.com/themehats
                         <div class="col-md-8 col-sm-8 col-xs-12">
                         </div>
                         <div class="col-md-4 col-sm-4 col-xs-12">
-                            <select ng-model="vm.ahorro" 
+                            <select ng-change="vm.changes()" ng-model="vm.ahorro" 
                                 class="col-sm-9"
                                 ng-options="item for item in vm.ahorroBoolean">
                             </select>
