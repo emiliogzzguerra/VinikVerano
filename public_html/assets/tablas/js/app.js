@@ -4,19 +4,17 @@ var app = angular.module("fondoDeAhorro", ['ui.bootstrap', 'ui.bootstrap-slider'
 FondoAhorroController.$inject = ['VinikService'];
 function FondoAhorroController(VinikService){
     console.log('FondoAhorroController');
-    var vm = this;
-    var jsonResponse = {"admin_cost":"8864.12"};
-    // VinikService.getComission();
+    var vm = this;   
 
     // Variables
-    vm.aportacionMensual = 4000; 
-    vm.aniosAhorro = 5;
-    vm.risk = "Baja";
-    vm.ahorro = "No";
+    vm.aportacionMensual = 3000; 
+    vm.aniosAhorro = 10;
+    vm.risk = "Media";
+    vm.ahorro = "Si";
 
-    vm.interesAnual = 0.1; //default
+    vm.interesAnual = 0.09; //default
     vm.interesMensual = (Math.pow(vm.interesAnual+1,(1/12))-1);
-    console.log(vm.interesMensual)
+    console.log(vm.interesMensual);
     vm.aportacionOptions = {};
     vm.ahorroOptions = {};
 
@@ -24,7 +22,7 @@ function FondoAhorroController(VinikService){
     vm.aportacionOptions = {
         min : 1500,
         step : 500,
-        max : 30000,
+        max : 20000,
         value : vm.aportacionMensual
     };
     vm.ahorroOptions = {
@@ -61,24 +59,109 @@ function FondoAhorroController(VinikService){
     // Functions
     vm.changes = changes;
     function changes(){
-
+        var jsonResponse = VinikService.getComission(vm.aportacionMensual,vm.aniosAhorro,vm.risk);
         // InteresGanadoLogic
+        if(vm.risk == 'Baja'){
+            vm.interesAnual = 0.07; //Baja
+        } else if (vm.risk == 'Media'){
+            vm.interesAnual = 0.09; //Media
+        } else {
+            vm.interesAnual = 0.12; //Alta
+        }
+        vm.interesMensual = (Math.pow(vm.interesAnual+1,(1/12))-1);
         var f1 = Math.pow(1+vm.interesMensual, vm.aniosAhorro*12+1);
         var f2 = f1 - (1+vm.interesMensual);
         var f3 = vm.aportacionMensual * f2 / vm.interesMensual;
         vm.results.aportacionesTotales = vm.aportacionMensual * vm.aniosAhorro * 12;
         vm.results.interesGanado = f3 - vm.results.aportacionesTotales;
-        vm.results.costoAdministracion = jsonResponse.admin_cost;
-        vm.results.ahorroEsperado = vm.results.aportacionesTotales + vm.results.interesGanado;
+        console.log(vm.results.interesGanado);
+        vm.results.costoAdministracion = jsonResponse;
+        vm.results.ahorroEsperado = vm.results.aportacionesTotales + vm.results.interesGanado - vm.results.costoAdministracion;
         vm.results.devolucionesFiscales = Math.min(params.isr * vm.aportacionMensual * vm.aniosAhorro * 12, params.deduccionAnualMaxima * vm.aniosAhorro);
-        vm.results.ahorroAcumulado = vm.results.ahorroEsperado + vm.results.devolucionesFiscales ;
+        vm.results.ahorroAcumulado = vm.results.ahorroEsperado + vm.results.devolucionesFiscales;
 
-        // console.log('aportacionesTotales', vm.results.aportacionesTotales);
-        // console.log('interesGanado', vm.results.interesGanado);
         vm.results.ahorroAcumuladoFixed = angular.copy(vm.results.ahorroAcumulado.toFixed(2));
-        console.log(vm.results)
+
+
+        if(vm.ahorro == "No"){
+            myChart.update({
+                series: [{
+                    upColor: colors.positive,
+                    color: colors.negative,
+                    borderColor: colors.text,
+                    data: [{
+                        name: 'Aportaciones Mensuales',
+                        y: vm.results.aportacionesTotales
+                    }, {
+                        name: 'Interés Ganado',
+                        y: vm.results.interesGanado
+                    }, {
+                        name: 'Costo de Administración',
+                        y: (-20050)
+                    }, {
+                        name: 'Ahorro acumulado',
+                        isIntermediateSum: true,
+                        color: colors.sum
+                    }],
+                    dataLabels: {
+                        enabled: true,
+                        formatter: function () {
+                            return Highcharts.numberFormat(this.y / 1000, 0, ',') + 'k';
+                        },
+                        style: {
+                            fontWeight: 'bold',
+                            borderColor: '#F00'
+                        }
+                    },
+                    pointPadding: 0
+                }]
+            });
+        } else {
+            myChart.update({
+                series: [{
+                    upColor: colors.positive,
+                    color: colors.negative,
+                    borderColor: colors.text,
+                    data: [{
+                        name: 'Aportaciones Mensuales',
+                        y: vm.results.aportacionesTotales
+                    }, {
+                        name: 'Interés Ganado',
+                        y: vm.results.interesGanado
+                    }, {
+                        name: 'Costo de Administración',
+                        y: (-20050)
+                    }, {
+                        name: 'Ahorro esperado',
+                        isIntermediateSum: true,
+                        color: colors.sum
+                    }, {
+                        name: 'Devoluciones Fiscales',
+                        y: vm.results.devolucionesFiscales
+                    }, {
+                        name: 'Ahorro acumulado',
+                        isSum: true,
+                        color: colors.sum
+                    }],
+                    dataLabels: {
+                        enabled: true,
+                        formatter: function () {
+                            return Highcharts.numberFormat(this.y / 1000, 0, ',') + 'k';
+                        },
+                        style: {
+                            fontWeight: 'bold',
+                            borderColor: '#F00'
+                        }
+                    },
+                    pointPadding: 0
+                }]
+            });
+        }
+        
+
+        //console.log(vm.results)
     }
-    console.log(vm.results);
+    //console.log(vm.results);
 }
 app.controller('FondoAhorroController', FondoAhorroController);
 
@@ -143,25 +226,22 @@ var myChart = Highcharts.chart('container', {
         borderColor: colors.text,
         data: [{
             name: 'Aportaciones Mensuales',
-            y: 120000
+            y: 360000
         }, {
             name: 'Interés Ganado',
-            y: 569000
+            y: 213300
         }, {
             name: 'Costo de Administración',
-            y: 231000
+            y: -68300
         }, {
             name: 'Ahorro esperado',
             isIntermediateSum: true,
             color: colors.sum
         }, {
             name: 'Devoluciones Fiscales',
-            y: -342000
+            y: 108000
         }, {
-            name: 'Variable Costs',
-            y: -233000
-        }, {
-            name: 'Balance',
+            name: 'Ahorro Acumulado',
             isSum: true,
             color: colors.sum
         }],
