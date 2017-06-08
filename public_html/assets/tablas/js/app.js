@@ -64,6 +64,11 @@ function FondoAhorroController(VinikService){
         var data;
         jsonResponse.then(function(value){
             console.log(value);
+            console.log(value[data]);
+            console.log(value["data"]);
+            console.log(value['data']);
+            console.log(value.data);
+            console.log(value[0]);
         });
 
 
