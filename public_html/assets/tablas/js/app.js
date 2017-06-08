@@ -61,6 +61,7 @@ function FondoAhorroController(VinikService){
     function changes(){
         var jsonResponse = VinikService.getComission(vm.aportacionMensual,vm.aniosAhorro,vm.risk);
         jsonResponse = JSON.parse(jsonResponse);
+
         // InteresGanadoLogic
         if(vm.risk == 'Baja'){
             vm.interesAnual = 0.07; //Baja
@@ -69,7 +70,7 @@ function FondoAhorroController(VinikService){
         } else {
             vm.interesAnual = 0.12; //Alta
         }
-        console.log(jsonResponse.data.admin_cost);
+        console.log(jsonResponse);
         vm.interesMensual = (Math.pow(vm.interesAnual+1,(1/12))-1);
         var f1 = Math.pow(1+vm.interesMensual, vm.aniosAhorro*12+1);
         var f2 = f1 - (1+vm.interesMensual);
@@ -77,7 +78,7 @@ function FondoAhorroController(VinikService){
         vm.results.aportacionesTotales = vm.aportacionMensual * vm.aniosAhorro * 12;
         vm.results.interesGanado = f3 - vm.results.aportacionesTotales;
         console.log(vm.results.interesGanado);
-        vm.results.costoAdministracion = jsonResponse.admin_cost;
+        vm.results.costoAdministracion = /*jsonResponse.admin_cost*/20000;
         vm.results.ahorroEsperado = vm.results.aportacionesTotales + vm.results.interesGanado - vm.results.costoAdministracion;
         vm.results.devolucionesFiscales = Math.min(params.isr * vm.aportacionMensual * vm.aniosAhorro * 12, params.deduccionAnualMaxima * vm.aniosAhorro);
         vm.results.ahorroAcumulado = vm.results.ahorroEsperado + vm.results.devolucionesFiscales;
