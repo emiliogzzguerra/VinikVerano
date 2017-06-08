@@ -231,6 +231,9 @@ var myChart = Highcharts.chart('container', {
     exporting: { 
         enabled: false 
     },
+    credits: {
+      enabled: false
+    },
 
     series: [{
         upColor: colors.positive,
