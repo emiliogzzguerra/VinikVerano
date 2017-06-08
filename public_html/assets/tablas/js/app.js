@@ -61,10 +61,11 @@ function FondoAhorroController(VinikService){
 
     function changes(){
         var jsonResponse = VinikService.getComission(vm.aportacionMensual,vm.aniosAhorro,vm.risk);
+        var data;
         jsonResponse.then(function(value){
-            console.log(value);
+            data = value;
         });
-        console.log(jsonResponse);
+        console.log(data["data"].admin_cost);
 
         // InteresGanadoLogic
         if(vm.risk == 'Baja'){
