@@ -60,6 +60,7 @@ function FondoAhorroController(VinikService){
     vm.changes = changes;
     function changes(){
         var jsonResponse = VinikService.getComission(vm.aportacionMensual,vm.aniosAhorro,vm.risk);
+        console.log(jsonResponse);
         console.log(jsonResponse[data]);
         var data = jsonResponse[data].admin_cost;
         console.log(data);
