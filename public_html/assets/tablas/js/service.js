@@ -11,16 +11,13 @@ function VinikService($http){
 	};
 
 	function getComission(monthly_cash, years, risk){
-		console.log(monthly_cash);
-		console.log(years);
-		console.log(url)
 		return $http.get(url + '/controllers/getComission.php?monthly_cash='+monthly_cash+'&years='+years+'&risk='+risk)
 	            .then(function(res){
 	            	console.log('res', res);
-            		return res.json(data)
+            		return res;
 	            })
 	            .catch(function(res){
-            		return res.json(data)
+            		return res;
 	            });	
 	}
 }
