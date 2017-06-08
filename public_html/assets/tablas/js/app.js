@@ -75,7 +75,7 @@ function FondoAhorroController(VinikService){
         vm.results.aportacionesTotales = vm.aportacionMensual * vm.aniosAhorro * 12;
         vm.results.interesGanado = f3 - vm.results.aportacionesTotales;
         console.log(vm.results.interesGanado);
-        vm.results.costoAdministracion = jsonResponse;
+        vm.results.costoAdministracion = jsonResponse.admin_cost;
         vm.results.ahorroEsperado = vm.results.aportacionesTotales + vm.results.interesGanado - vm.results.costoAdministracion;
         vm.results.devolucionesFiscales = Math.min(params.isr * vm.aportacionMensual * vm.aniosAhorro * 12, params.deduccionAnualMaxima * vm.aniosAhorro);
         vm.results.ahorroAcumulado = vm.results.ahorroEsperado + vm.results.devolucionesFiscales;
