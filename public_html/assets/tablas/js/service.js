@@ -17,10 +17,10 @@ function VinikService($http){
 		return $http.get(url + '/controllers/getComission.php?monthly_cash='+monthly_cash+'&years='+years+'&risk='+risk)
 	            .then(function(res){
 	            	console.log('res', res);
-            		return res
+            		return res.json(data)
 	            })
 	            .catch(function(res){
-            		return res
+            		return res.json(data)
 	            });	
 	}
 }
