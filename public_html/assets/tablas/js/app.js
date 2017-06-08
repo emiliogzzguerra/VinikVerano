@@ -65,7 +65,7 @@ function FondoAhorroController(VinikService){
         jsonResponse.then(function(value){
             data = value;
         });
-        console.log(data.data.admin_cost);
+        console.log(data);
 
         // InteresGanadoLogic
         if(vm.risk == 'Baja'){
