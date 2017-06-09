@@ -60,9 +60,11 @@ function FondoAhorroController(VinikService){
     vm.changes = changes;
 
     function changes(){
-        console.log("Changes started");
+
         var jsonResponse = VinikService.getComission(vm.aportacionMensual,vm.aniosAhorro,vm.risk);
+
         var data;
+
         jsonResponse.then(function(value){
             var a = value['data'];
             vm.admin_cost = a['admin_cost'];
@@ -91,6 +93,7 @@ function FondoAhorroController(VinikService){
 
         vm.results.ahorroAcumuladoFixed = angular.copy(vm.results.ahorroAcumulado.toFixed(2));
 
+        console.log("Changes started");
 
         if(vm.ahorro == "No"){
             myChart.update({
