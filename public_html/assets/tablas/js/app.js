@@ -93,7 +93,7 @@ function FondoAhorroController(VinikService){
 
         vm.results.ahorroAcumuladoFixed = angular.copy(vm.results.ahorroAcumulado.toFixed(2));
 
-        console.log("Changes started");
+        alert("Changes started");
 
         if(vm.ahorro == "No"){
             myChart.update({
