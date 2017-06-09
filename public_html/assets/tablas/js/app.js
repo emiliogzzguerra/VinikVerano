@@ -64,11 +64,15 @@ function FondoAhorroController(VinikService){
         var jsonResponse = VinikService.getComission(vm.aportacionMensual,vm.aniosAhorro,vm.risk);
 
         var data;
-
-        jsonResponse.then(function(value){
-            var a = value['data'];
-            vm.admin_cost = a['admin_cost'];
-        });
+        try{
+            jsonResponse.then(function(value){
+                var a = value['data'];
+                vm.admin_cost = a['admin_cost'];
+            });
+        }catch(err){
+            console.log(err);
+        }
+        
 
         // InteresGanadoLogic
         if(vm.risk == 'Baja'){
@@ -172,7 +176,7 @@ function FondoAhorroController(VinikService){
 
         return vm.results;
     }
-    console.log(vm.results);
+    //console.log(vm.results);
 }
 app.controller('FondoAhorroController', FondoAhorroController);
 
