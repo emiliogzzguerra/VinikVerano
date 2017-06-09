@@ -17,7 +17,6 @@ function FondoAhorroController(VinikService){
     console.log(vm.interesMensual);
     vm.aportacionOptions = {};
     vm.ahorroOptions = {};
-    vm.admin_cost = 0;
 
     // Options
     vm.aportacionOptions = {
