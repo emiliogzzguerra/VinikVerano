@@ -168,7 +168,7 @@ function FondoAhorroController(VinikService){
         }
         
 
-        //console.log(vm.results)
+        console.log(vm.results);
     }
     //console.log(vm.results);
 }
