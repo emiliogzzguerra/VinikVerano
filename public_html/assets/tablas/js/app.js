@@ -230,6 +230,7 @@ var myChart = Highcharts.chart('container', {
     credits: {
       enabled: false
     },
+    
 
     series: [{
         upColor: colors.positive,
