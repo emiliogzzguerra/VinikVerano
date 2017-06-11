@@ -112,7 +112,7 @@ function FondoAhorroController(VinikService){
                     dataLabels: {
                         enabled: true,
                         formatter: function () {
-                            return Highcharts.numberFormat(this.y / 1000, 0, ',');
+                            return Highcharts.numberFormat(this.y / 1000, 0, ',') + 'k';
                         },
                         style: {
                             fontWeight: 'bold',
@@ -152,7 +152,7 @@ function FondoAhorroController(VinikService){
                     dataLabels: {
                         enabled: true,
                         formatter: function () {
-                            return Highcharts.numberFormat(this.y / 1000, 0, ',');
+                            return Highcharts.numberFormat(this.y / 1000, 0, ',') + 'k';
                         },
                         style: {
                             fontWeight: 'bold',
@@ -258,7 +258,7 @@ var myChart = Highcharts.chart('container', {
         dataLabels: {
             enabled: true,
             formatter: function () {
-                return Highcharts.numberFormat(this.y / 1000, 0, ',');
+                return Highcharts.numberFormat(this.y / 1000, 0, ',') + 'k';
             },
             style: {
                 fontWeight: 'bold',
