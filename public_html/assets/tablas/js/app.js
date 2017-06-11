@@ -67,6 +67,7 @@ function FondoAhorroController(VinikService){
             vm.admin_cost = a.admin_cost;
         });
 
+
         // InteresGanadoLogic
         if(vm.risk == 'Baja'){
             vm.interesAnual = 0.07; //Baja
