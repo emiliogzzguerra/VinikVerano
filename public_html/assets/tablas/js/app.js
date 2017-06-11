@@ -1,14 +1,14 @@
 //AngularApp
 var app = angular.module("fondoDeAhorro", ['ui.bootstrap', 'ui.bootstrap-slider']);
 
-FondoAhorroController.$inject = ['VinikService'];
-function FondoAhorroController(VinikService){
+FondoAhorroController.$inject = ['VinikService', '$timeout'];
+function FondoAhorroController(VinikService, $timeout){
     console.log('FondoAhorroController');
     var vm = this;
 
     // Variables
     vm.aportacionMensual = 3000;
-    vm.aniosAhorro = 10;
+    vm.aniosAhorro = 15;
     vm.risk = "Media";
     vm.ahorro = "Si";
     vm.results = {};
@@ -58,23 +58,20 @@ function FondoAhorroController(VinikService){
     };
 
     console.log('Default');
-    console.log('vm.aportacionMensual', vm.aportacionMensual);
-    console.log('vm.aniosAhorro', vm.aniosAhorro);
-    console.log('vm.risk', vm.risk);
-    console.log('vm.ahorro', vm.ahorro);
-    console.log('vm.results', vm.results);
     console.log('vm.admin_cost', vm.admin_cost);
 
     // Functions
     vm.changes = changes;
 
     function changes(){
-        console.log('Changes');
-        console.log('vm.aportacionMensual', vm.aportacionMensual);
-        console.log('vm.aniosAhorro', vm.aniosAhorro);
-        console.log('vm.risk', vm.risk);
-        console.log('vm.ahorro', vm.ahorro);
-        console.log('vm.results', vm.results);
+      $timeout(function(){
+        console.log('Test with change');
+        calculateData();
+      }, 300);
+    }
+
+    function calculateData(){
+        console.log('calculateData');
         console.log('vm.admin_cost', vm.admin_cost);
 
         var jsonResponse = VinikService.getComission(vm.aportacionMensual,vm.aniosAhorro,vm.risk);
@@ -182,6 +179,10 @@ function FondoAhorroController(VinikService){
         }
 
         return vm.results;
+    }
+
+    function init(){
+      calculateData();
     }
 }
 app.controller('FondoAhorroController', FondoAhorroController);
