@@ -11,7 +11,9 @@ function FondoAhorroController(VinikService){
     vm.aniosAhorro = 10;
     vm.risk = "Media";
     vm.ahorro = "Si";
+    vm.results = {};
 
+    vm.admin_cost = 0;
     vm.interesAnual = 0.09; //default
     vm.interesMensual = (Math.pow(vm.interesAnual+1,(1/12))-1);
     vm.aportacionOptions = {};
@@ -55,16 +57,30 @@ function FondoAhorroController(VinikService){
         ahorroAcumuladoFixed: 0
     };
 
+    console.log('Default');
+    console.log('vm.aportacionMensual', vm.aportacionMensual);
+    console.log('vm.aniosAhorro', vm.aniosAhorro);
+    console.log('vm.risk', vm.risk);
+    console.log('vm.ahorro', vm.ahorro);
+    console.log('vm.results', vm.results);
+    console.log('vm.admin_cost', vm.admin_cost);
+
     // Functions
     vm.changes = changes;
 
     function changes(){
+        console.log('Changes');
+        console.log('vm.aportacionMensual', vm.aportacionMensual);
+        console.log('vm.aniosAhorro', vm.aniosAhorro);
+        console.log('vm.risk', vm.risk);
+        console.log('vm.ahorro', vm.ahorro);
+        console.log('vm.results', vm.results);
+        console.log('vm.admin_cost', vm.admin_cost);
+
         var jsonResponse = VinikService.getComission(vm.aportacionMensual,vm.aniosAhorro,vm.risk);
 
         jsonResponse.then(function(value){
-            console.log('changes', value);
-            var a = value.data;
-            vm.admin_cost = a.admin_cost;
+            vm.admin_cost = value.data.admin_cost;
         });
 
 
