@@ -4,17 +4,16 @@ var app = angular.module("fondoDeAhorro", ['ui.bootstrap', 'ui.bootstrap-slider'
 FondoAhorroController.$inject = ['VinikService'];
 function FondoAhorroController(VinikService){
     console.log('FondoAhorroController');
-    var vm = this;   
+    var vm = this;
 
     // Variables
-    vm.aportacionMensual = 3000; 
+    vm.aportacionMensual = 3000;
     vm.aniosAhorro = 10;
     vm.risk = "Media";
     vm.ahorro = "Si";
 
     vm.interesAnual = 0.09; //default
     vm.interesMensual = (Math.pow(vm.interesAnual+1,(1/12))-1);
-    console.log(vm.interesMensual);
     vm.aportacionOptions = {};
     vm.ahorroOptions = {};
 
@@ -31,19 +30,18 @@ function FondoAhorroController(VinikService){
         max : 25,
         value : vm.aniosAhorro
     };
-    vm.riskOptions = ['Alta', 'Media', 'Baja']
-    vm.ahorroBoolean = ["Si", "No"]
-
+    vm.riskOptions = ['Alta', 'Media', 'Baja'];
+    vm.ahorroBoolean = ["Si", "No"];
 
     // params
     var params = {};
     params = {
-        comisionVariable: 0.00001667,       //Contrato Old Mutual 14/05/17 
-        comisionFija: 0.075,                //Contrato Old Mutual 14/05/17 
-        salarioMinimo: 63.92,             //Supuesto Oscar (solver) 
-        inflacion: 0.029,                 //Supuesto Oscar (solver) 
-        isr: 0.30,                        //Supuesto Oscar 
-        deduccionAnualMaxima: 137769.25   //Ley ISR 2017 (Gustavo)   
+        comisionVariable: 0.00001667,       //Contrato Old Mutual 14/05/17
+        comisionFija: 0.075,                //Contrato Old Mutual 14/05/17
+        salarioMinimo: 63.92,             //Supuesto Oscar (solver)
+        inflacion: 0.029,                 //Supuesto Oscar (solver)
+        isr: 0.30,                        //Supuesto Oscar
+        deduccionAnualMaxima: 137769.25   //Ley ISR 2017 (Gustavo)
     };
 
     // Results
@@ -53,26 +51,21 @@ function FondoAhorroController(VinikService){
         costoAdministracion: 0,
         ahorroEsperado: 0,
         devolucionesFiscales: 0,
-        ahorroAcumulado: 0
+        ahorroAcumulado: 0,
+        ahorroAcumuladoFixed: 0
     };
 
     // Functions
     vm.changes = changes;
 
     function changes(){
-
         var jsonResponse = VinikService.getComission(vm.aportacionMensual,vm.aniosAhorro,vm.risk);
 
-        var data;
-        try{
-            jsonResponse.then(function(value){
-                var a = value['data'];
-                vm.admin_cost = a['admin_cost'];
-            });
-        }catch(err){
-            console.log(err);
-        }
-        
+        jsonResponse.then(function(value){
+            console.log('changes', value);
+            var a = value.data;
+            vm.admin_cost = a.admin_cost;
+        });
 
         // InteresGanadoLogic
         if(vm.risk == 'Baja'){
@@ -89,14 +82,12 @@ function FondoAhorroController(VinikService){
         var f3 = vm.aportacionMensual * f2 / vm.interesMensual;
         vm.results.aportacionesTotales = vm.aportacionMensual * vm.aniosAhorro * 12;
         vm.results.interesGanado = f3 - vm.results.aportacionesTotales;
-        //console.log(vm.results.interesGanado);
         vm.results.costoAdministracion = vm.admin_cost;
         vm.results.ahorroEsperado = vm.results.aportacionesTotales + vm.results.interesGanado - vm.results.costoAdministracion;
         vm.results.devolucionesFiscales = Math.min(params.isr * vm.aportacionMensual * vm.aniosAhorro * 12, params.deduccionAnualMaxima * vm.aniosAhorro);
         vm.results.ahorroAcumulado = vm.results.ahorroEsperado + vm.results.devolucionesFiscales;
 
         vm.results.ahorroAcumuladoFixed = angular.copy(vm.results.ahorroAcumulado.toFixed(2));
-
 
         if(vm.ahorro == "No"){
             myChart.update({
@@ -121,7 +112,7 @@ function FondoAhorroController(VinikService){
                     dataLabels: {
                         enabled: true,
                         formatter: function () {
-                            return Highcharts.numberFormat(this.y / 1000, 0, ',') + 'k';
+                            return Highcharts.numberFormat(this.y / 1000, 0, ',');
                         },
                         style: {
                             fontWeight: 'bold',
@@ -161,7 +152,7 @@ function FondoAhorroController(VinikService){
                     dataLabels: {
                         enabled: true,
                         formatter: function () {
-                            return Highcharts.numberFormat(this.y / 1000, 0, ',') + 'k';
+                            return Highcharts.numberFormat(this.y / 1000, 0, ',');
                         },
                         style: {
                             fontWeight: 'bold',
@@ -172,11 +163,9 @@ function FondoAhorroController(VinikService){
                 }]
             });
         }
-        
 
         return vm.results;
     }
-    //console.log(vm.results);
 }
 app.controller('FondoAhorroController', FondoAhorroController);
 
@@ -234,8 +223,8 @@ var myChart = Highcharts.chart('container', {
     tooltip: {
         pointFormat: '<b>${point.y:,.2f}</b> MX',
     },
-    exporting: { 
-        enabled: false 
+    exporting: {
+        enabled: false
     },
     credits: {
       enabled: false
@@ -247,20 +236,20 @@ var myChart = Highcharts.chart('container', {
         borderColor: colors.text,
         data: [{
             name: 'Aportaciones Mensuales',
-            y: 360000
+            y: 0
         }, {
             name: 'Interés Ganado',
-            y: 213300
+            y: 0
         }, {
             name: 'Costo de Administración',
-            y: -68300
+            y: 0
         }, {
             name: 'Ahorro esperado',
             isIntermediateSum: true,
             color: colors.sum
         }, {
             name: 'Devoluciones Fiscales',
-            y: 108000
+            y: 0
         }, {
             name: 'Ahorro Acumulado',
             isSum: true,
@@ -269,7 +258,7 @@ var myChart = Highcharts.chart('container', {
         dataLabels: {
             enabled: true,
             formatter: function () {
-                return Highcharts.numberFormat(this.y / 1000, 0, ',') + 'k';
+                return Highcharts.numberFormat(this.y / 1000, 0, ',');
             },
             style: {
                 fontWeight: 'bold',
