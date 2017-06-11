@@ -9,6 +9,7 @@ function VinikService($http){
 	return {
 		getComission: getComission
 	};
+	
 
 	function getComission(monthly_cash, years, risk){
 		return $http.get(url + '/controllers/getComission.php?monthly_cash='+monthly_cash+'&years='+years+'&risk='+risk)
