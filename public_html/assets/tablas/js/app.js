@@ -230,14 +230,14 @@ var myChart = Highcharts.chart('container', {
     credits: {
       enabled: false
     },
-    
+
 
     series: [{
         upColor: colors.positive,
         color: colors.negative,
         borderColor: colors.text,
         data: [{
-            name: 'Aportaciones Mensuales',
+            name: 'AAportaciones Mensuales',
             y: 0
         }, {
             name: 'Interés Ganado',
