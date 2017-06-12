@@ -8,7 +8,7 @@ function FondoAhorroController(VinikService, $timeout){
 
     // Variables
     vm.aportacionMensual = 3000;
-    vm.aniosAhorro = 15;
+    vm.aniosAhorro = 10;
     vm.risk = "Media";
     vm.ahorro = "Si";
     vm.results = {};
