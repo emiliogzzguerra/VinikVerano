@@ -195,7 +195,7 @@ var colors = {
 };
 var myChart = Highcharts.chart('container', {
     chart: {
-        height: 500,
+        height: 600,
         type: 'waterfall',
         inverted: true,
         backgroundColor: colors.bg
@@ -253,20 +253,20 @@ var myChart = Highcharts.chart('container', {
         borderColor: colors.text,
         data: [{
             name: 'AAportaciones Mensuales',
-            y: 0
+            y: 360000
         }, {
             name: 'Interés Ganado',
-            y: 0
+            y: 244400
         }, {
             name: 'Costo de Administración',
-            y: 0
+            y: -72800
         }, {
             name: 'Ahorro esperado',
             isIntermediateSum: true,
             color: colors.sum
         }, {
             name: 'Devoluciones Fiscales',
-            y: 0
+            y: 108000
         }, {
             name: 'Ahorro Acumulado',
             isSum: true,
