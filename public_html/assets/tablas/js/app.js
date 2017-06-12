@@ -48,11 +48,11 @@ function FondoAhorroController(VinikService, $timeout){
 
     // Results
     vm.results = {
-        aportacionesTotales: 0,
-        interesGanado: 0,
-        costoAdministracion: 0,
+        aportacionesTotales: 360000,
+        interesGanado: 244400,
+        costoAdministracion: -72800,
         ahorroEsperado: 0,
-        devolucionesFiscales: 0,
+        devolucionesFiscales: 108000,
         ahorroAcumulado: 0,
         ahorroAcumuladoFixed: 0
     };
@@ -195,6 +195,7 @@ var colors = {
 };
 var myChart = Highcharts.chart('container', {
     chart: {
+        height: 500,
         type: 'waterfall',
         inverted: true,
         backgroundColor: colors.bg
