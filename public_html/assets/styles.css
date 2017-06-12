@@ -13,7 +13,7 @@
 .container-base {
 	padding: 5px;
 	/*width: calc((100% - (40px + 40px)) / 3);*/
-	height: 565px;
+	height: 620px;
 }
 
 .container-base:first-child,
@@ -107,4 +107,17 @@
 /* Bootstrap overrides */
 
 
+@media screen and (max-width: 767px) {
+	.container-base {
+		padding: 5px;
+		/*width: calc((100% - (40px + 40px)) / 3);*/
+		height: initial;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+	.container-chart {
+		height: initial;
+	}
+}
 /* ---------- */
