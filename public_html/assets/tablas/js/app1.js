@@ -1,8 +1,8 @@
 //AngularApp
 var app = angular.module("fondoDeAhorro", ['ui.bootstrap', 'ui.bootstrap-slider']);
 
-FondoAhorroController.$inject = ['VinikService'];
-function FondoAhorroController(VinikService){
+FondoAhorroController.$inject = ['VinikService', '$timeout'];
+function FondoAhorroController(VinikService, $timeout){
     console.log('FondoAhorroController');
     var vm = this;
 
@@ -11,7 +11,9 @@ function FondoAhorroController(VinikService){
     vm.aniosAhorro = 10;
     vm.risk = "Media";
     vm.ahorro = "Si";
+    vm.results = {};
 
+    vm.admin_cost = 0;
     vm.interesAnual = 0.09; //default
     vm.interesMensual = (Math.pow(vm.interesAnual+1,(1/12))-1);
     vm.aportacionOptions = {};
@@ -46,126 +48,131 @@ function FondoAhorroController(VinikService){
 
     // Results
     vm.results = {
-        aportacionesTotales: 0,
-        interesGanado: 0,
-        costoAdministracion: 0,
+        aportacionesTotales: 360000,
+        interesGanado: 244400,
+        costoAdministracion: -72800,
         ahorroEsperado: 0,
-        devolucionesFiscales: 0,
+        devolucionesFiscales: 108000,
         ahorroAcumulado: 0,
         ahorroAcumuladoFixed: 0
     };
+
+    console.log('Default');
+    console.log('vm.admin_cost', vm.admin_cost);
 
     // Functions
     vm.changes = changes;
 
     function changes(){
+      $timeout(function(){
+        console.log('Test with change');
+        calculateData();
+      }, 300);
+    }
+
+    function calculateData(){
+        console.log('calculateData');
+        console.log('vm.admin_cost', vm.admin_cost);
+
         var jsonResponse = VinikService.getComission(vm.aportacionMensual,vm.aniosAhorro,vm.risk);
 
         jsonResponse.then(function(value){
-            console.log('changes', value);
-            var a = value.data;
-            vm.admin_cost = a.admin_cost;
+            vm.admin_cost = value.data.admin_cost;
+
+            // InteresGanadoLogic
+            if(vm.risk == 'Baja'){
+                vm.interesAnual = 0.07; //Baja
+            } else if (vm.risk == 'Media'){
+                vm.interesAnual = 0.09; //Media
+            } else {
+                vm.interesAnual = 0.12; //Alta
+            }
+
+            vm.interesMensual = (Math.pow(vm.interesAnual+1,(1/12))-1);
+            var f1 = Math.pow(1+vm.interesMensual, vm.aniosAhorro*12+1);
+            var f2 = f1 - (1+vm.interesMensual);
+            var f3 = vm.aportacionMensual * f2 / vm.interesMensual;
+            vm.results.aportacionesTotales = vm.aportacionMensual * vm.aniosAhorro * 12;
+            vm.results.interesGanado = f3 - vm.results.aportacionesTotales;
+            vm.results.costoAdministracion = vm.admin_cost;
+            vm.results.ahorroEsperado = vm.results.aportacionesTotales + vm.results.interesGanado - vm.results.costoAdministracion;
+            vm.results.devolucionesFiscales = Math.min(params.isr * vm.aportacionMensual * vm.aniosAhorro * 12, params.deduccionAnualMaxima * vm.aniosAhorro);
+            vm.results.ahorroAcumulado = vm.results.ahorroEsperado + vm.results.devolucionesFiscales;
+
+            vm.results.ahorroAcumuladoFixed = angular.copy(vm.results.ahorroAcumulado.toFixed(2));
+
+            if(vm.ahorro == "No"){
+                myChart.update({
+                    series: [{
+                        upColor: colors.positive,
+                        color: colors.negative,
+                        borderColor: colors.text,
+                        data: [{
+                            name: 'Aportaciones Mensuales',
+                            y: vm.results.aportacionesTotales
+                        }, {
+                            name: 'Interés Ganado',
+                            y: vm.results.interesGanado -vm.results.costoAdministracion
+                        }, {
+                            name: 'Devoluciones Fiscales',
+                            y: vm.results.devolucionesFiscales
+                        }, {
+                            name: 'Ahorro acumulado',
+                            isSum: true,
+                            color: colors.sum
+                        }],
+                        dataLabels: {
+                            enabled: true,
+                            formatter: function () {
+                                return Highcharts.numberFormat(this.y / 1000, 0, ',') + 'k';
+                            },
+                            style: {
+                                fontWeight: 'bold',
+                                borderColor: '#F00'
+                            }
+                        },
+                        pointPadding: 0
+                    }]
+                });
+            } else {
+                myChart.update({
+                    series: [{
+                        upColor: colors.positive,
+                        color: colors.negative,
+                        borderColor: colors.text,
+                        data: [{
+                            name: 'Aportaciones Mensuales',
+                            y: vm.results.aportacionesTotales
+                        }, {
+                            name: 'Interés Ganado',
+                            y: vm.results.interesGanado -vm.results.costoAdministracion
+                        }, {
+                            name: 'Devoluciones Fiscales',
+                            y: vm.results.devolucionesFiscales
+                        }, {
+                            name: 'Ahorro acumulado',
+                            isSum: true,
+                            color: colors.sum
+                        }],
+                        dataLabels: {
+                            enabled: true,
+                            formatter: function () {
+                                return Highcharts.numberFormat(this.y / 1000, 0, ',') + 'k';
+                            },
+                            style: {
+                                fontWeight: 'bold',
+                                borderColor: '#F00'
+                            }
+                        },
+                        pointPadding: 0
+                    }]
+                });
+            }
         });
+    }
 
-
-        // InteresGanadoLogic
-        if(vm.risk == 'Baja'){
-            vm.interesAnual = 0.07; //Baja
-        } else if (vm.risk == 'Media'){
-            vm.interesAnual = 0.09; //Media
-        } else {
-            vm.interesAnual = 0.12; //Alta
-        }
-
-        vm.interesMensual = (Math.pow(vm.interesAnual+1,(1/12))-1);
-        var f1 = Math.pow(1+vm.interesMensual, vm.aniosAhorro*12+1);
-        var f2 = f1 - (1+vm.interesMensual);
-        var f3 = vm.aportacionMensual * f2 / vm.interesMensual;
-        vm.results.aportacionesTotales = vm.aportacionMensual * vm.aniosAhorro * 12;
-        vm.results.interesGanado = f3 - vm.results.aportacionesTotales;
-        vm.results.costoAdministracion = vm.admin_cost;
-        vm.results.ahorroEsperado = vm.results.aportacionesTotales + vm.results.interesGanado - vm.results.costoAdministracion;
-        vm.results.devolucionesFiscales = Math.min(params.isr * vm.aportacionMensual * vm.aniosAhorro * 12, params.deduccionAnualMaxima * vm.aniosAhorro);
-        vm.results.ahorroAcumulado = vm.results.ahorroEsperado + vm.results.devolucionesFiscales;
-
-        vm.results.ahorroAcumuladoFixed = angular.copy(vm.results.ahorroAcumulado.toFixed(2));
-
-        if(vm.ahorro == "No"){
-            myChart.update({
-                series: [{
-                    upColor: colors.positive,
-                    color: colors.negative,
-                    borderColor: colors.text,
-                    data: [{
-                        name: 'Aportaciones Mensuales',
-                        y: vm.results.aportacionesTotales
-                    }, {
-                        name: 'Interés Ganado',
-                        y: vm.results.interesGanado
-                    }, {
-                        name: 'Costo de Administración',
-                        y: (-vm.results.costoAdministracion)
-                    }, {
-                        name: 'Ahorro acumulado',
-                        isIntermediateSum: true,
-                        color: colors.sum
-                    }],
-                    dataLabels: {
-                        enabled: true,
-                        formatter: function () {
-                            return Highcharts.numberFormat(this.y / 1000, 0, ',') + 'k';
-                        },
-                        style: {
-                            fontWeight: 'bold',
-                            borderColor: '#F00'
-                        }
-                    },
-                    pointPadding: 0
-                }]
-            });
-        } else {
-            myChart.update({
-                series: [{
-                    upColor: colors.positive,
-                    color: colors.negative,
-                    borderColor: colors.text,
-                    data: [{
-                        name: 'Aportaciones Mensuales',
-                        y: vm.results.aportacionesTotales
-                    }, {
-                        name: 'Interés Ganado',
-                        y: vm.results.interesGanado
-                    }, {
-                        name: 'Costo de Administración',
-                        y: (-vm.results.costoAdministracion)
-                    }, {
-                        name: 'Ahorro esperado',
-                        isIntermediateSum: true,
-                        color: colors.sum
-                    }, {
-                        name: 'Devoluciones Fiscales',
-                        y: vm.results.devolucionesFiscales
-                    }, {
-                        name: 'Ahorro acumulado',
-                        isSum: true,
-                        color: colors.sum
-                    }],
-                    dataLabels: {
-                        enabled: true,
-                        formatter: function () {
-                            return Highcharts.numberFormat(this.y / 1000, 0, ',') + 'k';
-                        },
-                        style: {
-                            fontWeight: 'bold',
-                            borderColor: '#F00'
-                        }
-                    },
-                    pointPadding: 0
-                }]
-            });
-        }
-
-        return vm.results;
+    function init(){
+      calculateData();
     }
 }
 app.controller('FondoAhorroController', FondoAhorroController);
@@ -181,6 +188,7 @@ var colors = {
 };
 var myChart = Highcharts.chart('container', {
     chart: {
+        height: 600,
         type: 'waterfall',
         inverted: true,
         backgroundColor: colors.bg
@@ -237,21 +245,14 @@ var myChart = Highcharts.chart('container', {
         color: colors.negative,
         borderColor: colors.text,
         data: [{
-            name: 'AAportaciones Mensuales',
-            y: 0
+            name: 'Aportaciones Mensuales',
+            y: 360000
         }, {
             name: 'Interés Ganado',
-            y: 0
-        }, {
-            name: 'Costo de Administración',
-            y: 0
-        }, {
-            name: 'Ahorro esperado',
-            isIntermediateSum: true,
-            color: colors.sum
+            y: 244400 -72800
         }, {
             name: 'Devoluciones Fiscales',
-            y: 0
+            y: 108000
         }, {
             name: 'Ahorro Acumulado',
             isSum: true,
