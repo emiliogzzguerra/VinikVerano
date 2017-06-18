@@ -2778,7 +2778,9 @@ h1 {
 
 @media (min-width: 992px) {
   .container-fluid {
-    padding: 0 100px; } }
+    padding: 0 100px; 
+  } 
+}
 
 .c-layout-header:before,
 .c-layout-header:after {
@@ -4058,7 +4060,7 @@ h1 {
   /* 992px */
   .c-layout-header.c-layout-header-4 {
     background: none;
-    border-bottom: 0; }
+    border-bottom: 2; }
     .c-layout-header.c-layout-header-4 .c-navbar {
       background: none; }
       .c-layout-header.c-layout-header-4 .c-navbar .c-mega-menu > .nav.navbar-nav > li > .c-btn-icon,

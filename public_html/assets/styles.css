@@ -4,12 +4,54 @@
 }
 
 
+
+.ahorro-inteligente{
+	background-color: gray;
+}
+
 /* NEW STYLES */
 
 /* Se restan 40px para los margin
  * de en medio. Y otros 40px para
  * los de los lados de afuera.
  */
+.porque-vinik-title{
+	color:white;
+	font-family:'Source Sans Pro', sans-serif;
+	font-size: 2em;
+	margin-top: 30px;
+}
+
+.empezar-title{
+	color:inherit;
+	font-family:'Source Sans Pro', sans-serif;
+	font-size: 2em;
+	margin-top: 30px;
+}
+
+#empezar-button{
+	margin-top: 0px;	
+}
+
+#herramienta.c-content-box.c-size-md {
+	padding-top: 30px;
+	padding-bottom: 0px;
+}
+.porque-vinik{
+	background: #000000 no-repeat fixed center;
+	padding-bottom: 30px;
+}
+
+.empezar{
+	background: #ffffff no-repeat fixed center;
+	padding-bottom: 30px;
+}
+
+.empezar-content{
+	padding-top: 0px;
+	padding-bottom: 30px;
+}
+
 .container-base {
 	padding: 5px;
 	/*width: calc((100% - (40px + 40px)) / 3);*/
@@ -25,10 +67,32 @@
 	/*margin-left: 20px;*/
 }
 
+.my-container-base {
+	padding: 5px;
+	/*width: calc((100% - (40px + 40px)) / 3);*/
+	height: 200px;
+}
+
+.my-container-base:first-child,
+.my-container-base:nth-child(2) {
+	/*margin-right: 20px;*/
+}
+
+.my-container-base:first-child {
+	/*margin-left: 20px;*/
+}
+
 .container-customize {
 	padding: 30px;
 	color: #333;
 	background-color: #DDD;
+}
+
+.container-emilio {
+	padding: 30px;
+	margin-top: 30px;
+	color: #333;
+	background-color: red;
 }
 
 .container-pension {
@@ -113,6 +177,13 @@
 		/*width: calc((100% - (40px + 40px)) / 3);*/
 		height: initial;
 	}
+	.my-container-base {
+		padding: 5px;
+		/*width: calc((100% - (40px + 40px)) / 3);*/
+		height: initial;
+	}
+
+
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {

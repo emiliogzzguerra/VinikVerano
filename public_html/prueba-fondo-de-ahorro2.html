@@ -51,12 +51,13 @@ Follow: http://www.twitter.com/themehats
     <link rel="stylesheet" href="https://rawgit.com/seiyria/bootstrap-slider/v4.8.1/css/bootstrap-slider.css">
     <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap-select/dist/css/bootstrap-select.css">
     <link rel="stylesheet" type="text/css" href="../assets/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
 <body class="c-layout-header-fixed c-layout-header-mobile-fixed">
     <!-- BEGIN: LAYOUT/HEADERS/HEADER-1 -->
     <!-- BEGIN: HEADER -->
-    <header class="c-layout-header c-layout-header-4 c-layout-header-default-mobile" data-minimize-offset="80">
+    <header class="c-layout-header c-layout-header-4 c-layout-header-default-mobile" data-minimize-offset="30">
         <div class="c-navbar">
             <div class="container">
                 <!-- BEGIN: BRAND -->
@@ -67,6 +68,9 @@ Follow: http://www.twitter.com/themehats
                             <img src="assets/base/img/layout/logos/logo-9.png" alt="JANGO" class="c-desktop-logo">
                             <img src="assets/base/img/layout/logos/logo-9.png" alt="JANGO" class="c-desktop-logo-inverse">
                             <img src="assets/base/img/layout/logos/logo-9.png" alt="JANGO" class="c-mobile-logo"> </a>
+                        <button id="no-background" class="c-hor-nav-toggler">
+                            <i class="material-icons">call</i>
+                        </button>
                     </div>
                     <!--Termina LandingPage area para colocar diseño de movil/tablet en navegacion-->
                     <!-- END: BRAND -->
@@ -75,35 +79,9 @@ Follow: http://www.twitter.com/themehats
                     <!-- BEGIN: MEGA MENU -->
                     <!-- Dropdown menu toggle on mobile: c-toggler class can be applied to the link arrow or link itself depending on toggle mode -->
                     <nav class="c-mega-menu c-pull-right c-mega-menu-dark c-mega-menu-dark-mobile c-fonts-uppercase c-fonts-bold">
-                        <ul class="nav navbar-nav c-theme-nav">
+                        <ul class="c-brand c-pull-rightjan">
                             <li>
-                                <a href="#" class="c-link">Home
-                                        <span class="c-arrow"></span>
-                                    </a>
-                            </li>
-                            <li class="c-active c-menu-type-classic">
-                                <a href="#" class="c-link">Features
-                                        <span class="c-arrow"></span>
-                                    </a>
-                            </li>
-                            <li>
-                                <a href="#" class="c-link">Pages
-                                        <span class="c-arrow"></span>
-                                    </a>
-                            </li>
-                            <li>
-                                <a href="#" class="c-link">Shop
-                                        <span class="c-arrow"></span>
-                                    </a>
-                            </li>
-                            <li>
-                                <a href="#" class="c-link">Components
-                                        <span class="c-arrow"></span>
-                                    </a>
-                            </li>
-                            <li>
-                                <a href="#" class="c-link" data-toggle="modal" data-target="#myModal">Invest Now
-                                </a>
+                                <a id="ahorroBoton" href="#" class="c-action-btn btn btn-md c-btn-square c-theme-btn c-btn-bold c-btn-uppercase">Quiero Ahorrar</a>
                             </li>
                         </ul>
                     </nav>
@@ -185,12 +163,27 @@ Follow: http://www.twitter.com/themehats
                         <!--BEGIN: SLIDE #2 -->
                         <li data-transition="fade" data-slotamount="1" data-masterspeed="1000">
                             <img alt="" src="assets2/base/img/content/backgrounds/bg-51.jpg" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
-                            <div class="tp-caption customin customout" data-x="center" data-y="center" data-hoffset="" data-voffset="-50" data-speed="500" data-start="1000" data-transform_idle="o:1;" data-transform_in="rX:0.5;scaleX:0.75;scaleY:0.75;o:0;s:500;e:Back.easeInOut;" data-transform_out="rX:0.5;scaleX:0.75;scaleY:0.75;o:0;s:600;e:Back.easeInOut;" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="600">
-                                <h3 class="c-main-title-circle c-font-48 c-font-bold c-font-center c-font-uppercase c-font-white c-block"> JANGO IS OPTIMIZED
-                                        <br>TO EVERY DEVELOPMENT </h3>
+                            <div class="tp-caption customin customout" 
+                                data-x="center" 
+                                data-y="center" 
+                                data-hoffset="" 
+                                data-voffset="-50" 
+                                data-speed="500" 
+                                data-start="1000" 
+                                data-transform_idle="o:1;" 
+                                data-transform_in="rX:0.5;scaleX:0.75;scaleY:0.75;o:0;s:500;e:Back.easeInOut;" 
+                                data-transform_out="rX:0.5;scaleX:0.75;scaleY:0.75;o:0;s:600;e:Back.easeInOut;" 
+                                data-splitin="none" 
+                                data-splitout="none" 
+                                data-elementdelay="0.1" 
+                                data-endelementdelay="0.1" 
+                                data-endspeed="600"
+                                data-fontsize="['24', '24', '22', '18']">
+                                <h3 class="c-main-title-circle c-font-48 c-font-center c-font-white c-block"> Empieza a ahorrar con un
+                                        <br> fondo de ahorro <b>inteligente</b></h3>
                             </div>
                             <div class="tp-caption lft" data-x="center" data-y="center" data-voffset="110" data-speed="900" data-start="500" data-transform_idle="o:1;" data-transform_in="o:0;s:900;e:Back.easeInOut;">
-                                <a href="#" class="c-action-btn btn btn-lg c-btn-square c-theme-btn c-btn-bold c-btn-uppercase">Learn More</a>
+                                <a href="#" class="c-action-btn btn btn-lg c-btn-square c-theme-btn c-btn-bold c-btn-uppercase">Quiero Ahorrar</a>
                             </div>
                         </li>
                         <!--END -->
@@ -202,37 +195,42 @@ Follow: http://www.twitter.com/themehats
         <!-- BEGIN: CONTENT/FEATURES/FEATURES-1 -->
         <div class="c-content-box c-size-md c-bg-white">
             <div class="container">
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="c-content-feature-1 wow animate fadeInUp">
-                            <div class="c-content-line-icon c-theme c-icon-screen-chart"></div>
-                            <h3 class="c-font-uppercase c-font-bold">Fully responsive</h3>
-                            <p class="c-font-thin">Beautiful cinematic designs optimized for all screen sizes and types. Compatible with Retina high pixel density displays.</p>
-                        </div>
+                <div class="row col-md-6">
+                    <img  class="img-responsive" style="max-height: 420px;" src="/assets2/base/img/simple-phone.png">
+                </div>
+                <div class="row col-md-6">
+                    <div class="c-content-feature-1 wow animate fadeInUp">
+                        <h3 class="c-font-uppercase c-font-bold">Fully responsive</h3>
+                        <p class="c-font-thin">Beautiful cinematic designs optimized for all screen sizes and types. Compatible with Retina high pixel density displays.</p>
                     </div>
-                    <div class="col-sm-4">
-                        <div class="c-content-feature-1 wow animate fadeInUp" data-wow-delay="0.2s">
-                            <div class="c-content-line-icon c-theme c-icon-support"></div>
-                            <h3 class="c-font-uppercase c-font-bold">Visual & Pragmatic</h3>
-                            <p class="c-font-thin">Featuring trending modern web standards.
-                                <br/>Clean and easy framework design for worry and hassle free customizations.</p>
-                        </div>
+                    <div class="c-content-feature-1 wow animate fadeInUp" data-wow-delay="0.2s">
+                        <h3 class="c-font-uppercase c-font-bold">Visual & Pragmatic</h3>
+                        <p class="c-font-thin">Featuring trending modern web standards.
+                            <br/>Clean and easy framework design for worry and hassle free customizations.</p>
                     </div>
-                    <div class="col-sm-4 c-card">
-                        <div class="c-content-feature-1 wow animate fadeInUp" data-wow-delay="0.4s">
-                            <div class="c-content-line-icon c-theme c-icon-bulb"></div>
-                            <h3 class="c-font-uppercase c-font-bold">Dedicated Support</h3>
-                            <p class="c-font-thin">Quick response with regular updates.
-                                <br/>Each update will include great new features and enhancements for free.</p>
-                        </div>
+                    <div class="c-content-feature-1 wow animate fadeInUp" data-wow-delay="0.4s">
+                        <h3 class="c-font-uppercase c-font-bold">Dedicated Support</h3>
+                        <p class="c-font-thin">Quick response with regular updates.
+                            <br/>Each update will include great new features and enhancements for free.</p>
                     </div>
+                </div>
+                <div class="row col-md-12 c-center">
+                    <a href="#" class="c-action-btn btn btn-lg c-btn-square c-theme-btn c-btn-bold c-btn-uppercase">Learn More</a>
                 </div>
             </div>
         </div>
         <!-- END: CONTENT/FEATURES/FEATURES-1 -->
+        <div class="c-content-box c-size-md ahorro-inteligente">
+            <div class="container">
+                <div class="row col-md-6">
+                    <h2>La manera intelgente de ahorrar</h2>
+                    <p></p>
+                </div>
+            </div>
+        </div>
 <!-- BEGIN: Herramienta -->
 <div ng-app="fondoDeAhorro" id="fondoDeAhorro">
-    <div ng-controller="FondoAhorroController as vm" class="c-content-box c-size-md c-bg-white">
+    <div id="herramienta" ng-controller="FondoAhorroController as vm" class="c-content-box c-size-md c-bg-white">
         <div class="row row-restore saving-param">
 
             <div class="col-md-4 col-sm-6 col-xs-12">
@@ -321,171 +319,60 @@ Follow: http://www.twitter.com/themehats
             </div>
 
         </div> <!-- .row -->
-<!--         <div class="c-content-box c-size-md c-bg-white">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 c-bg-white" style="padding-top:40px">
-                        <div class="col-md-4 c-bg-white">
-                            <form id="buscarEmpleado" class="frontend" onchange="reqListener(this)">
-                                <label for="monthly_cash">Monthly Cash:</label>
-                                <input id="monthly_cash" name="monthly_cash" type="text" />
-                                <label for="years">Years:</label>
-                                <input name="years" type="text" />
-                                <label for="risk">Risk:</label>
-                                <p>//low, medium, high</p>
-                                <input name="risk" type="text" />
-                                <label>Result:</label>
-                                <p id="comission_text">hello</p>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
-        <!-- BEGIN: Herramienta -->
-
-        <!-- Emilio -->
-<!--         <div ng-app="fondoDeAhorro">
-            <div ng-controller="FondoAhorroController as vm" class="c-content-box c-size-md c-bg-white">
-                <div class="container">
-                    <div class="row">
-                        <div class="c-bg-white" style="padding-top:40px">
-                            <div class="col-md-4 container--padding">
-                                <div class="c-container c-bg-green c-bg-img-bottom-right">
-                                    <div class="container">
-                                        <div class="c-content-title-1 c-inverse">
-                                            <h3 class="c-font-uppercase c-font-bold" style="color:white;">Paga menos con tu crédito hipotecario</h3>
-                                            <div class="c-line-left"></div>
-                                            <div class="row">
-                                                <p class="c-font-lowercase" style="color:white;">Aportacion mensual</p>
-                                                <div class="col-sm-8" watch="active">
-                                                    <slider ng-model="vm.aportacionMensual" max="vm.aportacionOptions.max" min="vm.aportacionOptions.min" step="vm.aportacionOptions.step" value="vm.aportacionMensual" >
-                                                    </slider>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <button type="button" class="btn btn-default">$ {{vm.aportacionMensual}}</button>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <p class="c-font-lowercase" style="color:white;">Años de ahorro</p>
-                                                <div class="col-sm-8">
-                                                    <slider ng-model="vm.aniosAhorro" min="vm.ahorroOptions.min" step="vm.ahorroOptions.step" max="vm.ahorroOptions.max" value="vm.ahorroOptions.value" onmouseup="update(aportacionMensual,vm.ahorroOptions,vm.ahorro)">
-                                                    </slider>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <button type="button" class="btn btn-default">$ {{vm.aniosAhorro}}</button>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <p class="c-font-lowercase" style="color:white;">Riesgo del portafolio</p>
-                                                <div class="col-sm-8">
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <select ng-model="vm.risk" class="selectpicker col-sm-8">
-                                                        <option>Alta</option>
-                                                        <option>Media</option>
-                                                        <option>Baja</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <p style="color:white;">Quieres hacer deducible tu ahorro?</p>
-                                                <div class="col-sm-8">
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <select ng-model="vm.ahorro" class="selectpicker col-sm-8">
-                                                        <option>Si</option>
-                                                        <option>No</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>`
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 container--padding" style="background-color: #00C851">
-                                <div class="container" style="color: white; text-align: justify; text-align-last: center;">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-                                    <br>
-                                    <h3>25,000</h3>
-                                    <p>blablal</p>
-                                    <p>blablalbalballb</p>
-                                    <p>blalbalbla</p>
-                                    <h2>2,500</h2>
-                                    <br>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <button type="button" data-toggle="modal" data-target="#myModal">Start pension</button>
-                                </div>
-                            </div>
-                            <div class="col-md-4 " style="background-color: green">
-                                <div id="container" >
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="c-content-box c-size-md c-bg-white">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12 c-bg-white" style="padding-top:40px">
-                                <div class="col-md-4 c-bg-white">
-                                    <form id="buscarEmpleado" class="frontend" onchange="reqListener(this)">
-                                        <label for="monthly_cash">Monthly Cash:</label>
-                                        <input id="monthly_cash" name="monthly_cash" type="text" />
-                                        <label for="years">Years:</label>
-                                        <input name="years" type="text" />
-                                        <label for="risk">Risk:</label>
-                                        <p>//low, medium, high</p>
-                                        <input name="risk" type="text" />
-                                        <label>Result:</label>
-                                        <p id="comission_text">hello</p>
-                                    </form>
-                                </div>
-                                <div class="col-md-4 c-bg-white">
-                                    <form method="post" action="controllers/insertar_lead.php">
-                                        <fieldset>
-                                            <label for="name">Name:</label>
-                                            <input name="name" type="text"/>
-                                            <label for="phone">Phone:</label>
-                                            <input name="phone" type="number"/>
-                                            <label for="postal_code">Postal Code:</label>
-                                            <input name="postal_code" type="number"/>
-                                            <label for="email">Email:</label>
-                                            <input id="email" name="email" type="email"/>
-                                            <label for="taxes">Taxes:</label>
-                                            <input name="taxes" type="checkbox"/>
-                                            <input class="form_button" type="submit" value="Enviar">
-                                            <input class="form_button" type="reset" value="Borrar Todo">
-                                        </fieldset>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- /Emilio -->
-
     </div> <!-- CONTROLLER -->
 </div>
 <!-- APP -->
 <!-- END: Herramienta -->
+
+    <div class="container-fluid porque-vinik c-center">
+            <h2 class="porque-vinik-title">¿Por qué escoger VINIK?</h2>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="my-container-base container-emilio">
+                </div> <!-- .container-customize -->
+            </div> <!-- .col-md-4 -->
+
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="my-container-base container-emilio">
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="my-container-base container-emilio">
+
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="my-container-base container-emilio">
+
+                </div>
+            </div>
+    </div>
         <!-- BEGIN: CONTENT/BARS/BAR-6 -->
-        <div class="c-content-box c-size-md">
+        <div class="c-content-box empezar-content">
             <div class="container">
-                <div class="c-content-bar-1 c-opt-1 c-bordered c-theme-border c-shadow">
-                    <h3 class="c-font-uppercase c-font-bold">JANGO is optimized to every development</h3>
-                    <p class="c-font-uppercase"> JANGO is build to completely support your web projects by
-                        <br> providing
-                        <strong>Ultra Flexibility</strong>,
-                        <strong>Increased productivity</strong> and
-                        <strong>Top quality</strong>
-                    </p>
-                    <button type="button" class="btn btn-md c-btn-square c-btn-border-2x c-btn-dark c-btn-uppercase c-btn-bold c-margin-r-40">Explore</button>
-                    <a href="http://themeforest.net/item/jango-responsive-multipurpose-html5-template/11987314" class="btn btn-md c-btn-square c-theme-btn c-btn-uppercase c-btn-bold">Purchase</a>
+                <div class="row col-md-12 c-center">
+                    <div class="container-fluid empezar c-center">
+                        <h2 class="empezar-title">¿Qué necesitas para empezar?</h2>
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="my-container-base container-emilio">
+                            </div> <!-- .container-customize -->
+                        </div> <!-- .col-md-4 -->
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="my-container-base container-emilio">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="my-container-base container-emilio">
+
+                            </div>
+                        </div>
+                    </div>
+                        
+                </div>
+                <div class="col-md-12 c-center">
+                    <a id="empezar-button" href="#" class="c-action-btn btn btn-lg c-btn-square c-theme-btn c-btn-bold c-btn-uppercase">Learn More</a>
                 </div>
             </div>
         </div>
@@ -1089,35 +976,20 @@ Follow: http://www.twitter.com/themehats
         var cont = $('.c-layout-revo-slider .tp-banner-container');
         var height = (App.getViewPort().width < App.getBreakpoint('md') ? 400 : 620);
         var api = slider.show().revolution({
+            responsiveLevels: [1240, 1024, 778, 480],
+            /* [DESKTOP, LAPTOP, TABLET, SMARTPHONE] */
+            gridwidth:[1240, 1024, 778, 480],
+            /* [DESKTOP, LAPTOP, TABLET, SMARTPHONE] */
+            gridheight:[400, 768, 960, 500],
             sliderType: "standard",
-            sliderLayout: "fullwidth",
-            delay: 15000,
-            autoHeight: 'off',
-            gridheight: 500,
+            sliderLayout: "auto",
+            delay: 800,
+            autoHeight: 'on',
             navigation: {
                 keyboardNavigation: "off",
                 keyboard_direction: "horizontal",
                 mouseScrollNavigation: "off",
                 onHoverStop: "on",
-                arrows: {
-                    style: "circle",
-                    enable: true,
-                    hide_onmobile: false,
-                    hide_onleave: false,
-                    tmp: '',
-                    left: {
-                        h_align: "left",
-                        v_align: "center",
-                        h_offset: 30,
-                        v_offset: 0
-                    },
-                    right: {
-                        h_align: "right",
-                        v_align: "center",
-                        h_offset: 30,
-                        v_offset: 0
-                    }
-                },
                 touch: {
                     touchenabled: "on",
                     swipe_threshold: 75,
