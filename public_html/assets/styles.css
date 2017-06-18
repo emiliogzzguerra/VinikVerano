@@ -30,13 +30,14 @@
 	border-bottom-style: solid;
 }
 
-.post-footer{
-	padding-top: 10px;
+.pre-footer{
+	padding-top: 20px;
 	background-color: rgb(247,247,247);
-	border-bottom: 3px solid;
-	border-bottom-color: #69BE28;
-	border-bottom-width: 3px;
-	border-bottom-style: solid;
+	padding-bottom: 20px;
+}
+
+.inside-footer{
+	background-color: white;
 }
 
 .porque-vinik-title{
@@ -67,11 +68,12 @@
 }
 
 .empezar{
-	background: #ffffff no-repeat fixed center;
+	color: white;
 	padding-bottom: 30px;
 }
 
 .empezar-content{
+	background-color: #0065BD;
 	padding-top: 0px;
 	padding-bottom: 30px;
 }
