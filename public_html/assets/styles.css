@@ -29,6 +29,16 @@
 	border-bottom-width: 3px;
 	border-bottom-style: solid;
 }
+
+.post-footer{
+	padding-top: 10px;
+	background-color: rgb(247,247,247);
+	border-bottom: 3px solid;
+	border-bottom-color: #69BE28;
+	border-bottom-width: 3px;
+	border-bottom-style: solid;
+}
+
 .porque-vinik-title{
 	color:white;
 	font-family:'Source Sans Pro', sans-serif;

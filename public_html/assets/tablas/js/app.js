@@ -48,11 +48,11 @@ function FondoAhorroController(VinikService, $timeout){
 
     // Results
     vm.results = {
-        aportacionesTotales: 360000,
-        interesGanado: 244400,
-        costoAdministracion: -72800,
+        aportacionesTotales: 0,
+        interesGanado: 0,
+        costoAdministracion: 0,
         ahorroEsperado: 0,
-        devolucionesFiscales: 108000,
+        devolucionesFiscales: 0,
         ahorroAcumulado: 0,
         ahorroAcumuladoFixed: 0
     };
