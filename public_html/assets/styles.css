@@ -1,3 +1,52 @@
+.pasos-setup{
+	background-color: #0065BD;
+	padding-top: 0px;
+	padding-bottom: 30px;
+	border-bottom: 2px solid;
+	border-bottom-color: #69BE28;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	display: inline-block;
+}
+
+.animacion{
+	order:1;
+}
+
+
+.pasos{
+	order:2;
+}
+
+.contactanos{
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+.icons{
+	margin-bottom: 15px;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+.line-break{
+	border-bottom: 2px solid;
+	border-bottom-color: gray;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+
+	margin: auto;
+}
+
+.left-footer{
+	margin-top:15px;
+}
+
+.socios{
+	padding-top:30px;
+	padding-bottom:30px;
+}
+
 .links{
 	color: white;
 	text-decoration: underline;
@@ -34,6 +83,8 @@
 	padding-top: 20px;
 	background-color: rgb(247,247,247);
 	padding-bottom: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 .inside-footer{
@@ -76,6 +127,10 @@
 	background-color: #0065BD;
 	padding-top: 0px;
 	padding-bottom: 30px;
+	border-bottom: 2px solid;
+	border-bottom-color: #69BE28;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
 }
 
 .container-base {
@@ -196,6 +251,11 @@
 
 /* Bootstrap overrides */
 
+@media screen and (max-width: 531px) {
+    .pasos-setup { display: flex; flex-flow: column; }
+    .animacion { order: 2; }
+    .pasos { order: 1;  }
+}
 
 @media screen and (max-width: 767px) {
 	.container-base {

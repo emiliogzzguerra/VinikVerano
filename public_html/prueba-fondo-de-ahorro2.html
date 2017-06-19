@@ -194,22 +194,27 @@ Follow: http://www.twitter.com/themehats
         </section>
         <!-- END: LAYOUT/SLIDERS/REVO-SLIDER-4 -->
         <!-- BEGIN: CONTENT/FEATURES/FEATURES-1 -->
-        <div class="c-content-box c-size-md c-bg-white">
+        <div class="c-content-box c-size-md pasos-setup">
             <div class="container">
-                <div class="row col-md-6">
+                <div class="row col-md-12 col-sm-12">
+                    <div class="c-content-title-1">
+                        <h3 class="c-center c-font-white">Ahorrar núnca había sido tan fácil</h3>
+                    </div>
+                </div>
+                <div class="row col-md-6 col-sm-12 animacion">
                     <img  class="img-responsive" style="max-height: 420px;" src="/assets2/base/img/simple-phone.png">
                 </div>
-                <div class="row col-md-6">
-                    <div class="c-content-feature-1 wow animate fadeInUp">
+                <div class="row col-md-6 col-sm-12 pasos">
+                    <div class="c-content-feature-1">
                         <h3 class="c-font-uppercase c-font-bold">Fully responsive</h3>
                         <p class="c-font-thin">Beautiful cinematic designs optimized for all screen sizes and types. Compatible with Retina high pixel density displays.</p>
                     </div>
-                    <div class="c-content-feature-1 wow animate fadeInUp" data-wow-delay="0.2s">
+                    <div class="c-content-feature-1">
                         <h3 class="c-font-uppercase c-font-bold">Visual & Pragmatic</h3>
                         <p class="c-font-thin">Featuring trending modern web standards.
                             <br/>Clean and easy framework design for worry and hassle free customizations.</p>
                     </div>
-                    <div class="c-content-feature-1 wow animate fadeInUp" data-wow-delay="0.4s">
+                    <div class="c-content-feature-1">
                         <h3 class="c-font-uppercase c-font-bold">Dedicated Support</h3>
                         <p class="c-font-thin">Quick response with regular updates.
                             <br/>Each update will include great new features and enhancements for free.</p>
@@ -381,17 +386,16 @@ Follow: http://www.twitter.com/themehats
 
         
         <!-- BEGIN: CONTENT/SLIDERS/CLIENT-LOGOS-2 -->
-        <div class="c-content-box c-size-md c-bg-white">
+        <div class="c-content-box c-bg-white socios c-center">
             <div class="container">
                 <!-- Begin: Testimonals 1 component -->
                 <div class="c-content-client-logos-slider-1  c-bordered">
                     <!-- Begin: Title 1 component -->
                     <div class="c-content-title-1">
-                        <h3 class="c-center c-font-uppercase c-font-bold">Happy Customers</h3>
-                        <div class="c-line-center c-theme-bg"></div>
+                        <h3 class="c-center ">Nuestros socios</h3>
                     </div>
                     <!-- End-->
-                    <div class="col-md-6 col-sm-12 c-col">
+                    <div class="col-md-12 col-sm-12 c-col">
                         <div class="your-class">
                           <div>
                             <img src="../assets2/base/img/piggyBank.png"/>
@@ -443,32 +447,18 @@ Follow: http://www.twitter.com/themehats
             <div class="container">
                 <div class="row inside-footer">
                     <div class="col-md-6">
-                        <div class="c-container c-first">
-                            <div class="c-content-title-1">
-                                <h3 class="c-font-uppercase c-font-bold c-font-white">JAN
-                                        <span class="c-theme-font">GO</span>
-                                    </h3>
-                                <div class="c-line-left hide"></div>
-                                <p class="c-text"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, s ed elit diam nonummy ad minim veniam quis nostrud exerci et tation diam.</p>
+                        <div class="c-container left-footer">
+                            <a href="#" class="icons socicon-btn socicon-btn-circle socicon-solid c-bg-grey-1 c-font-grey-2 c-theme-on-hover socicon-facebook tooltips" data-original-title="Facebook" data-container="body"></a>
+                            <a href="#" class="icons socicon-btn socicon-btn-circle socicon-solid c-bg-grey-1 c-font-grey-2 c-theme-on-hover socicon-linkedin tooltips" data-original-title="Facebook" data-container="body"></a>
+                            <div class="line-break"></div>
+                            <div class="contactanos">
+                                <h1>Contáctanos</h1>
+                                <h4>+55 5305 3360</h4>
                             </div>
-                            <ul class="c-links">
-                                <li>
-                                    <a href="#">Home</a>
-                                </li>
-                                <li>
-                                    <a href="#">About</a>
-                                </li>
-                                <li>
-                                    <a href="#">Terms</a>
-                                </li>
-                                <li>
-                                    <a href="#">Contact</a>
-                                </li>
-                            </ul>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="c-container">
+                        <div class="c-container  c-first">
                             <div class="c-content-title-1">
                                 <h3 class="c-font-uppercase c-font-bold c-font-white">Latest Posts</h3>
                                 <div class="c-line-left hide"></div>
@@ -576,6 +566,7 @@ Follow: http://www.twitter.com/themehats
         infinite: true,
         slidesToShow: 5,
         slidesToScroll: 1,
+        centerMode: true,
         responsive: [
         {
           breakpoint: 1024,
@@ -583,21 +574,23 @@ Follow: http://www.twitter.com/themehats
             slidesToShow: 5,
             slidesToScroll: 2,
             infinite: true,
-            dots: true
+            centerMode: true
           }
         },
         {
           breakpoint: 600,
           settings: {
             slidesToShow: 3,
-            slidesToScroll: 2
+            slidesToScroll: 2,
+            centerMode: true
           }
         },
         {
           breakpoint: 480,
           settings: {
             slidesToShow: 2,
-            slidesToScroll: 1
+            slidesToScroll: 1,
+            centerMode: true
           }
         }
         // You can unslick at a given breakpoint now by adding:
