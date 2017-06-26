@@ -119,6 +119,14 @@ margin-top:-15px;
   margin-top: 50px;
 }
 
+.gif-desk {
+  display: none;
+}
+.gif-tablet {
+  display: none;
+}
+
+
 @media (min-width: 415px) {
 
   .c-desktop-logo,.c-desktop-logo-inverse,.c-mobile-logo{
@@ -148,7 +156,6 @@ margin-top:-15px;
     padding-left: 10px !important;
   }
 
-
 }
 
 
@@ -169,7 +176,17 @@ body {
     margin-top: 50px;
   }
   
+  .gif-desk {
+    display: none;
+  }
 
+  .gif-tablet {
+    display: block;
+  }
+
+  .gif-mobile {
+    display: none;
+  }
 
 }
 
@@ -193,6 +210,18 @@ body {
     margin-top:-13px;
   }
 
+  .gif-desk {
+    display: block;
+  }
+
+  .gif-tablet {
+    display: none;
+  }
+
+  .gif-mobile {
+    display: none;
+  }
+
 }
 
 @media (min-width: 991px) {
@@ -209,6 +238,14 @@ body {
   .title {
       font-size: 45px;
       line-height: 70px;
+  }
+
+  .gif-tablet {
+    display: none;
+  }
+  
+  .gif-mobile {
+    display: none;
   }
 
 }
