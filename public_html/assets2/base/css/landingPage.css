@@ -130,6 +130,10 @@ margin-top:-15px;
   height: 250px;
 }
 
+.message-action {
+  text-align: center;
+}
+
 @media (min-width: 415px) {
 
   .c-desktop-logo,.c-desktop-logo-inverse,.c-mobile-logo{
@@ -262,6 +266,10 @@ body {
 
   .hide-container-pension {
     display: block !important;
+  }
+
+  .message-action {
+    display: none;
   }
 
   .container-base {
