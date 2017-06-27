@@ -188,10 +188,10 @@ var colors = {
 };
 var myChart = Highcharts.chart('container', {
     chart: {
-        height: 600,
         type: 'waterfall',
         inverted: true,
-        backgroundColor: colors.bg
+        backgroundColor: colors.bg,
+        marginLeft: 90
     },
 
     title: {
@@ -205,8 +205,10 @@ var myChart = Highcharts.chart('container', {
         type: 'category',
         labels: {
          style: {
-            color: colors.text
-         }
+            color: colors.text,
+            // fontSize: '18px'
+         },
+         useHTML : true
       }
     },
 
@@ -220,7 +222,8 @@ var myChart = Highcharts.chart('container', {
         gridLineColor: colors.lines,
         labels: {
          style: {
-            color: colors.text
+            color: colors.text,
+            fontSize: '18px'
          }
       }
     },
@@ -265,9 +268,20 @@ var myChart = Highcharts.chart('container', {
             },
             style: {
                 fontWeight: 'bold',
-                borderColor: '#F00'
+                borderColor: '#F00',
+                fontSize: '18px'
             }
         },
         pointPadding: 0
     }]
+});
+
+
+$(window).resize(function() 
+{    
+    myChart.setSize(
+       $('#container').width(), 
+       $('#container').height(),
+       false
+    );   
 });

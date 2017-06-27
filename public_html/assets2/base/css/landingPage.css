@@ -126,6 +126,9 @@ margin-top:-15px;
   display: none;
 }
 
+.chart-waterfall {
+  height: 250px;
+}
 
 @media (min-width: 415px) {
 
@@ -154,6 +157,10 @@ margin-top:-15px;
   .container-fluid{
     padding-right: 10px !important;
     padding-left: 10px !important;
+  }
+
+  .chart-waterfall {
+    height: 350px;
   }
 
 }
@@ -201,6 +208,7 @@ body {
       font-size: 32px;
       line-height: 50px;
   }
+
 }
 
 /* Larger than tablet */
@@ -220,6 +228,10 @@ body {
 
   .gif-mobile {
     display: none;
+  }
+
+  .container-base {
+    height: 500px !important;
   }
 
 }
@@ -246,6 +258,14 @@ body {
   
   .gif-mobile {
     display: none;
+  }
+
+  .hide-container-pension {
+    display: block !important;
+  }
+
+  .container-base {
+    height: 500px !important;
   }
 
 }

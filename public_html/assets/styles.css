@@ -164,9 +164,17 @@
 }
 
 .container-customize {
-	padding: 30px;
+	padding: 5px 10px 0 10px;
+}
+
+.container-default {
 	color: #333;
 	background-color: #DDD;
+}
+
+.container-ahorro {
+	color: #F0F0F0;
+	background-color: #02AE4E;
 }
 
 .container-emilio {
@@ -189,6 +197,11 @@
 	color: #FFF;
 }
 
+.hide-container-pension {
+	display: none;
+	background-color: #0E7970;
+}
+
 .container-chart {
 	padding: 10px;
 	color: #FFF;
@@ -206,7 +219,7 @@
 }
 
 .c-line-left {
-	margin: 0px 0 20px;
+	margin: 0px 0 0px;
 	height: 3px;
 	background-color: #aaa;
 }
@@ -230,6 +243,10 @@
 	margin: 0;
 }
 
+.pad-bttm-0 {
+	padding-bottom: 0;
+}
+
 /* Bootstrap overrides */
 #fondoDeAhorro [class*="col-"] {
 	padding: 10px;
@@ -246,10 +263,30 @@
 }
 
 .saving-param {
-	margin-bottom: 30px;
+	margin-bottom: 0px;
+}
+
+.saving-param p {
+	font-size: 14px;
+}
+
+.saving-param .btn {
+	height: 22px;
+	padding: 2px 0;
+}
+
+.saving-param .slider {
+	padding: 0 10px !important;
 }
 
 /* Bootstrap overrides */
+
+
+@media (max-width: 415px) {
+	.no-bttm-padd {
+		padding-bottom: 0 !important;
+	}
+}
 
 @media screen and (max-width: 531px) {
     .pasos-setup { display: flex; flex-flow: column; }
@@ -274,7 +311,52 @@
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
 	.container-chart {
-		height: initial;
+		/*height: initial;*/
+	}
+
+	.container-customize {
+		padding: 5px 10px 0 10px;
+	}
+
+	.saving-param {
+		margin-bottom: 15px;
+	}
+
+	.saving-param p {
+		font-size: 14px;
+	}
+
+	.saving-param .btn, .saving-param select {
+		height: 35px;
+		padding: 5px !important;
+	}
+
+	.saving-param .slider {
+		padding: 10px 10px !important;
+	}
+
+}
+
+
+@media screen (min-width: 991px) {
+	
+	.saving-param {
+		margin-bottom: 30px;
+	}
+
+	.saving-param p {
+		font-size: 15px;
+	}
+
+	.c-line-left {
+	    margin: 0px 0 20px;
+	    height: 3px;
+	    background-color: #aaa;
+	}
+
+	.hide-container-pension {
+		display: block;
 	}
 }
+
 /* ---------- */
