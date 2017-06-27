@@ -53,6 +53,7 @@ Follow: http://www.twitter.com/themehats
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" type="text/css" href="../assets2/plugins/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="../assets2/plugins/slick/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="../assets/colors.css"/>
 </head>
 
 <body class="c-layout-header-fixed c-layout-header-mobile-fixed" ng-app="fondoDeAhorro">
@@ -104,34 +105,34 @@ Follow: http://www.twitter.com/themehats
                     <h4 class="modal-title" id="myModalLabel">Contact info</h4>
                 </div>
                 <div class="modal-body">
-                    <form name="contactForm" class="form-horizontal">
+                    <form name="contactForm" class="form-horizontal" novalidate>
                         <div class="form-group">
                             <label for="Name" class="col-md-4 control-label">Name</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control  c-square c-theme" id="Name" ng-model="vm.name" data-toggle="tooltip" title="Este campo es requerido" required>
+                                <input type="text" class="form-control  c-square" id="Name" ng-model="vm.name" data-toggle="tooltip" title="Este campo es requerido" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="Name" class="col-md-4 control-label">Phone</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control  c-square c-theme" id="Name" ng-model="vm.phone" data-toggle="tooltip" title="Este campo es requerido" required>
+                                <input type="text" class="form-control  c-square" id="Name" ng-model="vm.phone" data-toggle="tooltip" title="Este campo es requerido | Sólo números ej.8104566852" ng-pattern="/\d+/" maxlength="15" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="Name" class="col-md-4 control-label">Postal Code</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control  c-square c-theme" ng-model="vm.postalCode" id="Name">
+                                <input type="text" class="form-control  c-square" ng-model="vm.postalCode" id="Name" ng-pattern="/\d+/" maxlength="10" data-toggle="tooltip" title="Este campo solo debe contener números">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="Name" class="col-md-4 control-label">Email</label>
                             <div class="col-md-6">
-                                <input type="email" class="form-control  c-square c-theme" id="Name" ng-model="vm.email" data-toggle="tooltip" title="Este campo es requerido" required>
+                                <input type="email" class="form-control  c-square" id="Name" ng-model="vm.email" data-toggle="tooltip" title="Este campo es requerido | Debe ingresar un email válido" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-4 control-label">Aceptar <a href="#">términos y condiciones</a></label>
-                            <input type="checkbox" id="terms" class="regular-checkbox" value="" ng-model="vm.terms" required><label for="terms" data-toggle="tooltip" title="Debe aceptar los términos" data-placement="right"></label>
+                            <input type="checkbox" id="terms" class="regular-checkbox" value="" ng-model="vm.terms" required><label for="terms" data-toggle="tooltip" title="Debe aceptar los términos" data-placement="bottom"></label>
                         </div>
                     </form>
                 </div>
@@ -172,19 +173,26 @@ Follow: http://www.twitter.com/themehats
                 </div>
                 <div class="col-md-6 col-sm-12 col-xs-12 col-md-push-6 pasos">
                     <div class="c-content-feature-1">
-                        <img src="/assets2/base/img/1.png" style="max-height: 40px; float: left; margin-right:5px;">
-                        <h3 class="c-font-bold c-font-white">Define tus metas de ahorro</h3>
-                        <p class="c-font-thin c-font-white">Define tus metas de ahorro personales y selecciona el nivel de riesgo que estás dispuesto a tomar</p>
+                        <img src="/assets2/base/img/1.png" class="feature-image">
+                        <div class="feature-info">
+                            <h3 class="c-font-bold c-font-white">Define tus metas de ahorro</h3>
+                            <p class="c-font-thin c-font-white">Define tus metas de ahorro personales y selecciona el nivel de riesgo que estás dispuesto a tomar</p>
+                        </div>
+                        
                     </div>
                     <div class="c-content-feature-1">
-                        <img src="/assets2/base/img/2.png" style="max-height: 40px; float: left; margin-right:5px;">
-                        <h3 class="c-font-bold c-font-white">Obtén el mejor fondo de ahorro para ti</h3>
-                        <p class="c-font-thin c-font-white">Con VINIK podrás comparar los mejores fondos de ahorro del mercado y elegir el mejor para ti</p>
+                        <img src="/assets2/base/img/2.png" class="feature-image">
+                        <div class="feature-info">
+                            <h3 class="c-font-bold c-font-white">Obtén el mejor fondo de ahorro para ti</h3>
+                            <p class="c-font-thin c-font-white">Con VINIK podrás comparar los mejores fondos de ahorro del mercado y elegir el mejor para ti</p>  
+                        </div>
                     </div>
                     <div class="c-content-feature-1">
-                        <img src="/assets2/base/img/3.png" style="max-height: 40px; float: left; margin-right:5px;">
-                        <h3 class="c-font-bold c-font-white">Relájate y disfruta la vida</h3>
-                        <p class="c-font-thin c-font-white">Sé feliz, en VINIK te tenemos cubierto</p>
+                        <img src="/assets2/base/img/3.png" class="feature-image">
+                        <div class="feature-info">
+                            <h3 class="c-font-bold c-font-white">Relájate y disfruta la vida</h3>
+                            <p class="c-font-thin c-font-white">Sé feliz, en VINIK te tenemos cubierto</p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-12 col-xs-12 col-md-pull-6 animacion gif-desk">
@@ -216,7 +224,7 @@ Follow: http://www.twitter.com/themehats
 <!-- BEGIN: Herramienta -->
 <div  id="fondoDeAhorro">
     <div id="herramienta" ng-controller="FondoAhorroController as vm" class="c-content-box c-size-md c-bg-white">
-        <div class="row col-md-12 col-sm-12 c-center">
+        <div class="row col-md-12 col-sm-12 c-center full-width">
             <div class="c-content-title-1">
                 <h3 class="c-center">Crea tu plan de ahorro personalizado</h3>
             </div>
@@ -258,7 +266,7 @@ Follow: http://www.twitter.com/themehats
                         <div class="col-md-12 col-sm-12 col-xs-6 no-ver-padd">
                     <div class="row row-restore saving-param">
                         <div class="col-md-8 col-sm-8 col-xs-12 no-ver-padd">
-                          <p class="c-font-lowercase no-margins">Riesgo del portafolio</p>
+                          <p class="c-font-lowercase no-margins equal-line-height">Riesgo del portafolio</p>
                         </div>
                         <!-- <div class="col-md-4 col-sm-4 col-xs-12"> -->
                         <div class="col-md-4 col-sm-4 col-xs-12">
@@ -290,7 +298,7 @@ Follow: http://www.twitter.com/themehats
             </div> <!-- .col-md-4 -->
 
             <div class="col-md-4 col-sm-6 col-xs-12 hide-container-pension">
-                <div class="container-base container-pension">
+                <div class="container-base container-pension container-pension-adjust">
                     <div class="container">
                         <p>Ahorro Acumulado</p>
                         <h3>$ {{vm.results.ahorroAcumuladoFixed}}</h3>
@@ -328,7 +336,7 @@ Follow: http://www.twitter.com/themehats
 <!-- APP -->
 <!-- END: Herramienta -->
 
-    <div class="container-fluid porque-vinik c-center">
+    <div class="container-fluid porque-vinik c-center fourth-color">
             <h2 class="porque-vinik-title">¿Por qué escoger VINIK?</h2>
             <div class="col-md-3 col-sm-6 col-xs-12">
                 <div class="my-container-base container-emilio">
@@ -382,7 +390,7 @@ Follow: http://www.twitter.com/themehats
         </div>
         <!-- END: CONTENT/BARS/BAR-6 -->
         <!-- BEGIN: CONTENT/SLIDERS/CLIENT-LOGOS-2 -->
-        <div class="c-content-box c-bg-blue-1 c-center" style="padding-top: 60px;padding-bottom: 60px;">
+        <div class="c-content-box secondary-color c-center" style="padding-top: 60px;padding-bottom: 60px;">
             <div class="container">
                 <!-- Begin: Testimonals 1 component -->
                 <div>
@@ -474,7 +482,7 @@ Follow: http://www.twitter.com/themehats
                     <div class="col-md-6">
                         <div class="c-container  c-first">
                             <div class="c-content-title-1">
-                                <h3 class="c-font-uppercase c-font-bold c-font-white">Latest Posts</h3>
+                                <h3 class="c-font-uppercase c-font-bold">Latest Posts</h3>
                                 <div class="c-line-left hide"></div>
                             </div>
                             <div class="c-blog">

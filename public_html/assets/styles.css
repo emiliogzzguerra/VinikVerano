@@ -1,9 +1,6 @@
 .pasos-setup{
-	background-color: #0065BD;
 	padding-top: 0px;
 	padding-bottom: 30px;
-	border-bottom: 2px solid;
-	border-bottom-color: #69BE28;
 	border-bottom-width: 2px;
 	border-bottom-style: solid;
 	display: inline-block;
@@ -47,8 +44,7 @@
 	padding-bottom:30px;
 }
 
-.links{
-	color: white;
+.links {
 	text-decoration: underline;
 }
 
@@ -65,34 +61,38 @@
 
 /* NEW STYLES */
 
-/* Se restan 40px para los margin
- * de en medio. Y otros 40px para
- * los de los lados de afuera.
- */
+.feature-image {
+	max-height: 40px; 
+	float: left; 
+	margin-right:5px;
+}
 
-.post-footer{
+.feature-info {
+	margin-left: 45px;
+	margin-bottom: 30px;
+}
+
+.feature-info h3 {
+	font-size: 24px;
+    margin-top: 0;
+}
+
+.post-footer {
 	padding-top: 10px;
-	background-color: #0065BD;
-	border-bottom: 3px solid;
-	border-bottom-color: #69BE28;
 	border-bottom-width: 3px;
 	border-bottom-style: solid;
 }
 
 .pre-footer{
 	padding-top: 20px;
-	background-color: rgb(247,247,247);
 	padding-bottom: 20px;
 	padding-left: 20px;
 	padding-right: 20px;
 }
 
-.inside-footer{
-	background-color: white;
-}
 
-.porque-vinik-title{
-	color:white;
+
+.porque-vinik-title {
 	font-family:'Source Sans Pro', sans-serif;
 	font-size: 2em;
 	margin-top: 30px;
@@ -114,21 +114,16 @@
 	padding-bottom: 0px;
 }
 .porque-vinik{
-	background: #000000 no-repeat fixed center;
 	padding-bottom: 30px;
 }
 
-.empezar{
-	color: white;
+.empezar {
 	padding-bottom: 30px;
 }
 
-.empezar-content{
-	background-color: #0065BD;
+.empezar-content {
 	padding-top: 0px;
 	padding-bottom: 30px;
-	border-bottom: 2px solid;
-	border-bottom-color: #69BE28;
 	border-bottom-width: 2px;
 	border-bottom-style: solid;
 }
@@ -167,55 +162,23 @@
 	padding: 5px 10px 0 10px;
 }
 
-.container-default {
-	color: #333;
-	background-color: #DDD;
-}
-
-.container-ahorro {
-	color: #F0F0F0;
-	background-color: #02AE4E;
-}
-
 .container-emilio {
 	padding: 30px;
 	margin-top: 30px;
 	color: #333;
-	background-color: red;
-}
-
-.container-pension {
-	padding: 30px 5px 0;
-	color: #FFF;
-	background-color: #0E7970;
-	text-align: center;
-}
-
-.container-pension h3,
-.container-pension h2,
-.container-pension small {
-	color: #FFF;
 }
 
 .hide-container-pension {
 	display: none;
-	background-color: #0E7970;
 }
 
 .container-chart {
 	padding: 10px;
-	color: #FFF;
-	background-color: #02AE4E;
-}
-
-.container-chart em {
-	color: #0f3a7f;
 }
 
 .btn-pension {
 	padding: 0px 30px;
 	height: 50px;
-	background-color: #F49F0A;
 }
 
 .c-line-left {
@@ -235,8 +198,7 @@
 }
 
 .input-alt {
-	background-color: #BBB;
-	color: #444;
+	padding: 2px 10px !important;
 }
 
 .no-margins {
@@ -274,14 +236,15 @@
 	font-size: 14px;
 }
 
-.saving-param .btn {
-	height: 22px;
-	padding: 2px 0;
-}
 
 .saving-param .slider {
 	padding: 0 10px !important;
 }
+
+.full-width {
+	width: 100%;
+}
+
 
 label {
 	display: inline;
@@ -410,14 +373,22 @@ label {
 
 input.ng-dirty.ng-invalid,
 input.ng-dirty.ng-invalid:focus,
-form.ng-submitted input.ng-invalid,
 select.ng-dirty.ng-invalid,
 select.ng-dirty.ng-invalid:focus,
-form.ng-submitted select.ng-invalid,
+select.ng-dirty.ng-invalid,
 form.ng-submitted .regular-checkbox.ng-invalid + label {
   border: 1px solid red;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6) !important;
 }
+
+input.ng-dirty.ng-valid,
+input.ng-dirty.ng-valid:focus,
+select.ng-dirty.ng-valid,
+select.ng-dirty.ng-valid:focus,
+select.ng-dirty.ng-valid,
+form.ng-submitted .regular-checkbox.ng-valid + label {
+  border: 1px solid #2bd02b;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 255, 0, 0.6) !important;
 
 
 /* Bootstrap overrides */
@@ -432,7 +403,10 @@ form.ng-submitted .regular-checkbox.ng-invalid + label {
 	.btn-pension {
 		padding: 6px 20px;
 		height: 50px;
-		background-color: #F49F0A;
+	}
+
+	.equal-line-height {
+		line-height: 44.8px;
 	}
 }
 
@@ -499,7 +473,6 @@ form.ng-submitted .regular-checkbox.ng-invalid + label {
 	.c-line-left {
 	    margin: 0px 0 20px;
 	    height: 3px;
-	    background-color: #aaa;
 	}
 
 	.hide-container-pension {

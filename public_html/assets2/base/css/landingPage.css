@@ -31,10 +31,6 @@
 
 /* Note: Try to remove the following lines to see the effect of CSS positioning */
 
-a {
-  color: #0065BD;
-}
-
 #no-background{
   background: transparent;
 }
@@ -43,16 +39,15 @@ a {
   margin-top: -13px;
 }
 
-.c-layout-header.c-layout-header-4{
+
+.c-layout-header.c-layout-header-4 {
   border-top: 3px solid;
-  border-top-color: #0065BD;
   border-top-width: 3px;
   border-top-style: solid;
 }
 
 .c-page-on-scroll.c-layout-header.c-layout-header-4{
   border-top: 3px solid;
-  border-top-color: #0065BD;
   border-top-width: 3px;
   border-top-style: solid;
 }
@@ -73,7 +68,6 @@ a {
     bottom: 1em;
     width: 100%;
     font-size: 1.5em;
-    color:white;
     font-family:'Source Sans Pro', sans-serif;
 }
 
@@ -113,7 +107,6 @@ margin-top:-15px;
 }
 
 .title {
-  color: #FFF;
   font-size: 26px;
   margin: 0 auto;
   width: 80%;

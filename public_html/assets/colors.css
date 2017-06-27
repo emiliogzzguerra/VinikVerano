@@ -1,0 +1,99 @@
+/* COLORES */
+
+
+/* ############## PRIMARY COLOR  ############## */
+.primary-color,
+.pasos-setup,
+.post-footer,
+.empezar-content
+{
+	background-color: #0065BD;
+}
+.c-layout-header.c-layout-header-4,
+.c-page-on-scroll.c-layout-header.c-layout-header-4
+{
+  border-color: #0065BD;
+}
+a {
+	color: #0065BD;
+}
+
+/* ############## SECONDARY COLOR  ############## */
+.secondary-color,
+.c-theme-btn.btn,
+.container-emilio
+{
+    background: #32c5d2;
+}
+.pasos-setup,
+.post-footer,
+.empezar-content
+{
+	border-color: #32c5d2;
+	/*border-color: #69BE28;*/ /* old border color */
+}
+
+/* ############## THIRD COLOR  ############## */ 
+.third-color,
+.container-ahorro,
+.container-chart 
+{
+	background-color: #02AE4E;
+}
+
+/* ############## FORTH COLOR  ############## */ 
+.fourth-color {
+	background-color: #000;
+}
+
+/* ############## LIGHTER COLORS  ############## */
+.title,
+.preguntas,
+.links,
+.porque-vinik,
+.porque-vinik-title,
+.empezar,
+.c-theme-btn.btn,
+.container-emilio,
+.container-ahorro,
+.container-chart 
+.container-pension h3,
+.container-pension h2,
+.container-pension small {
+	color: #FFF;
+}
+.pre-footer,
+.inside-footer {
+	background-color: rgb(247,247,247);
+}
+
+
+/* ############## OTHER COLORS  ############## */
+.container-default {
+	color: #333;
+	background-color: #DDD;
+}
+.input-alt {
+	color: #444;
+	background-color: #BBB;
+}
+.container-pension,
+.hide-container-pension
+{
+	color: #FFF;
+	background-color: #0E7970;
+}
+.container-chart em {
+	color: #0f3a7f;
+}
+.btn-pension {
+	background-color: #F49F0A;
+}
+
+.container-pension-adjust {
+	padding: 30px 5px 0;
+	text-align: center;
+}
+
+
+/* ------------------------------------------- */
