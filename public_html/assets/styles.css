@@ -240,7 +240,11 @@
 }
 
 .no-margins {
-	margin: 0;
+	margin: 0 !important;
+}
+
+.no-padding {
+	padding: 0 !important;
 }
 
 .pad-bttm-0 {
@@ -420,8 +424,15 @@ form.ng-submitted .regular-checkbox.ng-invalid + label {
 
 
 @media (max-width: 415px) {
-	.no-bttm-padd {
+	.no-ver-padd {
+		padding-top: 0 !important;
 		padding-bottom: 0 !important;
+	}
+
+	.btn-pension {
+		padding: 6px 20px;
+		height: 50px;
+		background-color: #F49F0A;
 	}
 }
 
