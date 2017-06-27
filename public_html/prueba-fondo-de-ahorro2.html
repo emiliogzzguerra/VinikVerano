@@ -94,7 +94,7 @@ Follow: http://www.twitter.com/themehats
         </div>
     </header>
     <!-- Modal -->
-    <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" ng-controller="ModalController as vm">
         <div class="modal-dialog">
             <div class="modal-content c-square">
                 <div class="modal-header">
@@ -104,45 +104,40 @@ Follow: http://www.twitter.com/themehats
                     <h4 class="modal-title" id="myModalLabel">Contact info</h4>
                 </div>
                 <div class="modal-body">
-                    <form class="form-horizontal">
+                    <form name="contactForm" class="form-horizontal">
                         <div class="form-group">
                             <label for="Name" class="col-md-4 control-label">Name</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control  c-square c-theme" id="Name">
+                                <input type="text" class="form-control  c-square c-theme" id="Name" ng-model="vm.name" data-toggle="tooltip" title="Este campo es requerido" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="Name" class="col-md-4 control-label">Phone</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control  c-square c-theme" id="Name">
+                                <input type="text" class="form-control  c-square c-theme" id="Name" ng-model="vm.phone" data-toggle="tooltip" title="Este campo es requerido" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="Name" class="col-md-4 control-label">Postal Code</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control  c-square c-theme" id="Name">
+                                <input type="text" class="form-control  c-square c-theme" ng-model="vm.postalCode" id="Name">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="Name" class="col-md-4 control-label">Email</label>
                             <div class="col-md-6">
-                                <input type="email" class="form-control  c-square c-theme" id="Name">
+                                <input type="email" class="form-control  c-square c-theme" id="Name" ng-model="vm.email" data-toggle="tooltip" title="Este campo es requerido" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-4 control-label">Taxes</label>
-                            <div class="col-md-6">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value=""></label>
-                                </div>
-                            </div>
+                            <label class="col-md-4 control-label">Aceptar <a href="#">términos y condiciones</a></label>
+                            <input type="checkbox" id="terms" class="regular-checkbox" value="" ng-model="vm.terms" required><label for="terms" data-toggle="tooltip" title="Debe aceptar los términos" data-placement="right"></label>
                         </div>
                     </form>
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn c-theme-btn c-btn-square c-btn-bold c-btn-uppercase" ng-click="vm.send()">Enviar</button>
+                    <button type="button" class="btn c-theme-btn c-btn-square c-btn-bold c-btn-uppercase" ng-click="vm.send(contactForm)">Enviar</button>
                     <button type="button" class="btn c-theme-btn c-btn-border-2x c-btn-square c-btn-bold c-btn-uppercase" data-dismiss="modal">Borrar todo</button>
                 </div>
             </div>

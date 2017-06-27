@@ -31,6 +31,10 @@
 
 /* Note: Try to remove the following lines to see the effect of CSS positioning */
 
+a {
+  color: #0065BD;
+}
+
 #no-background{
   background: transparent;
 }

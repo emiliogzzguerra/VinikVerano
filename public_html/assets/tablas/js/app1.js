@@ -177,6 +177,26 @@ function FondoAhorroController(VinikService, $timeout){
 }
 app.controller('FondoAhorroController', FondoAhorroController);
 
+ModalController.$inject = ['VinikService', '$timeout'];
+function ModalController(VinikService, $timeout){
+    console.log('ModalController');
+    var vm = this;
+
+    vm.send = send;
+
+    function send(form){
+        if(form.$invalid){
+            console.error('FORM INVALID');
+            form.$setSubmitted();
+        }else {
+            console.log('FORM VALID');
+        }
+    }
+}
+
+app.controller('ModalController', ModalController);
+
+
 // HighCharts
 var colors = {
     text: '#F0F0F0',
@@ -284,4 +304,8 @@ $(window).resize(function()
        $('#container').height(),
        false
     );   
+});
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
 });
