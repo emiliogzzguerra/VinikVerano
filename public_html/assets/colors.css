@@ -25,13 +25,6 @@ a {
 {
     background: #32c5d2;
 }
-.pasos-setup,
-.post-footer,
-.empezar-content
-{
-	border-color: #32c5d2;
-	/*border-color: #69BE28;*/ /* old border color */
-}
 
 /* ############## THIRD COLOR  ############## */ 
 .third-color,
@@ -39,6 +32,13 @@ a {
 .container-chart 
 {
 	background-color: #02AE4E;
+}
+.pasos-setup,
+.post-footer,
+.empezar-content
+{
+	border-color: #02AE4E;
+	/*border-color: #69BE28;*/ /* old border color */
 }
 
 /* ############## FORTH COLOR  ############## */ 
