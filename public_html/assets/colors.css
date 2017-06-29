@@ -19,11 +19,16 @@ a {
 }
 
 /* ############## SECONDARY COLOR  ############## */
-.secondary-color,
+
+.secondary-color
+{
+	background: #69bd28;
+}
+
 .c-theme-btn.btn,
 .container-emilio
 {
-    background: #32c5d2;
+    background: #69bd28;
 }
 
 /* ############## THIRD COLOR  ############## */ 
