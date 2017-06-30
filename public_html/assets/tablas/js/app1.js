@@ -199,8 +199,8 @@ app.controller('ModalController', ModalController);
 
 // HighCharts
 var colors = {
-    text: '#F0F0F0',
-    bg: '#02AE4E',
+    text: '#333',
+    bg: '#F6F4F4',
     lines: '#0EC45E',
     positive: '#EFEBE0',
     sum: '#3477CE',
@@ -215,7 +215,7 @@ var myChart = Highcharts.chart('container', {
     },
 
     title: {
-        text: 'Crecimiento de tu ahorro',
+        text: '',
          style: {
             color: colors.text
          }
@@ -226,7 +226,8 @@ var myChart = Highcharts.chart('container', {
         labels: {
          style: {
             color: colors.text,
-            // fontSize: '18px'
+            fontFamily: "'Source Sans Pro', sans-serif",
+            fontSize: '13px',
          },
          useHTML : true
       }
@@ -236,14 +237,17 @@ var myChart = Highcharts.chart('container', {
         title: {
             text: 'MX',
             style: {
-                color: colors.text
+                color: colors.text,
+                fontFamily: "'Source Sans Pro', sans-serif",
+                fontSize: '13px'
             }
         },
         gridLineColor: colors.lines,
         labels: {
          style: {
             color: colors.text,
-            fontSize: '18px'
+            fontFamily: "'Source Sans Pro', sans-serif",
+            fontSize: '13px'
          }
       }
     },
@@ -287,9 +291,8 @@ var myChart = Highcharts.chart('container', {
                 return Highcharts.numberFormat(this.y / 1000, 0, ',') + 'k';
             },
             style: {
-                fontWeight: 'bold',
-                borderColor: '#F00',
-                fontSize: '18px'
+
+                fontSize: '14px'
             }
         },
         pointPadding: 0

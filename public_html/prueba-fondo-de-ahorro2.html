@@ -83,7 +83,7 @@ Follow: http://www.twitter.com/themehats
                     <nav class="c-mega-menu c-pull-right c-mega-menu-dark c-mega-menu-dark-mobile c-fonts-uppercase c-fonts-bold">
                         <ul class="c-brand c-pull-rightjan" style="list-style-type: none;">
                             <li>
-                                <a id="ahorroBoton" href="#" class="c-action-btn btn btn-md c-btn-square c-theme-btn c-btn-bold c-btn-uppercase">Quiero Ahorrar</a>
+                                <a id="ahorroBoton" href="#" class="c-action-btn btn btn-md c-btn-square c-theme-btn c-btn-bold c-btn-uppercase" data-toggle="modal" data-target="#myModal">Quiero Ahorrar</a>
                             </li>
                         </ul>
                     </nav>
@@ -157,7 +157,7 @@ Follow: http://www.twitter.com/themehats
             <div class="tp-banner-container c-theme">
                 <div class="bg_intro">
                     <div class="title">Empieza a ahorrar con un fondo de ahorro <strong>inteligente</strong></div>
-                    <a href="#" class="btn btn-lg c-btn-square c-theme-btn c-btn-bold c-btn-uppercase btn-cta">Quiero Ahorrar</a>
+                    <a href="#" class="btn btn-lg c-btn-square c-theme-btn c-btn-bold c-btn-uppercase btn-cta" data-toggle="modal" data-target="#myModal">Quiero Ahorrar</a>
                 </div>
             </div>
         </section>
@@ -165,33 +165,33 @@ Follow: http://www.twitter.com/themehats
         <!-- BEGIN: CONTENT/FEATURES/FEATURES-1 -->
         <div class="c-content-box c-size-md pasos-setup">
             <div class="container">
-            <div class="row">
+            <div class="row" style="color: #3F444A">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="c-content-title-1">
-                        <h3 class="c-center c-font-white">Ahorrar núnca había sido tan fácil</h3>
+                        <h3 class="c-center">Ahorrar núnca había sido tan fácil</h3>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-12 col-xs-12 col-md-push-6 pasos">
                     <div class="c-content-feature-1">
                         <img src="/assets2/base/img/1.png" class="feature-image">
                         <div class="feature-info">
-                            <h3 class="c-font-bold c-font-white">Define tus metas de ahorro</h3>
-                            <p class="c-font-thin c-font-white">Define tus metas de ahorro personales y selecciona el nivel de riesgo que estás dispuesto a tomar</p>
+                            <h3 class="c-font-bold">Define tus metas de ahorro</h3>
+                            <p class="c-font-thin">Define tus metas de ahorro personales y selecciona el nivel de riesgo que estás dispuesto a tomar</p>
                         </div>
                         
                     </div>
                     <div class="c-content-feature-1">
                         <img src="/assets2/base/img/2.png" class="feature-image">
                         <div class="feature-info">
-                            <h3 class="c-font-bold c-font-white">Obtén el mejor fondo de ahorro para ti</h3>
-                            <p class="c-font-thin c-font-white">Con VINIK podrás comparar los mejores fondos de ahorro del mercado y elegir el mejor para ti</p>  
+                            <h3 class="c-font-bold">Obtén el mejor fondo de ahorro para ti</h3>
+                            <p class="c-font-thin">Con VINIK podrás comparar los mejores fondos de ahorro del mercado y elegir el mejor para ti</p>  
                         </div>
                     </div>
                     <div class="c-content-feature-1">
                         <img src="/assets2/base/img/3.png" class="feature-image">
                         <div class="feature-info">
-                            <h3 class="c-font-bold c-font-white">Relájate y disfruta la vida</h3>
-                            <p class="c-font-thin c-font-white">Sé feliz, en VINIK te tenemos cubierto</p>
+                            <h3 class="c-font-bold">Relájate y disfruta la vida</h3>
+                            <p class="c-font-thin">Sé feliz, en VINIK te tenemos cubierto</p>
                         </div>
                     </div>
                 </div>
@@ -205,25 +205,25 @@ Follow: http://www.twitter.com/themehats
                     <img  class="img-responsive center-element" style="max-height: 420px;" src="../assets2/base/img/200w_d.gif">
                 </div>
                 <div class="col-md-12 col-sm-12 col-xs-12 c-center">
-                    <a href="#" class="c-action-btn btn btn-lg c-btn-square c-theme-btn c-btn-bold c-btn-uppercase">Learn More</a>
+                    <a id="ahorroBoton" href="#" class="c-action-btn btn btn-md c-btn-square c-theme-btn c-btn-bold c-btn-uppercase" data-toggle="modal" data-target="#myModal">Quiero Ahorrar</a>
                 </div>
                 </div>
             </div>
         </div>
         <!-- END: CONTENT/FEATURES/FEATURES-1 -->
-        <div class="c-content-box c-size-md c-bg-grey-1">
+        <div class="c-content-box c-size-md c-inteligente">
             <div class="container c-center">
                 <div class="row col-md-12">
                     <div class="c-content-title-1">
-                        <h3 class="c-center ">La manera intelgente de ahorrar</h3>
+                        <h3 class="c-center c-font-white">La manera inteligente de ahorrar</h3>
                     </div>
-                    <p>Seleccionamos a los mejores fondos de ahorro, simplificamos su comparación y te asignamos un asesor financiero para que puedas tomar la mejor decisión</p>
+                    <p class="c-contenido-inteligente">Seleccionamos los mejores fondos de ahorro, simplificamos su comparación y te asignamos un asesor financiero para que puedas tomar la mejor decisión</p>
                 </div>
             </div>
         </div>
 <!-- BEGIN: Herramienta -->
 <div  id="fondoDeAhorro">
-    <div id="herramienta" ng-controller="FondoAhorroController as vm" class="c-content-box c-size-md c-bg-white">
+    <div id="herramienta" ng-controller="FondoAhorroController as vm" class="c-content-box c-size-md c-container-default">
         <div class="row col-md-12 col-sm-12 c-center full-width no-margins">
             <div class="c-content-title-1">
                 <h3 class="c-center">Crea tu plan de ahorro personalizado</h3>
@@ -234,9 +234,8 @@ Follow: http://www.twitter.com/themehats
         <div class="row row-restore">
             <div class="col-md-4 col-sm-6 col-xs-12 container-customize container-default no-ver-padd">
                 <div class="container-base container-customize container-default no-ver-padd">
-                    <strong class="c-font-uppercase c-font-bold font-title">Paga menos con tu crédito hipotecario</strong>
-                    <div class="c-line-left"></div>
-
+                    <h2 class="font-title ">Paga menos con tu crédito hipotecario</h2>
+                    <div class="line-break"></div>
 
                     <div class="row row-restore saving-param">
                         <div class="col-sm-8 col-xs-7">
@@ -314,6 +313,8 @@ Follow: http://www.twitter.com/themehats
 
             <div class="col-md-4 col-sm-6 col-xs-12 container-customize container-ahorro">
                 <div class="container-base container-chart container-customize container-ahorro">
+                    <h2 class="font-title">Crecimiento de tu ahorro</h2>
+                    <div class="line-break"></div>
                     <div id="container" class="chart-waterfall">
                         <p>Cargando gráfica...</p>
                     </div>
@@ -339,22 +340,22 @@ Follow: http://www.twitter.com/themehats
     <div class="container-fluid porque-vinik c-center fourth-color">
             <h2 class="porque-vinik-title">¿Por qué escoger VINIK?</h2>
             <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="my-container-base container-emilio">
+                <div class="my-container-base container-porquevinik">
                 </div> <!-- .container-customize -->
             </div> <!-- .col-md-4 -->
 
             <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="my-container-base container-emilio">
+                <div class="my-container-base container-porquevinik">
                 </div>
             </div>
 
             <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="my-container-base container-emilio">
+                <div class="my-container-base container-porquevinik">
 
                 </div>
             </div>
             <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="my-container-base container-emilio">
+                <div class="my-container-base container-porquevinik">
 
                 </div>
             </div>
@@ -364,7 +365,9 @@ Follow: http://www.twitter.com/themehats
             <div class="container">
                 <div class="row col-md-12 c-center">
                     <div class="container-fluid empezar c-center">
-                        <h2 class="empezar-title">¿Qué necesitas para empezar?</h2>
+                        <div class="c-content-title-1" style="margin-top: 30px;margin-bottom: 0px">
+                            <h3 class="c-center ">¿Qué necesitas para empezar?</h3>
+                        </div>
                         <div class="col-md-4 col-sm-6 col-xs-12">
                             <div class="my-container-base container-emilio">
                             </div> <!-- .container-customize -->

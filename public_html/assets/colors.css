@@ -7,8 +7,21 @@
 .post-footer,
 .empezar-content
 {
+	background-color: #F7F7F7;
+	color: #686B6E
+}
+
+.c-inteligente,
+.fourth-color
+{
 	background-color: #0065BD;
 }
+
+.c-contenido-inteligente{
+	color:white;
+	font-size: 1.2em;
+}
+
 .c-layout-header.c-layout-header-4,
 .c-page-on-scroll.c-layout-header.c-layout-header-4
 {
@@ -33,11 +46,11 @@ a {
 
 /* ############## THIRD COLOR  ############## */ 
 .third-color,
-.container-ahorro,
 .container-chart 
 {
 	background-color: #02AE4E;
 }
+
 .pasos-setup,
 .post-footer,
 .empezar-content
@@ -47,15 +60,12 @@ a {
 }
 
 /* ############## FORTH COLOR  ############## */ 
-.fourth-color {
-	background-color: #000;
-}
+
 
 /* ############## LIGHTER COLORS  ############## */
 .title,
 .preguntas,
 .links,
-.porque-vinik,
 .porque-vinik-title,
 .empezar,
 .c-theme-btn.btn,
@@ -74,25 +84,32 @@ a {
 
 
 /* ############## OTHER COLORS  ############## */
-.container-default {
+.container-default,
+.container-ahorro {
 	color: #333;
-	background-color: #DDD;
+	background-color: #f6f4f4;
 }
 .input-alt {
 	color: #444;
 	background-color: #BBB;
 }
-.container-pension,
-.hide-container-pension
+
+.container-pension
 {
 	color: #FFF;
-	background-color: #0E7970;
+}
+
+
+
+.hide-container-pension{
+	background-image: url(./base/img/dark-triangles.png);
+  	background-repeat: repeat;
 }
 .container-chart em {
 	color: #0f3a7f;
 }
 .btn-pension {
-	background-color: #F49F0A;
+	background-color: #69bd28;
 }
 
 .container-pension-adjust {

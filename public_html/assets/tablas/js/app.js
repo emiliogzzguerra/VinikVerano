@@ -187,7 +187,7 @@ app.controller('FondoAhorroController', FondoAhorroController);
 // HighCharts
 var colors = {
     text: '#F0F0F0',
-    bg: '#02AE4E',
+    bg: '#F6F4F4',
     lines: '#0EC45E',
     positive: '#EFEBE0',
     sum: '#3477CE',
