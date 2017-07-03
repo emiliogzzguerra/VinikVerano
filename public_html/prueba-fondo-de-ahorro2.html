@@ -83,7 +83,7 @@ Follow: http://www.twitter.com/themehats
                     <nav class="c-mega-menu c-pull-right c-mega-menu-dark c-mega-menu-dark-mobile c-fonts-uppercase c-fonts-bold">
                         <ul class="c-brand c-pull-rightjan" style="list-style-type: none;">
                             <li>
-                                <a id="ahorroBoton" href="#" class="c-action-btn btn btn-md c-btn-square c-theme-btn c-btn-bold c-btn-uppercase" data-toggle="modal" data-target="#myModal">Quiero Ahorrar</a>
+                                <a id="ahorroBoton" href="#" class="c-action-btn btn btn-md c-btn-square c-theme-btn c-btn-bold c-btn-uppercase" data-toggle="modal" data-target="#myModal">Ahorrar ahora</a>
                             </li>
                         </ul>
                     </nav>
@@ -157,7 +157,6 @@ Follow: http://www.twitter.com/themehats
             <div class="tp-banner-container c-theme">
                 <div class="bg_intro">
                     <div class="title">Empieza a ahorrar con un fondo de ahorro <strong>inteligente</strong></div>
-                    <a href="#" class="btn btn-lg c-btn-square c-theme-btn c-btn-bold c-btn-uppercase btn-cta" data-toggle="modal" data-target="#myModal">Quiero Ahorrar</a>
                 </div>
             </div>
         </section>
@@ -205,7 +204,7 @@ Follow: http://www.twitter.com/themehats
                     <img  class="img-responsive center-element" style="max-height: 420px;" src="../assets2/base/img/200w_d.gif">
                 </div>
                 <div class="col-md-12 col-sm-12 col-xs-12 c-center">
-                    <a id="ahorroBoton" href="#" class="c-action-btn btn btn-md c-btn-square c-theme-btn c-btn-bold c-btn-uppercase" data-toggle="modal" data-target="#myModal">Quiero Ahorrar</a>
+                    <a id="ahorroBoton" href="#" class="c-action-btn btn btn-md c-btn-square c-theme-btn c-btn-bold c-btn-uppercase" data-toggle="modal" data-target="#myModal">Empezar ahora</a>
                 </div>
                 </div>
             </div>
@@ -228,13 +227,13 @@ Follow: http://www.twitter.com/themehats
             <div class="c-content-title-1">
                 <h3 class="c-center">Crea tu plan de ahorro personalizado</h3>
             </div>
-            <p>Selecciona las características de tu fondo de ahorro y proyecta tu ahorro esperado</p>
+            
             <p>Compara cómo ahorrar tu dinero con VINIK puede darte un mayor retorno que dejarlo guardado en una cuenta de cheques o bajo el colchón</p>
         </div>
         <div class="row row-restore">
             <div class="col-md-4 col-sm-6 col-xs-12 container-customize container-default no-ver-padd">
                 <div class="container-base container-customize container-default no-ver-padd">
-                    <h2 class="font-title ">Paga menos con tu crédito hipotecario</h2>
+                    <h2 class="font-title ">Personaliza tu fondo de ahorro</h2>
                     <div class="line-break"></div>
 
                     <div class="row row-restore saving-param">
@@ -242,7 +241,7 @@ Follow: http://www.twitter.com/themehats
                             <p class="c-font-lowercase no-margins">Aportacion mensual</p>
                         </div>    
                         <div class="col-sm-4 col-xs-5">
-                            <button type="button" class="btn btn-default input-fit input-alt">$ {{vm.aportacionMensual}}</button>
+                            <p type="" class="c-center input-fit input-alt">$ {{vm.aportacionMensual}}</p>
                         </div>
                         <div class="col-xs-12 slider">
                             <slider ng-change="vm.changes()" ng-model="vm.aportacionMensual" max="vm.aportacionOptions.max" min="vm.aportacionOptions.min" step="vm.aportacionOptions.step" value="vm.aportacionMensual"></slider>
@@ -254,7 +253,7 @@ Follow: http://www.twitter.com/themehats
                             <p class="c-font-lowercase no-margins">Años de ahorro</p>
                         </div>    
                         <div class="col-sm-4 col-xs-5">
-                            <button type="button" class="btn btn-default input-fit input-alt">{{vm.aniosAhorro}}</button>
+                            <p type="" class="c-center input-fit input-alt">{{vm.aniosAhorro}}</p>
                         </div>
                         <div class="col-xs-12 slider">
                             <slider ng-change="vm.changes()" ng-model="vm.aniosAhorro" min="vm.ahorroOptions.min" step="vm.ahorroOptions.step" max="vm.ahorroOptions.max" value="vm.ahorroOptions.value">
@@ -306,7 +305,7 @@ Follow: http://www.twitter.com/themehats
                         <p>Ut enim ad minim veniam.</p>
                         <h2>$2,500<small>/mes</small> </h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-warning btn-pension">Start pension</button>
+                        <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-warning btn-pension">Estoy listo</button>
                     </div>
                 </div>
             </div>
@@ -323,7 +322,7 @@ Follow: http://www.twitter.com/themehats
                             <p>Con <em>Vinik</em> podrás generar un ahorro acumulado de <em>$0.00</em> un <em>%0</em> más que bajo el colchón.</p>
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-6">
-                            <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-warning btn-pension">Start pension</button>
+                            <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-warning btn-pension">Empezar ahora</button>
                         </div>
                         
                         
@@ -366,7 +365,7 @@ Follow: http://www.twitter.com/themehats
                 <div class="row col-md-12 c-center">
                     <div class="container-fluid empezar c-center">
                         <div class="c-content-title-1" style="margin-top: 30px;margin-bottom: 0px">
-                            <h3 class="c-center ">¿Qué necesitas para empezar?</h3>
+                            <h3 class="c-center ">Ventajas de Ahorrar con VINIK</h3>
                         </div>
                         <div class="col-md-4 col-sm-6 col-xs-12">
                             <div class="my-container-base container-emilio">
@@ -415,10 +414,6 @@ Follow: http://www.twitter.com/themehats
             <div class="container">
                 <!-- Begin: Testimonals 1 component -->
                 <div class="c-content-client-logos-slider-1  c-bordered">
-                    <!-- Begin: Title 1 component -->
-                    <div class="c-content-title-1">
-                        <h3 class="c-center ">Nuestros socios</h3>
-                    </div>
                     <!-- End-->
                     <div class="col-md-12 col-sm-12 c-col">
                         <div class="your-class">
