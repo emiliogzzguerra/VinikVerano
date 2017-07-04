@@ -133,7 +133,7 @@ function FondoAhorroController(VinikService, $timeout, $interval){
                             dataLabels: {
                                 enabled: true,
                                 formatter: function () {
-                                    return '$' + (Math.round(1000000*this.y)/1000000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                                    return '$' + Math.round(this.y).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                                 },
                                 style: {
 
@@ -166,7 +166,7 @@ function FondoAhorroController(VinikService, $timeout, $interval){
                             dataLabels: {
                                 enabled: true,
                                 formatter: function () {
-                                    return '$' + (Math.round(1000000*this.y)/1000000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                                    return '$' + Math.round(this.y).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                                 },
                                 style: {
 
@@ -297,7 +297,7 @@ var myChart = Highcharts.chart('container', {
             dataLabels: {
                 enabled: true,
                 formatter: function () {
-                    return '$' + (Math.round(1000000*this.y)/1000000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    return '$' + Math.round(this.y).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                 },
                 style: {
 
