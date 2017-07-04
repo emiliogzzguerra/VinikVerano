@@ -1,8 +1,8 @@
 //AngularApp
 var app = angular.module("fondoDeAhorro", ['ui.bootstrap', 'ui.bootstrap-slider']);
 
-FondoAhorroController.$inject = ['VinikService', '$timeout'];
-function FondoAhorroController(VinikService, $timeout){
+FondoAhorroController.$inject = ['VinikService', '$timeout','$interval'];
+function FondoAhorroController(VinikService, $timeout, $interval){
     console.log('FondoAhorroController');
     var vm = this;
 
@@ -65,11 +65,13 @@ function FondoAhorroController(VinikService, $timeout){
     // Functions
     vm.changes = changes;
 
-    window.setInterval(
-     function () {
+    $interval(function() {
         delta = delta + 10;
         vm.ahorroAcumuladoTotal = Date.now()*delta;
-     }, 1000);
+        vm.ahorroAcumuladoTotal = Math.round(vm.ahorroAcumuladoTotal/1000000)*1000000;
+        vm.ahorroAcumuladoTotal = vm.ahorroAcumuladoTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        vm.ahorroAcumuladoTotal = '$' + vm.ahorroAcumuladoTotal;
+    }, 1500);
 
     function changes(){
       $timeout(function(){
