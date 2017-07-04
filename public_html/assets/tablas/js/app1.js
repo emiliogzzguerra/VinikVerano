@@ -6,6 +6,8 @@ function FondoAhorroController(VinikService, $timeout){
     console.log('FondoAhorroController');
     var vm = this;
 
+    delta = 200000;
+    vm.ahorroAcumuladoTotal = Date.now()*delta;
     // Variables
     vm.aportacionMensual = 3000;
     vm.aniosAhorro = 10;
@@ -62,6 +64,12 @@ function FondoAhorroController(VinikService, $timeout){
 
     // Functions
     vm.changes = changes;
+
+    window.setInterval(
+     function () {
+        delta = delta + 10;
+        vm.ahorroAcumuladoTotal = Date.now()*delta;
+     }, 1000);
 
     function changes(){
       $timeout(function(){
