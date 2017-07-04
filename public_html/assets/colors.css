@@ -4,7 +4,6 @@
 /* ############## PRIMARY COLOR  ############## */
 .primary-color,
 .pasos-setup,
-.post-footer,
 .empezar-content
 {
 	background-color: #F7F7F7;
@@ -18,7 +17,7 @@
 	background-image: url(./base/img/dark-triangles.png);
   	background-repeat: repeat;
 }
-
+.post-footer,
 .c-inteligente,
 .fourth-color
 {
@@ -43,7 +42,12 @@ a {
 
 .secondary-color
 {
-	background: #69bd28;
+	background: #0065BD;
+}
+
+.lock-color
+{
+	background: #BFBDBD;
 }
 
 .c-theme-btn.btn

@@ -245,7 +245,7 @@ var myChart = Highcharts.chart('container', {
 
     yAxis: {
         title: {
-            text: 'MX',
+            text: 'MXN',
             style: {
                 color: colors.text,
                 fontFamily: "'Source Sans Pro', sans-serif",
@@ -267,7 +267,7 @@ var myChart = Highcharts.chart('container', {
     },
 
     tooltip: {
-        pointFormat: '<b>${point.y:,.4f}</b> MX',
+        pointFormat: '<b>${point.y:,.4f}</b> MXN',
     },
     exporting: {
         enabled: false
