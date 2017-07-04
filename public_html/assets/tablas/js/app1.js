@@ -116,7 +116,7 @@ function FondoAhorroController(VinikService, $timeout, $interval){
                     series: [{
                         upColor: colors.positive,
                         color: colors.negative,
-                        borderColor: colors.text,
+                        borderColor: colors.bg,
                         data: [{
                             name: 'Aportaciones Mensuales',
                             y: vm.results.aportacionesTotales
@@ -127,20 +127,20 @@ function FondoAhorroController(VinikService, $timeout, $interval){
                             name: 'Devoluciones Fiscales',
                             y: vm.results.devolucionesFiscales
                         }, {
-                            name: 'Ahorro acumulado',
+                            name: 'Ahorro Acumulado',
                             isSum: true,
-                            color: colors.sum
-                        }],
-                        dataLabels: {
-                            enabled: true,
-                            formatter: function () {
-                                return Highcharts.numberFormat(this.y / 1000, 0, ',') + 'k';
-                            },
-                            style: {
-                                fontWeight: 'bold',
-                                borderColor: '#F00'
+                            color: colors.sum,
+                            dataLabels: {
+                                enabled: true,
+                                formatter: function () {
+                                    return '$' + this.y.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");;
+                                },
+                                style: {
+
+                                    fontSize: '14px'
+                                }
                             }
-                        },
+                        }],
                         pointPadding: 0
                     }]
                 });
@@ -149,7 +149,7 @@ function FondoAhorroController(VinikService, $timeout, $interval){
                     series: [{
                         upColor: colors.positive,
                         color: colors.negative,
-                        borderColor: colors.text,
+                        borderColor: colors.bg,
                         data: [{
                             name: 'Aportaciones Mensuales',
                             y: vm.results.aportacionesTotales
@@ -160,20 +160,20 @@ function FondoAhorroController(VinikService, $timeout, $interval){
                             name: 'Devoluciones Fiscales',
                             y: vm.results.devolucionesFiscales
                         }, {
-                            name: 'Ahorro acumulado',
+                            name: 'Ahorro Acumulado',
                             isSum: true,
-                            color: colors.sum
-                        }],
-                        dataLabels: {
-                            enabled: true,
-                            formatter: function () {
-                                return Highcharts.numberFormat(this.y / 1000, 0, ',') + 'k';
-                            },
-                            style: {
-                                fontWeight: 'bold',
-                                borderColor: '#F00'
+                            color: colors.sum,
+                            dataLabels: {
+                                enabled: true,
+                                formatter: function () {
+                                    return '$' + this.y.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");;
+                                },
+                                style: {
+
+                                    fontSize: '14px'
+                                }
                             }
-                        },
+                        }],
                         pointPadding: 0
                     }]
                 });
@@ -211,8 +211,8 @@ app.controller('ModalController', ModalController);
 var colors = {
     text: '#333',
     bg: '#F6F4F4',
-    lines: '#0EC45E',
-    positive: '#EFEBE0',
+    lines: '#d6dadc',
+    positive: '#69bd28',
     sum: '#3477CE',
     negative: '#B8504D'
 };
@@ -267,7 +267,7 @@ var myChart = Highcharts.chart('container', {
     },
 
     tooltip: {
-        pointFormat: '<b>${point.y:,.2f}</b> MX',
+        pointFormat: '<b>${point.y:,.4f}</b> MX',
     },
     exporting: {
         enabled: false
@@ -280,7 +280,7 @@ var myChart = Highcharts.chart('container', {
     series: [{
         upColor: colors.positive,
         color: colors.negative,
-        borderColor: colors.text,
+        borderColor: colors.bg,
         data: [{
             name: 'Aportaciones Mensuales',
             y: 360000
@@ -293,18 +293,18 @@ var myChart = Highcharts.chart('container', {
         }, {
             name: 'Ahorro Acumulado',
             isSum: true,
-            color: colors.sum
-        }],
-        dataLabels: {
-            enabled: true,
-            formatter: function () {
-                return Highcharts.numberFormat(this.y / 1000, 0, ',') + 'k';
-            },
-            style: {
+            color: colors.sum,
+            dataLabels: {
+                enabled: true,
+                formatter: function () {
+                    return '$' + this.y.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");;
+                },
+                style: {
 
-                fontSize: '14px'
+                    fontSize: '14px'
+                }
             }
-        },
+        }],
         pointPadding: 0
     }]
 });
