@@ -146,7 +146,7 @@
 .my-container-base {
 	padding: 5px;
 	/*width: calc((100% - (40px + 40px)) / 3);*/
-	height: 200px;
+	height: auto;
 }
 
 .my-container-base:first-child,
@@ -169,7 +169,7 @@
 }
 
 .container-porquevinik {
-	background-color: #0065BD;
+	background-color: #f6f4f4;
 	padding: 30px;
 	margin-top: 30px;
 	color: #333;
