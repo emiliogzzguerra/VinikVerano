@@ -227,8 +227,15 @@
 
 .btn {
 	border: none;
-	border-radius: 0;
+	border-radius: 2px;
 	text-transform: none;
+	margin: 15px 0;
+	font-size: 15px;
+}
+
+.btn.btn-long {
+	width: 250px;
+	padding: 15px 0;
 }
 
 .row-restore {

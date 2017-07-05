@@ -50,9 +50,16 @@ a {
 	background: #BFBDBD;
 }
 
+.btn,
 .c-theme-btn.btn
 {
-    background: #69bd28;
+    background: #69BE28;
+}
+
+.btn,
+.c-theme-btn.btn:hover
+{
+    background: #3B8205;
 }
 
 .container-emilio
