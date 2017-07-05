@@ -220,6 +220,12 @@
 	padding-bottom: 0;
 }
 
+
+.c-content-title-1 > h3 {
+	font-size: 34px;
+	font-weight: 300;
+}
+
 /* Bootstrap overrides */
 #fondoDeAhorro [class*="col-"] {
 	padding: 10px;
