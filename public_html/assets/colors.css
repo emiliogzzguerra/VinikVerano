@@ -30,7 +30,8 @@
 }
 
 .c-layout-header.c-layout-header-4,
-.c-page-on-scroll.c-layout-header.c-layout-header-4
+.c-page-on-scroll.c-layout-header.c-layout-header-4,
+.navbar-default
 {
   border-color: #0065BD;
 }

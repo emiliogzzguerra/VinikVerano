@@ -249,9 +249,39 @@ h4, h5, h6 {
 	font-weight: 300;
 }
 
+.logo {
+    width: 120px;
+}
+
 /* Bootstrap overrides */
 #fondoDeAhorro [class*="col-"] {
 	padding: 10px;
+}
+
+.navbar-default {
+    /*height: 65px;*/
+    border-top-width: 3px;
+    border-bottom: none;
+    /*background-color: #f8f8f8;*/
+}
+
+.navbar-brand {
+    float: left;
+    padding: 11px 20px;
+	margin: 0 10px !important;
+}
+
+.navbar .btn {
+    margin: 10px 0;
+    padding: 6px 20px;
+}
+
+.navbar-form {
+	margin: 0;
+}
+
+.navbar-toggle {
+	margin: 13px 15px;
 }
 
 .btn {
@@ -260,11 +290,16 @@ h4, h5, h6 {
 	text-transform: none;
 	margin: 15px 0;
 	font-size: 15px;
+	padding: 6px 20px;
 }
 
 .btn.btn-long {
 	width: 250px;
 	padding: 15px 0;
+}
+
+.btn-flat {
+	border: none;
 }
 
 .row-restore {
@@ -451,6 +486,12 @@ form.ng-submitted .regular-checkbox.ng-valid + label {
 }
 
 /* Bootstrap overrides */
+
+
+
+.c-layout-header-fixed.c-layout-header-mobile-fixed .c-layout-page {
+	margin-top: 60px;
+}
 
 
 @media (max-width: 415px) {
