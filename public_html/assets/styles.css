@@ -1,3 +1,9 @@
+h1, h2, h3, 
+h4, h5, h6 {
+	font-weight: 300;
+}
+
+
 .pasos-setup{
 	padding-top: 0px;
 	padding-bottom: 30px;
@@ -486,6 +492,9 @@ form.ng-submitted .regular-checkbox.ng-valid + label {
 		height: initial;
 	}
 
+	.desktop-guy {
+		width: 35%;
+	}
 
 }
 
