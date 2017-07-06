@@ -123,10 +123,7 @@ function FondoAhorroController(VinikService, $timeout, $interval){
                         }, {
                             name: 'Interés Ganado',
                             y: vm.results.interesGanado -vm.results.costoAdministracion
-                        }, {
-                            name: 'Devoluciones Fiscales',
-                            y: vm.results.devolucionesFiscales
-                        }, {
+                        },{
                             name: 'Ahorro Acumulado',
                             isSum: true,
                             color: colors.sum,
