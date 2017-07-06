@@ -3,7 +3,7 @@
 	padding-bottom: 30px;
 	border-bottom-width: 2px;
 	border-bottom-style: solid;
-	display: inline-block;
+	display: block;
 }
 
 .animacion{
@@ -52,8 +52,6 @@
 	background-clip: padding-box;
     border: 10px solid transparent;
 }
-
-
 
 .ahorro-inteligente{
 	background-color: gray;
@@ -146,7 +144,19 @@
 .my-container-base {
 	padding: 5px;
 	/*width: calc((100% - (40px + 40px)) / 3);*/
-	height: auto;
+	height: 320px;
+}
+
+.my-container-base svg {
+	height: 220px;
+}
+
+.my-container-base h4 {
+	font-size: 19px;
+	font-weight: bold;
+}
+.my-container-base p {
+	font-size: 16px;
 }
 
 .my-container-base:first-child,
@@ -170,7 +180,7 @@
 
 .container-porquevinik {
 	background-color: #f6f4f4;
-	padding: 30px;
+	padding: 10px;
 	margin-top: 30px;
 	color: #333;
 }
@@ -220,6 +230,13 @@
 	padding-bottom: 0;
 }
 
+.text-center {
+	text-align: center;
+}
+
+.boveda {
+	width: 180px;
+}
 
 .c-content-title-1 > h3 {
 	font-size: 34px;
@@ -442,7 +459,7 @@ form.ng-submitted .regular-checkbox.ng-valid + label {
 	}
 }
 
-@media (max-width: 450px) {
+@media (max-width: 384px) {
 	.equal-line-height {
 		height: 44px;
 	}
@@ -452,6 +469,9 @@ form.ng-submitted .regular-checkbox.ng-valid + label {
     .pasos-setup { display: flex; flex-flow: column; }
     .animacion { order: 2; }
     .pasos { order: 1;  }
+	.container-ahorro {
+		padding-top: 0 !important;
+	}
 }
 
 @media screen and (max-width: 767px) {
@@ -461,7 +481,7 @@ form.ng-submitted .regular-checkbox.ng-valid + label {
 		height: initial;
 	}
 	.my-container-base {
-		padding: 5px;
+		padding: 30px;
 		/*width: calc((100% - (40px + 40px)) / 3);*/
 		height: initial;
 	}
