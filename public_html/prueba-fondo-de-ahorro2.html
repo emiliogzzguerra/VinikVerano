@@ -91,6 +91,7 @@ Follow: http://www.twitter.com/themehats
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
     <!-- </header> -->
     <!-- Modal -->
     <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" ng-controller="ModalController as vm">
@@ -151,7 +152,7 @@ Follow: http://www.twitter.com/themehats
     <div class="c-layout-page">
         <!-- BEGIN: PAGE CONTENT -->
         <!-- BEGIN: LAYOUT/NEW INTRO -->
-        <section class="c-layout-revo-slider c-layout-revo-slider-4" dir="ltr">
+        <section class="c-layout-revo-slider c-layout-revo-slider-4 infront" dir="ltr">
             <div class="tp-banner-container c-theme">
                 <div class="bg_intro">
                     <div>
@@ -164,7 +165,7 @@ Follow: http://www.twitter.com/themehats
         </section>
         <!-- END: LAYOUT/NEW INTRO4 -->
         <!-- BEGIN: CONTENT/FEATURES/FEATURES-1 -->
-        <div class="c-content-box c-size-md pasos-setup">
+        <div class="c-content-box c-size-md pasos-setup infront">
             <div class="container">
             <div class="row" style="color: #3F444A">
                 <div class="col-md-12 col-sm-12 col-xs-12">
@@ -214,8 +215,10 @@ Follow: http://www.twitter.com/themehats
         <!-- END: CONTENT/FEATURES/FEATURES-1 -->
         <div class="c-content-box c-size-md c-inteligente">
             <div class="container c-center">
-                <div class="row col-md-6">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" enable-background="new 0 0 100 100" xml:space="preserve" width="30%" height="100%">
+                <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div data-paroller-factor="0.5" data-paroller-type="foreground">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" enable-background="new 0 0 100 100" xml:space="preserve" width="30%" height="100%" class="foco">
                         <g display="none">
                         <rect x="-977.382" y="-248.38" display="inline" fill="#000000" stroke="#000000" stroke-width="0.4634" stroke-miterlimit="10" width="1226.941" height="1582.379"/>
                         </g>
@@ -233,17 +236,19 @@ Follow: http://www.twitter.com/themehats
                         <text x="0" y="120" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">from the Noun Project
                         </text>
                     </svg>
+                    </div>
                 </div>
-                <div class="row col-md-6">
+                <div class="col-md-6 col-sm-6 col-xs-12">
                     <div class="c-content-title-1">
                         <h3 class="c-center c-font-white">La manera inteligente de ahorrar</h3>
                     </div>
                     <p class="c-contenido-inteligente">Seleccionamos los mejores fondos de ahorro, simplificamos su comparación y te asignamos un asesor financiero para que puedas tomar la mejor decisión</p>
                 </div>
+                </div>
             </div>
         </div>
 <!-- BEGIN: Herramienta -->
-<div  id="fondoDeAhorro">
+<div  id="fondoDeAhorro" class="infront">
     <div id="herramienta" ng-controller="FondoAhorroController as vm" class="c-content-box c-size-md c-container-default">
         <div class="row col-md-12 col-sm-12 c-center full-width no-margins">
             <div class="c-content-title-1">
@@ -362,7 +367,7 @@ Follow: http://www.twitter.com/themehats
 <!-- APP -->
 <!-- END: Herramienta -->
 
-    <div class="container-fluid porque-vinik c-center fourth-color">
+    <div class="container-fluid porque-vinik c-center fourth-color infront">
             <h2 class="porque-vinik-title">¿Por qué escoger VINIK?</h2>
             <div class="col-md-3 col-sm-6 col-xs-12">
                 <div class="my-container-base container-porquevinik">
@@ -3030,13 +3035,13 @@ Follow: http://www.twitter.com/themehats
             </div>
     </div>
 
-    <div class="container-fluid porque-vinik c-center pattern-background" ng-controller="FondoAhorroController as vm">
+    <div class="container-fluid porque-vinik c-center pattern-background infront" ng-controller="FondoAhorroController as vm">
             <h2 class="porque-vinik-title">Hemos ayudado a ahorrar mas de <br>{{vm.ahorroAcumuladoTotal}}</h2> 
             
     </div>
 
         <!-- BEGIN: CONTENT/BARS/BAR-6 -->
-        <div class="c-content-box empezar-content">
+        <div class="c-content-box empezar-content infront">
             <div class="container">
                 <div class="row col-md-12 c-center">
                     <div class="container-fluid empezar c-center">
@@ -3397,7 +3402,7 @@ Follow: http://www.twitter.com/themehats
         </div>
         <!-- END: CONTENT/BARS/BAR-6 -->
         <!-- BEGIN: CONTENT/SLIDERS/CLIENT-LOGOS-2 -->
-        <div class="c-content-box lock-color c-center" style="padding-top: 60px;padding-bottom: 60px;">
+        <div class="c-content-box lock-color c-center infront" style="padding-top: 60px;padding-bottom: 60px;">
             <div class="container">
                 <!-- Begin: Testimonals 1 component -->
                 <div>
@@ -3435,7 +3440,7 @@ Follow: http://www.twitter.com/themehats
         <!-- END: CONTENT/SLIDERS/CLIENT-LOGOS-2 -->
         
         <!-- BEGIN: CONTENT/SLIDERS/CLIENT-LOGOS-2 -->
-        <div class="c-content-box c-bg-white socios c-center">
+        <div class="c-content-box c-bg-white socios c-center infront">
             <div class="container">
                 <!-- Begin: Testimonals 1 component -->
                 <div class="c-content-client-logos-slider-1  c-bordered">
@@ -3487,7 +3492,7 @@ Follow: http://www.twitter.com/themehats
     <!-- END: PAGE CONTAINER -->
     <!-- BEGIN: LAYOUT/FOOTERS/FOOTER-5 -->
     <a name="footer"></a>
-    <footer class="c-layout-footer c-layout-footer-3 c-bg-dark">
+    <footer class="c-layout-footer c-layout-footer-3 c-bg-dark infront">
         <div class="pre-footer">
             <div class="container">
                 <div class="row inside-footer">
@@ -3559,7 +3564,7 @@ Follow: http://www.twitter.com/themehats
     <script src="../assets/global/plugins/excanvas.min.js"></script>
     <![endif]-->
     <script src="../assets/plugins/jquery.min.js" type="text/javascript"></script>
-    <script src="../assets/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+    <!-- <script src="../assets/plugins/jquery-migrate.min.js" type="text/javascript"></script> -->
     <script src="../assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <!-- Necesario Grafica -->
     <!-- and Angular, of course -->
@@ -3571,12 +3576,13 @@ Follow: http://www.twitter.com/themehats
     <script src="https://rawgit.com/seiyria/angular-bootstrap-slider/master/slider.js"></script>
     <script type="text/javascript" src="../bower_components/angular-bootstrap/ui-bootstrap.js"></script>
     <!-- End necesario Grafica -->
-    <script src="../assets2/plugins/jquery.min.js" type="text/javascript"></script>
-    <script src="../assets2/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+    <!-- <script src="../assets2/plugins/jquery.min.js" type="text/javascript"></script> -->
+    <script src="../assets2/base/js/jquery.paroller.min.js" type="text/javascript"></script>
+    <!-- <script src="../assets2/plugins/jquery-migrate.min.js" type="text/javascript"></script> -->
     <!-- <script src="../assets2/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script> -->
-    <script src="../assets2/plugins/jquery.easing.min.js" type="text/javascript"></script>
-    <script src="../assets2/plugins/reveal-animate/wow.js" type="text/javascript"></script>
-    <script src="../assets2/base/js/scripts/reveal-animate/reveal-animate.js" type="text/javascript"></script>
+    <!-- <script src="../assets2/plugins/jquery.easing.min.js" type="text/javascript"></script> -->
+    <!-- <script src="../assets2/plugins/reveal-animate/wow.js" type="text/javascript"></script> -->
+    <!-- <script src="../assets2/base/js/scripts/reveal-animate/reveal-animate.js" type="text/javascript"></script> -->
     <!-- END: CORE PLUGINS -->
     <!-- BEGIN: LAYOUT PLUGINS -->
     <script src="../assets2/plugins/revo-slider/js/jquery.themepunch.tools.min.js" type="text/javascript"></script>
@@ -3594,6 +3600,7 @@ Follow: http://www.twitter.com/themehats
     <!-- END: LAYOUT PLUGINS -->
     <!-- BEGIN: THEME SCRIPTS -->
     <script src="../assets2/base/js/landingPage.js" type="text/javascript"></script>
+    
     <!--<script src="assets2/base/js/components.js" type="text/javascript"></script>-->
     <script src="../assets2/base/js/components-shop.js" type="text/javascript"></script>
     <script src="assets/base/js/app.js" type="text/javascript"></script>

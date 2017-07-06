@@ -319,3 +319,10 @@ $(window).resize(function()
 $(function () {
   $('[data-toggle="tooltip"]').tooltip();
 });
+
+
+$(window).paroller({ 
+    factor: '0.5', 
+    type: 'foreground', 
+    // direction: 'horizontal' 
+});
