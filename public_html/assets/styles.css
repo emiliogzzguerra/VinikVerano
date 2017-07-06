@@ -197,7 +197,7 @@ h4, h5, h6 {
 }
 
 .container-chart {
-	padding: 10px;
+	/*padding: 10px;*/
 }
 
 .btn-pension {
@@ -266,8 +266,15 @@ h4, h5, h6 {
 
 .foco {
     position: relative;
-    top: -120px;
-	width: 200px;    
+    top: -100px;
+	width: 250px;    
+}
+
+
+.flex-center {
+	display: flex;
+	display: -webkit-flex;
+	align-items: center;
 }
 
 /* Bootstrap overrides */
