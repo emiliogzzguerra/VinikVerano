@@ -180,8 +180,8 @@ h4, h5, h6 {
 }
 
 .container-emilio {
-	padding: 30px;
-	margin-top: 30px;
+    margin-top: 0;
+    padding-top: 0;
 	color: #333;
 }
 
@@ -282,7 +282,14 @@ h4, h5, h6 {
 .flex-center {
 	display: flex;
 	display: -webkit-flex;
-	align-items: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.c-font-grey {
+    font-size: 20px;
 }
 
 /* Bootstrap overrides */
@@ -617,11 +624,8 @@ form.ng-submitted .regular-checkbox.ng-valid + label {
 }
 
 @media screen and (min-width: 768px) {
-	.parallax-element {
-		/*position: fixed;*/
-	    /*top: 30%;*/
-	    /*left: 15%;*/
-	    /*z-index: 0;*/
+	.foco {
+		top: -160px;
 	}
 }
 
