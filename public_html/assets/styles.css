@@ -270,6 +270,10 @@ h4, h5, h6 {
 	width: 250px;    
 }
 
+.slider-handle
+{
+	opacity: 1.0;
+}
 
 .flex-center {
 	display: flex;
@@ -521,26 +525,6 @@ form.ng-submitted .regular-checkbox.ng-valid + label {
 }
 
 
-@media (max-width: 415px) {
-	.no-ver-padd {
-		padding-top: 0 !important;
-		padding-bottom: 0 !important;
-	}
-
-	.btn-pension {
-		padding: 6px 20px;
-		height: 50px;
-	}
-}
-
-@media (max-width: 384px) {
-	.equal-line-height {
-		height: 44px;
-	}
-}
-
-
-
 @media screen and (max-width: 767px) {
 	.container-base {
 		padding: 5px;
@@ -557,7 +541,37 @@ form.ng-submitted .regular-checkbox.ng-valid + label {
 		width: 35%;
 	}
 
+	.foco {
+		top: -180px;
+	}
+
 }
+
+@media (max-width: 415px) {
+	.no-ver-padd {
+		padding-top: 0 !important;
+		padding-bottom: 0 !important;
+	}
+
+	.btn-pension {
+		padding: 6px 20px;
+		height: 50px;
+	}
+
+	.foco {
+		top: -70px;
+	}
+}
+
+@media (max-width: 384px) {
+	.equal-line-height {
+		height: 44px;
+	}
+}
+
+
+
+
 
 @media screen and (max-width: 531px) {
     .pasos-setup { display: flex; flex-flow: column; }

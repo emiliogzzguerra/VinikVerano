@@ -52,13 +52,16 @@ a {
 }
 
 .btn,
-.c-theme-btn.btn
+.c-theme-btn.btn,
+.slider-selection
 {
     background: #69BE28;
 }
 
+
 .btn,
-.c-theme-btn.btn:hover
+.c-theme-btn.btn:hover,
+.slider-handle
 {
     background: #3B8205;
 }
