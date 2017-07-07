@@ -127,7 +127,13 @@ a {
 	color: #FFF;
 }
 
+.btn.btn-cancel {
+	background-color: #4C4C4C;
+}
 
+.btn.btn-cancel:hover {
+	background-color: #2D2D2D;
+}
 
 .hide-container-pension{
 	background-image: url(./base/img/dark-triangles.png);
