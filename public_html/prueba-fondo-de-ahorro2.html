@@ -268,7 +268,7 @@ Follow: http://www.twitter.com/themehats
                             <p class="c-font-lowercase no-margins">Aportacion mensual</p>
                         </div>    
                         <div class="col-sm-4 col-xs-5">
-                            <p type="" class="c-center input-fit input-alt">{{vm.aportacionMensualString}}</p>
+                            <p type="" class="c-center input-fit input-alt">{{vm.aportacionMensual | currency:"$":0}}</p>
                         </div>
                         <div class="col-xs-12 slider">
                             <slider ng-change="vm.changes()" ng-model="vm.aportacionMensual" max="vm.aportacionOptions.max" min="vm.aportacionOptions.min" step="vm.aportacionOptions.step" value="vm.aportacionMensual"></slider>
