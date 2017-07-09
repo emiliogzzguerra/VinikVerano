@@ -14,7 +14,8 @@
 {
 	padding-bottom:100px;
 	padding-top:80px;
-	background-image: url(./base/img/dark-triangles.png);
+	background-image: url(./base/img/pattern-green.svg);
+	background-size: 120px 120px;
   	background-repeat: repeat;
 }
 .post-footer,
@@ -28,6 +29,8 @@
 	color:white;
 	font-size: 1.2em;
 }
+
+
 
 .c-layout-header.c-layout-header-4,
 .c-page-on-scroll.c-layout-header.c-layout-header-4,
@@ -48,7 +51,7 @@ a {
 
 .lock-color
 {
-	background: #888;
+	background: #F8F8F8;
 }
 
 .btn,
@@ -91,6 +94,15 @@ a {
 
 
 /* ############## LIGHTER COLORS  ############## */
+
+.ayudado-a-ahorro
+{
+	color: #6b6b6b;
+	font-size: 3em;
+	font-weight: 500;
+	line-height: 130%;
+}
+
 .title,
 .preguntas,
 .links,
