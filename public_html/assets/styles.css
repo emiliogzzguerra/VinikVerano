@@ -3,6 +3,9 @@ h4, h5, h6 {
 	font-weight: 300;
 }
 
+.ventajas{
+	font-weight: 500;
+}
 
 .pasos-setup{
 	padding-top: 0px;
@@ -123,14 +126,12 @@ h4, h5, h6 {
 }
 
 .empezar {
-	padding-bottom: 30px;
+	padding-bottom: 0px;
 }
 
 .empezar-content {
 	padding-top: 0px;
 	padding-bottom: 30px;
-	border-bottom-width: 2px;
-	border-bottom-style: solid;
 }
 
 .container-base {
