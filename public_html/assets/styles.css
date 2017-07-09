@@ -637,6 +637,10 @@ form.ng-submitted .regular-checkbox.ng-valid + label {
 	.foco {
 		top: -160px;
 	}
+	.c-desk-right {
+		text-align: right;
+	}
+
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
