@@ -107,9 +107,11 @@ margin-top:-15px;
 }
 
 .title {
-  font-size: 50px;
-  margin: 0 auto;
-  width: 80%;
+    font-size: 37px;
+    font-weight: normal;
+    line-height: 1.5em;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .btn-cta {
@@ -207,7 +209,8 @@ body {
 
   .title {
       font-size: 40px;
-      line-height: 50px;
+      line-height: 1.5em;
+      width: 80%;
   }
 
 }
@@ -250,7 +253,8 @@ body {
 
   .title {
       font-size: 45px;
-      line-height: 70px;
+      line-height: 1.5em;
+      width: 80%;
   }
 
   .gif-tablet {

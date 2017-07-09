@@ -151,5 +151,9 @@ a {
 	text-align: center;
 }
 
+.navbar-default
+{
+	border-bottom-color: #CCC;
+}
 
 /* ------------------------------------------- */

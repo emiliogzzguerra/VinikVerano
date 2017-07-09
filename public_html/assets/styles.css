@@ -70,6 +70,8 @@ h4, h5, h6 {
 	float: left; 
 	margin-right:5px;
 	width: 44px;
+	margin-top: -5px;
+    margin-bottom: 50px;
 }
 
 .feature-info {
@@ -80,6 +82,13 @@ h4, h5, h6 {
 .feature-info h3 {
 	font-size: 24px;
     margin-top: 0;
+}
+
+.svg-container {
+    /* background-color: red; */
+    height: 150px;
+    margin-bottom: 10px;
+    overflow: hidden;
 }
 
 .post-footer {
@@ -151,7 +160,7 @@ h4, h5, h6 {
 .my-container-base {
 	padding: 5px;
 	/*width: calc((100% - (40px + 40px)) / 3);*/
-	height: 320px;
+	height: auto;
 }
 
 .my-container-base svg {
@@ -187,7 +196,7 @@ h4, h5, h6 {
 
 .container-porquevinik {
 	background-color: #f6f4f4;
-	padding: 10px;
+    padding: 10px 0 20px;
 	margin-top: 30px;
 	color: #333;
 }
@@ -301,7 +310,7 @@ h4, h5, h6 {
 .navbar-default {
     /*height: 65px;*/
     border-top-width: 3px;
-    border-bottom: none;
+    /*border-bottom: none;*/
     /*background-color: #f8f8f8;*/
 }
 
