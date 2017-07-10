@@ -286,7 +286,7 @@ h4, h5, h6 {
 
 .foco {
     position: relative;
-    top: -10px;
+    top: 70px;
 	width: 250px;    
 }
 
@@ -632,6 +632,12 @@ form.ng-submitted .regular-checkbox.ng-valid + label {
 
 	.desktop-guy {
 		width: 55%;
+	}
+}
+
+@media screen and (min-width: 350px) {
+	.foco {
+		top: -10px;
 	}
 }
 
