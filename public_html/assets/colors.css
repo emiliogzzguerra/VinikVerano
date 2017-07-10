@@ -157,9 +157,14 @@ a {
 	background-color: #2D2D2D;
 }
 
+.card-3 {
+  
+}
 .hide-container-pension{
-	background-image: url(./base/img/dark-triangles.png);
-  	background-repeat: repeat;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	background-color: #444;
+	//background-image: url(./base/img/dark-triangles.png);
+  	//background-repeat: repeat;
 }
 .container-chart em {
 	color: #0f3a7f;
