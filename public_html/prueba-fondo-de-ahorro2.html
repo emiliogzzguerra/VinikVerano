@@ -322,12 +322,12 @@ Follow: http://www.twitter.com/themehats
                     <div class="container">
                         <h2 class="font-title ">Ahorro acumulado</h2>
                         <div class="line-break"></div>
+                        <h2>Al realizar aportaciones mensuales de</h2>
+                        <h2>{{vm.aportacionMensual | currency:"$":0}} al mes</h2>
+                        <h2>durante {{vm.aniosAhorro}} años</h2>
+                        <h2>lograrás un ahorro acumulado de</h2>
                         <h2>{{vm.results.ahorroAcumuladoFixed | currency:"$":0}}</h2>
-                        <p>Tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <p>Duis aute irure dolor</p>
-                        <p>Ut enim ad mnim veniam.</p>
-                        <h2>$2,500<small>/mes</small> </h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p>Aproximadamente {{vm.diferencia | currency:"$":0}} más que guardado bajo el colchón o en tu cuenta de cheques</p>
                         <button type="button" data-toggle="modal" data-target="#myModal" class="btn c-theme-btn btn-long">Estoy listo</button>
                     </div>
                 </div>

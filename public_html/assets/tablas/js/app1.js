@@ -24,6 +24,7 @@ function FondoAhorroController(VinikService, $timeout, $interval){
     vm.ahorro = "Si";
     vm.results = {};
 
+    vm.diferencia = 279600;
     vm.admin_cost = 0;
     vm.interesAnual = 0.09; //default
     vm.interesMensual = (Math.pow(vm.interesAnual+1,(1/12))-1);
@@ -119,6 +120,7 @@ function FondoAhorroController(VinikService, $timeout, $interval){
             vm.results.ahorroAcumulado = vm.results.ahorroEsperado + vm.results.devolucionesFiscales;
 
             vm.results.ahorroAcumuladoFixed = angular.copy(vm.results.ahorroAcumulado.toFixed(2));
+            vm.diferencia = vm.results.ahorroAcumulado - vm.results.aportacionesTotales;
 
             if(vm.ahorro == "No"){
                 myChart.update({
