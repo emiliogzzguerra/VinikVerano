@@ -5,8 +5,9 @@ h4, h5, h6 {
 
 .menciones
 {
-	height: 60px;
-	width: auto;
+	height: auto;
+	width: 300px;
+	bottom: 0;
 }
 
 .ventajas{

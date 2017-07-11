@@ -3592,14 +3592,14 @@ Follow: http://www.twitter.com/themehats
         App.init(); // init core
       $('.your-class').slick({
         infinite: true,
-        slidesToShow: 5,
+        slidesToShow: 3,
         slidesToScroll: 1,
         centerMode: true,
         responsive: [
         {
           breakpoint: 1024,
           settings: {
-            slidesToShow: 5,
+            slidesToShow: 3,
             slidesToScroll: 2,
             infinite: true,
             centerMode: true
@@ -3608,7 +3608,7 @@ Follow: http://www.twitter.com/themehats
         {
           breakpoint: 600,
           settings: {
-            slidesToShow: 3,
+            slidesToShow: 2,
             slidesToScroll: 2,
             centerMode: true
           }
@@ -3616,7 +3616,7 @@ Follow: http://www.twitter.com/themehats
         {
           breakpoint: 480,
           settings: {
-            slidesToShow: 2,
+            slidesToShow: 1,
             slidesToScroll: 1,
             centerMode: true
           }
@@ -3629,52 +3629,6 @@ Follow: http://www.twitter.com/themehats
     });
     </script>
     <!-- END: THEME SCRIPTS -->
-    <!-- BEGIN: PAGE SCRIPTS -->
-    <script>
-    $(document).ready(function() {
-        var slider = $('.c-layout-revo-slider .tp-banner');
-        var cont = $('.c-layout-revo-slider .tp-banner-container');
-        var height = (App.getViewPort().width < App.getBreakpoint('md') ? 400 : 620);
-        var api = slider.show().revolution({
-            responsiveLevels: [1240, 1024, 778, 480],
-            /* [DESKTOP, LAPTOP, TABLET, SMARTPHONE] */
-            gridwidth:[1240, 1024, 778, 480],
-            /* [DESKTOP, LAPTOP, TABLET, SMARTPHONE] */
-            gridheight:[400, 768, 960, 500],
-            sliderType: "standard",
-            sliderLayout: "auto",
-            delay: 800,
-            autoHeight: 'on',
-            navigation: {
-                keyboardNavigation: "off",
-                keyboard_direction: "horizontal",
-                mouseScrollNavigation: "off",
-                onHoverStop: "on",
-                touch: {
-                    touchenabled: "on",
-                    swipe_threshold: 75,
-                    swipe_min_touches: 1,
-                    swipe_direction: "horizontal",
-                    drag_block_vertical: false
-                },
-            },
-            viewPort: {
-                enable: true,
-                outof: "pause",
-                visible_area: "80%"
-            },
-            shadow: 0,
-            spinner: "spinner2",
-            disableProgressBar: "on",
-            fullScreenOffsetContainer: '.tp-banner-container',
-            hideThumbsOnMobile: "on",
-            hideNavDelayOnMobile: 1500,
-            hideBulletsOnMobile: "on",
-            hideArrowsOnMobile: "on",
-            hideThumbsUnderResolution: 0,
-        });
-    }); //ready
-    </script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
     <!-- END: PAGE SCRIPTS -->
     <!-- END: LAYOUT/BASE/BOTTOM -->

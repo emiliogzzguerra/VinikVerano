@@ -3,7 +3,7 @@ var app = angular.module("fondoDeAhorro", ['ui.bootstrap', 'ui.bootstrap-slider'
 
 FondoAhorroController.$inject = ['VinikService', '$timeout','$interval'];
 function FondoAhorroController(VinikService, $timeout, $interval){
-    console.log('FondoAhorroController');
+    //console.log('FondoAhorroController');
     var vm = this;
 
     vm.imagenActual = 0;
@@ -11,7 +11,6 @@ function FondoAhorroController(VinikService, $timeout, $interval){
 
 
     $interval(function() {
-        console.log(vm.imagenActual);
         vm.imagenActual = (vm.imagenActual + 1)%4;
     }, 2000);
 
@@ -69,8 +68,8 @@ function FondoAhorroController(VinikService, $timeout, $interval){
         ahorroAcumuladoFixed: 639600
     };
 
-    console.log('Default');
-    console.log('vm.admin_cost', vm.admin_cost);
+    //console.log('Default');
+    //console.log('vm.admin_cost', vm.admin_cost);
 
     // Functions
     vm.changes = changes;
@@ -85,14 +84,14 @@ function FondoAhorroController(VinikService, $timeout, $interval){
 
     function changes(){
       $timeout(function(){
-        console.log('Test with change');
+        //console.log('Test with change');
         calculateData();
       }, 300);
     }
 
     function calculateData(){
-        console.log('calculateData');
-        console.log('vm.admin_cost', vm.admin_cost);
+        //console.log('calculateData');
+        //console.log('vm.admin_cost', vm.admin_cost);
 
         var jsonResponse = VinikService.getComission(vm.aportacionMensual,vm.aniosAhorro,vm.risk);
 
@@ -197,7 +196,7 @@ app.controller('FondoAhorroController', FondoAhorroController);
 
 ModalController.$inject = ['VinikService', '$timeout'];
 function ModalController(VinikService, $timeout){
-    console.log('ModalController');
+    //console.log('ModalController');
     var vm = this;
 
     vm.send = send;
