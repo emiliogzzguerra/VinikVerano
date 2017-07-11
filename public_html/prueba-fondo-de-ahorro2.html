@@ -101,35 +101,33 @@ Follow: http://www.twitter.com/themehats
         <div class="modal-dialog">
             <div class="modal-content c-square">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                    <h4 class="modal-title" id="myModalLabel">Contact info</h4>
+                    <h4 class="modal-title" id="myModalLabel">Asesoría financiera <span style="color:#69BE28">gratuita</span></h4>
+                    <p>Un asesor financiero se comunicará contigo al teléfono proporcionado el día y hora que tú elijas.</p>
                 </div>
                 <div class="modal-body">
                     <form name="contactForm" class="form-horizontal" novalidate>
                         <div class="form-group">
-                            <label for="Name" class="col-md-4 control-label">Name</label>
+                            <label for="nombre" class="col-md-4 control-label">Nombre</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control  c-square" id="Name" ng-model="vm.name" data-toggle="tooltip" title="Este campo es requerido" required>
+                                <input type="text" class="form-control  c-square" id="Name" ng-model="vm.name" data-toggle="tooltip" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="Name" class="col-md-4 control-label">Phone</label>
+                            <label for="tel" class="col-md-4 control-label">Teléfono</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control  c-square" id="Name" ng-model="vm.phone" data-toggle="tooltip" title="Este campo es requerido | Sólo números ej.8104566852" ng-pattern="/\d+/" maxlength="15" required>
+                                <input type="text" class="form-control  c-square" id="Name" ng-model="vm.phone" data-toggle="tooltip" ng-pattern="/\d+/" maxlength="15" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="Name" class="col-md-4 control-label">Postal Code</label>
+                            <label for="cp" class="col-md-4 control-label">Código Postal</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control  c-square" ng-model="vm.postalCode" id="Name" ng-pattern="/\d+/" maxlength="10" data-toggle="tooltip" title="Este campo solo debe contener números">
+                                <input type="text" class="form-control  c-square" ng-model="vm.postalCode" id="Name" ng-pattern="/\d+/" maxlength="10" data-toggle="tooltip">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="Name" class="col-md-4 control-label">Email</label>
+                            <label for="email" class="col-md-4 control-label">Email</label>
                             <div class="col-md-6">
-                                <input type="email" class="form-control  c-square" id="Name" ng-model="vm.email" data-toggle="tooltip" title="Este campo es requerido | Debe ingresar un email válido" required>
+                                <input type="email" class="form-control  c-square" id="Name" ng-model="vm.email" data-toggle="tooltip" required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -206,10 +204,9 @@ Follow: http://www.twitter.com/themehats
                     <img  class="img-responsive center-element" style="max-height: 300px;" src="../assets2/base/img/animacion/paraque.png" ng-src="{{vm.availableImages[vm.imagenActual]}}">
                 </div>
                 <div class="col-md-6 col-sm-12 col-xs-12 col-md-pull-6 animacion gif-tablet">
-                    <img  class="img-responsive center-element" style="max-height: 420px;" src="../assets2/base/img/giphy-downsized.gif">
+                    <img  class="img-responsive center-element" style="max-height: 300px;" src="../assets2/base/img/animacion/paraque.png" ng-src="{{vm.availableImages[vm.imagenActual]}}">
                 </div>
                 <div class="col-md-6 col-sm-12 col-xs-12 col-md-pull-6 animacion gif-mobile">
-                    <img  class="img-responsive center-element" style="max-height: 420px;" src="../assets2/base/img/200w_d.gif">
                 </div>
                 </div>
             </div>
