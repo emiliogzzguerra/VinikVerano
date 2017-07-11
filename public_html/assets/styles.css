@@ -75,11 +75,11 @@ h4, h5, h6 {
 /* NEW STYLES */
 
 .feature-image {
-	max-height: 40px; 
+	max-height: 33px; 
 	float: left; 
 	margin-right:5px;
-	width: 44px;
-	margin-top: -5px;
+	width: 33px;
+	margin-top: -2px;
     margin-bottom: 50px;
 }
 
