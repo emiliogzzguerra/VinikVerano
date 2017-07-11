@@ -6,6 +6,15 @@ function FondoAhorroController(VinikService, $timeout, $interval){
     console.log('FondoAhorroController');
     var vm = this;
 
+    vm.imagenActual = 0;
+    vm.availableImages = ["../assets2/base/img/animacion/paraque.png","../assets2/base/img/animacion/nivel.png","../assets2/base/img/animacion/proyeccion.png","../assets2/base/img/animacion/inversion.png"];
+
+
+    $interval(function() {
+        console.log(vm.imagenActual);
+        vm.imagenActual = (vm.imagenActual + 1)%4;
+    }, 2000);
+
     delta = 30000000;
     vm.ahorroAcumuladoTotal = Date.now()*delta;
     // Variables

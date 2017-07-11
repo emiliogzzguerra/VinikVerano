@@ -169,7 +169,7 @@ Follow: http://www.twitter.com/themehats
         </section>
         <!-- END: LAYOUT/NEW INTRO4 -->
         <!-- BEGIN: CONTENT/FEATURES/FEATURES-1 -->
-        <div class="c-content-box c-size-md pasos-setup infront">
+        <div class="c-content-box c-size-md pasos-setup infront" ng-controller="FondoAhorroController as vm">
             <div class="container">
             <div class="row" style="color: #3F444A">
                 <div class="col-md-12 col-sm-12 col-xs-12">
@@ -202,7 +202,8 @@ Follow: http://www.twitter.com/themehats
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-12 col-xs-12 col-md-pull-6 animacion gif-desk">
-                    <img  class="img-responsive center-element" style="max-height: 420px;" src="../assets2/base/img/giphy.gif">
+                    
+                    <img  class="img-responsive center-element" style="max-height: 300px;" src="../assets2/base/img/animacion/paraque.png" ng-src="{{vm.availableImages[vm.imagenActual]}}">
                 </div>
                 <div class="col-md-6 col-sm-12 col-xs-12 col-md-pull-6 animacion gif-tablet">
                     <img  class="img-responsive center-element" style="max-height: 420px;" src="../assets2/base/img/giphy-downsized.gif">

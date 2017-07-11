@@ -6,11 +6,15 @@
 
 /* ############## PRIMARY COLOR  ############## */
 .primary-color,
-.pasos-setup,
 .empezar-content
 {
 	background-color: #F7F7F7;
 	color: #686B6E
+}
+
+.pasos-setup
+{
+	background-color: #fff;
 }
 
 .navegacion
