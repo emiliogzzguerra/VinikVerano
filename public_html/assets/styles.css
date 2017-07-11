@@ -3,11 +3,26 @@ h4, h5, h6 {
 	font-weight: 300;
 }
 
-.menciones
-{
-	height: auto;
-	width: 300px;
-	bottom: 0;
+.menciones {
+    height: 50px;
+    width: auto;
+    /* bottom: 0; */
+	filter: grayscale(1.0);
+	-webkit-filter: grayscale(1.0);
+	transition: opacity 1.0s;
+	-webkit-transition: opacity 1.0s;
+    opacity: 0.5;
+}
+
+.menciones:hover {
+	filter: grayscale(0.0);
+	-webkit-filter: grayscale(0.0);
+    opacity: 1.0;
+}
+
+.slick-slide a {
+    /*background: red;*/
+    margin: 20px;
 }
 
 .ventajas{
