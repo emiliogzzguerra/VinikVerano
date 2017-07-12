@@ -8,8 +8,8 @@ h4, h5, h6 {
 }
 
 .menciones {
-    height: 50px;
-    width: auto;
+    height: auto;
+    width: 190px;
     /* bottom: 0; */
 	filter: grayscale(1.0);
 	-webkit-filter: grayscale(1.0);
@@ -27,6 +27,15 @@ h4, h5, h6 {
 .slick-slide a {
     /*background: red;*/
     margin: 20px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slick-prev, .slick-next {
+    -webkit-filter: brightness(0.9);
+    filter: brightness(0.9);
 }
 
 /* Ventajas de ahorrar con vinik */
