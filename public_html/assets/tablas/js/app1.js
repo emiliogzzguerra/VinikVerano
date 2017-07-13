@@ -274,7 +274,7 @@ var myChart = Highcharts.chart('container', {
     },
 
     tooltip: {
-        pointFormat: '<b>${point.y:,.4f}</b> MXN',
+        pointFormat: '<b>${point.y:,.0f}</b> MXN',
     },
     exporting: {
         enabled: false
