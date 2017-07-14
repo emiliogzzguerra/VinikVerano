@@ -38,7 +38,7 @@ function FondoAhorroController(VinikService, $timeout, $interval){
         value : vm.aportacionMensual
     };
     vm.ahorroOptions = {
-        min : 3,
+        min : 5,
         step : 1,
         max : 25,
         value : vm.aniosAhorro
