@@ -30,12 +30,26 @@
 	background-size: 120px 120px;
   	background-repeat: repeat;
 }
-.post-footer,
-.c-inteligente,
+
 .fourth-color
 {
 	background-color: #0065BD;
 }
+
+.post-footer
+{
+	background-color: #003C71;	
+}
+
+.c-inteligente
+{
+	background: #0065BD; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(left top, #0065BD, #128DFB); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(bottom right, #0065BD, #128DFB); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(bottom right, #0065BD, #128DFB); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(to bottom right, #0065BD, #128DFB); /* Standard syntax */
+}
+
 
 .c-contenido-inteligente{
 	color:white;
@@ -97,11 +111,14 @@ a {
 }
 
 .pasos-setup,
-.post-footer,
 .empezar-content
 {
 	border-color: #02AE4E;
 	/*border-color: #69BE28;*/ /* old border color */
+}
+.post-footer
+{
+	border-color: #02AE4E;
 }
 
 /* ############## FORTH COLOR  ############## */ 
@@ -126,14 +143,36 @@ a {
 .container-ahorro,
 .container-chart 
 .container-pension h3,
-.container-pension h2,
 .container-pension small {
 	color: #FFF;
 }
+.up 
+{
+	margin-top:20px;
+}
+
+.container-pension h2{
+	font-size: 1.5em;
+	color: #FFF;
+	line-height: 130%;
+}
+
+.container-pension h2.impact
+{
+	font-size: 2em;
+	font-weight: 600;
+}
+
+.container-pension p.pre-impact
+{
+	font-size: 1.2em;
+	font-weight: 400;
+}
+
 .pre-footer,
 .inside-footer,
 #fondoDeAhorro {
-	background-color: rgb(247,247,247);
+	background-color: #6d6c6c;
 }
 
 
@@ -165,11 +204,18 @@ a {
   
 }
 .hide-container-pension{
-	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-	background-color: #444;
-	//background-image: url(./base/img/dark-triangles.png);
-  	//background-repeat: repeat;
+	padding-top: 50px;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.16);
+	/*background-color: #444;
+	background-image: url(./base/img/dark-triangles.png);
+	background-repeat: repeat;*/
+	background: #444; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(left, #444 , #666); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(right, #444, #666); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(right, #444, #666); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(to right, #444 , #666); /* Standard syntax */
 }
+
 .container-chart em {
 	color: #0f3a7f;
 }
@@ -180,6 +226,7 @@ a {
 .container-pension-adjust {
 	/*padding: 30px 5px 0;*/
 	text-align: center;
+	
 }
 
 .navbar-default

@@ -3,6 +3,8 @@ h4, h5, h6 {
 	font-weight: 300;
 }
 
+
+
 .your-class {
     margin: 50px 0px;
 }
@@ -61,8 +63,8 @@ h4, h5, h6 {
 .pasos-setup{
 	padding-top: 0px;
 	padding-bottom: 30px;
-	border-bottom-width: 2px;
-	border-bottom-style: solid;
+	/*border-bottom-width: 2px;
+	border-bottom-style: solid;*/
 	display: block;
 }
 
@@ -95,13 +97,23 @@ h4, h5, h6 {
 	margin: auto;
 }
 
+.friendly-line-break{
+	border-bottom: 0.5px solid;
+	border-bottom-color: rgba(200,200,200,0.2);
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+
+	margin: auto;
+}
+
+
 .left-footer{
 	margin-top:15px;
 }
 
 .socios{
-	padding-top:30px;
-	padding-bottom:30px;
+	padding-top:0px;
+	padding-bottom:0px;
 }
 
 .links {
@@ -147,11 +159,26 @@ h4, h5, h6 {
 
 .post-footer {
 	padding-top: 10px;
-	border-bottom-width: 3px;
+	border-bottom-width: 1px;
 	border-bottom-style: solid;
 }
 
 .pre-footer{
+	color: #ffffff;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.pre-footer h2,
+.pre-footer p{
+	color: #ffffff; !important
+	
+}
+
+.faq{
+	background-color: #F7F7F7;
 	padding-top: 20px;
 	padding-bottom: 20px;
 	padding-left: 20px;
@@ -160,15 +187,16 @@ h4, h5, h6 {
 
 
 
+
 .porque-vinik-title {
-	font-family:'Source Sans Pro', sans-serif;
+	font-family:"Baskerville", "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
 	font-size: 2em;
 	margin-top: 30px;
 }
 
 .empezar-title{
 	color:inherit;
-	font-family:'Source Sans Pro', sans-serif;
+	font-family:"Baskerville", "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
 	font-size: 2em;
 	margin-top: 30px;
 }
@@ -252,7 +280,14 @@ h4, h5, h6 {
     padding: 10px 0 20px;
 	margin-top: 30px;
 	color: #333;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
+
+.container-porquevinik:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 10px 20px rgba(0,0,0,0.23);
+}
+
 
 .hide-container-pension {
 	display: none;
@@ -309,6 +344,12 @@ h4, h5, h6 {
 
 .boveda {
 	width: 180px;
+}
+
+.social-icons
+{
+	height: 20px;
+	width: 20px;
 }
 
 .c-content-title-1 > h3 {
@@ -390,9 +431,18 @@ h4, h5, h6 {
 	border: none;
 	border-radius: 2px;
 	text-transform: none;
-	margin: 15px 0;
+	margin: 20px 0;
 	font-size: 15px;
 	padding: 6px 20px;
+}
+
+.btn-moderno {
+	border-radius: 2px;
+}
+
+.lock-color
+{
+	padding-bottom:0px; !important
 }
 
 .btn.btn-long {
