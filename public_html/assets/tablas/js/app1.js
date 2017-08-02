@@ -1,7 +1,7 @@
 //AngularApp
 var app = angular.module("fondoDeAhorro", ['ui.bootstrap', 'ui.bootstrap-slider']);
 
-FondoAhorroController.$inject = ['VinikService', '$timeout','$interval'];
+FondoAhorroController.$inject = ['VinikService', '$timeout','$interval', '$http'];
 function FondoAhorroController(VinikService, $timeout, $interval){
     //console.log('FondoAhorroController');
     var vm = this;
@@ -195,14 +195,18 @@ function FondoAhorroController(VinikService, $timeout, $interval){
 app.controller('FondoAhorroController', FondoAhorroController);
 
 ModalController.$inject = ['VinikService', '$timeout'];
-function ModalController(VinikService, $timeout){
+function ModalController(VinikService, $timeout, $http){
     //console.log('ModalController');
     var vm = this;
 
     vm.send = send;
 
     function send(form){
+        console.log(vm.name);
         if(form.$invalid){
+            $http.post('controllers/insertar_lead.php?name='+vm.name+'&phone='+vm.phone+'&postal_code='+vm.postalCode+'&email='+vm.email+'&taxes='+vm.taxes).then(function(response) {
+                console.log("sup");
+            })
             console.error('FORM INVALID');
             form.$setSubmitted();
         }else {

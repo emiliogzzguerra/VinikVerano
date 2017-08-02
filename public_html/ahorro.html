@@ -106,7 +106,7 @@ Follow: http://www.twitter.com/themehats
                     <p>Un asesor financiero se comunicará contigo al teléfono proporcionado el día y hora que tú elijas.</p>
                 </div>
                 <div class="modal-body">
-                    <form name="contactForm" class="form-horizontal"  action="controllers/insertar_lead.php" novalidate>
+                    <form name="contactForm" class="form-horizontal" novalidate>
                         <div class="form-group">
                             <label for="nombre" class="col-md-4 control-label">Nombre</label>
                             <div class="col-md-6">
@@ -140,7 +140,7 @@ Follow: http://www.twitter.com/themehats
 
                 <div class="modal-footer-block">
                     <button type="button" class="btn c-theme-btn btn-left btn-cancel" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn c-theme-btn btn-right">Enviar</button>
+                    <button type="button" class="btn c-theme-btn btn-right" ng-click="vm.send(contactForm)">Enviar</button>
                 </div>
             </div>
             <!-- /.modal-content -->
