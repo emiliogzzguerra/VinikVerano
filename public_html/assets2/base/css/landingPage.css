@@ -68,7 +68,7 @@
     bottom: 1em;
     width: 100%;
     font-size: 1.5em;
-    font-family:"Baskerville", "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+    font-family:'Source Sans Pro', sans-serif;
 }
 
 .c-mobile-logo{
@@ -96,7 +96,7 @@ margin-top:-15px;
 
 .bg_intro {
   height: 70vh;
-  background: url(../img/BackgroundVinik2.jpg);
+  background: url(../img/BackgroundVinik.jpg);
   background-size: cover;
   background-position: center;
   display: flex;
@@ -170,13 +170,13 @@ margin-top:-15px;
 
 
 html {
-  font-family: "Baskerville", "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 body {
   font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
   line-height: 1.6;
   font-weight: 400;
-  font-family: "Baskerville", "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+  font-family: 'Source Sans Pro', sans-serif;
  }
 
 /* Larger than mobile */

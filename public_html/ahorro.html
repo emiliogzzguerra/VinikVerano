@@ -85,7 +85,7 @@ Follow: http://www.twitter.com/themehats
     <form class="navbar-form navbar-right">
         <button type="button" data-toggle="modal" data-target="#myModal" class="btn c-theme-btn">Ahorrar ahora</button>
         <button id="no-background" data-toggle="modal" data-target="#myModal" class="btn btn-flat c-hor-nav-toggler">
-            <i class="material-icons">call</i>
+            <i class="material-icons" style="visibility: hidden;">call</i>
         </button>
       </form>
       <ul class="nav navbar-nav navbar-right">
@@ -106,7 +106,7 @@ Follow: http://www.twitter.com/themehats
                     <p>Un asesor financiero se comunicará contigo al teléfono proporcionado el día y hora que tú elijas.</p>
                 </div>
                 <div class="modal-body">
-                    <form name="contactForm" class="form-horizontal" novalidate>
+                    <form name="contactForm" class="form-horizontal"  action="controllers/insertar_lead.php" novalidate>
                         <div class="form-group">
                             <label for="nombre" class="col-md-4 control-label">Nombre</label>
                             <div class="col-md-6">
@@ -140,7 +140,7 @@ Follow: http://www.twitter.com/themehats
 
                 <div class="modal-footer-block">
                     <button type="button" class="btn c-theme-btn btn-left btn-cancel" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn c-theme-btn btn-right" ng-click="vm.send(contactForm)">Enviar</button>
+                    <button type="button" class="btn c-theme-btn btn-right" type="submit">Enviar</button>
                 </div>
             </div>
             <!-- /.modal-content -->
@@ -3396,7 +3396,7 @@ Follow: http://www.twitter.com/themehats
                         
                 </div>
                 <div class="col-md-12 c-center">
-                    <a id="empezar-button" data-toggle="modal" data-target="#myModal" href="#" class="c-action-btn btn btn-lg c-btn-square c-theme-btn c-btn-bold-x btn-long"> More</a>
+                    <a id="empezar-button" data-toggle="modal" data-target="#myModal" href="#" class="c-action-btn btn btn-lg c-btn-square c-theme-btn c-btn-bold-x btn-long">Quiero saber más</a>
                 </div>
             </div>
         </div>
@@ -3445,22 +3445,22 @@ Follow: http://www.twitter.com/themehats
                         <div class="your-class">
 <!-- FIRST ITERATION -->
                             <div>
-                                <a href="http://www.finnovista.com/fintechforinclusionradarlatam/">
+                                <a href="http://www.finnovista.com/fintechforinclusionradarlatam/" target="_blank">
                                     <img alt="Finnovista" src="../assets2/base/img/menciones/finnovista.png" class="menciones"/>
                                 </a>
                             </div>
                             <div>
-                                <a href="http://www.elfinanciero.com.mx/empresas/140-startups-en-mexico-quieren-competir-con-la-banca-comercial.html">
+                                <a href="http://www.elfinanciero.com.mx/empresas/140-startups-en-mexico-quieren-competir-con-la-banca-comercial.html" target="_blank">
                                     <img alt="El Financiero" src="../assets2/base/img/menciones/el-financiero.png" class="menciones"/>
                                 </a>
                             </div>
                             <div>
-                                <a href="https://www.facebook.com/TecdeMonterrey/posts/10155160347479009">
+                                <a href="https://www.facebook.com/TecdeMonterrey/posts/10155160347479009" target="_blank">
                                     <img alt="MIT" src="../assets2/base/img/menciones/mit.png" class="menciones"/>
                                 </a>
                             </div>
                             <div>
-                                <a href="https://wwws.stagexchange.com/vinik/vinik">
+                                <a href="https://wwws.stagexchange.com/vinik/vinik" target="_blank">
                                     <img alt="SXSW"src="../assets2/base/img/menciones/sxsw.png" class="menciones"/>
                                 </a>
                             </div>
@@ -3468,22 +3468,22 @@ Follow: http://www.twitter.com/themehats
 
 <!-- SECOND ITERATION -->
                             <div>
-                                <a href="http://www.finnovista.com/fintechforinclusionradarlatam/">
+                                <a href="http://www.finnovista.com/fintechforinclusionradarlatam/" target="_blank">
                                     <img alt="Finnovista" src="../assets2/base/img/menciones/finnovista.png" class="menciones"/>
                                 </a>
                             </div>
                             <div>
-                                <a href="">
+                                <a href="http://www.elfinanciero.com.mx/empresas/140-startups-en-mexico-quieren-competir-con-la-banca-comercial.html" target="_blank">
                                     <img alt="El Financiero" src="../assets2/base/img/menciones/el-financiero.png" class="menciones"/>
                                 </a>
                             </div>
                             <div>
-                                <a href="https://www.facebook.com/TecdeMonterrey/posts/10155160347479009">
+                                <a href="https://www.facebook.com/TecdeMonterrey/posts/10155160347479009" target="_blank">
                                     <img alt="MIT" src="../assets2/base/img/menciones/mit.png" class="menciones"/>
                                 </a>
                             </div>
                             <div>
-                                <a href="https://wwws.stagexchange.com/vinik/vinik">
+                                <a href="https://wwws.stagexchange.com/vinik/vinik" target="_blank">
                                     <img alt="SXSW"src="../assets2/base/img/menciones/sxsw.png" class="menciones"/>
                                 </a>
                             </div>
