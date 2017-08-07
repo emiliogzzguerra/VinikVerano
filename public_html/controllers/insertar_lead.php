@@ -11,7 +11,7 @@ $_POST = json_decode($rest_json, true);
 
 $name = $_POST['name'] ?? '';
 $phone = preg_replace("/[^0-9]/", "", $_POST['phone'] ?? '');
-$postal_code = $_POST['postal_code'] ?? '';
+$postal_code = $_POST['postalCode'] ?? '';
 $email = $_POST['email'] ?? '';
 $taxes = $_POST['taxes'] ?? '';
 
