@@ -108,34 +108,35 @@ Follow: http://www.twitter.com/themehats
                 <div class="modal-body">
                     <form name="contactForm" class="form-horizontal" novalidate>
                         <div class="form-group">
-                            <label for="nombre" class="col-md-4 control-label">Nombre</label>
+                            <label for="nombre" name="name" class="col-md-4 control-label">Nombre</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control  c-square" id="Name" ng-model="vm.name" data-toggle="tooltip" required>
+                                <input type="text" class="form-control  c-square" id="Name" ng-model="vm.data.name" data-toggle="tooltip" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="tel" class="col-md-4 control-label">Teléfono</label>
+                            <label for="tel" name="phone" class="col-md-4 control-label">Teléfono</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control  c-square" id="Name" ng-model="vm.phone" data-toggle="tooltip" ng-pattern="/\d+/" maxlength="15" required>
+                                <input type="text" class="form-control  c-square" id="Name" ng-model="vm.data.phone" data-toggle="tooltip" ng-pattern="/\d+/" maxlength="15" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="cp" class="col-md-4 control-label">Código Postal</label>
+                            <label for="cp" name="postal_code" class="col-md-4 control-label">Código Postal</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control  c-square" ng-model="vm.postalCode" id="Name" ng-pattern="/\d+/" maxlength="10" data-toggle="tooltip">
+                                <input type="text" class="form-control  c-square" ng-model="vm.data.postalCode" id="Name" ng-pattern="/\d+/" maxlength="10" data-toggle="tooltip">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="email" class="col-md-4 control-label">Email</label>
+                            <label for="email" name="email" class="col-md-4 control-label">Email</label>
                             <div class="col-md-6">
-                                <input type="email" class="form-control  c-square" id="Name" ng-model="vm.email" data-toggle="tooltip" required>
+                                <input type="email" class="form-control  c-square" id="Name" ng-model="vm.data.email" data-toggle="tooltip" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-4 control-label">Aceptar <a href="#">términos y condiciones</a></label>
-                            <input type="checkbox" id="terms" class="regular-checkbox" value="" ng-model="vm.terms" required><label for="terms" data-toggle="tooltip" title="Debe aceptar los términos" data-placement="bottom"></label>
+                            <input type="checkbox" id="terms" class="regular-checkbox" name="terms" value="" ng-model="vm.data.terms" required><label for="terms" data-toggle="tooltip" title="Debe aceptar los términos" data-placement="bottom"></label>
                         </div>
                     </form>
+
                 </div>
 
                 <div class="modal-footer-block">

@@ -16,9 +16,9 @@
 			$this->taxes = $taxes;
 		}
 		
-		public function InsertLead()
+		public function InsertLead($success)
 		{
-			$insercion_lead=mysql_query("INSERT INTO lead (name,phone,postal_code,email,taxes) VALUES ('$this->name', '$this->phone', '$this->postal_code', '$this->email', '$this->taxes')")  or die('ERROR EN INSERCIÓN DE Lead: '. mysql_error());	
+			$insercion_lead=mysqli_query($success,"INSERT INTO lead (name,phone,postal_code,email,taxes) VALUES ('$this->name', '$this->phone', '$this->postal_code', '$this->email', '$this->taxes')") or die('ERROR EN INSERCION DE Lead: '. mysql_error());	
 		}
 	}
 ?>
