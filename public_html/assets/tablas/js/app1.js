@@ -208,14 +208,14 @@ function ModalController(VinikService, $timeout, $http){
     vm.data["taxes"] =  '1';
 
     function send(form){
-        console.log(vm.data);
+        //console.log(vm.data);
         $http({
             url: 'controllers/insertar_lead.php',
             method: "POST",
             data: vm.data,
             headers: {'Content-Type': 'application/json'}
             }).success(function (data, status, headers, config) {
-                console.log(data);
+                console.log("success");
             }).error(function (data, status, headers, config) {});
         /*
         if(form.$invalid){

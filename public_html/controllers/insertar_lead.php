@@ -15,6 +15,8 @@ $postal_code = $_POST['postal_code'] ?? '';
 $email = $_POST['email'] ?? '';
 $taxes = $_POST['taxes'] ?? '';
 
+ChromePhp::log($_POST);
+
 $lead = new Lead($name, $phone, $postal_code, $email, $taxes);
 $lead->InsertLead($conexion);
 
