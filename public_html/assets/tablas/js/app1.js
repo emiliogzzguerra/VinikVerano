@@ -198,57 +198,52 @@ ModalController.$inject = ['VinikService', '$timeout', '$http'];
 function ModalController(VinikService, $timeout, $http){
     //console.log('ModalController');
     var vm = this;
+
     vm.send = send;
 
     vm.data = {};
-    vm.data["name"] =  'e';
-    vm.data["phone"] =  '2';
-    vm.data["postalCode"] =  '1';
-    vm.data["email"] =  'emilio@gmail.com';
-    vm.data["taxes"] =  '1';
+    vm.data["name"] =  '';
+    vm.data["phone"] =  '';
+    vm.data["postalCode"] =  '';
+    vm.data["email"] =  '';
+    vm.data["taxes"] =  '';
 
     function send(form){
-        //console.log(vm.data);
+        console.log("We startedddd!");
+        console.log(form);
         $http({
-            url: 'controllers/insertar_lead.php',
-            method: "POST",
-            data: vm.data,
-            headers: {'Content-Type': 'application/json'}
-            }).success(function (data, status, headers, config) {
-                console.log("success");
-            }).error(function (data, status, headers, config) {});
-        /*
+        url: 'controllers/insertar_lead.php',
+        method: "POST",
+        data: vm.data,
+        headers: {'Content-Type': 'application/json'}
+        }).success(function (data, status, headers, config) {
+            console.log("success");
+        }).error(function (data, status, headers, config) {});
+    }
+
+    function validate(form){
         if(form.$invalid){
-            console.error('FORM INVALID');
-            form.$setSubmitted();
+            console.log('FORM INVALID');
         } else {
-            $http({
-            url: 'controllers/insertar_lead.php',
-            method: "POST",
-            data: vm.data,
-            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-            }).success(function (data, status, headers, config) {
-                console.log(data);
-            }).error(function (data, status, headers, config) {});
-
-            $http.post('controllers/insertar_lead.php',JSON.stringify(vm.data)).then(function (response) {
-            if (response.data)
-                vm.msg = "Post Data Submitted Successfully!";
-            }, function (response) {
-                vm.msg = "Service not Exists";
-                vm.statusval = response.status;
-                vm.statustext = response.statusText;
-                vm.headers = response.headers();
-            }); 
-
-            //$http.post('controllers/insertar_lead.php?name='+vm.name+'&phone='+vm.phone+'&postal_code='+vm.postalCode+'&email='+vm.email); 
             console.log('FORM VALID');
-        }
-        */
+            vm.send(form);
+        }    
     }
 }
 
-app.controller('ModalController', ModalController);
+app
+.controller('ModalController', ModalController)
+.directive("formOnChange", function($parse){
+  return {
+    require: "form",
+    link: function(scope, element, attrs){
+       var cb = $parse(attrs.formOnChange);
+       element.on("change", function(){
+          cb(scope);
+       });
+    }
+  }
+});
 
 
 // HighCharts

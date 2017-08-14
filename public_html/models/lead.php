@@ -28,17 +28,39 @@
 			$response = curl_exec($ch);
 			curl_close($ch);
 			ChromePhp::log($response);
+			https://api.trello.com/1/cards?key=myKey&token=myToken&name=newCardName&desc=newCarddescription&idList=myListId
 			//'asesores-online@vinik.com.mx'
 			$to      = 'emilio.gonzalez@vinik.com.mx'; 
 			$subject = '[LEAD] ' . $this->name . '$$$';
 			$message = wordwrap('Acaba de llegar un lead\n Nombre = ' .  $this->name . '\nTelefono = ' .  $this->phone . '\nCodigo postal = ' .  $this->postal_code . '\n Codigo postal traducido: ' . $response . '\nCorreo = ' .  $this->email . '\nDeducción de impuestos = ' .  $this->taxes);
-			$headers  = 'MIME-Version: 1.0' . "\r\n";
-			$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-			$headers .= 'From: asesores-online@vinik.com.mx <no-reply@vinik.com.mx>\r\n';
+			/*
+			$encoding = "utf-8";
 
-			if(mail($to, $subject, $message, $headers)){
+			// Preferences for Subject field
+			$subject_preferences = array(
+				"input-charset" => $encoding,
+				"output-charset" => $encoding,
+				"line-length" => 76,
+				"line-break-chars" => "\r\n"
+			);
+
+			// Mail header
+			$header = "Content-type: text/html; charset=".$encoding." \r\n";
+			$header .= "From: asesores-online@vinik.com.mx <asesores-online@vinik.com.mx> \r\n";
+			$header .= "MIME-Version: 1.0 \r\n";
+			$header .= "Content-Transfer-Encoding: 8bit \r\n";
+			$header .= "Date: ".date("r (T)")." \r\n";
+			$header .= iconv_mime_encode("Subject", $subject, $subject_preferences);
+
+			// Send mail
+			$sent = mail($mail_to, $mail_subject, $mail_message, $header);
+
+			if($sent){
 				ChromePhp::log("Email sent");
+			} else {
+				ChromePhp::log("NOT sent");
 			}
+			*/
 		}
 	}
 ?>

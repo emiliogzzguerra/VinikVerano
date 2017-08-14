@@ -464,6 +464,13 @@ h4, h5, h6 {
     padding-right: 30px;
 }
 
+.btn-right:disabled {
+	background: rgba(133, 208, 75, 0.65) !important;
+	opacity: 1 !important;
+	border-color: rgba(133, 208, 75, 1) !important;
+	color: #ffffff;
+}
+
 .modal-footer-block {
 
 }
@@ -641,6 +648,9 @@ label {
 	-webkit-animation: fadein 2.0s;
 }
 
+.terminos {
+	text-align: center !important;
+}
 
 
 /* VALIDATIONS */
@@ -652,7 +662,7 @@ select.ng-dirty.ng-invalid:focus,
 select.ng-dirty.ng-invalid,
 form.ng-submitted .regular-checkbox.ng-invalid + label {
   border: 1px solid red;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6) !important;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 4px rgba(255, 0, 0, 0.3) !important;
 }
 
 input.ng-dirty.ng-valid,
@@ -662,7 +672,7 @@ select.ng-dirty.ng-valid:focus,
 select.ng-dirty.ng-valid,
 form.ng-submitted .regular-checkbox.ng-valid + label {
   border: 1px solid #2bd02b;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 255, 0, 0.6) !important;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 4px rgba(0, 255, 0, 0.3) !important;
 }
 
 /* Bootstrap overrides */
