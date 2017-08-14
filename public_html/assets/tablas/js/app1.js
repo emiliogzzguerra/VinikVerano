@@ -206,11 +206,9 @@ function ModalController(VinikService, $timeout, $http){
     vm.data["phone"] =  '';
     vm.data["postalCode"] =  '';
     vm.data["email"] =  '';
-    vm.data["taxes"] =  '';
 
     function send(form){
-        console.log("We startedddd!");
-        console.log(form);
+        console.log("Mandando form");
         $http({
         url: 'controllers/insertar_lead.php',
         method: "POST",
@@ -219,15 +217,6 @@ function ModalController(VinikService, $timeout, $http){
         }).success(function (data, status, headers, config) {
             console.log("success");
         }).error(function (data, status, headers, config) {});
-    }
-
-    function validate(form){
-        if(form.$invalid){
-            console.log('FORM INVALID');
-        } else {
-            console.log('FORM VALID');
-            vm.send(form);
-        }    
     }
 }
 
