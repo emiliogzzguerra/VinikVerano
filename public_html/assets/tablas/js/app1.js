@@ -208,14 +208,14 @@ function ModalController(VinikService, $timeout, $http){
     vm.data["email"] =  '';
 
     function send(form){
-        console.log("Mandando form");
+        console.log("Submitting form");
         $http({
         url: 'controllers/insertar_lead.php',
         method: "POST",
         data: vm.data,
         headers: {'Content-Type': 'application/json'}
         }).success(function (data, status, headers, config) {
-            console.log("success");
+            console.log("Success");
         }).error(function (data, status, headers, config) {});
     }
 }
