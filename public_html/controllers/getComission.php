@@ -13,18 +13,18 @@ $risk = $_GET['risk'];
 
 //echo $monthly_cash;
 
-$resultado_busqueda = Comission::SearchComission($monthly_cash, $years, $risk);
+$resultado_busqueda = Comission::SearchComission($conexion,$monthly_cash, $years, $risk);
 
 if (!$resultado_busqueda) {
-    die('No hay resultado en getComission.php: ' . mysql_error());
+    die('No hay resultado en getComission.php: ' . mysqli_error());
 }
 
 //echo $resultado_busqueda;
 
-$row = mysql_fetch_assoc($resultado_busqueda);
+$row = mysqli_fetch_assoc($resultado_busqueda);
 
 if (!$row) {
-    die('Mal fetch en getComission.php: ' . mysql_error());
+    die('Mal fetch en getComission.php: ' . mysqli_error());
 }
 
 

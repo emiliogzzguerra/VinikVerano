@@ -5,7 +5,7 @@
 		public $years;
 		public $admin_cost;
 
-		public static function SearchComission($monthly_cash, $years, $risk)
+		public static function SearchComission($conexion,$monthly_cash, $years, $risk)
 		{
 
 			//Se comienza con un simple select para después agregarle las condiciones de la búsqueda
@@ -21,7 +21,7 @@
 
 
 			//Una vez formado el query este se ejecuta
-			$resultado_busqueda = mysqli_query($busqueda_query) or die ("ERROR EN EL QUERY en comission.php: " . mysqli_error());
+			$resultado_busqueda = mysqli_query($conexion,$busqueda_query) or die ("ERROR EN EL QUERY en comission.php: " . mysqli_error());
 
 			if (!$resultado_busqueda) {
 			    die('No hay resultado en comission: ' . mysqli_error());
