@@ -92,7 +92,7 @@ function FondoAhorroController(VinikService, $timeout, $interval,$http){
     function calculateData(){
         //console.log('calculateData');
         //console.log('vm.admin_cost', vm.admin_cost);
-
+        //console.log(vm.aportacionMensual,vm.aniosAhorro,vm.risk);
         var jsonResponse = VinikService.getComission(vm.aportacionMensual,vm.aniosAhorro,vm.risk);
 
         jsonResponse.then(function(value){
