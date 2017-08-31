@@ -14,8 +14,10 @@ function FondoAhorroController(VinikService, $timeout, $interval,$http){
         vm.imagenActual = (vm.imagenActual + 1)%4;
     }, 2000);
 
-    delta = 30000000;
-    vm.ahorroAcumuladoTotal = Date.now()*delta;
+    ahorroInicial = 30000000;
+    tazaCrecimiento = 0.1;
+    momentoInicial = 1504137599;
+    intervalosPorMes = 1296000;
     // Variables
     vm.aportacionMensual = 3000;
     vm.aniosAhorro = 10;
@@ -75,12 +77,16 @@ function FondoAhorroController(VinikService, $timeout, $interval,$http){
     vm.changes = changes;
 
     $interval(function() {
-        delta = delta + 5000;
-        vm.ahorroAcumuladoTotal = delta;
+        var tiempoAhora = Math.floor(Date.now() / 1000);
+        // console.log("ahora:  " + tiempoAhora);
+        // console.log("inicio: " + momentoInicial);
+        // console.log("diferencia: " + (tiempoAhora-momentoInicial));
+        vm.ahorroAcumuladoTotal = ahorroInicial + ((ahorroInicial*tazaCrecimiento)/intervalosPorMes) * (tiempoAhora-momentoInicial);
         vm.ahorroAcumuladoTotal = Math.round(vm.ahorroAcumuladoTotal/100)*100;
         vm.ahorroAcumuladoTotal = vm.ahorroAcumuladoTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         vm.ahorroAcumuladoTotal = '$' + vm.ahorroAcumuladoTotal;
-    }, 1500);
+
+    }, 2000);
 
     function changes(){
       $timeout(function(){
@@ -215,7 +221,14 @@ function ModalController(VinikService, $timeout, $http){
         data: vm.data,
         headers: {'Content-Type': 'application/json'}
         }).success(function (data, status, headers, config) {
-            console.log("Success");
+            $http({
+                url: 'controllers/insertar_valores.php',
+                method: "POST",
+                data: vm.results,
+                headers: {'Content-Type': 'application/json'}
+                }).success(function (data, status, headers, config) {
+                    console.log("Success");
+                }).error(function (data, status, headers, config) {});
         }).error(function (data, status, headers, config) {});
     }
 }

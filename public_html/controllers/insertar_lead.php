@@ -19,8 +19,4 @@ ChromePhp::log($_POST);
 
 $lead = new Lead($name, $phone, $postal_code, $email, $taxes);
 $lead->InsertLead($conexion);
-
-//redireccionamiento
-//header("Location: ../confirmacion.php");
-
 ?> 
